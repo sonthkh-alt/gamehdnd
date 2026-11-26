@@ -1,4 +1,4 @@
-/* Nguồn ảnh (Wikimedia Commons). Tệp sinh tự động. */
+/* Nguồn ảnh chính của các chặng (Wikimedia Commons). Tệp sinh tự động. */
 window.NTS_CREDITS={
  "thanhho": {
   "title": "Ho dynasty's citadel, Vietnam.jpg",
