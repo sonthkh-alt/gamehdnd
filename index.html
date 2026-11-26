@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>html{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}</style>
 <!--PAGE-HEAD-->
 <title>Nghị trường số</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -44,7 +45,7 @@ img.gone{visibility:hidden}
 .ib{width:40px;height:40px;border-radius:50%;border:1px solid rgba(245,217,143,.5);background:rgba(0,0,0,.22);display:grid;place-items:center;flex:none}
 .ib svg{width:22px;height:22px}
 main{flex:1;overflow-y:auto;overflow-x:hidden;padding-bottom:24px;-webkit-overflow-scrolling:touch}
-.bot{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#061412;border-top:1px solid var(--line);padding:0 var(--gr) env(safe-area-inset-bottom,0px) var(--gl)}
+.bot{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#061412;border-top:1px solid var(--line);padding:0 var(--gr) 0 var(--gl)}
 .bot button{background:none;border:0;padding:0 2px;white-space:nowrap;min-height:58px;display:grid;justify-items:center;align-content:center;gap:2px;font-size:12.5px;line-height:1.1;color:var(--mute)}
 .bot svg,.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .bot button[aria-current=page]{color:var(--gold2)}
@@ -59,8 +60,8 @@ h3{font-size:19px}
 .eb{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--gold2);font-weight:600}
 /* hero */
 .hero{position:relative;height:clamp(250px,44vh,340px);overflow:hidden;background:#0a1d1a}
-.hero img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s}
-.hero img.ph.on{opacity:1;animation:kb 9s ease-out both}
+.hero .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s}
+.hero .ph.on{opacity:1;animation:kb 9s ease-out both}
 @keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,24,22,.25) 0%,rgba(7,24,22,0) 30%,rgba(7,24,22,.72) 68%,var(--bg2) 100%)}
 .hero .sun{position:absolute;right:-46px;top:-46px;width:190px;height:190px;z-index:1;opacity:.92;filter:drop-shadow(0 0 22px rgba(245,217,143,.45))}
@@ -120,10 +121,9 @@ h3{font-size:19px}
 .st.r{grid-template-columns:minmax(0,1fr) 92px}
 .st.r .med{order:2}
 .med{position:relative;width:92px;height:92px;border-radius:50%;background:radial-gradient(#1f5249,#0b2522);box-shadow:0 0 0 2.5px var(--gold),0 0 0 6px var(--bg2),0 0 0 7px #6d5326,0 6px 14px rgba(0,0,0,.5);display:grid;place-items:center;overflow:hidden;flex:none}
-.med svg{width:52px;height:52px;position:absolute}
-.med img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.med>svg{position:absolute;inset:0;width:100%;height:100%}
 .med .no{position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:2;min-width:30px;padding:1px 6px 2px;border-radius:9px 9px 0 0;background:var(--son);color:#fff;font:700 13px/1.2 var(--disp);text-align:center;border:1px solid var(--gold2);border-bottom:0}
-.st.lock .med img{filter:grayscale(1) brightness(.5)}
+.st.lock .med>svg{filter:grayscale(1) brightness(.5)}
 .st.cur .med{animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 2.5px var(--gold2),0 0 0 6px var(--bg2),0 0 0 7px #6d5326,0 0 26px rgba(245,217,143,.75)}}
 .stc{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:10px 12px;display:grid;gap:5px}
@@ -230,7 +230,7 @@ h3{font-size:19px}
 .mc .b{background:radial-gradient(#8e1c15,var(--son2));border:2px solid var(--gold);display:grid;place-items:center}
 .mc .b svg{width:78%;height:auto}
 .mc .f{transform:rotateY(180deg);border:2px solid var(--gold2);background:#0b2522}
-.mc .f img{width:100%;height:100%;object-fit:cover}
+.mc .f svg{position:absolute;inset:0;width:100%;height:100%}
 .mc .f span{position:absolute;left:0;right:0;bottom:0;padding:14px 4px 5px;font:700 12.5px/1.15 var(--disp);text-align:center;background:linear-gradient(transparent,rgba(0,0,0,.85))}
 .mc.done .f{border-color:var(--ok);box-shadow:0 0 14px rgba(116,214,165,.55)}
 /* xếp hạng, hồ sơ */
@@ -263,16 +263,20 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
 /* di sản */
 .hgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .hc{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;border:2px solid var(--gold);padding:0;background:#0b2522;text-align:left}
-.hc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hc>svg{position:absolute;inset:0;width:100%;height:100%}
 .hc .cp{position:absolute;left:0;right:0;bottom:0;padding:26px 10px 9px;background:linear-gradient(transparent,rgba(4,14,13,.92))}
 .hc .cp b{display:block;font:700 17px/1.1 var(--disp);color:var(--gold2)}
 .hc .cp span{font-size:12.5px;color:var(--ivory);line-height:1.25;display:block;margin-top:2px}
 .hc.lock{border-color:var(--line)}
-.hc.lock img{filter:grayscale(1) brightness(.35) blur(2px)}
+.hc.lock>svg{filter:grayscale(1) brightness(.35) blur(2px)}
 .hc.lock .lk{position:absolute;inset:0;display:grid;place-items:center;color:var(--mute)}
 .hc.lock .lk svg{width:34px;height:34px}
-.photo{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0b2522}
-.photo img{width:100%;height:100%;object-fit:cover;animation:kb 12s ease-out both}
+.photo{position:relative;aspect-ratio:3/2;overflow:hidden;background:#0b2522}
+.photo>svg{position:absolute;inset:0;width:100%;height:100%;animation:kb 12s ease-out both}
+.fig{margin:16px 0 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+.fig img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.fig figcaption{padding:8px 12px;font-size:13px;color:var(--mute);line-height:1.4}
+.fig figcaption b{color:var(--ivory);font-weight:600}
 .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,var(--bg2) 100%)}
 .photo .pt{position:absolute;left:var(--gl);right:var(--gr);bottom:8px;z-index:1}
 .photo .pt h2{font-size:30px;color:var(--gold2);margin:2px 0 0;text-shadow:0 2px 10px #000}
@@ -290,7 +294,7 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
 .modal{position:absolute;inset:0;z-index:30;background:rgba(3,12,11,.9);display:none;align-items:flex-end}
 .modal.on{display:flex}
 .modal.mid{align-items:center}
-.sheet{width:100%;max-height:100%;overflow-y:auto;background:var(--bg2);border-top:2px solid var(--gold);border-radius:22px 22px 0 0;padding:20px var(--gr) calc(20px + env(safe-area-inset-bottom,0px)) var(--gl)}
+.sheet{width:100%;max-height:100%;overflow-y:auto;background:var(--bg2);border-top:2px solid var(--gold);border-radius:22px 22px 0 0;padding:20px var(--gr) 20px var(--gl)}
 .cine{width:100%;display:grid;gap:14px;padding:0 var(--gr) 0 var(--gl)}
 .cine video{width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;border:2px solid var(--gold);box-shadow:0 0 40px rgba(217,164,65,.3)}
 .cine h2{justify-content:center;color:var(--gold2);margin:0;font-size:26px}
@@ -319,7 +323,7 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
 .crd:first-child{border-top:0}
 .crd a{color:var(--gold2);word-break:break-word}
 @media(max-width:380px){.cta{grid-template-columns:1fr}.row{grid-template-columns:7.8em minmax(0,1fr) 2.2em}.bdg{grid-template-columns:repeat(3,minmax(0,1fr))}.st{grid-template-columns:80px minmax(0,1fr)}.st.r{grid-template-columns:minmax(0,1fr) 80px}.med{width:80px;height:80px}}
-@media(prefers-reduced-motion:reduce){.spin,.hero img.ph.on,.photo img,.hero .voi,.st.cur .med,.jmap .rw,.fb.in svg,.res .stars svg.pop{animation:none}.toast,.ans,.btn,.mc .in,.track i,.bar i{transition:none!important}.shake{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.spin,.hero .ph.on,.photo>svg,.hero .voi,.st.cur .med,.jmap .rw,.fb.in svg,.res .stars svg.pop{animation:none}.toast,.ans,.btn,.mc .in,.track i,.bar i{transition:none!important}.shake{animation:none!important}}
 </style>
 <!--/PAGE-HEAD-->
 </head>
@@ -330,6 +334,7 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
 <radialGradient id="gDrum" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffe7a6"/><stop offset=".5" stop-color="#dca54c"/><stop offset="1" stop-color="#94591f"/></radialGradient>
 <linearGradient id="gEle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2ad58"/><stop offset="1" stop-color="#9a5f25"/></linearGradient>
 </defs>
+<defs id="adefs"></defs>
 </svg>
 <svg class="bgart" id="bgart" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
 <div class="app" id="app">
@@ -345,6 +350,7 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
 </div>
 <script src="data/cau-hoi.js"></script>
 <script src="assets/img/credits.js"></script>
+<script src="assets/art.js"></script>
 <script>
 {
 const $=s=>document.querySelector(s);
@@ -363,6 +369,8 @@ const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').match
 const BANK=(window.NTS_BANK&&window.NTS_BANK.q)||[];
 const BYCD={};BANK.forEach(q=>{(BYCD[q.cd]=BYCD[q.cd]||[]).push(q)});
 const CRED=window.NTS_CREDITS||{};
+const ARTS=window.NTS_ART||null;
+const art=(k,cls)=>ARTS?ARTS.svg(k,cls):'';
 const NQ=BANK.length;
 
 /* ---------- Nội dung ---------- */
@@ -383,28 +391,28 @@ const LV=['Dễ','Vừa','Khó'];
 const RUN=8,PASS=5;
 
 const STAGES=[
-{id:'nt',n:'Đông Sơn',t:'Nền tảng chính quyền hai cấp',img:'dongson',cap:'Mặt trống đồng Đông Sơn',
+{id:'nt',n:'Đông Sơn',t:'Nền tảng chính quyền hai cấp',img:'dongson',cap:'Mặt trống đồng và thuyền Đông Sơn',
  lore:'Năm 1924, những đồ đồng đầu tiên được tìm thấy ở làng Đông Sơn bên bờ sông Mã, và tên làng trở thành tên của cả một nền văn hóa thời dựng nước. Hành trình bắt đầu từ cội nguồn ấy: Hiến pháp, mô hình chính quyền địa phương hai cấp, phân quyền và phân cấp.'},
 {id:'bc',n:'Hàm Rồng',t:'Bầu cử đại biểu HĐND',img:'hamrong',cap:'Cầu Hàm Rồng bắc qua sông Mã',
  lore:'Cầu Hàm Rồng bắc qua sông Mã, khánh thành ngày 19/5/1964, gắn với chiến thắng Hàm Rồng năm 1965 của quân và dân Thanh Hóa. Lá phiếu là nhịp cầu nối cử tri với cơ quan dân cử: chặng này nói về nguyên tắc bầu cử, ứng cử, hiệp thương và xác định người trúng cử.'},
-{id:'tc',n:'Thành nhà Hồ',t:'Tổ chức HĐND và đại biểu',img:'thanhho',cap:'Cổng Nam Thành nhà Hồ',
+{id:'tc',n:'Thành nhà Hồ',t:'Tổ chức HĐND và đại biểu',img:'thanhho',cap:'Cổng đá Thành nhà Hồ',
  lore:'Kinh đô nước Đại Ngu được dựng bằng những khối đá lớn chỉ trong khoảng ba tháng đầu năm 1397; UNESCO công nhận là Di sản văn hóa thế giới ngày 27/6/2011. Bộ máy cũng cần vững như thành đá: Thường trực HĐND, các Ban, Tổ đại biểu và đại biểu HĐND.'},
 {id:'nv',n:'Lam Kinh',t:'Nhiệm vụ, quyền hạn',img:'lamkinh',cap:'Khu di tích Lam Kinh',
  lore:'Sau mười năm khởi nghĩa Lam Sơn (1418-1428), Lê Thái Tổ cho dựng kinh thành Lam Kinh trên đất quê hương; nơi đây là di tích quốc gia đặc biệt từ năm 2012. Chặng này trả lời câu hỏi quen thuộc ở nghị trường: việc này ai quyết, HĐND, UBND hay Chủ tịch UBND?'},
-{id:'kh',n:'Đền Bà Triệu',t:'Kỳ họp và quy chế làm việc',img:'batrieu',cap:'Đền thờ Bà Triệu',
+{id:'kh',n:'Đền Bà Triệu',t:'Kỳ họp và quy chế làm việc',img:'batrieu',cap:'Bà Triệu cưỡi voi ra trận',
  lore:'Năm 248, Bà Triệu phất cờ khởi nghĩa chống quân Đông Ngô với chí lớn “cưỡi cơn gió mạnh, đạp luồng sóng dữ”. Tiếng nói ở nghị trường cũng cần bản lĩnh và đúng quy tắc: triệu tập, chương trình, thảo luận, biểu quyết theo quy chế làm việc của HĐND tỉnh và HĐND xã.'},
-{id:'gs',n:'Sầm Sơn',t:'Hoạt động giám sát',img:'samson',cap:'Biển Sầm Sơn',
+{id:'gs',n:'Sầm Sơn',t:'Hoạt động giám sát',img:'samson',cap:'Bình minh trên biển Sầm Sơn',
  lore:'Sầm Sơn là bãi biển nổi tiếng của xứ Thanh, với núi Trường Lệ soi bóng xuống sóng. Giám sát cũng là soi cho rõ: chất vấn, giải trình, giám sát chuyên đề, xem xét báo cáo và theo dõi việc thực hiện kiến nghị sau giám sát.'},
-{id:'ct',n:'Pù Luông',t:'Cử tri và dân nguyện',img:'puluong',cap:'Ruộng bậc thang Pù Luông',
+{id:'ct',n:'Pù Luông',t:'Cử tri và dân nguyện',img:'puluong',cap:'Ruộng bậc thang và nhà sàn Pù Luông',
  lore:'Trong tiếng Thái, Pù Luông nghĩa là “núi lớn”. Giữa ruộng bậc thang và những nếp nhà sàn ở phía tây bắc Thanh Hóa, đại biểu về với cử tri: tiếp xúc cử tri, tiếp công dân, xử lý đơn thư và theo đến cùng các kiến nghị.'},
-{id:'vb',n:'Cẩm Lương',t:'Ban hành nghị quyết, văn bản',img:'camluong',cap:'Suối cá Cẩm Lương',
+{id:'vb',n:'Cẩm Lương',t:'Ban hành nghị quyết, văn bản',img:'camluong',cap:'Đàn cá suối Cẩm Lương',
  lore:'Ở miền núi phía tây Thanh Hóa, đồng bào Mường gìn giữ đàn cá suối Cẩm Lương qua nhiều đời bằng một lệ làng: không ai đánh bắt. Lệ đúng thì bền. Chặng này nói về thẩm quyền, hình thức, hiệu lực của nghị quyết HĐND và quyết định UBND.'},
-{id:'ns',n:'Nghi Sơn',t:'Ngân sách và đầu tư công',img:'nghison',cap:'Vùng biển Nghi Sơn',
+{id:'ns',n:'Nghi Sơn',t:'Ngân sách và đầu tư công',img:'nghison',cap:'Cảng biển Nghi Sơn',
  lore:'Khu kinh tế Nghi Sơn được thành lập ngày 15/5/2006 ở phía nam Thanh Hóa, có cảng biển Nghi Sơn, là một động lực phát triển của tỉnh. Muốn vươn khơi phải chắc tay hòm chìa khóa: dự toán, phân bổ, điều chỉnh và quyết toán ngân sách địa phương.'},
-{id:'th',n:'Hạc Thành',t:'Thanh Hóa: quê hương và khát vọng',img:'hacthanh',cap:'Tượng đài Lê Lợi',
+{id:'th',n:'Hạc Thành',t:'Thanh Hóa: quê hương và khát vọng',img:'hacthanh',cap:'Hạc đứng trên lưng rùa',
  lore:'Hạc Thành là tên gọi xưa của đô thị tỉnh lỵ xứ Thanh, nay là tên phường trung tâm hình thành sau sắp xếp năm 2025. Chặng về đích: 166 xã, phường của tỉnh, HĐND tỉnh khóa XIX, mục tiêu tăng trưởng hai con số và những trang sử, di sản đáng tự hào.'}];
 const SIDX={};STAGES.forEach((s,i)=>{SIDX[s.id]=i});
-const img=(k,s)=>'assets/img/'+k+(s?'-s':'')+'.jpg';
+const img=k=>'assets/img/'+k+'.jpg';
 
 const CARDS=[
  {t:'Quyết định dự toán thu, chi ngân sách địa phương của tỉnh',b:'ht',why:'HĐND quyết định dự toán và phân bổ ngân sách địa phương cùng cấp; UBND lập và trình.'},
@@ -579,9 +587,9 @@ function renderNav(){$('#nav').innerHTML=NAV.map(([id,n,ic])=>`<button data-act=
 function render(){
  if(heroT){clearInterval(heroT);heroT=null}
  renderTop();renderNav();const m=$('#main');m.innerHTML=({map:tabMap,arena:tabArena,mini:tabMini,disan:tabDisan,me:tabMe})[tab]();bindMe();
- if(tab==='map'&&!RM){heroT=setInterval(()=>{const ps=document.querySelectorAll('.hero img.ph');if(!ps.length)return;ps[heroI%ps.length].classList.remove('on');heroI=(heroI+1)%ps.length;ps[heroI].classList.add('on');const c=$('#hcap');if(c)c.textContent=HERO[heroI].cap},6000)}
+ if(tab==='map'&&!RM&&HERO.length>1){heroT=setInterval(()=>{const ps=document.querySelectorAll('.hero img.ph');if(!ps.length)return;ps[heroI%ps.length].classList.remove('on');heroI=(heroI+1)%ps.length;ps[heroI].classList.add('on');const c=$('#hcap');if(c)c.textContent=HERO[heroI].cap},6000)}
 }
-const HERO=['hamrong','thanhho','lamkinh','puluong','samson'].map(k=>STAGES.find(s=>s.img===k));
+const HERO=['thanhho','puluong','lamkinh'].filter(k=>CRED[k]).map(k=>STAGES.find(s=>s.img===k));
 
 function indCard(ind){
  const pos=g=>Math.max(0,Math.min(100,(g-6)/6*100));
@@ -600,10 +608,10 @@ function tabMap(){
  ensureDaily();const ind=indicators(),nx=nextNode();
  const st=(s,i)=>{const un=isOpen(i,1),cur=nx&&nx[0]===i;
   const pills=[1,2,3].map(m=>{const o=isOpen(i,m),v=stv(s.id,m);return `<span class="pill ${v?'on':''}">${LV[m-1]} ${o?[0,1,2].map(k=>star(k<v)).join(''):LOCK}</span>`}).join('');
-  return `<button class="st ${i%2?'r':''} ${un?'':'lock'} ${cur?'cur':''}" data-act="stage" data-v="${i}" aria-label="Chặng ${i+1}: ${s.n}, ${s.t}${un?'':' (chưa mở)'}"><span class="med"><svg viewBox="0 0 48 48" aria-hidden="true">${ICON[s.img]}</svg><img src="${img(s.img,1)}" alt="" loading="lazy"><span class="no">${i+1}</span></span><span class="stc"><span class="eb">${s.t}</span><h3>${s.n}</h3><span class="lv">${pills}</span></span></button>`};
- return `<div class="hero">${HERO.map((s,i)=>`<img class="ph ${i===heroI%HERO.length?'on':''}" src="${img(s.img)}" alt="${i===0?esc(s.cap):''}">`).join('')}
+  return `<button class="st ${i%2?'r':''} ${un?'':'lock'} ${cur?'cur':''}" data-act="stage" data-v="${i}" aria-label="Chặng ${i+1}: ${s.n}, ${s.t}${un?'':' (chưa mở)'}"><span class="med">${art(s.img)}<span class="no">${i+1}</span></span><span class="stc"><span class="eb">${s.t}</span><h3>${s.n}</h3><span class="lv">${pills}</span></span></button>`};
+ return `<div class="hero">${HERO.length?HERO.map((s,i)=>`<img class="ph ${i===heroI%HERO.length?'on':''}" src="${img(s.img)}" alt="${i===0?esc(s.cap):''}">`).join(''):art('hamrong','ph on')}
  <svg class="sun" viewBox="0 0 200 200" aria-hidden="true">${drum(100,100,96,true)}</svg>
- <span class="cap" id="hcap">${HERO[heroI%HERO.length].cap}</span><span class="voi">${voi(84)}</span>
+ ${HERO.length?`<span class="cap" id="hcap">${HERO[heroI%HERO.length].cap}</span>`:''}<span class="voi">${voi(84)}</span>
  <div class="tt"><h1>Nghị trường số</h1><p>Hành trình Đại biểu HĐND hai cấp tỉnh Thanh Hóa</p></div></div>
  <div class="cta pad">${nx?`<button class="btn" data-act="play" data-v="${nx[0]}-${nx[1]}">${PLAY}Chơi tiếp: ${STAGES[nx[0]].n}</button>`:`<button class="btn" data-act="tab" data-v="arena">Vào Đấu trường</button>`}<button class="btn ghost" data-act="cine">${PLAY}Phim giới thiệu</button></div>
  <div class="facts pad"><div class="stat"><b>${fmt(NQ)}</b><span>Câu hỏi</span></div><div class="stat"><b>10</b><span>Chặng di sản</span></div><div class="stat"><b>${totalStars()}/90</b><span>Sao đã đạt</span></div></div>
@@ -629,12 +637,12 @@ function tabMini(){
  return `<div class="pad" style="padding-top:16px"><h1>Trò chơi</h1><p class="sub">Mỗi lượt chỉ 2 đến 3 phút.</p></div>
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.bins}</svg></div><div><h3>Ai có thẩm quyền?</h3><p>Đưa 8 việc về đúng chủ thể: HĐND tỉnh, HĐND xã, Thường trực HĐND hay UBND.</p><div class="lab">Kỷ lục: ${S.tqBest}/8</div><button class="btn sm mt" data-act="tq-start">Chơi ngay</button></div></section>
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.steps}</svg></div><div><h3>Xếp đúng quy trình</h3><p>Chạm các bước theo đúng thứ tự. Càng ít bước sai, càng nhiều XP.</p><div class="row2">${PROCS.map((p,i)=>`<button class="btn sm ghost" data-act="qt-start" data-v="${i}">${p.n}</button>`).join('')}</div><div class="lab mt">${PROCS.map((p,i)=>S.qtBest[i]!=null?p.n+': sai ít nhất '+S.qtBest[i]+' bước':'').filter(Boolean).join('. ')||'Chưa có lượt chơi'}</div></div></section>
- <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.cards}</svg></div><div><h3>Lật thẻ di sản</h3><p>Tìm 6 cặp ảnh di tích, thắng cảnh xứ Thanh. Lật càng ít lượt càng giỏi.</p><div class="lab">${S.memBest?'Ít lượt nhất: '+S.memBest:'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="mem-start">Chơi ngay</button></div></section>`;
+ <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.cards}</svg></div><div><h3>Lật thẻ di sản</h3><p>Tìm 6 cặp tranh di tích, thắng cảnh xứ Thanh. Lật càng ít lượt càng giỏi.</p><div class="lab">${S.memBest?'Ít lượt nhất: '+S.memBest:'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="mem-start">Chơi ngay</button></div></section>`;
 }
-function creditLine(k){const c=CRED[k];return c?`<p class="credit">Ảnh: ${esc(c.author)}, ${esc(c.lic)}, Wikimedia Commons.</p>`:''}
+function figure(s){const c=CRED[s.img];return c?`<figure class="fig"><img src="${img(s.img)}" alt="${esc(s.cap)}" loading="lazy"><figcaption><b>Ảnh tư liệu: ${esc(c.cap||s.cap)}.</b> Ảnh: ${esc(c.author)}, ${esc(c.lic)}, Wikimedia Commons.</figcaption></figure>`:''}
 function tabDisan(){
  return `<div class="pad" style="padding-top:16px"><h1>Thẻ di sản</h1><p class="sub">Vượt cấp Dễ của mỗi chặng để mở một thẻ. Đã sưu tầm ${S.cards.length}/10.</p></div>
- <section class="sec"><div class="hgrid">${STAGES.map((s,i)=>{const has=S.cards.includes(s.id);return `<button class="hc ${has?'':'lock'}" data-act="card" data-v="${i}" aria-label="${s.n}${has?'':' (chưa mở)'}"><img src="${img(s.img)}" alt="" loading="lazy">${has?'':`<span class="lk">${LOCK}</span>`}<span class="cp"><b>${s.n}</b><span>${has?s.cap:'Chặng '+(i+1)+': '+s.t}</span></span></button>`}).join('')}</div></section>`;
+ <section class="sec"><div class="hgrid">${STAGES.map((s,i)=>{const has=S.cards.includes(s.id);return `<button class="hc ${has?'':'lock'}" data-act="card" data-v="${i}" aria-label="${s.n}${has?'':' (chưa mở)'}">${art(s.img)}${has?'':`<span class="lk">${LOCK}</span>`}<span class="cp"><b>${s.n}</b><span>${has?s.cap:'Chặng '+(i+1)+': '+s.t}</span></span></button>`}).join('')}</div></section>`;
 }
 function tabMe(){
  const L=level(S.xp),r=ROLES.find(x=>x.id===S.role),tm=TEAMS.find(x=>x.id===S.team);
@@ -653,7 +661,7 @@ function bindMe(){const n=$('#nm');if(n)n.addEventListener('input',()=>{S.name=n
 
 /* ---------- Phim giới thiệu, chọn nhân vật ---------- */
 function openCine(first){
- $('#cineS').innerHTML=`<h2>Nghị trường số</h2><video id="vid" src="assets/video/gioi-thieu.mp4" poster="assets/video/gioi-thieu.jpg" playsinline controls preload="metadata"></video><p>Một phút dọc sông Mã qua những di sản xứ Thanh.</p><div class="row2"><button class="btn ghost" data-act="cine-play">${PLAY}Xem phim</button><button class="btn" data-act="cine-close">${first?'Vào nghị trường':'Đóng'}</button></div>`;
+ $('#cineS').innerHTML=`<h2>Nghị trường số</h2><video id="vid" src="assets/video/gioi-thieu.mp4" poster="assets/video/gioi-thieu.jpg" playsinline controls preload="metadata"></video><p>46 giây dọc sông Mã qua mười di sản xứ Thanh.</p><div class="row2"><button class="btn ghost" data-act="cine-play">${PLAY}Xem phim</button><button class="btn" data-act="cine-close">${first?'Vào nghị trường':'Đóng'}</button></div>`;
  $('#cine').classList.add('on');
 }
 function closeCine(){const v=$('#vid');if(v){try{v.pause()}catch(e){}}$('#cine').classList.remove('on');$('#cineS').innerHTML='';if(!S.intro){S.intro=true;save()}if(!S.role)openOnb()}
@@ -685,11 +693,11 @@ function renderOv(){
  if(run.type==='info'){
   const s=STAGES[run.idx],n=(BYCD[s.id]||[]).length;b.className='ovb flush';
   head('Chặng '+(run.idx+1)+': '+s.n,'');
-  b.innerHTML=`<div class="photo"><img src="${img(s.img)}" alt="${esc(s.cap)}"><div class="pt"><span class="eb">${s.t}</span><h2>${s.n}</h2></div></div>
-  <div class="pad"><p class="lore">${s.lore}</p>${creditLine(s.img)}
+  b.innerHTML=`<div class="photo">${art(s.img)}<div class="pt"><span class="eb">${s.t}</span><h2>${s.n}</h2></div></div>
+  <div class="pad"><p class="lore">${s.lore}</p>
   <div class="lvl-list">${[1,2,3].map(m=>{const o=isOpen(run.idx,m),v=stv(s.id,m),c=(BYCD[s.id]||[]).filter(q=>q.m===m),k=c.filter(q=>S.ok[q.id]).length,bs=S.best[s.id+m];
    return `<button class="lvb ${o?'open':''}" data-act="play" data-v="${run.idx}-${m}" ${o?'':'disabled'}><span><b>Cấp ${LV[m-1]}</b><small>${o?`Đã nắm ${k}/${c.length} câu${bs!=null?', lượt tốt nhất '+bs+'/'+RUN:''}`:(m===1?'Vượt cấp Dễ ở chặng trước để mở':'Vượt cấp '+LV[m-2]+' để mở')}</small></span><span class="stars">${o?[0,1,2].map(i=>star(i<v)).join(''):LOCK}</span></button>`}).join('')}</div>
-  <p class="hint">Kho câu hỏi của chặng: ${n} câu. Mỗi lượt ${RUN} câu, ưu tiên câu bạn chưa gặp hoặc từng trả lời sai.</p></div>`;
+  <p class="hint">Kho câu hỏi của chặng: ${n} câu. Mỗi lượt ${RUN} câu, ưu tiên câu bạn chưa gặp hoặc từng trả lời sai.</p>${figure(s)}</div>`;
  }else if(run.type==='stage'){
   const st=run.st,q=run.qs[run.i],p=run.picked;
   head(st.n+' · Cấp '+LV[run.m-1],(run.i+1)+'/'+run.qs.length);
@@ -707,7 +715,7 @@ function renderOv(){
   b.innerHTML=`<div class="res"><svg class="medal" viewBox="0 0 180 180" aria-hidden="true">${drum(90,90,86,pass)}<circle cx="90" cy="90" r="34" fill="#0c2421" stroke="#f5d98f" stroke-width="2"/><g transform="translate(66,66)">${ICON[st.img]}</g></svg>
   <div class="stars">${[0,1,2].map(k=>star(k<s,k<s?'pop':'')).join('')}</div><h2 style="margin:0">Đúng ${run.ok}/${RUN} câu</h2><p class="sub" style="margin:0">${msg}</p>
   <div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${pct(run.after.grdp)}</b><span>GRDP tỉnh ảo</span></div><div class="stat"><b>${run.maxc}</b><span>Chuỗi dài nhất</span></div></div>
-  ${run.newCard?`<button class="hc" style="width:min(240px,70%)" data-act="card" data-v="${run.idx}"><img src="${img(st.img)}" alt=""><span class="cp"><b>Thẻ di sản mới</b><span>${st.n}: ${st.cap}</span></span></button>`:''}
+  ${run.newCard?`<button class="hc" style="width:min(240px,70%)" data-act="card" data-v="${run.idx}">${art(st.img)}<span class="cp"><b>Thẻ di sản mới</b><span>${st.n}: ${st.cap}</span></span></button>`:''}
   <div class="btns">${nx?`<button class="btn" data-act="play" data-v="${nx[0]}-${nx[1]}">${nx[0]===run.idx?'Lên cấp '+LV[nx[1]-1]:'Chặng tiếp: '+STAGES[nx[0]].n}</button>`:''}<button class="btn ghost" data-act="play" data-v="${run.idx}-${run.m}">Chơi lại lượt này</button><button class="btn ghost" data-act="close">Về bản đồ</button></div></div>`;
  }else if(run.type==='arena'){
   const c=run.cur,mult=run.combo>=5?2:run.combo>=3?1.5:1;
@@ -758,17 +766,17 @@ function renderOv(){
   const done=run.found.length===6;
   head('Lật thẻ di sản','Lượt '+run.moves);
   b.innerHTML=`<p class="sub" style="margin:0">${run.note||'Lật hai thẻ giống nhau để ghép cặp.'}</p>
-  <div class="mem">${run.deck.map((c,i)=>{const up=run.open.includes(i)||run.found.includes(c.k);return `<button class="mc ${up?'up':''} ${run.found.includes(c.k)?'done':''}" data-act="mem-flip" data-v="${i}" aria-label="${up?c.n:'Thẻ úp số '+(i+1)}"><span class="in"><span class="b"><svg viewBox="0 0 100 100" aria-hidden="true">${drum(50,50,46,false)}</svg></span><span class="f"><img src="${img(c.k,1)}" alt=""><span>${c.n}</span></span></span></button>`}).join('')}</div>
+  <div class="mem">${run.deck.map((c,i)=>{const up=run.open.includes(i)||run.found.includes(c.k);return `<button class="mc ${up?'up':''} ${run.found.includes(c.k)?'done':''}" data-act="mem-flip" data-v="${i}" aria-label="${up?c.n:'Thẻ úp số '+(i+1)}"><span class="in"><span class="b"><svg viewBox="0 0 100 100" aria-hidden="true">${drum(50,50,46,false)}</svg></span><span class="f">${art(c.k)}<span>${c.n}</span></span></span></button>`}).join('')}</div>
   ${done?`<div class="res mt"><div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${run.moves}</b><span>Số lượt</span></div><div class="stat"><b>${S.memBest}</b><span>Ít nhất</span></div></div><div class="btns"><button class="btn" data-act="mem-start">Chơi lại</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`:''}`;
  }else if(run.type==='card'){
   const s=STAGES[run.idx];b.className='ovb flush';head('Thẻ di sản','');
-  b.innerHTML=`<div class="photo"><img src="${img(s.img)}" alt="${esc(s.cap)}"><div class="pt"><span class="eb">${s.cap}</span><h2>${s.n}</h2></div></div><div class="pad"><p class="lore">${s.lore}</p>${creditLine(s.img)}<div class="btns mt"><button class="btn" data-act="stage" data-v="${run.idx}">Đến chặng ${s.n}</button><button class="btn ghost" data-act="close">Đóng</button></div></div>`;
+  b.innerHTML=`<div class="photo">${art(s.img)}<div class="pt"><span class="eb">Chặng ${run.idx+1} · ${s.t}</span><h2>${s.n}</h2></div></div><div class="pad"><p class="lore">${s.lore}</p>${figure(s)}<div class="btns mt"><button class="btn" data-act="stage" data-v="${run.idx}">Đến chặng ${s.n}</button><button class="btn ghost" data-act="close">Đóng</button></div></div>`;
  }else if(run.type==='credits'){
   head('Căn cứ và nguồn ảnh','');
   const docs=['Hiến pháp năm 2013 (sửa đổi, bổ sung theo Nghị quyết 203/2025/QH15)','Luật Tổ chức chính quyền địa phương số 72/2025/QH15','Luật Hoạt động giám sát của Quốc hội và HĐND số 121/2025/QH15','Luật Bầu cử đại biểu Quốc hội và đại biểu HĐND (văn bản hợp nhất 83/VBHN-VPQH năm 2026)','Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15, sửa đổi bởi Luật số 87/2025/QH15','Luật Ngân sách nhà nước số 89/2025/QH15','Luật Tiếp công dân năm 2013, sửa đổi bởi Luật số 136/2025/QH15','Nghị quyết 103/2025/UBTVQH15 và 104/2025/UBTVQH15: Quy chế làm việc mẫu của HĐND cấp tỉnh, cấp xã','Nghị quyết 106, 107, 108/2025/UBTVQH15 về số lượng Phó Chủ tịch, Phó Trưởng Ban; cơ cấu người ứng cử; Ban Dân tộc','Nghị quyết 114/2025/UBTVQH15 hướng dẫn hoạt động giám sát của HĐND','Nghị quyết 116/2025/UBTVQH15 về tiếp công dân, xử lý đơn, giám sát giải quyết khiếu nại, tố cáo','Nghị quyết liên tịch 72/2025/NQLT/UBTVQH15-CP-ĐCTUBTWMTTQVN về tiếp xúc cử tri (đã sửa đổi năm 2025)','Nghị quyết 96/2023/QH15 về lấy phiếu tín nhiệm, bỏ phiếu tín nhiệm','Nghị quyết 202/2025/QH15 và Nghị quyết 1686/NQ-UBTVQH15 về sắp xếp đơn vị hành chính','Nghị quyết 45/2025/NQ-HĐND, 36/2026/NQ-HĐND, 55/NQ-HĐND năm 2026 của HĐND tỉnh Thanh Hóa','Chỉ thị 08/CT-TTg và Chỉ thị 14/CT-TTg năm 2026','Báo Thanh Hóa điện tử; Wikipedia tiếng Việt (phần lịch sử, văn hóa)'];
   b.innerHTML=`<h3>Căn cứ soạn câu hỏi</h3><p class="sub">Mỗi câu hỏi đều ghi điều, khoản làm căn cứ và đã được đối chiếu với nguyên văn văn bản. Bộ câu hỏi vẫn cần Phòng Công tác HĐND rà soát trước khi dùng chính thức.</p><div class="card mt">${docs.map(d=>`<div class="crd">${d}</div>`).join('')}</div>
-  <h3 class="mt" style="margin-top:22px">Nguồn ảnh</h3><p class="sub">Ảnh lấy từ Wikimedia Commons, dùng theo giấy phép ghi kèm; ảnh đã được cắt và thu nhỏ.</p><div class="card mt">${STAGES.map(s=>{const c=CRED[s.img];return c?`<div class="crd"><b>${s.n}</b>: ${esc(c.title)}. Tác giả: ${esc(c.author)}. Giấy phép: ${esc(c.lic)}. <a href="${esc(c.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`:''}).join('')}</div>
-  <p class="hint">Phim giới thiệu dựng từ chính các ảnh trên; nhạc và tiếng trống được tổng hợp bằng máy.</p>`;
+  <h3 class="mt" style="margin-top:22px">Tranh và ảnh</h3><p class="sub">Mười bức tranh phong cách sơn mài của các chặng được vẽ riêng cho game. Ảnh tư liệu lấy từ Wikimedia Commons, dùng theo giấy phép ghi kèm; ảnh đã được cắt và thu nhỏ.</p><div class="card mt">${STAGES.map(s=>{const c=CRED[s.img];return c?`<div class="crd"><b>${s.n}</b>: ${esc(c.title)}. Tác giả: ${esc(c.author)}. Giấy phép: ${esc(c.lic)}. <a href="${esc(c.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`:''}).join('')}</div>
+  <p class="hint">Phim giới thiệu dựng từ các tranh, ảnh trên; nhạc và tiếng trống được tổng hợp bằng máy.</p>`;
  }
 }
 
@@ -918,6 +926,7 @@ document.addEventListener('keydown',e=>{
 function start(data){
  if(data&&data.S)S=Object.assign(fresh(),data.S);else load();
  $('#bgart').innerHTML=drum(180,260,300,false)+drum(1430,760,340,false);
+ if(ARTS){const ad=$('#adefs');if(ad)ad.innerHTML=ARTS.defs}
  render();
  if(!S.intro)openCine(true);else if(!S.role)openOnb();
 }
