@@ -296,6 +296,30 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
 .modal.mid{align-items:center}
 .sheet{width:100%;max-height:100%;overflow-y:auto;background:var(--bg2);border-top:2px solid var(--gold);border-radius:22px 22px 0 0;padding:20px var(--gr) 20px var(--gl)}
 .cine{width:100%;display:grid;gap:14px;padding:0 var(--gr) 0 var(--gl)}
+.strip{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;margin-top:10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.strip button{flex:none;width:132px;aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:1.5px solid var(--line);padding:0;background:var(--panel);scroll-snap-align:start;position:relative}
+.strip button:first-child{width:200px}
+.strip img,.pgrid img{width:100%;height:100%;object-fit:cover}
+.strip button span{position:absolute;left:0;right:0;bottom:0;padding:12px 6px 4px;font-size:11.5px;line-height:1.2;text-align:left;color:var(--ivory);background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.chips2{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-top:10px}
+.chips2 button{flex:none;min-height:36px;padding:2px 12px;border-radius:99px;border:1px solid var(--line);background:var(--panel);font-size:13.5px;white-space:nowrap}
+.chips2 button[aria-pressed=true]{border-color:var(--gold2);color:var(--gold2);background:#24544a}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:8px}
+.pgrid button{aspect-ratio:1;border:0;padding:0;border-radius:8px;overflow:hidden;background:var(--panel)}
+.lb{position:absolute;inset:0;z-index:33;background:rgba(3,12,11,.96);display:none;flex-direction:column}
+.lb.on{display:flex}
+.lbh{display:flex;align-items:center;gap:10px;padding:10px var(--gr) 10px var(--gl)}
+.lbh .t{flex:1;font:700 17px/1.2 var(--disp);color:var(--gold2)}
+.lbi{flex:1;min-height:0;display:grid;place-items:center;position:relative;padding:0 6px}
+.lbi img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lbn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,217,143,.5);background:rgba(0,0,0,.55);display:grid;place-items:center}
+.lbn.p{left:8px}.lbn.n{right:8px}
+.lbc{padding:12px var(--gr) 18px var(--gl);font-size:14.5px;line-height:1.45}
+.lbc small{display:block;margin-top:6px;color:var(--mute);font-size:12.5px}
+.lbc a{color:var(--mute)}
+h3 .lab{font-family:var(--body);font-weight:400}
+.picq{border-radius:14px;overflow:hidden;border:2px solid var(--gold);aspect-ratio:4/3;background:#000;margin-top:12px}
+.picq img{width:100%;height:100%;object-fit:cover}
 .cine video{width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;border:2px solid var(--gold);box-shadow:0 0 40px rgba(217,164,65,.3)}
 .cine h2{justify-content:center;color:var(--gold2);margin:0;font-size:26px}
 .cine h2::after{display:none}
@@ -345,12 +369,14 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
   <section class="ov" id="ov" aria-live="polite"><div class="ovh" id="ovh"></div><div class="tc" aria-hidden="true"></div><div class="ovb" id="ovb"></div></section>
   <div class="modal" id="onb" role="dialog" aria-modal="true" aria-labelledby="onbT"><div class="sheet" id="onbS"></div></div>
   <div class="modal mid" id="cine" role="dialog" aria-modal="true" aria-label="Phim giới thiệu"><div class="cine" id="cineS"></div></div>
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh"></div>
   <div id="fx" aria-hidden="true"></div>
   <div class="toast" id="toast" role="status"></div>
 </div>
 <script src="data/cau-hoi.js"></script>
 <script src="assets/img/credits.js"></script>
 <script src="assets/art.js"></script>
+<script src="assets/img/gallery.js"></script>
 <script>
 {
 const $=s=>document.querySelector(s);
@@ -369,6 +395,9 @@ const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').match
 const BANK=(window.NTS_BANK&&window.NTS_BANK.q)||[];
 const BYCD={};BANK.forEach(q=>{(BYCD[q.cd]=BYCD[q.cd]||[]).push(q)});
 const CRED=window.NTS_CREDITS||{};
+const GAL_ALL=window.NTS_GALLERY||[];
+let GAL=GAL_ALL;
+const galOf=k=>GAL.map((g,i)=>[g,i]).filter(([g])=>g.st===k);
 const ARTS=window.NTS_ART||null;
 const art=(k,cls)=>ARTS?ARTS.svg(k,cls):'';
 const NQ=BANK.length;
@@ -412,7 +441,7 @@ const STAGES=[
 {id:'th',n:'Hạc Thành',t:'Thanh Hóa: quê hương và khát vọng',img:'hacthanh',cap:'Hạc đứng trên lưng rùa',
  lore:'Hạc Thành là tên gọi xưa của đô thị tỉnh lỵ xứ Thanh, nay là tên phường trung tâm hình thành sau sắp xếp năm 2025. Chặng về đích: 166 xã, phường của tỉnh, HĐND tỉnh khóa XIX, mục tiêu tăng trưởng hai con số và những trang sử, di sản đáng tự hào.'}];
 const SIDX={};STAGES.forEach((s,i)=>{SIDX[s.id]=i});
-const img=k=>'assets/img/'+k+'.jpg';
+const img=k=>(CRED[k]&&CRED[k].url)||'assets/img/'+k+'.jpg';
 
 const CARDS=[
  {t:'Quyết định dự toán thu, chi ngân sách địa phương của tỉnh',b:'ht',why:'HĐND quyết định dự toán và phân bổ ngân sách địa phương cùng cấp; UBND lập và trình.'},
@@ -490,7 +519,9 @@ const GLY={
  cap:'<path d="M3 9l9-4 9 4-9 4z M7 11v5c3 2 7 2 10 0v-5 M21 9v6"/>',
  crown:'<path d="M4 18h16 M4 18L3 8l5 4 4-7 4 7 5-4-1 10"/>',
  book:'<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M5 17a3 3 0 0 1 3-3h11"/>',
- gem:'<path d="M6 4h12l3 5-9 11L3 9z M3 9h18 M9 4l3 5 3-5"/>'};
+ gem:'<path d="M6 4h12l3 5-9 11L3 9z M3 9h18 M9 4l3 5 3-5"/>',
+ eye:'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+ img:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/>'};
 const NAV=[
  ['map','Hành trình','<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14"/>'],
  ['arena','Thi đấu','<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><path d="M12 8.5l1 2.6h2.8l-2.2 1.7.8 2.7-2.4-1.6-2.4 1.6.8-2.7-2.2-1.7H11z"/>'],
@@ -514,6 +545,7 @@ const BADGES=STAGES.map(s=>({id:'s_'+s.id,n:s.n,d:'Vượt cấp Dễ ở chặn
  {id:'sathach',n:'Đạt sát hạch',d:'Thi thử đạt từ 21/30 câu',g:'cap'},
  {id:'tramcau',n:'Trăm câu',d:'Trả lời đúng 100 câu khác nhau',g:'book'},
  {id:'disan',n:'Giữ lửa di sản',d:'Sưu tầm đủ 10 thẻ di sản',g:'gem'},
+ {id:'matxu',n:'Mắt xứ Thanh',d:'Đoán đúng từ 7/8 ảnh di sản',g:'eye'},
  {id:'haiconso',n:'Hai con số',d:'GRDP tỉnh ảo đạt 10%',g:'chart'},
  {id:'vuotdich',n:'Vượt đích 11%',d:'GRDP tỉnh ảo đạt 11%',g:'flag'},
  {id:'chuyencan',n:'Chuyên cần',d:'Học 3 ngày liên tiếp',g:'cal'}]);
@@ -530,8 +562,8 @@ function av(role,size){
 
 /* ---------- Trạng thái ---------- */
 const KEY='nghitruongso-v2';
-const fresh=()=>({name:'',role:'',team:'',xp:0,ok:{},wr:{},stars:{},best:{},badges:[],cards:[],streak:0,last:'',daily:{d:'',done:{}},week:{k:'',xp:0},arenaBest:0,arenaPlays:0,tqBest:0,qtBest:{},memBest:0,examBest:0,exams:0,answered:0,correct:0,snd:true,free:false,intro:false});
-let S=fresh(),tab='map',run=null,onb=null,confirmReset=false,arenaLv=0,heroT=null,heroI=0;
+const fresh=()=>({name:'',role:'',team:'',xp:0,ok:{},wr:{},stars:{},best:{},badges:[],cards:[],streak:0,last:'',daily:{d:'',done:{}},week:{k:'',xp:0},arenaBest:0,arenaPlays:0,tqBest:0,qtBest:{},memBest:0,picBest:0,examBest:0,exams:0,answered:0,correct:0,snd:true,free:false,intro:false});
+let S=fresh(),tab='map',run=null,onb=null,confirmReset=false,arenaLv=0,heroT=null,heroI=0,galF='all',lbI=-1,lbList=[];
 function load(){
  try{const raw=localStorage.getItem(KEY);if(raw){S=Object.assign(fresh(),JSON.parse(raw));return}
   const old=localStorage.getItem('nghitruongso-v1');if(old){const o=JSON.parse(old);S.name=o.name||'';S.role=o.role||'';S.team=o.team||''}}catch(e){S=fresh()}
@@ -587,9 +619,10 @@ function renderNav(){$('#nav').innerHTML=NAV.map(([id,n,ic])=>`<button data-act=
 function render(){
  if(heroT){clearInterval(heroT);heroT=null}
  renderTop();renderNav();const m=$('#main');m.innerHTML=({map:tabMap,arena:tabArena,mini:tabMini,disan:tabDisan,me:tabMe})[tab]();bindMe();
- if(tab==='map'&&!RM&&HERO.length>1){heroT=setInterval(()=>{const ps=document.querySelectorAll('.hero img.ph');if(!ps.length)return;ps[heroI%ps.length].classList.remove('on');heroI=(heroI+1)%ps.length;ps[heroI].classList.add('on');const c=$('#hcap');if(c)c.textContent=HERO[heroI].cap},6000)}
+ if(tab==='map'&&!RM&&HERO.length>1){heroT=setInterval(()=>{const ps=document.querySelectorAll('.hero img.ph');if(!ps.length)return;ps[heroI%ps.length].classList.remove('on');heroI=(heroI+1)%ps.length;ps[heroI].classList.add('on');const c=$('#hcap');if(c)c.textContent=hcap(HERO[heroI])},6000)}
 }
-const HERO=['thanhho','puluong','lamkinh'].filter(k=>CRED[k]).map(k=>STAGES.find(s=>s.img===k));
+const hcap=s=>(CRED[s.img]&&CRED[s.img].cap)||s.cap;
+let HERO=['thanhho','samson','puluong','hacthanh','lamkinh','batrieu'].filter(k=>CRED[k]).map(k=>STAGES.find(s=>s.img===k));
 
 function indCard(ind){
  const pos=g=>Math.max(0,Math.min(100,(g-6)/6*100));
@@ -611,7 +644,7 @@ function tabMap(){
   return `<button class="st ${i%2?'r':''} ${un?'':'lock'} ${cur?'cur':''}" data-act="stage" data-v="${i}" aria-label="Chặng ${i+1}: ${s.n}, ${s.t}${un?'':' (chưa mở)'}"><span class="med">${art(s.img)}<span class="no">${i+1}</span></span><span class="stc"><span class="eb">${s.t}</span><h3>${s.n}</h3><span class="lv">${pills}</span></span></button>`};
  return `<div class="hero">${HERO.length?HERO.map((s,i)=>`<img class="ph ${i===heroI%HERO.length?'on':''}" src="${img(s.img)}" alt="${i===0?esc(s.cap):''}">`).join(''):art('hamrong','ph on')}
  <svg class="sun" viewBox="0 0 200 200" aria-hidden="true">${drum(100,100,96,true)}</svg>
- ${HERO.length?`<span class="cap" id="hcap">${HERO[heroI%HERO.length].cap}</span>`:''}<span class="voi">${voi(84)}</span>
+ ${HERO.length?`<span class="cap" id="hcap">${hcap(HERO[heroI%HERO.length])}</span>`:''}<span class="voi">${voi(84)}</span>
  <div class="tt"><h1>Nghị trường số</h1><p>Hành trình Đại biểu HĐND hai cấp tỉnh Thanh Hóa</p></div></div>
  <div class="cta pad">${nx?`<button class="btn" data-act="play" data-v="${nx[0]}-${nx[1]}">${PLAY}Chơi tiếp: ${STAGES[nx[0]].n}</button>`:`<button class="btn" data-act="tab" data-v="arena">Vào Đấu trường</button>`}<button class="btn ghost" data-act="cine">${PLAY}Phim giới thiệu</button></div>
  <div class="facts pad"><div class="stat"><b>${fmt(NQ)}</b><span>Câu hỏi</span></div><div class="stat"><b>10</b><span>Chặng di sản</span></div><div class="stat"><b>${totalStars()}/90</b><span>Sao đã đạt</span></div></div>
@@ -637,12 +670,21 @@ function tabMini(){
  return `<div class="pad" style="padding-top:16px"><h1>Trò chơi</h1><p class="sub">Mỗi lượt chỉ 2 đến 3 phút.</p></div>
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.bins}</svg></div><div><h3>Ai có thẩm quyền?</h3><p>Đưa 8 việc về đúng chủ thể: HĐND tỉnh, HĐND xã, Thường trực HĐND hay UBND.</p><div class="lab">Kỷ lục: ${S.tqBest}/8</div><button class="btn sm mt" data-act="tq-start">Chơi ngay</button></div></section>
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.steps}</svg></div><div><h3>Xếp đúng quy trình</h3><p>Chạm các bước theo đúng thứ tự. Càng ít bước sai, càng nhiều XP.</p><div class="row2">${PROCS.map((p,i)=>`<button class="btn sm ghost" data-act="qt-start" data-v="${i}">${p.n}</button>`).join('')}</div><div class="lab mt">${PROCS.map((p,i)=>S.qtBest[i]!=null?p.n+': sai ít nhất '+S.qtBest[i]+' bước':'').filter(Boolean).join('. ')||'Chưa có lượt chơi'}</div></div></section>
- <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.cards}</svg></div><div><h3>Lật thẻ di sản</h3><p>Tìm 6 cặp tranh di tích, thắng cảnh xứ Thanh. Lật càng ít lượt càng giỏi.</p><div class="lab">${S.memBest?'Ít lượt nhất: '+S.memBest:'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="mem-start">Chơi ngay</button></div></section>`;
+ <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.cards}</svg></div><div><h3>Lật thẻ di sản</h3><p>Tìm 6 cặp tranh di tích, thắng cảnh xứ Thanh. Lật càng ít lượt càng giỏi.</p><div class="lab">${S.memBest?'Ít lượt nhất: '+S.memBest:'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="mem-start">Chơi ngay</button></div></section>
+ ${GAL.filter(g=>!g.nq).length>=8?`<section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.img}</svg></div><div><h3>Ảnh này ở đâu?</h3><p>Nhìn ảnh tư liệu thật, đoán đúng địa danh xứ Thanh. 8 ảnh mỗi lượt.</p><div class="lab">${S.picBest?'Kỷ lục: '+S.picBest+'/8':'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="pic-start">Chơi ngay</button></div></section>`:''}`;
 }
-function figure(s){const c=CRED[s.img];return c?`<figure class="fig"><img src="${img(s.img)}" alt="${esc(s.cap)}" loading="lazy"><figcaption><b>Ảnh tư liệu: ${esc(c.cap||s.cap)}.</b> Ảnh: ${esc(c.author)}, ${esc(c.lic)}, Wikimedia Commons.</figcaption></figure>`:''}
+function figure(s){const L=galOf(s.img);if(!L.length)return '';return `<h3 style="margin-top:20px">Ảnh tư liệu <span class="lab">(${L.length} ảnh, chạm để xem lớn)</span></h3><div class="strip">${L.map(([g,i])=>`<button data-act="photo" data-v="${i}" data-l="${s.img}" aria-label="Xem ảnh: ${esc(g.cap)}"><img src="${g.th}" alt="" loading="lazy"><span>${esc(g.cap)}</span></button>`).join('')}</div>`}
+const GTABS=[['all','Tất cả']].concat(STAGES.map(s=>[s.img,s.n]),[['th','Xứ Thanh']]);
+function openLb(i,l){const key=l==='grid'?galF:(l||'all');lbList=key==='all'?GAL.map((g,k)=>k):galOf(key).map(x=>x[1]);lbI=Math.max(0,lbList.indexOf(+i));renderLb();$('#lb').classList.add('on')}
+function renderLb(){const g=GAL[lbList[lbI]];if(!g)return;$('#lb').innerHTML=`<div class="lbh"><button class="x" data-act="lb-close" aria-label="Đóng">${XI}</button><div class="t">${esc(g.pl)}</div><div class="lab">${lbI+1}/${lbList.length}</div></div><div class="lbi"><img src="${g.src}" alt="${esc(g.cap)}">${lbList.length>1?`<button class="lbn p" data-act="lb-go" data-v="-1" aria-label="Ảnh trước"><svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button class="lbn n" data-act="lb-go" data-v="1" aria-label="Ảnh sau"><svg class="ic" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>`:''}</div><div class="lbc">${esc(g.cap)}<small>Ảnh: ${esc(g.author)} · ${esc(g.lic)} · <a href="${esc(g.page)}" target="_blank" rel="noopener">Wikimedia Commons</a></small></div>`}
+function lbGo(d){if(!lbList.length)return;lbI=(lbI+(+d)+lbList.length)%lbList.length;renderLb()}
+function closeLb(){$('#lb').classList.remove('on');$('#lb').innerHTML='';lbI=-1}
 function tabDisan(){
  return `<div class="pad" style="padding-top:16px"><h1>Thẻ di sản</h1><p class="sub">Vượt cấp Dễ của mỗi chặng để mở một thẻ. Đã sưu tầm ${S.cards.length}/10.</p></div>
- <section class="sec"><div class="hgrid">${STAGES.map((s,i)=>{const has=S.cards.includes(s.id);return `<button class="hc ${has?'':'lock'}" data-act="card" data-v="${i}" aria-label="${s.n}${has?'':' (chưa mở)'}">${art(s.img)}${has?'':`<span class="lk">${LOCK}</span>`}<span class="cp"><b>${s.n}</b><span>${has?s.cap:'Chặng '+(i+1)+': '+s.t}</span></span></button>`}).join('')}</div></section>`;
+ <section class="sec"><div class="hgrid">${STAGES.map((s,i)=>{const has=S.cards.includes(s.id);return `<button class="hc ${has?'':'lock'}" data-act="card" data-v="${i}" aria-label="${s.n}${has?'':' (chưa mở)'}">${art(s.img)}${has?'':`<span class="lk">${LOCK}</span>`}<span class="cp"><b>${s.n}</b><span>${has?s.cap:'Chặng '+(i+1)+': '+s.t}</span></span></button>`}).join('')}</div></section>
+ ${GAL.length?`<section class="sec"><h2>Thư viện ảnh xứ Thanh</h2><p class="sub" style="margin:-4px 0 0">${GAL.length} ảnh tư liệu từ Wikimedia Commons, kèm tác giả và giấy phép. Chạm vào ảnh để xem lớn.</p>
+ <div class="chips2" role="group" aria-label="Lọc ảnh theo địa danh">${GTABS.filter(([k])=>k==='all'||galOf(k).length).map(([k,n])=>`<button data-act="galf" data-v="${k}" aria-pressed="${galF===k}">${n}</button>`).join('')}</div>
+ <div class="pgrid">${(galF==='all'?GAL.map((g,i)=>[g,i]):galOf(galF)).map(([g,i])=>`<button data-act="photo" data-v="${i}" data-l="grid" aria-label="Xem ảnh: ${esc(g.cap)}"><img src="${g.th}" alt="" loading="lazy"></button>`).join('')}</div></section>`:''}`;
 }
 function tabMe(){
  const L=level(S.xp),r=ROLES.find(x=>x.id===S.role),tm=TEAMS.find(x=>x.id===S.team);
@@ -768,6 +810,16 @@ function renderOv(){
   b.innerHTML=`<p class="sub" style="margin:0">${run.note||'Lật hai thẻ giống nhau để ghép cặp.'}</p>
   <div class="mem">${run.deck.map((c,i)=>{const up=run.open.includes(i)||run.found.includes(c.k);return `<button class="mc ${up?'up':''} ${run.found.includes(c.k)?'done':''}" data-act="mem-flip" data-v="${i}" aria-label="${up?c.n:'Thẻ úp số '+(i+1)}"><span class="in"><span class="b"><svg viewBox="0 0 100 100" aria-hidden="true">${drum(50,50,46,false)}</svg></span><span class="f">${art(c.k)}<span>${c.n}</span></span></span></button>`}).join('')}</div>
   ${done?`<div class="res mt"><div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${run.moves}</b><span>Số lượt</span></div><div class="stat"><b>${S.memBest}</b><span>Ít nhất</span></div></div><div class="btns"><button class="btn" data-act="mem-start">Chơi lại</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`:''}`;
+ }else if(run.type==='pic'){
+  const r=run,g=GAL[r.items[r.i]],p=r.picked;
+  head('Ảnh này ở đâu?',(r.i+1)+'/'+r.items.length);
+  b.innerHTML=`<div class="dots">${r.items.map((x,k)=>`<i class="${k<r.res.length?(r.res[k]?'ok':'bad'):k===r.i?'cur':''}"></i>`).join('')}</div>
+  <div class="picq"><img src="${g.src}" alt="Ảnh cần đoán địa danh"></div>
+  <div class="answers">${r.opts[r.i].map((o,k)=>{let c='';if(p!=null){if(o===g.pl)c='ok';else if(o===p)c='bad'}return `<button class="ans ${c}" data-act="pic-ans" data-v="${esc(o)}" ${p!=null?'disabled':''}><span class="k">${'ABCD'[k]}</span><span>${esc(o)}</span></button>`}).join('')}</div>
+  ${p!=null?fb(p===g.pl,(p===g.pl?'':'Đây là '+esc(g.pl)+'. ')+esc(g.cap)+'.','')+`<p class="credit">Ảnh: ${esc(g.author)} · ${esc(g.lic)} · Wikimedia Commons</p><button class="btn full mt" data-act="pic-next">${r.i<r.items.length-1?'Ảnh tiếp theo':'Xem kết quả'}</button>`:''}`;
+ }else if(run.type==='picEnd'){
+  head('Kết quả','');
+  b.innerHTML=`<div class="res">${voi(140)}<h2 style="margin:0">Đúng ${run.ok}/${run.n} ảnh</h2><p class="sub" style="margin:0">${run.ok>=7?'Tinh mắt lắm! Bạn thuộc xứ Thanh như lòng bàn tay.':'Ghé thư viện ảnh ở mục Di sản để ngắm kỹ hơn rồi thử lại nhé.'}</p><div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${S.picBest}/8</b><span>Kỷ lục</span></div><div class="stat"><b>${run.ok>=7?'Đạt':'Chưa'}</b><span>Huy hiệu</span></div></div><div class="btns"><button class="btn" data-act="pic-start">Chơi lại</button><button class="btn ghost" data-act="tab-disan">Xem thư viện ảnh</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`;
  }else if(run.type==='card'){
   const s=STAGES[run.idx];b.className='ovb flush';head('Thẻ di sản','');
   b.innerHTML=`<div class="photo">${art(s.img)}<div class="pt"><span class="eb">Chặng ${run.idx+1} · ${s.t}</span><h2>${s.n}</h2></div></div><div class="pad"><p class="lore">${s.lore}</p>${figure(s)}<div class="btns mt"><button class="btn" data-act="stage" data-v="${run.idx}">Đến chặng ${s.n}</button><button class="btn ghost" data-act="close">Đóng</button></div></div>`;
@@ -776,6 +828,7 @@ function renderOv(){
   const docs=['Hiến pháp năm 2013 (sửa đổi, bổ sung theo Nghị quyết 203/2025/QH15)','Luật Tổ chức chính quyền địa phương số 72/2025/QH15','Luật Hoạt động giám sát của Quốc hội và HĐND số 121/2025/QH15','Luật Bầu cử đại biểu Quốc hội và đại biểu HĐND (văn bản hợp nhất 83/VBHN-VPQH năm 2026)','Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15, sửa đổi bởi Luật số 87/2025/QH15','Luật Ngân sách nhà nước số 89/2025/QH15','Luật Tiếp công dân năm 2013, sửa đổi bởi Luật số 136/2025/QH15','Nghị quyết 103/2025/UBTVQH15 và 104/2025/UBTVQH15: Quy chế làm việc mẫu của HĐND cấp tỉnh, cấp xã','Nghị quyết 106, 107, 108/2025/UBTVQH15 về số lượng Phó Chủ tịch, Phó Trưởng Ban; cơ cấu người ứng cử; Ban Dân tộc','Nghị quyết 114/2025/UBTVQH15 hướng dẫn hoạt động giám sát của HĐND','Nghị quyết 116/2025/UBTVQH15 về tiếp công dân, xử lý đơn, giám sát giải quyết khiếu nại, tố cáo','Nghị quyết liên tịch 72/2025/NQLT/UBTVQH15-CP-ĐCTUBTWMTTQVN về tiếp xúc cử tri (đã sửa đổi năm 2025)','Nghị quyết 96/2023/QH15 về lấy phiếu tín nhiệm, bỏ phiếu tín nhiệm','Nghị quyết 202/2025/QH15 và Nghị quyết 1686/NQ-UBTVQH15 về sắp xếp đơn vị hành chính','Nghị quyết 45/2025/NQ-HĐND, 36/2026/NQ-HĐND, 55/NQ-HĐND năm 2026 của HĐND tỉnh Thanh Hóa','Chỉ thị 08/CT-TTg và Chỉ thị 14/CT-TTg năm 2026','Báo Thanh Hóa điện tử; Wikipedia tiếng Việt (phần lịch sử, văn hóa)'];
   b.innerHTML=`<h3>Căn cứ soạn câu hỏi</h3><p class="sub">Mỗi câu hỏi đều ghi điều, khoản làm căn cứ và đã được đối chiếu với nguyên văn văn bản. Bộ câu hỏi vẫn cần Phòng Công tác HĐND rà soát trước khi dùng chính thức.</p><div class="card mt">${docs.map(d=>`<div class="crd">${d}</div>`).join('')}</div>
   <h3 class="mt" style="margin-top:22px">Tranh và ảnh</h3><p class="sub">Mười bức tranh phong cách sơn mài của các chặng được vẽ riêng cho game. Ảnh tư liệu lấy từ Wikimedia Commons, dùng theo giấy phép ghi kèm; ảnh đã được cắt và thu nhỏ.</p><div class="card mt">${STAGES.map(s=>{const c=CRED[s.img];return c?`<div class="crd"><b>${s.n}</b>: ${esc(c.title)}. Tác giả: ${esc(c.author)}. Giấy phép: ${esc(c.lic)}. <a href="${esc(c.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`:''}).join('')}</div>
+  ${GAL.length?`<h3 style="margin-top:22px">Thư viện ảnh (${GAL.length} ảnh)</h3><div class="card mt">${GAL.map(g=>`<div class="crd"><b>${esc(g.pl)}</b>: ${esc(g.cap)}. Tác giả: ${esc(g.author)}. Giấy phép: ${esc(g.lic)}. <a href="${esc(g.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`).join('')}</div>`:''}
   <p class="hint">Phim giới thiệu dựng từ các tranh, ảnh trên; nhạc và tiếng trống được tổng hợp bằng máy.</p>`;
  }
 }
@@ -872,6 +925,18 @@ function stepQt(v){
  if(run.placed.length===PROCS[run.p].s.length){run.xp=Math.max(5,20-3*run.mis);addXP(run.xp);const b=S.qtBest[run.p];S.qtBest[run.p]=b==null?run.mis:Math.min(b,run.mis);if(run.mis===0)award('quytrinh');daily('mini');touchStreak();save()}
  renderOv();if(run.placed.length===PROCS[run.p].s.length)toEnd();
 }
+function startPic(){
+ const by={};GAL.forEach((g,i)=>{if(!g.nq)(by[g.pl]=by[g.pl]||[]).push(i)});const places=Object.keys(by);if(places.length<4)return;
+ const items=shuffle(places).slice(0,8).map(pl=>shuffle(by[pl])[0]);
+ const opts=items.map(i=>shuffle([GAL[i].pl].concat(shuffle(places.filter(x=>x!==GAL[i].pl)).slice(0,3))));
+ stopRun();run={type:'pic',items,opts,i:0,res:[],picked:null};openOv();$('#ovb').scrollTop=0;
+}
+function ansPic(v){if(run.type!=='pic'||run.picked!=null)return;const g=GAL[run.items[run.i]],ok=v===g.pl;run.picked=v;run.res.push(ok);S.answered++;if(ok){S.correct++;SFX.ok();burst(7)}else SFX.bad();save();renderOv();toEnd()}
+function nextPic(){
+ if(run.i<run.items.length-1){run.i++;run.picked=null;renderOv();$('#ovb').scrollTop=0;return}
+ const ok=run.res.filter(Boolean).length,n=run.items.length,xp=ok*5+(ok===n?10:0);S.picBest=Math.max(S.picBest||0,ok);addXP(xp);if(ok>=7)award('matxu');daily('mini');touchStreak();save();if(ok>=7){SFX.win();burst(14)}
+ run={type:'picEnd',ok,n,xp};renderOv();$('#ovb').scrollTop=0;
+}
 function startMem(){
  const six=shuffle(STAGES).slice(0,6),deck=shuffle(six.concat(six).map(s=>({k:s.img,n:s.n,id:s.id})));
  stopRun();run={type:'mem',deck,open:[],found:[],moves:0,lock:false,xp:0,note:''};openOv();$('#ovb').scrollTop=0;
@@ -903,6 +968,10 @@ const ACT={
  snd:()=>{S.snd=!S.snd;save();if(S.snd)SFX.drum();if(tab==='me'&&!run)render();else renderTop()},
  free:()=>{S.free=!S.free;save();render()},
  cine:()=>openCine(false),'cine-close':closeCine,
+ photo:(v,b)=>openLb(v,b&&b.dataset.l),'lb-close':closeLb,'lb-go':lbGo,
+ galf:v=>{galF=v;const y=$('#main').scrollTop;render();$('#main').scrollTop=y},
+ 'pic-start':startPic,'pic-ans':ansPic,'pic-next':nextPic,
+ 'tab-disan':()=>{closeOv();tab='disan';render();$('#main').scrollTop=0},
  'cine-play':()=>{const v=$('#vid');if(v){v.muted=!S.snd;const p=v.play();if(p&&p.catch)p.catch(()=>{})}},
  'onb-open':openOnb,
  'onb-role':v=>{onb.role=v;document.querySelectorAll('.role').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v))},
@@ -914,12 +983,13 @@ const ACT={
 document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b||b.disabled)return;if(b.tagName==='A')e.preventDefault();const f=ACT[b.dataset.act];if(f)f(b.dataset.v,b)});
 document.addEventListener('error',e=>{const t=e.target;if(t&&t.tagName==='IMG')t.classList.add('gone')},true);
 document.addEventListener('keydown',e=>{
+ if($('#lb').classList.contains('on')){if(e.key==='Escape')closeLb();else if(e.key==='ArrowLeft')lbGo(-1);else if(e.key==='ArrowRight')lbGo(1);return}
  if(!run||!ov.classList.contains('on'))return;
  if(e.key==='Escape'){closeOv();return}
  if(e.target&&/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;
  const k='abcd'.indexOf(e.key.toLowerCase());
- if(k>=0&&(run.type==='stage'||run.type==='arena'||run.type==='exam')){const bs=document.querySelectorAll('#ovb .ans');if(bs[k]&&!bs[k].disabled)bs[k].click()}
- if(e.key==='Enter'){const n=document.querySelector('#ovb [data-act="next"],#ovb [data-act="tq-next"]');if(n){e.preventDefault();n.click()}}
+ if(k>=0&&(run.type==='stage'||run.type==='arena'||run.type==='exam'||run.type==='pic')){const bs=document.querySelectorAll('#ovb .ans');if(bs[k]&&!bs[k].disabled)bs[k].click()}
+ if(e.key==='Enter'){const n=document.querySelector('#ovb [data-act="next"],#ovb [data-act="tq-next"],#ovb [data-act="pic-next"]');if(n){e.preventDefault();n.click()}}
 });
 
 /* ---------- Khởi động ---------- */
@@ -927,6 +997,9 @@ function start(data){
  if(data&&data.S)S=Object.assign(fresh(),data.S);else load();
  $('#bgart').innerHTML=drum(180,260,300,false)+drum(1430,760,340,false);
  if(ARTS){const ad=$('#adefs');if(ad)ad.innerHTML=ARTS.defs}
+ /* Ảnh ngoài (Commons) bị chặn ở một số nơi nhúng trang: thử một ảnh, nếu không nạp được thì chỉ dùng ảnh có sẵn trong kho */
+ const rem=GAL_ALL.find(g=>/^https?:/.test(g.th));
+ if(rem){const t=new Image();let done=false;const fail=()=>{if(done)return;done=true;GAL=GAL_ALL.filter(g=>!/^https?:/.test(g.src));HERO=HERO.filter(s=>!(CRED[s.img]&&CRED[s.img].url));heroI=0;if(!run)render()};t.onload=()=>{done=true};t.onerror=fail;setTimeout(()=>{if(!t.complete||!t.naturalWidth)fail()},15000);t.src=rem.th}
  render();
  if(!S.intro)openCine(true);else if(!S.role)openOnb();
 }
