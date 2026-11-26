@@ -395,7 +395,8 @@ const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').match
 const BANK=(window.NTS_BANK&&window.NTS_BANK.q)||[];
 const BYCD={};BANK.forEach(q=>{(BYCD[q.cd]=BYCD[q.cd]||[]).push(q)});
 const CRED=window.NTS_CREDITS||{};
-const GAL=window.NTS_GALLERY||[];
+const GAL_ALL=window.NTS_GALLERY||[];
+let GAL=GAL_ALL;
 const galOf=k=>GAL.map((g,i)=>[g,i]).filter(([g])=>g.st===k);
 const ARTS=window.NTS_ART||null;
 const art=(k,cls)=>ARTS?ARTS.svg(k,cls):'';
@@ -440,7 +441,7 @@ const STAGES=[
 {id:'th',n:'Hạc Thành',t:'Thanh Hóa: quê hương và khát vọng',img:'hacthanh',cap:'Hạc đứng trên lưng rùa',
  lore:'Hạc Thành là tên gọi xưa của đô thị tỉnh lỵ xứ Thanh, nay là tên phường trung tâm hình thành sau sắp xếp năm 2025. Chặng về đích: 166 xã, phường của tỉnh, HĐND tỉnh khóa XIX, mục tiêu tăng trưởng hai con số và những trang sử, di sản đáng tự hào.'}];
 const SIDX={};STAGES.forEach((s,i)=>{SIDX[s.id]=i});
-const img=k=>'assets/img/'+k+'.jpg';
+const img=k=>(CRED[k]&&CRED[k].url)||'assets/img/'+k+'.jpg';
 
 const CARDS=[
  {t:'Quyết định dự toán thu, chi ngân sách địa phương của tỉnh',b:'ht',why:'HĐND quyết định dự toán và phân bổ ngân sách địa phương cùng cấp; UBND lập và trình.'},
@@ -618,9 +619,10 @@ function renderNav(){$('#nav').innerHTML=NAV.map(([id,n,ic])=>`<button data-act=
 function render(){
  if(heroT){clearInterval(heroT);heroT=null}
  renderTop();renderNav();const m=$('#main');m.innerHTML=({map:tabMap,arena:tabArena,mini:tabMini,disan:tabDisan,me:tabMe})[tab]();bindMe();
- if(tab==='map'&&!RM&&HERO.length>1){heroT=setInterval(()=>{const ps=document.querySelectorAll('.hero img.ph');if(!ps.length)return;ps[heroI%ps.length].classList.remove('on');heroI=(heroI+1)%ps.length;ps[heroI].classList.add('on');const c=$('#hcap');if(c)c.textContent=HERO[heroI].cap},6000)}
+ if(tab==='map'&&!RM&&HERO.length>1){heroT=setInterval(()=>{const ps=document.querySelectorAll('.hero img.ph');if(!ps.length)return;ps[heroI%ps.length].classList.remove('on');heroI=(heroI+1)%ps.length;ps[heroI].classList.add('on');const c=$('#hcap');if(c)c.textContent=hcap(HERO[heroI])},6000)}
 }
-const HERO=['thanhho','samson','puluong','hacthanh','lamkinh','batrieu','hamrong','nghison','camluong','dongson'].filter(k=>CRED[k]).map(k=>STAGES.find(s=>s.img===k));
+const hcap=s=>(CRED[s.img]&&CRED[s.img].cap)||s.cap;
+let HERO=['thanhho','samson','puluong','hacthanh','lamkinh','batrieu'].filter(k=>CRED[k]).map(k=>STAGES.find(s=>s.img===k));
 
 function indCard(ind){
  const pos=g=>Math.max(0,Math.min(100,(g-6)/6*100));
@@ -642,7 +644,7 @@ function tabMap(){
   return `<button class="st ${i%2?'r':''} ${un?'':'lock'} ${cur?'cur':''}" data-act="stage" data-v="${i}" aria-label="Chặng ${i+1}: ${s.n}, ${s.t}${un?'':' (chưa mở)'}"><span class="med">${art(s.img)}<span class="no">${i+1}</span></span><span class="stc"><span class="eb">${s.t}</span><h3>${s.n}</h3><span class="lv">${pills}</span></span></button>`};
  return `<div class="hero">${HERO.length?HERO.map((s,i)=>`<img class="ph ${i===heroI%HERO.length?'on':''}" src="${img(s.img)}" alt="${i===0?esc(s.cap):''}">`).join(''):art('hamrong','ph on')}
  <svg class="sun" viewBox="0 0 200 200" aria-hidden="true">${drum(100,100,96,true)}</svg>
- ${HERO.length?`<span class="cap" id="hcap">${HERO[heroI%HERO.length].cap}</span>`:''}<span class="voi">${voi(84)}</span>
+ ${HERO.length?`<span class="cap" id="hcap">${hcap(HERO[heroI%HERO.length])}</span>`:''}<span class="voi">${voi(84)}</span>
  <div class="tt"><h1>Nghị trường số</h1><p>Hành trình Đại biểu HĐND hai cấp tỉnh Thanh Hóa</p></div></div>
  <div class="cta pad">${nx?`<button class="btn" data-act="play" data-v="${nx[0]}-${nx[1]}">${PLAY}Chơi tiếp: ${STAGES[nx[0]].n}</button>`:`<button class="btn" data-act="tab" data-v="arena">Vào Đấu trường</button>`}<button class="btn ghost" data-act="cine">${PLAY}Phim giới thiệu</button></div>
  <div class="facts pad"><div class="stat"><b>${fmt(NQ)}</b><span>Câu hỏi</span></div><div class="stat"><b>10</b><span>Chặng di sản</span></div><div class="stat"><b>${totalStars()}/90</b><span>Sao đã đạt</span></div></div>
@@ -669,7 +671,7 @@ function tabMini(){
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.bins}</svg></div><div><h3>Ai có thẩm quyền?</h3><p>Đưa 8 việc về đúng chủ thể: HĐND tỉnh, HĐND xã, Thường trực HĐND hay UBND.</p><div class="lab">Kỷ lục: ${S.tqBest}/8</div><button class="btn sm mt" data-act="tq-start">Chơi ngay</button></div></section>
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.steps}</svg></div><div><h3>Xếp đúng quy trình</h3><p>Chạm các bước theo đúng thứ tự. Càng ít bước sai, càng nhiều XP.</p><div class="row2">${PROCS.map((p,i)=>`<button class="btn sm ghost" data-act="qt-start" data-v="${i}">${p.n}</button>`).join('')}</div><div class="lab mt">${PROCS.map((p,i)=>S.qtBest[i]!=null?p.n+': sai ít nhất '+S.qtBest[i]+' bước':'').filter(Boolean).join('. ')||'Chưa có lượt chơi'}</div></div></section>
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.cards}</svg></div><div><h3>Lật thẻ di sản</h3><p>Tìm 6 cặp tranh di tích, thắng cảnh xứ Thanh. Lật càng ít lượt càng giỏi.</p><div class="lab">${S.memBest?'Ít lượt nhất: '+S.memBest:'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="mem-start">Chơi ngay</button></div></section>
- ${GAL.length>=8?`<section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.img}</svg></div><div><h3>Ảnh này ở đâu?</h3><p>Nhìn ảnh tư liệu thật, đoán đúng địa danh xứ Thanh. 8 ảnh mỗi lượt.</p><div class="lab">${S.picBest?'Kỷ lục: '+S.picBest+'/8':'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="pic-start">Chơi ngay</button></div></section>`:''}`;
+ ${GAL.filter(g=>!g.nq).length>=8?`<section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.img}</svg></div><div><h3>Ảnh này ở đâu?</h3><p>Nhìn ảnh tư liệu thật, đoán đúng địa danh xứ Thanh. 8 ảnh mỗi lượt.</p><div class="lab">${S.picBest?'Kỷ lục: '+S.picBest+'/8':'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="pic-start">Chơi ngay</button></div></section>`:''}`;
 }
 function figure(s){const L=galOf(s.img);if(!L.length)return '';return `<h3 style="margin-top:20px">Ảnh tư liệu <span class="lab">(${L.length} ảnh, chạm để xem lớn)</span></h3><div class="strip">${L.map(([g,i])=>`<button data-act="photo" data-v="${i}" data-l="${s.img}" aria-label="Xem ảnh: ${esc(g.cap)}"><img src="${g.th}" alt="" loading="lazy"><span>${esc(g.cap)}</span></button>`).join('')}</div>`}
 const GTABS=[['all','Tất cả']].concat(STAGES.map(s=>[s.img,s.n]),[['th','Xứ Thanh']]);
@@ -924,7 +926,7 @@ function stepQt(v){
  renderOv();if(run.placed.length===PROCS[run.p].s.length)toEnd();
 }
 function startPic(){
- const by={};GAL.forEach((g,i)=>{(by[g.pl]=by[g.pl]||[]).push(i)});const places=Object.keys(by);if(places.length<4)return;
+ const by={};GAL.forEach((g,i)=>{if(!g.nq)(by[g.pl]=by[g.pl]||[]).push(i)});const places=Object.keys(by);if(places.length<4)return;
  const items=shuffle(places).slice(0,8).map(pl=>shuffle(by[pl])[0]);
  const opts=items.map(i=>shuffle([GAL[i].pl].concat(shuffle(places.filter(x=>x!==GAL[i].pl)).slice(0,3))));
  stopRun();run={type:'pic',items,opts,i:0,res:[],picked:null};openOv();$('#ovb').scrollTop=0;
@@ -995,6 +997,9 @@ function start(data){
  if(data&&data.S)S=Object.assign(fresh(),data.S);else load();
  $('#bgart').innerHTML=drum(180,260,300,false)+drum(1430,760,340,false);
  if(ARTS){const ad=$('#adefs');if(ad)ad.innerHTML=ARTS.defs}
+ /* Ảnh ngoài (Commons) bị chặn ở một số nơi nhúng trang: thử một ảnh, nếu không nạp được thì chỉ dùng ảnh có sẵn trong kho */
+ const rem=GAL_ALL.find(g=>/^https?:/.test(g.th));
+ if(rem){const t=new Image();let done=false;const fail=()=>{if(done)return;done=true;GAL=GAL_ALL.filter(g=>!/^https?:/.test(g.src));HERO=HERO.filter(s=>!(CRED[s.img]&&CRED[s.img].url));heroI=0;if(!run)render()};t.onload=()=>{done=true};t.onerror=fail;setTimeout(()=>{if(!t.complete||!t.naturalWidth)fail()},15000);t.src=rem.th}
  render();
  if(!S.intro)openCine(true);else if(!S.role)openOnb();
 }

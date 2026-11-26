@@ -9,8 +9,9 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 - **Hành trình dọc sông Mã:** 10 chặng gắn với 10 di tích, thắng cảnh xứ Thanh; mỗi chặng một chuyên đề và ba cấp độ Dễ, Vừa, Khó. Mỗi lượt 8 câu, đúng từ 5 câu thì vượt cấp. Mỗi ngôi sao làm tăng GRDP của "tỉnh ảo"; đích là mốc 11%.
 - **Ngân hàng 570 câu hỏi** (198 dễ, 224 vừa, 148 khó; 219 câu tình huống), mỗi câu có giải thích và căn cứ đến điều, khoản.
 - **Thi đấu:** Đấu trường 60 giây (chọn cấp độ), Thi thử 30 câu trong 25 phút (đạt từ 21/30).
-- **Trò chơi nhỏ:** Ai có thẩm quyền?, Xếp đúng quy trình, Lật thẻ di sản.
+- **Trò chơi nhỏ:** Ai có thẩm quyền?, Xếp đúng quy trình, Lật thẻ di sản, Ảnh này ở đâu? (đoán địa danh qua ảnh thật).
 - **Thẻ di sản:** vượt cấp Dễ của mỗi chặng để mở một thẻ tranh sơn mài kèm lời dẫn và ảnh tư liệu.
+- **Thư viện ảnh xứ Thanh:** 40 ảnh tư liệu từ Wikimedia Commons về 13 địa danh (cả 10 chặng, thêm Bến En, đảo Hòn Nẹ, núi Nưa, sông Mã), có chú thích, tác giả, giấy phép; lọc theo địa danh, xem ảnh lớn.
 - **Phim giới thiệu** 46 giây, âm thanh trống hội, trợ giúp 50:50 và "xem căn cứ", 22 huy hiệu, nhiệm vụ hằng ngày, chuỗi ngày học.
 - **Chế độ ôn tập tự do** (trong Hồ sơ): mở sẵn mọi chặng để tập huấn theo chuyên đề.
 
@@ -36,7 +37,7 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 | `data/cau-hoi.js` | Bản gọn để game nạp, sinh tự động từ tệp JSON |
 | `tools/build_bank.py` | Kiểm tra và sinh `data/cau-hoi.js` từ `data/cau-hoi.json` |
 | `assets/art.js` | Bộ 10 tranh phong cách sơn mài (vẽ bằng SVG) cho 10 chặng |
-| `assets/img/` | Ảnh tư liệu (Wikimedia Commons) và `credits.js` ghi tác giả, giấy phép |
+| `assets/img/` | Ảnh tư liệu lưu trong kho, `credits.js` (ảnh chính của từng chặng) và `gallery.js` (thư viện ảnh: chú thích, địa danh, tác giả, giấy phép, đường dẫn) |
 | `assets/video/` | Phim giới thiệu `gioi-thieu.mp4` và ảnh bìa |
 | `.nojekyll` | Để GitHub Pages phục vụ nguyên trạng các tệp |
 
@@ -71,5 +72,7 @@ Bộ câu hỏi được soạn từ nguyên văn các văn bản hiện hành (
   - Câu hỏi về mục tiêu, chỉ tiêu của tỉnh lấy theo Nghị quyết 55/NQ-HĐND ngày 17/7/2026; cần cập nhật khi tỉnh điều chỉnh.
 - Điểm của các đội trên bảng xếp hạng là dữ liệu minh họa.
 - Tiến trình người chơi chỉ lưu trên trình duyệt của từng máy; game không thu thập hay gửi dữ liệu cá nhân đi đâu.
-- Mười bức tranh của các chặng được vẽ riêng cho game. Ảnh tư liệu lấy từ Wikimedia Commons theo giấy phép ghi trong `assets/img/credits.js` và trong mục "Căn cứ pháp lý và nguồn ảnh" của game. Hiện có ảnh cho 5 chặng (Đông Sơn, Hàm Rồng, Thành nhà Hồ, Lam Kinh, Pù Luông); muốn thêm ảnh cho chặng khác, đặt tệp `assets/img/<mã>.jpg` (mã: `batrieu`, `samson`, `camluong`, `nghison`, `hacthanh`) và thêm mục tương ứng vào `credits.js`.
+- Mười bức tranh của các chặng được vẽ riêng cho game. Ảnh tư liệu lấy từ Wikimedia Commons, chỉ chọn ảnh giấy phép tự do (CC BY, CC BY-SA, CC0, phạm vi công cộng); tác giả, giấy phép ghi trong `assets/img/gallery.js`, `assets/img/credits.js` và mục "Căn cứ pháp lý và nguồn ảnh" của game.
+- 5 ảnh được lưu trong kho; 35 ảnh còn lại được trình duyệt người chơi nạp trực tiếp từ máy chủ Wikimedia Commons ở cỡ ảnh chuẩn mà Commons cho phép nhúng (vì máy chủ đám mây soạn game bị Wikimedia giới hạn tải). Vì vậy khi mở game, trình duyệt sẽ kết nối tới upload.wikimedia.org. Nếu nơi nhúng trang chặn ảnh ngoài, game tự dùng 5 ảnh trong kho và ẩn trò "Ảnh này ở đâu?".
+- Muốn lưu hẳn một ảnh vào kho: tải ảnh từ trang gốc ghi trong `gallery.js`, đặt vào `assets/img/g/<khóa>.jpg` rồi sửa `src` của mục đó thành đường dẫn trong kho.
 - Nhạc và tiếng trống trong phim, trong game được tổng hợp bằng máy.
