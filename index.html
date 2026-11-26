@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nghị trường số</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE occasion: a learning game for civil servants and citizens, proud and festive, never childish
+   IDEA the face of a Đông Sơn bronze drum, and a journey down the Mã river through five Thanh Hóa landmarks
+   PICTURE Hàm Rồng at dusk, a bronze drum rising as the sun with flying Lạc birds, the Voi Đồng mascot on the bank
+   COLOUR deep verdigris patina ground, bronze gold, đỏ son accent, ivory text, river teal
+   TYPE Chakra Petch 700 (engraved, angular) + Be Vietnam Pro
+   LAYOUT one phone column (max 480px): header, scrolling stage, bottom nav; on wide screens a framed column over a drum field */
+:root{--bg:#0a221f;--bg2:#0f2e2a;--panel:#143a34;--panel2:#1a463f;--line:#2e5f55;--gold:#d9a441;--gold2:#f3d48a;--red:#c43a2e;--ivory:#f8f0de;--mute:#b5c7bc;--ok:#72d3a2;--bad:#ff8f7f;--river:#4f9a8f;--disp:"Chakra Petch","Be Vietnam Pro",system-ui,sans-serif;color-scheme:dark}
+:root[data-theme=light],:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ivory);font:16px/1.5 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+.bgart{position:fixed;inset:0;width:100%;height:100%;opacity:.18;pointer-events:none}
+.app{position:relative;max-width:480px;height:100%;margin:0 auto;display:flex;flex-direction:column;background:var(--bg2);overflow:hidden}
+@media(min-width:520px){.app{box-shadow:0 0 0 1px #3d6e62,0 0 0 6px #0a221f,0 0 0 7px #8a6a2f}}
+.top{display:flex;align-items:center;gap:10px;padding:10px 16px;padding-top:max(10px,env(safe-area-inset-top));background:#0a221f;border-bottom:1px solid var(--line)}
+.top .who{flex:1;display:grid;gap:3px}
+.nm{font-weight:600;font-size:15px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lvl{font-size:13px;color:var(--gold2);line-height:1.2}
+.xpbar{height:6px;border-radius:3px;background:#24524a;overflow:hidden}
+.xpbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.streak{display:flex;align-items:center;gap:4px;font-weight:700;color:var(--gold2);white-space:nowrap}
+.streak svg{width:22px;height:22px;fill:var(--red)}
+main{flex:1;overflow-y:auto;overflow-x:hidden;padding-bottom:20px;-webkit-overflow-scrolling:touch}
+.bot{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#0a221f;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.bot button{background:none;border:0;padding:0 2px;white-space:nowrap;min-height:58px;display:grid;justify-items:center;align-content:center;gap:2px;font-size:13px;line-height:1.1;color:var(--mute)}
+.bot svg,.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bot button[aria-current=page]{color:var(--gold2)}
+.pad{padding-left:16px;padding-right:16px}
+h1,h2,h3{font-family:var(--disp);line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h1{font-size:clamp(32px,9vw,42px);color:var(--gold2)}
+h2{font-size:22px;margin-bottom:10px}
+h3{font-size:18px}
+.sub{color:var(--mute);margin:6px 0 0;font-size:15px}
+.hero{position:relative;height:clamp(210px,38vh,300px);margin-top:12px}
+.hero svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.spin{transform-box:view-box;animation:spin 70s linear infinite}
+@keyframes spin{to{transform:rotate(-360deg)}}
+@media(prefers-reduced-motion:reduce){.spin{animation:none}.toast,.ans,.btn{transition:none!important}.shake{animation:none!important}}
+.cta{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:10px;margin-top:12px}
+.sec{margin:22px 16px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:6px 16px;border-radius:12px;border:0;background:linear-gradient(#f0c662,#d39b36);color:#1d1205;font-weight:700;line-height:1.2;text-align:center;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25);transition:transform .1s}
+.btn:active{transform:translateY(1px)}
+.btn.sm{min-height:44px;padding:4px 14px;font-size:15px}
+.btn.ghost{background:transparent;color:var(--gold2);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.btn.red{background:linear-gradient(#d9503f,#b2342a);color:#fff}
+.btn.full{width:100%}
+.lab{font-size:13px;color:var(--mute)}
+.indtop{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.big{font-family:var(--disp);font-size:clamp(40px,12vw,52px);font-weight:700;color:var(--gold2);line-height:1}
+.goal{text-align:right;font-size:13px;color:var(--mute);line-height:1.2}
+.goal b{display:block;font-family:var(--disp);font-size:24px;color:var(--ivory)}
+.track{position:relative;height:14px;border-radius:7px;background:#24524a;margin-top:14px}
+.track i{position:absolute;left:0;top:0;bottom:0;border-radius:7px;background:linear-gradient(90deg,var(--river),var(--gold2))}
+.track b{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1px;border-radius:2px;background:var(--red)}
+.track b.ten{background:var(--ivory);opacity:.6}
+.scale{position:relative;height:20px;margin-top:4px;font-size:13px;color:var(--mute)}
+.scale span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.scale span:first-child{transform:none}
+.scale span:last-child{transform:translateX(-100%)}
+.rows{display:grid;gap:8px;margin-top:12px}
+.row{display:grid;grid-template-columns:9.2em minmax(0,1fr) 2.2em;gap:10px;align-items:center;font-size:14px}
+.bar{height:8px;border-radius:4px;background:#24524a;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold)}
+.row b{text-align:right;font-variant-numeric:tabular-nums}
+.hint{margin:12px 0 0;font-size:14px;color:var(--mute)}
+.dl{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.dl:first-child{border-top:0;padding-top:0}
+.dl:last-child{padding-bottom:0}
+.dl i{width:26px;height:26px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--gold);display:grid;place-items:center}
+.dl.done i{background:var(--ok);box-shadow:none}
+.dl.done span{color:var(--mute);text-decoration:line-through}
+.dl b{color:var(--gold2);font-size:14px;white-space:nowrap}
+.stations{position:relative;display:grid;gap:14px}
+.stations::before{content:"";position:absolute;left:30px;top:30px;bottom:30px;width:6px;border-radius:3px;background:linear-gradient(var(--river),#7fb8a8 50%,var(--gold))}
+.st{display:grid;grid-template-columns:66px minmax(0,1fr);gap:12px;align-items:center}
+.med{position:relative;z-index:1;width:66px;height:66px;border-radius:50%;background:radial-gradient(#1f5249,#0b2522);box-shadow:0 0 0 2px var(--gold),0 0 0 5px var(--bg2),0 0 0 6px #6d5326;display:grid;place-items:center}
+.med svg{width:46px;height:46px}
+.st.lock .med{opacity:.45}
+.stc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center}
+.tp{font-size:14px;color:var(--mute);margin-top:3px;line-height:1.3}
+.stars{display:flex;gap:4px;align-items:center;margin-top:6px}
+.stars svg{width:18px;height:18px}
+.stars span{font-size:13px;color:var(--mute);margin-left:4px}
+.lk{grid-column:1/-1;display:flex;gap:6px;align-items:center;font-size:13px;color:var(--mute)}
+.lk svg{width:16px;height:16px}
+.note{font-size:13px;color:var(--mute);margin:22px 16px 0;line-height:1.5}
+.ov{position:absolute;inset:0;z-index:20;display:none;flex-direction:column;background:var(--bg2)}
+.ov.on{display:flex}
+.ovh{display:flex;align-items:center;gap:10px;padding:10px 12px;padding-top:max(10px,env(safe-area-inset-top));border-bottom:1px solid var(--line);background:#0a221f}
+.ovh .t{flex:1;font-weight:700;line-height:1.2}
+.ovh .qc{font-family:var(--disp);font-weight:700;color:var(--gold2);white-space:nowrap}
+.x{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--panel);display:grid;place-items:center;flex:none}
+.ovb{flex:1;overflow-y:auto;padding:14px 16px 28px}
+.dots{display:flex;gap:6px}
+.dots i{flex:1;height:6px;border-radius:3px;background:#2a564d}
+.dots i.ok{background:var(--ok)}
+.dots i.bad{background:var(--bad)}
+.dots i.cur{background:var(--gold2)}
+.chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:12px 0}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 4px;text-align:center;line-height:1.2}
+.chip b{display:block;font-family:var(--disp);font-size:18px;color:var(--gold2)}
+.chip span{font-size:13px;color:var(--mute)}
+.qcard{position:relative;background:linear-gradient(160deg,#1d4c44,#123630);border:1px solid #3c7064;border-radius:18px;padding:18px;overflow:hidden}
+.qcard .wm{position:absolute;right:-28px;top:-24px;width:150px;height:150px;opacity:.13}
+.qcard p{position:relative;font-size:18px;font-weight:600;margin:0;line-height:1.4}
+.qn{position:relative;font-size:13px;color:var(--gold2);margin-bottom:6px}
+.answers{display:grid;gap:10px;margin-top:14px}
+.ans{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;text-align:left;min-height:54px;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:var(--panel2);line-height:1.35;transition:background .15s}
+.ans .k{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:700;background:#0f2e2a;box-shadow:0 0 0 1.5px var(--gold);color:var(--gold2)}
+.ans.ok{border-color:var(--ok);background:#1f5644}
+.ans.ok .k{background:var(--ok);color:#06231a;box-shadow:none}
+.ans.bad{border-color:var(--bad);background:#5a2a25}
+.ans.bad .k{background:var(--bad);color:#2a0b07;box-shadow:none}
+.ans[disabled]{cursor:default}
+.fb{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px;align-items:end;margin-top:16px}
+.bubble{background:var(--ivory);color:#1f1a10;border-radius:16px 16px 16px 4px;padding:12px 14px;font-size:15px;line-height:1.45}
+.bubble b{display:block;margin-bottom:4px;font-size:16px}
+.bubble .cc{display:block;margin-top:6px;font-size:13px;color:#5d4b26}
+.mt{margin-top:14px}
+.shake{animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.res{display:grid;gap:12px;justify-items:center;text-align:center}
+.medal{width:170px;height:170px}
+.res .stars svg{width:34px;height:34px}
+.gain{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;line-height:1.25}
+.stat b{display:block;font-family:var(--disp);font-size:21px;color:var(--gold2);white-space:nowrap}
+.stat span{font-size:13px;color:var(--mute)}
+.btns{display:grid;gap:10px;width:100%}
+.arena-art{position:relative;width:min(240px,64vw);aspect-ratio:1;margin:14px auto 0}
+.arena-art svg{width:100%;height:100%}
+.arena-art div{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:44px;color:var(--gold2)}
+.rules{margin:10px 0 0;padding-left:20px;display:grid;gap:4px}
+.ahud{display:grid;grid-template-columns:minmax(0,1fr) 108px minmax(0,1fr);align-items:center;gap:8px;margin-bottom:12px}
+.ahud .s{font-family:var(--disp);font-size:28px;font-weight:700;line-height:1.1}
+.ring{position:relative;width:108px;height:108px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring div{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-size:32px;font-weight:700;color:var(--gold2)}
+.combo{color:#ff9a8a;text-align:right}
+.game{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:start}
+.game .med svg{width:40px;height:40px;stroke:var(--gold2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.game p{margin:6px 0 10px;color:var(--mute);font-size:15px}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tqcard{background:var(--ivory);color:#1f1a10;border-radius:18px;padding:22px 18px;font-size:19px;font-weight:600;line-height:1.35;text-align:center;min-height:132px;display:grid;place-items:center;box-shadow:0 6px 0 #b98f45;margin-top:12px}
+.bins{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.bin{min-height:78px;border-radius:14px;border:1px solid var(--line);background:var(--panel2);display:grid;place-items:center;align-content:center;gap:2px;font-weight:700;padding:8px;text-align:center;line-height:1.2}
+.bin small{font-weight:400;color:var(--mute);font-size:13px}
+.bin.ok{border-color:var(--ok);background:#1f5644}
+.bin.bad{border-color:var(--bad);background:#5a2a25}
+.placed{display:grid;gap:8px;margin-top:12px}
+.placed div{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:#1f5644;border:1px solid var(--ok);line-height:1.35}
+.placed em{font-style:normal;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--ok);color:#06231a;font-weight:700}
+.pool{display:grid;gap:8px;margin-top:14px}
+.step{text-align:left;min-height:52px;padding:10px 14px;border-radius:12px;border:1.5px dashed var(--gold);background:var(--panel2);line-height:1.35}
+.rk{display:grid;gap:14px}
+.rr{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center}
+.rr .n{font-size:15px;line-height:1.3}
+.rr .bar{height:10px;border-radius:5px;margin-top:6px}
+.rr.me .bar i{background:var(--red)}
+.rr .p{font-family:var(--disp);font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pos{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#0f2e2a;box-shadow:0 0 0 1.5px var(--gold);font-weight:700;font-size:14px}
+.rr.me .pos{background:var(--red);box-shadow:none}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.bdg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 8px}
+.bd{display:grid;justify-items:center;gap:6px;text-align:center;font-size:13px;line-height:1.25}
+.bd .m{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(#f0c662,#9a6524);box-shadow:inset 0 0 0 2px #f6dc98}
+.bd .m svg{width:34px;height:34px;fill:none;stroke:#2a1806;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.bd.off{color:var(--mute)}
+.bd.off .m{background:#183b35;box-shadow:inset 0 0 0 1.5px #3c6a60}
+.bd.off .m svg{opacity:.4;stroke:var(--mute)}
+.prof{display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;align-items:center}
+label{font-size:14px;color:var(--mute);display:block;margin:12px 0 4px}
+input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px;border-radius:12px;border:1px solid #4a7a6e;background:#0c2723;color:var(--ivory)}
+.modal{position:absolute;inset:0;z-index:30;background:rgba(5,18,16,.88);display:none;align-items:flex-end}
+.modal.on{display:flex}
+.sheet{width:100%;max-height:100%;overflow-y:auto;background:var(--bg2);border-top:2px solid var(--gold);border-radius:22px 22px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom))}
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.role{display:grid;justify-items:center;gap:6px;padding:12px 8px;border-radius:14px;border:1px solid var(--line);background:var(--panel);text-align:center}
+.role[aria-pressed=true]{border-color:var(--gold2);background:#24544a;box-shadow:inset 0 0 0 2px var(--gold)}
+.role b{font-size:15px;line-height:1.25}
+.role small{font-size:13px;color:var(--mute);line-height:1.3}
+.toast{position:absolute;left:50%;bottom:78px;transform:translate(-50%,16px);opacity:0;background:var(--ivory);color:#1f1a10;padding:10px 16px;border-radius:999px;font-weight:600;font-size:15px;z-index:40;transition:.25s;pointer-events:none;white-space:nowrap;max-width:92%;overflow:hidden;text-overflow:ellipsis;box-shadow:0 4px 0 #b98f45}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:380px){.cta{grid-template-columns:1fr}.row{grid-template-columns:7.6em minmax(0,1fr) 2.2em}.bdg{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a221f"/><stop offset=".5" stop-color="#1d4a42"/><stop offset=".82" stop-color="#9a7a3c"/><stop offset="1" stop-color="#d8a24a"/></linearGradient>
+<radialGradient id="gDrum" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffe7a6"/><stop offset=".5" stop-color="#dca54c"/><stop offset="1" stop-color="#94591f"/></radialGradient>
+<linearGradient id="gRiver" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3f8a80"/><stop offset=".6" stop-color="#8fc4b0"/><stop offset="1" stop-color="#f0cf80"/></linearGradient>
+<linearGradient id="gEle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2ad58"/><stop offset="1" stop-color="#9a5f25"/></linearGradient>
+</defs>
+</svg>
+<svg class="bgart" id="bgart" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+<div class="app" id="app">
+  <header class="top" id="top"></header>
+  <main id="main"></main>
+  <nav class="bot" id="nav" aria-label="Điều hướng chính"></nav>
+  <section class="ov" id="ov" aria-live="polite"><div class="ovh" id="ovh"></div><div class="ovb" id="ovb"></div></section>
+  <div class="modal" id="onb" role="dialog" aria-modal="true" aria-labelledby="onbT"><div class="sheet" id="onbS"></div></div>
+  <div class="toast" id="toast" role="status"></div>
+</div>
+<script>
+{
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const fmt=n=>Number(n).toLocaleString('vi-VN');
+const pct=g=>g.toFixed(1).replace('.',',')+'%';
+const p2=n=>String(n).padStart(2,'0');
+const dkey=d=>d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate());
+const today=()=>dkey(new Date());
+const yday=()=>{const d=new Date();d.setDate(d.getDate()-1);return dkey(d)};
+const wkey=()=>{const d=new Date();d.setDate(d.getDate()-(d.getDay()+6)%7);return dkey(d)};
+
+/* ---------- Nội dung ---------- */
+const ROLES=[
+ {id:'tinh',n:'Đại biểu HĐND tỉnh',d:'Quyết sách tầm tỉnh, thẩm tra, chất vấn'},
+ {id:'xa',n:'Đại biểu HĐND xã',d:'Sát dân, gần dân, giám sát tại cơ sở'},
+ {id:'cv',n:'Chuyên viên tham mưu',d:'Chuẩn bị kỳ họp, soạn thảo, tổng hợp'},
+ {id:'dan',n:'Cử tri, doanh nhân',d:'Tìm hiểu bộ máy và chỉ tiêu của tỉnh'}];
+const TEAMS=[
+ {id:'vp',n:'Văn phòng Đoàn ĐBQH và HĐND tỉnh',p:2480},
+ {id:'ban',n:'Các Ban HĐND tỉnh',p:2215},
+ {id:'xa',n:'HĐND xã, phường',p:2655},
+ {id:'so',n:'Sở, ngành',p:1890},
+ {id:'dan',n:'Cử tri, người quan tâm',p:1540}];
+const LEVELS=[[0,'Tân đại biểu'],[150,'Đại biểu tích cực'],[400,'Đại biểu tiêu biểu'],[800,'Đại biểu xuất sắc'],[1400,'Nghị sĩ số']];
+const DAILY=[{id:'stage',n:'Hoàn thành 1 chặng hành trình',xp:30},{id:'arena',n:'Đúng từ 5 câu ở Đấu trường 60 giây',xp:20},{id:'mini',n:'Chơi xong 1 mini-game',xp:15}];
+
+const STAGES=[
+{id:'s1',n:'Hàm Rồng',t:'Nền tảng chính quyền hai cấp',ico:'hamrong',qs:[
+ {id:'s1q1',tag:'kc',q:'Từ ngày 01/7/2025, chính quyền địa phương được tổ chức theo mô hình nào?',a:['Hai cấp: tỉnh và xã','Ba cấp: tỉnh, huyện, xã','Hai cấp: tỉnh và huyện','Một cấp: tỉnh'],c:0,why:'Chính quyền địa phương gồm cấp tỉnh và cấp xã; chính quyền cấp huyện kết thúc hoạt động từ 01/7/2025.',cc:'Luật Tổ chức chính quyền địa phương số 72/2025/QH15.'},
+ {id:'s1q2',tag:'kc',q:'Đơn vị hành chính cấp xã gồm những loại nào?',a:['Xã, phường, đặc khu','Xã, phường, thị trấn','Xã, thị trấn, thị xã','Phường, quận, đặc khu'],c:0,why:'Đơn vị hành chính cấp xã nay gồm xã, phường và đặc khu; không còn thị trấn.',cc:'Điều 1 Luật 72/2025/QH15.'},
+ {id:'s1q3',tag:'kc',q:'Cơ cấu tổ chức của HĐND gồm những bộ phận nào?',a:['Thường trực HĐND, các Ban, Tổ đại biểu và đại biểu HĐND','Chủ tịch HĐND, UBND và các Ban','Thường trực HĐND, Văn phòng và các Sở','Các Ban và Ủy ban MTTQ'],c:0,why:'UBND là cơ quan chấp hành của HĐND, không nằm trong cơ cấu tổ chức của HĐND.',cc:'Khoản 1 Điều 29 Luật 72/2025/QH15.'},
+ {id:'s1q4',tag:'ns',q:'HĐND cấp xã thành lập những Ban nào?',a:['Ban Kinh tế - Ngân sách và Ban Văn hóa - Xã hội','Ban Pháp chế và Ban Kinh tế - Xã hội','Ban Pháp chế, Ban Kinh tế - Ngân sách và Ban Văn hóa - Xã hội','Ban Dân tộc và Ban Pháp chế'],c:0,why:'Cấp xã không còn Ban Pháp chế, Ban Kinh tế - Xã hội như trước; HĐND cấp xã có 02 Ban mới.',cc:'Luật 72/2025/QH15.'},
+ {id:'s1q5',tag:'kc',q:'Thường trực HĐND gồm những ai?',a:['Chủ tịch, Phó Chủ tịch và các Ủy viên là Trưởng Ban của HĐND','Chủ tịch HĐND và Chủ tịch UBND','Chủ tịch, Phó Chủ tịch HĐND và Chánh Văn phòng','Toàn thể đại biểu hoạt động chuyên trách'],c:0,why:'Các Ủy viên Thường trực HĐND là Trưởng các Ban của HĐND.',cc:'Luật 72/2025/QH15.'},
+ {id:'s1q6',tag:'kc',q:'Luật Tổ chức chính quyền địa phương số 72/2025/QH15 có hiệu lực từ ngày nào?',a:['16/6/2025','01/7/2025','01/01/2026','01/3/2025'],c:0,why:'Luật được thông qua ngày 16/6/2025, có hiệu lực ngay từ ngày thông qua và thay thế Luật số 65/2025/QH15.',cc:'Luật 72/2025/QH15.'}]},
+{id:'s2',n:'Thành nhà Hồ',t:'Tổ chức bộ máy và nhân sự',ico:'thanhho',qs:[
+ {id:'s2q1',tag:'kc',q:'Thành viên Thường trực HĐND cấp xã có được đồng thời là thành viên UBND cấp xã không?',a:['Không được','Được, nếu HĐND đồng ý','Được, nếu là đại biểu chuyên trách','Chỉ Phó Chủ tịch HĐND được kiêm'],c:0,why:'Luật tách bạch cơ quan quyền lực và cơ quan chấp hành: thành viên Thường trực HĐND không thể đồng thời là thành viên UBND cấp xã.',cc:'Luật 72/2025/QH15.'},
+ {id:'s2q2',tag:'kc',q:'Mỗi HĐND cấp xã có bao nhiêu Phó Chủ tịch HĐND?',a:['01 Phó Chủ tịch','02 Phó Chủ tịch','03 Phó Chủ tịch','Do HĐND xã tự quyết định'],c:0,why:'Mỗi HĐND cấp xã có 01 Phó Chủ tịch; mỗi Ban của HĐND cấp xã được tính bình quân 02 Phó Trưởng Ban.',cc:'Nghị quyết 106/2025/UBTVQH15.'},
+ {id:'s2q3',tag:'hl',q:'Ai bầu Chủ tịch UBND xã?',a:['HĐND xã','UBND tỉnh','Cử tri trong xã bầu trực tiếp','Thường trực HĐND tỉnh'],c:0,why:'Chủ tịch UBND do HĐND cùng cấp bầu tại kỳ họp.',cc:'Luật 72/2025/QH15.'},
+ {id:'s2q4',tag:'kc',q:'Quy chế làm việc mẫu của HĐND xã, phường, đặc khu được ban hành kèm theo văn bản nào?',a:['Nghị quyết 104/2025/UBTVQH15','Nghị định 30/2020/NĐ-CP','Nghị quyết 103/2025/UBTVQH15','Thông tư của Bộ Nội vụ'],c:0,why:'Nghị quyết 104/2025/UBTVQH15 ngày 26/9/2025 dành cho cấp xã; Quy chế làm việc mẫu của HĐND cấp tỉnh ban hành kèm Nghị quyết 103/2025/UBTVQH15.',cc:'NQ 103, 104/2025/UBTVQH15.'},
+ {id:'s2q5',tag:'kc',q:'Theo Luật 72/2025/QH15, lĩnh vực phụ trách của từng Ban HĐND được xác định thế nào?',a:['HĐND quyết định trong Quy chế làm việc','Luật quy định cứng cho từng Ban','Do UBND phân công','Do Chủ tịch UBND tỉnh quyết định'],c:0,why:'Luật không còn quy định cứng lĩnh vực của từng Ban mà giao HĐND tự quyết định trong quy chế làm việc.',cc:'Luật 72/2025/QH15.'},
+ {id:'s2q6',tag:'hl',q:'Số đại biểu HĐND giảm xuống không đủ 2/3. Trường hợp nào bắt buộc bầu cử bổ sung?',a:['Thời gian còn lại của nhiệm kỳ nhiều hơn 18 tháng','Thời gian còn lại ít hơn 12 tháng','Bất cứ khi nào thiếu 1 đại biểu','Chỉ khi UBND đề nghị'],c:0,why:'Nếu thời gian còn lại của nhiệm kỳ nhiều hơn 18 tháng mà số đại biểu không đủ 2/3 tổng số được bầu thì phải bầu cử bổ sung.',cc:'Luật 72/2025/QH15.'}]},
+{id:'s3',n:'Lam Kinh',t:'Kỳ họp và ban hành nghị quyết',ico:'lamkinh',qs:[
+ {id:'s3q1',tag:'kc',q:'HĐND họp thường lệ mỗi năm ít nhất mấy kỳ?',a:['2 kỳ','1 kỳ','3 kỳ','4 kỳ'],c:0,why:'Ngoài các kỳ họp thường lệ, HĐND có thể họp chuyên đề hoặc họp để giải quyết công việc phát sinh đột xuất.',cc:'Luật 72/2025/QH15; Quy chế làm việc của HĐND.'},
+ {id:'s3q2',tag:'kc',q:'Cơ quan nào quyết định triệu tập kỳ họp HĐND?',a:['Thường trực HĐND','UBND cùng cấp','Ủy ban MTTQ cùng cấp','Văn phòng giúp việc HĐND'],c:0,why:'Thường trực HĐND triệu tập kỳ họp và phối hợp với UBND chuẩn bị tài liệu, tổ chức kỳ họp.',cc:'Luật 72/2025/QH15; NQ 103/2025/UBTVQH15.'},
+ {id:'s3q3',tag:'kc',q:'Dự thảo nghị quyết trình kỳ họp được cơ quan nào của HĐND thẩm tra?',a:['Ban của HĐND','Sở Tư pháp','Thường trực HĐND cấp trên','Tổ đại biểu HĐND'],c:0,why:'Các Ban của HĐND thẩm tra nội dung được phân công. Sở Tư pháp thẩm định dự thảo nghị quyết quy phạm do UBND trình, đó là việc khác với thẩm tra.',cc:'Luật 72/2025/QH15; Luật Ban hành VBQPPL 2025.'},
+ {id:'s3q4',tag:'kc',q:'Văn bản quy phạm pháp luật của HĐND cấp xã có hình thức là gì?',a:['Nghị quyết','Quyết định','Chỉ thị','Thông báo'],c:0,why:'HĐND cấp xã ban hành nghị quyết; UBND cấp xã ban hành quyết định.',cc:'Luật Ban hành VBQPPL số 64/2025/QH15.'},
+ {id:'s3q5',tag:'kc',q:'Luật Ban hành văn bản quy phạm pháp luật hiện hành là luật nào?',a:['Luật số 64/2025/QH15, sửa đổi bởi Luật số 87/2025/QH15','Luật số 80/2015/QH13','Luật số 72/2025/QH15','Luật số 121/2025/QH15'],c:0,why:'Luật số 80/2015/QH13 đã được thay thế; Luật 72 và 121 là luật về chính quyền địa phương và giám sát.',cc:'Được viện dẫn tại NQ 114/2025/UBTVQH15.'},
+ {id:'s3q6',tag:'kc',q:'Ai ký chứng thực nghị quyết của HĐND?',a:['Chủ tịch HĐND','Chủ tịch UBND','Chánh Văn phòng','Trưởng Ban Pháp chế'],c:0,why:'Nghị quyết của HĐND do Chủ tịch HĐND ký chứng thực.',cc:'Luật Ban hành VBQPPL 2025.'}]},
+{id:'s4',n:'Pù Luông',t:'Giám sát và tiếp xúc cử tri',ico:'puluong',qs:[
+ {id:'s4q1',tag:'kc',q:'Luật Hoạt động giám sát của Quốc hội và HĐND số 121/2025/QH15 có hiệu lực từ ngày nào?',a:['01/3/2026','10/12/2025','01/7/2025','01/01/2027'],c:0,why:'Luật được thông qua ngày 10/12/2025, có hiệu lực từ 01/3/2026, thay thế Luật năm 2015.',cc:'Luật 121/2025/QH15.'},
+ {id:'s4q2',tag:'kc',q:'Nội dung nào KHÔNG thuộc các hình thức giám sát của HĐND được hướng dẫn tại NQ 114/2025/UBTVQH15?',a:['Thanh tra hành chính','Chất vấn','Giám sát chuyên đề','Lấy phiếu tín nhiệm'],c:0,why:'NQ 114 hướng dẫn: chương trình giám sát, chất vấn, giám sát chuyên đề, giải trình, lấy phiếu tín nhiệm. Thanh tra là hoạt động của cơ quan hành chính.',cc:'NQ 114/2025/UBTVQH15 ngày 24/12/2025.'},
+ {id:'s4q3',tag:'kc',q:'Tổ đại biểu HĐND giám sát việc thi hành pháp luật ở địa phương khi nào?',a:['Khi được HĐND hoặc Thường trực HĐND cùng cấp giao','Bất cứ khi nào Tổ trưởng muốn','Khi UBND đề nghị','Khi có doanh nghiệp yêu cầu'],c:0,why:'Tổ đại biểu giám sát khi được giao và báo cáo kết quả để HĐND, Thường trực HĐND xem xét, quyết định.',cc:'Điều 37 Luật 121/2025/QH15.'},
+ {id:'s4q4',tag:'hl',q:'Đối tượng nào thuộc phạm vi chất vấn của đại biểu HĐND cấp xã?',a:['Chủ tịch, thành viên khác của UBND và người đứng đầu cơ quan thuộc UBND cấp xã','Chủ tịch UBND tỉnh','Giám đốc các Sở','Bộ trưởng các Bộ'],c:0,why:'Đại biểu HĐND chất vấn những người thuộc cơ quan do HĐND cùng cấp giám sát.',cc:'Quy định về hoạt động giám sát của đại biểu HĐND cấp xã.'},
+ {id:'s4q5',tag:'hl',q:'Nghị quyết 116/2025/UBTVQH15 quy định về nội dung nào?',a:['Tiếp công dân, xử lý đơn và giám sát việc giải quyết khiếu nại, tố cáo, kiến nghị','Quy chế làm việc mẫu của HĐND tỉnh','Số lượng Phó Chủ tịch HĐND','Chế độ chi tiêu của HĐND'],c:0,why:'Nghị quyết quy định việc tiếp công dân, tiếp nhận, phân loại, xử lý đơn và giám sát việc giải quyết khiếu nại, tố cáo, phản ánh, kiến nghị.',cc:'NQ 116/2025/UBTVQH15 ngày 24/12/2025.'},
+ {id:'s4q6',tag:'hl',q:'Tình huống: cử tri phản ánh một cơ sở xả thải ra kênh kéo dài, UBND xã chậm xử lý. Là đại biểu HĐND xã, anh/chị làm gì cho đúng thẩm quyền?',a:['Tiếp nhận, chuyển kiến nghị, theo dõi; cần thì chất vấn Chủ tịch UBND xã tại kỳ họp','Tự ra quyết định xử phạt cơ sở','Ký văn bản cá nhân đình chỉ cơ sở','Không xử lý vì không thuộc trách nhiệm đại biểu'],c:0,why:'Đại biểu không làm thay cơ quan hành chính. Đại biểu tiếp nhận, chuyển và đôn đốc giải quyết kiến nghị, có quyền chất vấn và đề nghị Thường trực, các Ban đưa vụ việc vào giám sát.',cc:'Luật 72/2025/QH15; Luật 121/2025/QH15.'}]},
+{id:'s5',n:'Nghi Sơn',t:'Tăng trưởng hai con số và chuyển đổi số',ico:'nghison',qs:[
+ {id:'s5q1',tag:'ns',q:'Mục tiêu tăng trưởng GRDP năm 2026 của tỉnh Thanh Hóa là bao nhiêu?',a:['Tối thiểu 11%','8%','9,5%','15%'],c:0,why:'Tại Kỳ họp thứ tư HĐND tỉnh khóa XIX, tỉnh khẳng định giữ vững mục tiêu GRDP 2026 đạt 11%, không điều chỉnh chỉ tiêu.',cc:'Nghị quyết của HĐND tỉnh về kế hoạch phát triển KT-XH năm 2026.'},
+ {id:'s5q2',tag:'ns',q:'Giai đoạn 2026-2030, Thanh Hóa phấn đấu tăng trưởng GRDP bình quân bao nhiêu mỗi năm?',a:['Từ 11%/năm trở lên','7%/năm','9%/năm','Khoảng 6,5%/năm'],c:0,why:'Thanh Hóa xác định duy trì tăng trưởng hai con số, hướng tới trở thành cực tăng trưởng mới của Bắc Trung Bộ.',cc:'Nghị quyết Đại hội Đảng bộ tỉnh lần thứ XX, nhiệm kỳ 2025-2030.'},
+ {id:'s5q3',tag:'ns',q:'Thanh Hóa đặt mục tiêu kinh tế số chiếm bao nhiêu phần trăm GRDP?',a:['30%','10%','20%','50%'],c:0,why:'Cùng với tăng trưởng từ 11%/năm, tỉnh đẩy mạnh chuyển đổi số để kinh tế số chiếm 30% GRDP.',cc:'Nghị quyết Đại hội Đảng bộ tỉnh lần thứ XX.'},
+ {id:'s5q4',tag:'ns',q:'Mục tiêu GRDP bình quân đầu người của Thanh Hóa năm 2030 là bao nhiêu?',a:['7.900 USD','4.500 USD','12.000 USD','5.200 USD'],c:0,why:'Đi kèm mục tiêu kim ngạch xuất khẩu 15 tỷ USD vào năm 2030.',cc:'Báo cáo chính trị trình Đại hội Đảng bộ tỉnh lần thứ XX.'},
+ {id:'s5q5',tag:'hl',q:'Chỉ thị 14/CT-TTg năm 2026 yêu cầu đến hết năm 2026 điều gì?',a:['100% cán bộ, công chức, viên chức hiểu biết cơ bản về chuyển đổi số, dùng được nền tảng số','50% cán bộ có chứng chỉ tin học quốc tế','100% cán bộ có bằng đại học công nghệ thông tin','Mỗi cơ quan có một kỹ sư AI'],c:0,why:'Năm 2026 dùng bộ học liệu theo Quyết định 522/QĐ-BGDĐT để tự học và được xác nhận kết quả; từ 2027 gắn với vị trí việc làm.',cc:'Chỉ thị 14/CT-TTg năm 2026.'},
+ {id:'s5q6',tag:'hl',q:'Nền tảng “Bình dân học vụ số” do cơ quan nào vận hành, tích hợp với VNeID?',a:['Bộ Công an','Bộ Giáo dục và Đào tạo','Bộ Nội vụ','Bộ Khoa học và Công nghệ'],c:0,why:'Bộ Công an vận hành nền tảng; Bộ GD&ĐT phối hợp đăng tải bộ học liệu; hệ thống dùng AI để cá nhân hóa nội dung học.',cc:'Chỉ thị 14/CT-TTg năm 2026.'}]}];
+
+const EXTRA=[
+ {id:'x1',q:'HĐND là cơ quan gì ở địa phương?',a:['Cơ quan quyền lực nhà nước ở địa phương, do Nhân dân bầu ra','Cơ quan hành chính nhà nước ở địa phương','Cơ quan tư pháp','Tổ chức chính trị - xã hội'],c:0,why:'HĐND đại diện cho ý chí, nguyện vọng và quyền làm chủ của Nhân dân địa phương.',cc:'Hiến pháp; Luật 72/2025/QH15.'},
+ {id:'x2',q:'UBND là cơ quan gì?',a:['Cơ quan chấp hành của HĐND, cơ quan hành chính nhà nước ở địa phương','Cơ quan quyền lực nhà nước ở địa phương','Cơ quan giúp việc của HĐND','Cơ quan kiểm sát'],c:0,why:'UBND do HĐND cùng cấp bầu và tổ chức thực hiện nghị quyết của HĐND.',cc:'Hiến pháp; Luật 72/2025/QH15.'},
+ {id:'x3',q:'Nhiệm kỳ của mỗi khóa HĐND là bao nhiêu năm?',a:['5 năm','4 năm','3 năm','6 năm'],c:0,why:'HĐND tỉnh Thanh Hóa hiện là khóa XIX, nhiệm kỳ 2026-2031.',cc:'Luật 72/2025/QH15.'},
+ {id:'x4',q:'GRDP 9 tháng đầu năm 2026 của Thanh Hóa tăng khoảng bao nhiêu?',a:['8,54%','5,1%','11,2%','3,9%'],c:0,why:'Để đạt 11% cả năm, những tháng cuối năm phải tăng tốc mạnh.',cc:'Số liệu KT-XH tỉnh Thanh Hóa 9 tháng năm 2026.'},
+ {id:'x5',q:'Hiến pháp năm 2013 được sửa đổi, bổ sung năm 2025 theo nghị quyết nào?',a:['Nghị quyết 203/2025/QH15','Nghị quyết 202/2025/QH15','Nghị quyết 104/2025/UBTVQH15','Nghị quyết 114/2025/UBTVQH15'],c:0,why:'Nghị quyết 202/2025/QH15 là nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh.',cc:'Nghị quyết 203/2025/QH15 ngày 16/6/2025.'},
+ {id:'x6',q:'Sau sắp xếp năm 2025, cả nước có bao nhiêu đơn vị hành chính cấp tỉnh?',a:['34','63','28','45'],c:0,why:'Thanh Hóa là một trong các tỉnh giữ nguyên, không sáp nhập.',cc:'Nghị quyết 202/2025/QH15.'}];
+const ALLQ=STAGES.flatMap(s=>s.qs).concat(EXTRA);
+
+const CARDS=[
+ {t:'Quyết định dự toán thu, chi ngân sách địa phương của tỉnh',b:'ht',why:'HĐND quyết định dự toán và phân bổ ngân sách địa phương cùng cấp; UBND lập và trình.'},
+ {t:'Bầu Trưởng Ban của HĐND tỉnh',b:'ht',why:'HĐND tỉnh bầu Trưởng Ban của HĐND tỉnh (Điều 15 Luật 72/2025/QH15).'},
+ {t:'Bầu Chủ tịch UBND xã',b:'hx',why:'Chủ tịch UBND do HĐND cùng cấp bầu.'},
+ {t:'Lấy phiếu tín nhiệm người giữ chức vụ do HĐND xã bầu',b:'hx',why:'Lấy phiếu tín nhiệm là hình thức giám sát của HĐND cùng cấp (NQ 114/2025/UBTVQH15).'},
+ {t:'Quyết định triệu tập kỳ họp HĐND',b:'tt',why:'Thường trực HĐND triệu tập kỳ họp, phối hợp với UBND chuẩn bị kỳ họp.'},
+ {t:'Điều hòa, phối hợp hoạt động của các Ban HĐND',b:'tt',why:'Đây là nhiệm vụ của Thường trực HĐND.'},
+ {t:'Tổ chức thực hiện nghị quyết của HĐND',b:'ub',why:'UBND là cơ quan chấp hành của HĐND, tổ chức thực hiện nghị quyết của HĐND cùng cấp.'},
+ {t:'Ban hành quyết định hành chính quản lý một lĩnh vực trên địa bàn',b:'ub',why:'UBND là cơ quan hành chính nhà nước ở địa phương.'}];
+const BINS=[{id:'ht',n:'HĐND tỉnh',s:'Cơ quan quyền lực cấp tỉnh'},{id:'hx',n:'HĐND xã',s:'Cơ quan quyền lực cấp xã'},{id:'tt',n:'Thường trực HĐND',s:'Giữa hai kỳ họp'},{id:'ub',n:'UBND',s:'Cơ quan chấp hành'}];
+const PROCS=[
+ {n:'Một cuộc giám sát chuyên đề',s:['Đưa nội dung vào chương trình giám sát được HĐND thông qua','Thành lập Đoàn giám sát, ban hành kế hoạch','Cơ quan chịu giám sát gửi báo cáo','Đoàn làm việc, khảo sát thực tế','Báo cáo kết quả, kết luận và kiến nghị','Theo dõi, đôn đốc thực hiện kiến nghị']},
+ {n:'Chuẩn bị và tổ chức kỳ họp',s:['Thường trực HĐND quyết định triệu tập, dự kiến chương trình','Các Ban thẩm tra tờ trình, dự thảo nghị quyết','Gửi tài liệu kỳ họp đến đại biểu','Khai mạc; thảo luận, chất vấn','Biểu quyết thông qua nghị quyết','Chủ tịch HĐND ký chứng thực nghị quyết']}];
+
+/* ---------- Hình vẽ ---------- */
+const BIRD='M-14,0 C-8,-4 2,-4 7,-1.5 L18,-2 L7,1.5 C2,3.5 -8,3.5 -14,0Z M-3,-2 L-9,-9 L0,-3Z M-3,2 L-9,9 L0,3Z M-14,0 L-21,-4 M-14,0 L-21,4 M4,-2.5 L1,-8 M6,-2 L5,-8';
+const f1=n=>n.toFixed(1);
+function drum(cx,cy,r,spin){
+ let s=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#gDrum)"/><circle cx="${cx}" cy="${cy}" r="${f1(r-1)}" fill="none" stroke="#f6dc98" stroke-width="1.2" opacity=".8"/>`;
+ [.9,.8,.62,.5,.36].forEach(k=>{s+=`<circle cx="${cx}" cy="${cy}" r="${f1(r*k)}" fill="none" stroke="#6e4116" stroke-width="${(r/80).toFixed(2)}" opacity=".75"/>`});
+ let t='';for(let i=0;i<60;i++){const a=i*6*Math.PI/180,c=Math.cos(a),n=Math.sin(a);t+=`M${f1(cx+c*r*.81)},${f1(cy+n*r*.81)}L${f1(cx+c*r*.89)},${f1(cy+n*r*.89)}`}
+ s+=`<path d="${t}" stroke="#6e4116" stroke-width="${(r/70).toFixed(2)}" opacity=".8"/>`;
+ let d='';for(let i=0;i<36;i++){const a=i*10*Math.PI/180;d+=`<circle cx="${f1(cx+Math.cos(a)*r*.43)}" cy="${f1(cy+Math.sin(a)*r*.43)}" r="${(r*.018).toFixed(2)}"/>`}
+ s+=`<g fill="#6e4116">${d}</g>`;
+ let b='';const R=r*.71,sc=(r/90).toFixed(3);for(let i=0;i<6;i++){const a=i*60*Math.PI/180;b+=`<g transform="translate(${f1(cx+Math.cos(a)*R)},${f1(cy+Math.sin(a)*R)}) rotate(${i*60-90}) scale(${sc})"><path d="${BIRD}"/></g>`}
+ s+=`<g class="${spin?'spin':''}" style="transform-origin:${cx}px ${cy}px" fill="#6e4116" stroke="#6e4116" stroke-width="1.2" stroke-linecap="round">${b}</g>`;
+ let p='';for(let i=0;i<28;i++){const a=i*Math.PI/14-Math.PI/2,rr=i%2?r*.1:r*.28;p+=`${f1(cx+Math.cos(a)*rr)},${f1(cy+Math.sin(a)*rr)} `}
+ s+=`<polygon points="${p}" fill="#fff1c4"/><circle cx="${cx}" cy="${cy}" r="${f1(r*.08)}" fill="#e0a94e"/>`;
+ return s;
+}
+const ELE=`<ellipse cx="62" cy="96" rx="50" ry="4.5" fill="#000" opacity=".3"/>
+<path d="M15,50 C8,54 8,62 6,67" fill="none" stroke="#8a5222" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="22" y="58" width="15" height="37" rx="6" fill="#7d4a1d"/><rect x="64" y="58" width="15" height="37" rx="6" fill="#7d4a1d"/>
+<path d="M14,56 C10,32 32,19 58,21 C82,22 94,34 94,52 C94,68 82,74 60,74 C36,74 18,70 14,56Z" fill="url(#gEle)"/>
+<rect x="36" y="60" width="15" height="36" rx="6" fill="url(#gEle)"/><rect x="78" y="60" width="15" height="36" rx="6" fill="url(#gEle)"/>
+<path d="M32,24 C44,19 66,19 76,24 L74,47 C62,51 46,51 34,47Z" fill="#b8322a"/>
+<path d="M36,31 l5,-4 5,4 5,-4 5,4 5,-4 5,4 5,-4 5,4 4,-3" fill="none" stroke="#f3d48a" stroke-width="1.4"/>
+<path d="M35,41 C47,45 61,45 73,41" fill="none" stroke="#f3d48a" stroke-width="1.3" stroke-dasharray="2 3"/>
+<path d="M22,28 C34,20 50,18 64,20" fill="none" stroke="#fbe3a8" stroke-width="1.5" opacity=".6"/>
+<path d="M110,46 C124,40 128,26 122,15" fill="none" stroke="#c88d40" stroke-width="9" stroke-linecap="round"/>
+<circle cx="98" cy="40" r="19" fill="url(#gEle)"/>
+<path d="M86,26 C70,26 66,50 76,60 C83,66 92,59 92,50Z" fill="#8a5222"/>
+<circle cx="81" cy="44" r="8" fill="none" stroke="#f3d48a" stroke-width="1"/><circle cx="81" cy="44" r="4.5" fill="none" stroke="#f3d48a" stroke-width="1"/><circle cx="81" cy="44" r="1.6" fill="#f3d48a"/>
+<path d="M107,55 C113,59 119,59 123,54" fill="none" stroke="#fbf3e0" stroke-width="3" stroke-linecap="round"/>
+<circle cx="103" cy="35" r="2.5" fill="#1b1206"/><circle cx="103.8" cy="34.2" r=".8" fill="#fff"/>
+<path d="M98,21 l1.6,3.4 3.6,.4 -2.7,2.4 .8,3.6 -3.3,-1.9 -3.3,1.9 .8,-3.6 -2.7,-2.4 3.6,-.4Z" fill="#f3d48a"/>`;
+const voi=w=>`<svg viewBox="0 0 130 100" width="${w}" height="${Math.round(w*100/130)}" aria-label="Voi Đồng" role="img">${ELE}</svg>`;
+
+const ICON={
+ hamrong:`<path d="M2,34 C8,22 12,18 17,24 C20,16 25,12 30,20 C34,14 40,16 46,28 L46,40 L2,40Z" fill="#2c6a5c"/><path d="M4,36 Q14,26 24,36 Q34,26 44,36 M4,36 L44,36 M9,36 v-4 M14,36 v-6 M19,36 v-4 M29,36 v-4 M34,36 v-6 M39,36 v-4" fill="none" stroke="#f3d48a" stroke-width="1.8"/><path d="M2,40 C14,38 34,42 46,39 L46,46 L2,46Z" fill="#4f9a8f"/>`,
+ thanhho:`<path d="M6,40 L6,18 L10,18 L10,14 L14,14 L14,18 L20,18 L20,14 L28,14 L28,18 L34,18 L34,14 L38,14 L38,18 L42,18 L42,40Z" fill="#cdb58a"/><path d="M6,25 H42 M6,32 H42 M15,18 v7 M27,25 v7 M33,18 v7" stroke="#9c8358" stroke-width=".9"/><path d="M10,40 V34 a4,4 0 0 1 8,0 V40Z M20,40 V32 a4,4 0 0 1 8,0 V40Z M30,40 V34 a4,4 0 0 1 8,0 V40Z" fill="#2a1d10"/><path d="M2,40 H46 V44 H2Z" fill="#6b5a3a"/>`,
+ lamkinh:`<path d="M8,22 Q24,12 40,22 L36,24 Q24,18 12,24Z" fill="#c43a2e"/><path d="M4,31 Q24,20 44,31 L40,33 Q24,27 8,33Z" fill="#c43a2e"/><path d="M7,22 Q24,11 41,22 M3,31 Q24,19 45,31" stroke="#f3d48a" stroke-width="1.4" fill="none"/><rect x="15" y="24" width="18" height="6" fill="#7a2a20"/><path d="M10,33 V41 M17,33 V41 M24,33 V41 M31,33 V41 M38,33 V41" stroke="#e9c77b" stroke-width="2"/><rect x="6" y="41" width="36" height="3" fill="#cdb58a"/>`,
+ puluong:`<path d="M2,14 C14,8 34,8 46,14 L46,20 C34,14 14,14 2,20Z" fill="#8fcf72"/><path d="M2,22 C14,16 34,16 46,22 L46,28 C34,22 14,22 2,28Z" fill="#62ad5c"/><path d="M2,30 C14,24 34,24 46,30 L46,36 C34,30 14,30 2,36Z" fill="#e2bd52"/><path d="M2,38 C14,32 34,32 46,38 L46,44 L2,44Z" fill="#3f8a4f"/>`,
+ nghison:`<path d="M2,37 H46 V46 H2Z" fill="#2f6f8f"/><path d="M6,31 H34 L30,38 H10Z" fill="#c43a2e"/><rect x="13" y="26" width="12" height="5" fill="#f8f0de"/><path d="M38,37 V9 M38,9 H20 M38,9 L44,15 M38,13 L30,9 M24,9 V19" stroke="#f3d48a" stroke-width="2" fill="none"/><rect x="21" y="19" width="6" height="4" fill="#d9a441"/>`};
+const GLY={
+ flame:'<path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-3 2-4 2-7 1.5 1 2.5 2 3 4 0-3 0-5 0-7z"/>',
+ bolt:'<path d="M13 2L5 14h6l-1 8 8-12h-6z"/>',
+ scale:'<path d="M12 4v16 M7 20h10 M4 8h16 M6 8l-3 6h6z M18 8l-3 6h6z"/>',
+ steps:'<path d="M3 20h5v-5h5v-5h5V5h3"/>',
+ chart:'<path d="M5 20V12 M10 20V8 M15 20v-6 M20 20V5 M3 20h18"/>',
+ flag:'<path d="M6 21V4 M6 4h12l-2.5 4 2.5 4H6"/>',
+ cal:'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16 M9 3v4 M15 3v4"/>',
+ bins:'<rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/>'};
+const NAV=[
+ ['map','Hành trình','<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14"/>'],
+ ['arena','Đấu trường','<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><path d="M12 8.5l1 2.6h2.8l-2.2 1.7.8 2.7-2.4-1.6-2.4 1.6.8-2.7-2.2-1.7H11z"/>'],
+ ['mini','Mini-game','<path d="M4 8h4a2 2 0 1 1 4 0h4v4a2 2 0 1 1 0 4v4H4z"/>'],
+ ['rank','Xếp hạng','<path d="M7 4h10v4a5 5 0 0 1-10 0z M7 6H4a3 3 0 0 0 3 4 M17 6h3a3 3 0 0 1-3 4 M12 13v4 M8 20h8"/>'],
+ ['me','Hồ sơ','<circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/>']];
+const FLAME='<svg viewBox="0 0 24 24" aria-hidden="true">'+GLY.flame+'</svg>';
+const XI='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"/></svg>';
+const LOCK='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+const CHECK='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12l5 5 9-10" fill="none" stroke="#06231a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const star=on=>`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.3l-5.9 3.2 1.3-6.6-4.9-4.5 6.6-.8z" fill="${on?'#f3d48a':'#2a564d'}" stroke="${on?'#b98f45':'#3c6a60'}"/></svg>`;
+const BADGES=[
+ {id:'s1',n:'Người mở đường',d:'Đạt từ 4/6 ở Hàm Rồng',ico:'hamrong'},
+ {id:'s2',n:'Vững như thành đá',d:'Đạt từ 4/6 ở Thành nhà Hồ',ico:'thanhho'},
+ {id:'s3',n:'Nghị sự Lam Kinh',d:'Đạt từ 4/6 ở Lam Kinh',ico:'lamkinh'},
+ {id:'s4',n:'Sát dân, gần dân',d:'Đạt từ 4/6 ở Pù Luông',ico:'puluong'},
+ {id:'s5',n:'Cực tăng trưởng',d:'Đạt từ 4/6 ở Nghi Sơn',ico:'nghison'},
+ {id:'chuoi5',n:'Chuỗi 5',d:'Đúng 5 câu liên tiếp',g:'flame'},
+ {id:'thantoc',n:'Thần tốc',d:'Đúng từ 8 câu ở Đấu trường',g:'bolt'},
+ {id:'thamquyen',n:'Chuẩn thẩm quyền',d:'Xếp đúng 8/8 thẻ',g:'scale'},
+ {id:'quytrinh',n:'Thạo quy trình',d:'Xếp quy trình không sai bước',g:'steps'},
+ {id:'haiconso',n:'Hai con số',d:'GRDP tỉnh ảo đạt 10%',g:'chart'},
+ {id:'vuotdich',n:'Vượt đích 11%',d:'GRDP tỉnh ảo đạt 11%',g:'flag'},
+ {id:'chuyencan',n:'Chuyên cần',d:'Học 3 ngày liên tiếp',g:'cal'}];
+
+const AV={tinh:{b:'#1f3a5f',h:'#1d1410'},xa:{b:'#b8322a',h:'#1d1410'},cv:{b:'#2f6f8f',h:'#2a1a10'},dan:{b:'#3f7a4f',h:'#1d1410'}};
+function av(role,size){
+ const c=AV[role]||AV.xa;let x='';
+ if(role==='tinh')x=`<path d="M21,25 C21,14 43,13 43,24 C40,19 26,19 21,25Z" fill="${c.h}"/><path d="M26,41 L32,47 L38,41" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M32,46 l-2.5,3 2.5,10 2.5,-10Z" fill="#c43a2e"/><circle cx="43" cy="51" r="3" fill="#f3d48a"/>`;
+ else if(role==='xa')x=`<circle cx="32" cy="13" r="5" fill="${c.h}"/><path d="M21,26 C20,14 44,14 43,26 C41,20 23,20 21,26Z" fill="${c.h}"/><path d="M27,41 C29,45 35,45 37,41" stroke="#f3d48a" stroke-width="2.6" fill="none"/><circle cx="38" cy="50" r="1.3" fill="#f3d48a"/><circle cx="40" cy="55" r="1.3" fill="#f3d48a"/>`;
+ else if(role==='cv')x=`<path d="M21,24 C22,14 42,14 43,23 C38,18 28,18 21,24Z" fill="${c.h}"/><circle cx="28" cy="27" r="3.6" fill="none" stroke="#1b1206" stroke-width="1.3"/><circle cx="36" cy="27" r="3.6" fill="none" stroke="#1b1206" stroke-width="1.3"/><path d="M31.6,27h0.8 M27,41 L32,51 L37,41" stroke="#f3d48a" stroke-width="1.6" fill="none"/><rect x="29.5" y="50" width="5" height="6" rx="1" fill="#fff"/>`;
+ else x=`<path d="M22,27 C22,23 42,23 42,27" fill="${c.h}"/><path d="M12,22 L32,7 L52,22 Z" fill="#ead6a3" stroke="#b99a5a" stroke-width="1"/><path d="M20,16 L44,16 M16,19 L48,19" stroke="#c9ad6e" stroke-width=".8"/><path d="M27,41 C29,44 35,44 37,41" stroke="#e8c36d" stroke-width="2.4" fill="none"/>`;
+ return `<svg viewBox="0 0 64 64" width="${size}" height="${size}" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#10302c" stroke="#d9a441" stroke-width="2"/><circle cx="32" cy="32" r="26.5" fill="none" stroke="#d9a441" stroke-width=".8" stroke-dasharray="1.5 2.5" opacity=".6"/><clipPath id="cl${role}${size}"><circle cx="32" cy="32" r="30"/></clipPath><g clip-path="url(#cl${role}${size})"><path d="M10,64 C12,47 22,41 32,41 C42,41 52,47 54,64Z" fill="${c.b}"/><rect x="28" y="34" width="8" height="8" fill="#e2ad84"/><circle cx="32" cy="26" r="11" fill="#e9b98e"/><circle cx="28" cy="27" r="1.2" fill="#1b1206"/><circle cx="36" cy="27" r="1.2" fill="#1b1206"/><path d="M29,31 Q32,33.5 35,31" stroke="#8a4a2a" stroke-width="1.2" fill="none" stroke-linecap="round"/>${x}</g></svg>`;
+}
+function heroSVG(){
+ return `<svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Núi Hàm Rồng, sông Mã, cầu Hàm Rồng và mặt trống đồng Đông Sơn lúc hoàng hôn, Voi Đồng đứng bên bờ">
+ <rect width="400" height="240" fill="url(#gSky)"/>
+ <circle cx="285" cy="96" r="112" fill="#f3d48a" opacity=".06"/><circle cx="285" cy="96" r="92" fill="#f3d48a" opacity=".1"/>
+ ${drum(285,96,74,true)}
+ <path d="M0,150 C40,120 70,128 100,112 C130,98 160,120 190,110 C220,100 250,124 290,116 C330,108 360,126 400,118 L400,240 L0,240Z" fill="#2f6255" opacity=".85"/>
+ <path d="M120,172 C150,150 165,138 185,146 C200,152 205,130 228,128 C250,126 252,150 270,146 C290,142 300,120 322,124 C345,128 350,150 372,146 C385,144 392,150 400,150 L400,240 L120,240Z" fill="#1a4740"/>
+ <path d="M185,146 C200,152 205,130 228,128 C250,126 252,150 270,146 C290,142 300,120 322,124" fill="none" stroke="#f3d48a" stroke-width="1" opacity=".35"/>
+ <path d="M0,166 C30,150 70,150 112,170 L112,240 L0,240Z" fill="#1c4a42"/>
+ <path d="M0,200 C80,186 140,192 200,184 C260,176 320,182 400,172 L400,192 C320,200 260,196 200,204 C140,212 80,208 0,222Z" fill="url(#gRiver)" opacity=".92"/>
+ <path d="M60,204 h40 M150,196 h30 M250,188 h36 M330,182 h28" stroke="#fff6dc" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+ <path d="M222,180 L372,173" stroke="#e9c77b" stroke-width="2.6"/>
+ <path d="M226,180 Q260,146 296,178 M300,178 Q333,143 368,173" fill="none" stroke="#e9c77b" stroke-width="2.4"/>
+ <path d="M236,179 V166 M246,179 V159 M256,178 V156 M266,178 V157 M276,177 V161 M286,177 V169 M310,177 V164 M320,176 V156 M330,176 V153 M340,175 V155 M350,175 V161 M360,174 V168" stroke="#e9c77b" stroke-width="1" opacity=".85"/>
+ <rect x="294" y="178" width="6" height="16" fill="#9c7a3c"/><rect x="220" y="180" width="6" height="14" fill="#9c7a3c"/><rect x="366" y="173" width="6" height="16" fill="#9c7a3c"/>
+ <path d="M0,228 C80,214 160,222 240,216 C300,212 350,220 400,214 L400,240 L0,240Z" fill="#0f2f2a"/>
+ <g transform="translate(16,130)">${ELE}</g>
+ </svg>`;
+}
+
+/* ---------- Trạng thái ---------- */
+const KEY='nghitruongso-v1';
+const fresh=()=>({name:'',role:'',team:'',xp:0,qok:[],stageBest:{},badges:[],streak:0,last:'',daily:{d:'',done:{}},week:{k:'',xp:0},arenaBest:0,arenaPlays:0,tqBest:0,qtBest:{},answered:0,correct:0});
+let S=fresh(),tab='map',run=null,onb=null,confirmReset=false;
+function load(){try{const raw=localStorage.getItem(KEY);if(raw)S=Object.assign(fresh(),JSON.parse(raw))}catch(e){S=fresh()}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function level(xp){let i=0;LEVELS.forEach((l,k)=>{if(xp>=l[0])i=k});const cur=LEVELS[i][0],nx=LEVELS[i+1]?LEVELS[i+1][0]:null;return{i,name:LEVELS[i][1],p:nx?Math.round((xp-cur)/(nx-cur)*100):100,nx}}
+function indicators(extra){
+ const ok=new Set(S.qok.concat(extra||[]));let n=0;const tg={ns:[0,0],hl:[0,0],kc:[0,0]};
+ STAGES.forEach(st=>st.qs.forEach(q=>{const y=ok.has(q.id);if(y)n++;tg[q.tag][1]++;if(y)tg[q.tag][0]++}));
+ const v=k=>Math.round(40+60*tg[k][0]/tg[k][1]);
+ return{grdp:7.2+0.15*n,ns:v('ns'),hl:v('hl'),kc:v('kc')};
+}
+const unlocked=i=>i===0||(S.stageBest[STAGES[i-1].id]||0)>=3;
+const starsOf=ok=>ok>=6?3:ok>=4?2:ok>=3?1:0;
+function nextStage(){for(let i=0;i<STAGES.length;i++)if(unlocked(i)&&(S.stageBest[STAGES[i].id]||0)<4)return i;for(let i=0;i<STAGES.length;i++)if(unlocked(i)&&(S.stageBest[STAGES[i].id]||0)<6)return i;return -1}
+function ensureDaily(){if(S.daily.d!==today())S.daily={d:today(),done:{}}}
+function ensureWeek(){if(S.week.k!==wkey())S.week={k:wkey(),xp:0}}
+
+/* ---------- Thông báo ---------- */
+const tq=[];let tbusy=false;
+function toast(m){tq.push(m);if(!tbusy)nextToast()}
+function nextToast(){const m=tq.shift();const el=$('#toast');if(!m){tbusy=false;return}tbusy=true;el.textContent=m;el.classList.add('on');setTimeout(()=>{el.classList.remove('on');setTimeout(nextToast,260)},1700)}
+function addXP(n){if(n<=0)return;ensureWeek();const b=level(S.xp).i;S.xp+=n;S.week.xp+=n;const a=level(S.xp).i;if(a>b)toast('Lên cấp: '+LEVELS[a][1]);save();renderTop()}
+function award(id){if(S.badges.includes(id))return;S.badges.push(id);const b=BADGES.find(x=>x.id===id);toast('Huy hiệu mới: '+b.n);save()}
+function touchStreak(){const t=today();if(S.last===t)return;S.streak=S.last===yday()?S.streak+1:1;S.last=t;if(S.streak>=3)award('chuyencan');save();renderTop()}
+function daily(id){ensureDaily();if(S.daily.done[id])return;S.daily.done[id]=true;const t=DAILY.find(x=>x.id===id);toast('Xong nhiệm vụ: +'+t.xp+' XP');addXP(t.xp)}
+
+/* ---------- Khung chính ---------- */
+function renderTop(){
+ const L=level(S.xp);
+ $('#top').innerHTML=`${av(S.role||'xa',42)}<div class="who"><div class="nm">${esc(S.name||'Khách tham quan')}</div><div class="lvl">${L.name}, ${fmt(S.xp)} XP</div><div class="xpbar" title="${L.nx?'Còn '+fmt(L.nx-S.xp)+' XP lên cấp':'Cấp cao nhất'}"><i style="width:${L.p}%"></i></div></div><div class="streak" title="Chuỗi ngày học">${FLAME}<span>${S.streak}</span></div>`;
+}
+function renderNav(){$('#nav').innerHTML=NAV.map(([id,n,ic])=>`<button data-act="tab" data-v="${id}" ${tab===id?'aria-current="page"':''}><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg>${n}</button>`).join('')}
+function render(){renderTop();renderNav();const m=$('#main');m.innerHTML=({map:tabMap,arena:tabArena,mini:tabMini,rank:tabRank,me:tabMe})[tab]();bindMe()}
+
+function indCard(ind){
+ const pos=g=>Math.max(0,Math.min(100,(g-6)/6*100));
+ return `<div class="card"><div class="indtop"><div><div class="lab">Tăng trưởng GRDP của tỉnh ảo</div><div class="big">${pct(ind.grdp)}</div></div><div class="goal">Mục tiêu năm<b>11%</b></div></div>
+ <div class="track"><i style="width:${pos(ind.grdp)}%"></i><b class="ten" style="left:${pos(10)}%"></b><b style="left:${pos(11)}%"></b></div>
+ <div class="scale"><span style="left:0">6%</span><span style="left:${pos(10)}%">10%</span><span style="left:100%">12%</span></div>
+ <div class="rows">${[['ns','Ngân sách'],['hl','Hài lòng cử tri'],['kc','Kỷ cương pháp luật']].map(([k,n])=>`<div class="row"><span>${n}</span><div class="bar"><i style="width:${ind[k]}%"></i></div><b>${ind[k]}</b></div>`).join('')}</div>
+ <p class="hint">Mỗi câu đúng ở các chặng giúp tỉnh ảo tăng trưởng thêm. Đưa GRDP chạm vạch đỏ 11% để nhận huy hiệu Vượt đích.</p></div>`;
+}
+function tabMap(){
+ ensureDaily();const ind=indicators(),nx=nextStage();
+ const st=(s,i)=>{const un=unlocked(i),best=S.stageBest[s.id]||0;
+  return `<div class="st ${un?'':'lock'}"><div class="med"><svg viewBox="0 0 48 48" aria-hidden="true">${ICON[s.ico]}</svg></div><div class="stc"><div><h3>${s.n}</h3><div class="tp">${s.t}</div><div class="stars">${[0,1,2].map(k=>star(k<starsOf(best))).join('')}<span>${best}/6</span></div></div>${un?`<button class="btn sm ${best?'ghost':''}" data-act="stage" data-v="${i}">${best?'Chơi lại':'Chơi'}</button>`:`<span class="lk">${LOCK}Mở khi đạt 3/6 ở chặng trước</span>`}</div></div>`};
+ return `<div class="pad" style="padding-top:16px"><h1>Nghị trường số</h1><p class="sub">Hành trình Đại biểu HĐND hai cấp tỉnh Thanh Hóa</p></div>
+ <div class="hero">${heroSVG()}</div>
+ <div class="cta pad">${nx>=0?`<button class="btn" data-act="stage" data-v="${nx}">Chơi chặng ${STAGES[nx].n}</button>`:`<button class="btn" data-act="tab" data-v="arena">Vào Đấu trường</button>`}<button class="btn ghost" data-act="arena-start">Đấu trường 60 giây</button></div>
+ <section class="sec"><h2>Tỉnh ảo của bạn</h2>${indCard(ind)}</section>
+ <section class="sec"><h2>Nhiệm vụ hôm nay</h2><div class="card">${DAILY.map(t=>{const d=S.daily.done[t.id];return `<div class="dl ${d?'done':''}"><i>${d?CHECK:''}</i><span>${t.n}</span><b>+${t.xp} XP</b></div>`}).join('')}</div></section>
+ <section class="sec"><h2>Hành trình dọc sông Mã</h2><div class="stations">${STAGES.map(st).join('')}</div></section>
+ <p class="note">Bản demo. Bộ câu hỏi mẫu cần được Phòng Công tác HĐND rà soát trước khi phát hành. Căn cứ: Luật 72/2025/QH15, Luật 121/2025/QH15, NQ 103, 104, 106, 114, 116/2025/UBTVQH15, Chỉ thị 14/CT-TTg; số liệu KT-XH Thanh Hóa cập nhật đến 11/2026.</p>`;
+}
+function tabArena(){
+ return `<div class="pad" style="padding-top:16px"><h1>Đấu trường 60 giây</h1><p class="sub">Trả lời nhanh, giữ chuỗi đúng để nhân điểm.</p></div>
+ <div class="arena-art"><svg viewBox="0 0 200 200" aria-hidden="true">${drum(100,100,96,true)}<circle cx="100" cy="100" r="40" fill="#0f2e2a" stroke="#f3d48a" stroke-width="2"/></svg><div>60</div></div>
+ <section class="sec"><div class="stats"><div class="stat"><b>${fmt(S.arenaBest)}</b><span>Kỷ lục</span></div><div class="stat"><b>${S.arenaPlays}</b><span>Lượt chơi</span></div><div class="stat"><b>${ALLQ.length}</b><span>Câu hỏi</span></div></div></section>
+ <section class="sec card"><h3>Luật chơi</h3><ul class="rules"><li>Mỗi câu đúng được 10 điểm.</li><li>Chuỗi 3 câu đúng: nhân 1,5. Chuỗi 5: nhân 2.</li><li>Trả lời sai, chuỗi về 0.</li><li>Đúng từ 8 câu: nhận huy hiệu Thần tốc.</li></ul></section>
+ <div class="sec"><button class="btn full" data-act="arena-start">Bắt đầu 60 giây</button></div>`;
+}
+function tabMini(){
+ return `<div class="pad" style="padding-top:16px"><h1>Mini-game</h1><p class="sub">Mỗi lượt chỉ 2 đến 3 phút.</p></div>
+ <section class="sec card game"><div class="med" style="width:72px;height:72px"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.bins}</svg></div><div><h3>Ai có thẩm quyền?</h3><p>Đưa 8 việc về đúng chủ thể: HĐND tỉnh, HĐND xã, Thường trực HĐND hay UBND.</p><div class="lab">Kỷ lục: ${S.tqBest}/8</div><button class="btn sm mt" data-act="tq-start">Chơi ngay</button></div></section>
+ <section class="sec card game"><div class="med" style="width:72px;height:72px"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.steps}</svg></div><div><h3>Xếp đúng quy trình</h3><p>Chạm các bước theo đúng thứ tự. Càng ít bước sai, càng nhiều XP.</p><div class="row2">${PROCS.map((p,i)=>`<button class="btn sm ghost" data-act="qt-start" data-v="${i}">${p.n}</button>`).join('')}</div><div class="lab mt">${PROCS.map((p,i)=>S.qtBest[i]!=null?p.n+': sai ít nhất '+S.qtBest[i]+' bước':'').filter(Boolean).join('. ')||'Chưa có lượt chơi'}</div></div></section>`;
+}
+function tabRank(){
+ ensureWeek();const L=level(S.xp);
+ const rows=TEAMS.map(t=>({...t,p:t.p+(t.id===S.team?S.week.xp:0),me:t.id===S.team})).sort((a,b)=>b.p-a.p);const mx=rows[0].p;
+ return `<div class="pad" style="padding-top:16px"><h1>Bảng xếp hạng</h1><p class="sub">Thi đua theo đội, tính điểm trong tuần.</p></div>
+ <section class="sec card"><div class="rk">${rows.map((r,i)=>`<div class="rr ${r.me?'me':''}"><span class="pos">${i+1}</span><div><div class="n">${r.n}${r.me?' (đội của bạn)':''}</div><div class="bar"><i style="width:${Math.round(r.p/mx*100)}%"></i></div></div><span class="p">${fmt(r.p)}</span></div>`).join('')}</div></section>
+ <p class="note" style="margin-top:8px">Điểm các đội là dữ liệu minh họa; bản chính thức đồng bộ điểm từ máy chủ của cơ quan.</p>
+ <section class="sec"><h2>Thành tích của bạn</h2><div class="stats"><div class="stat"><b>${fmt(S.week.xp)}</b><span>XP tuần này</span></div><div class="stat"><b>${fmt(S.xp)}</b><span>Tổng XP</span></div><div class="stat"><b>${S.correct}/${S.answered}</b><span>Câu đúng</span></div></div><p class="hint">Cấp hiện tại: ${L.name}.${L.nx?' Còn '+fmt(L.nx-S.xp)+' XP để lên cấp tiếp theo.':''}</p></section>`;
+}
+function tabMe(){
+ const L=level(S.xp),r=ROLES.find(x=>x.id===S.role),tm=TEAMS.find(x=>x.id===S.team);
+ return `<div class="pad" style="padding-top:16px"><h1>Hồ sơ đại biểu</h1></div>
+ <section class="sec card"><div class="prof">${av(S.role||'xa',92)}<div><h3>${esc(S.name||'Khách tham quan')}</h3><div class="tp">${r?r.n:'Chưa chọn nhân vật'}</div><div class="tp">${tm?tm.n:''}</div><div class="lvl mt">${L.name}</div><div class="xpbar" style="margin-top:4px"><i style="width:${L.p}%"></i></div></div></div>
+ <label for="nm">Tên hiển thị</label><input type="text" id="nm" maxlength="40" value="${esc(S.name)}" autocomplete="off"><button class="btn sm ghost mt" data-act="onb-open">Đổi nhân vật hoặc đội</button></section>
+ <section class="sec"><h2>Huy hiệu ${S.badges.length}/${BADGES.length}</h2><div class="card bdg">${BADGES.map(b=>`<div class="bd ${S.badges.includes(b.id)?'':'off'}" title="${b.d}"><div class="m">${b.ico?`<svg viewBox="0 0 48 48" style="stroke:none">${ICON[b.ico]}</svg>`:`<svg viewBox="0 0 24 24">${GLY[b.g]}</svg>`}</div><span>${b.n}</span></div>`).join('')}</div></section>
+ <section class="sec"><h2>Thống kê</h2><div class="stats"><div class="stat"><b>${S.streak}</b><span>Ngày liên tiếp</span></div><div class="stat"><b>${S.answered?Math.round(S.correct/S.answered*100):0}%</b><span>Tỷ lệ đúng</span></div><div class="stat"><b>${Object.values(S.stageBest).filter(v=>v>=4).length}/5</b><span>Chặng đạt</span></div></div></section>
+ <section class="sec">${confirmReset?`<div class="card"><p style="margin:0 0 10px">Xóa toàn bộ XP, huy hiệu và tiến trình trên máy này?</p><div class="row2"><button class="btn red" data-act="reset-yes">Xóa tiến trình</button><button class="btn ghost" data-act="reset-no">Giữ lại</button></div></div>`:`<button class="btn ghost full" data-act="reset">Chơi lại từ đầu</button>`}</section>`;
+}
+function bindMe(){const n=$('#nm');if(n)n.addEventListener('input',()=>{S.name=n.value.slice(0,40);save();renderTop()})}
+
+/* ---------- Chọn nhân vật ---------- */
+function openOnb(){onb={role:S.role||'xa',name:S.name,team:S.team||'xa'};renderOnb();$('#onb').classList.add('on')}
+function renderOnb(){
+ $('#onbS').innerHTML=`<h2 id="onbT" style="color:var(--gold2)">Chọn nhân vật của bạn</h2><p class="sub">Voi Đồng sẽ đồng hành, giải thích căn cứ sau mỗi câu trả lời.</p>
+ <div class="roles">${ROLES.map(r=>`<button class="role" data-act="onb-role" data-v="${r.id}" aria-pressed="${onb.role===r.id}">${av(r.id,64)}<b>${r.n}</b><small>${r.d}</small></button>`).join('')}</div>
+ <label for="onbName">Tên hiển thị</label><input type="text" id="onbName" maxlength="40" value="${esc(onb.name)}" placeholder="Ví dụ: Nguyễn Văn An" autocomplete="off">
+ <label for="onbTeam">Thi đua cho đội</label><select id="onbTeam">${TEAMS.map(t=>`<option value="${t.id}" ${onb.team===t.id?'selected':''}>${t.n}</option>`).join('')}</select>
+ <button class="btn full mt" data-act="onb-done">Vào nghị trường</button>`;
+ $('#onbName').addEventListener('input',e=>{onb.name=e.target.value});
+ $('#onbTeam').addEventListener('change',e=>{onb.team=e.target.value});
+}
+
+/* ---------- Lớp chơi ---------- */
+const ov=$('#ov');
+function openOv(){ov.classList.add('on');renderOv()}
+function closeOv(){if(run&&run.iv)clearInterval(run.iv);run=null;ov.classList.remove('on');render()}
+function head(t,right){$('#ovh').innerHTML=`<button class="x" data-act="close" aria-label="Đóng">${XI}</button><div class="t">${t}</div><div class="qc">${right||''}</div>`}
+function ansBtns(q,ord,picked,act){return `<div class="answers">${ord.map((oi,k)=>{let c='';if(picked!=null){if(oi===q.c)c='ok';else if(oi===picked)c='bad'}return `<button class="ans ${c}" data-act="${act}" data-v="${oi}" ${picked!=null?'disabled':''}><span class="k">${'ABCD'[k]}</span><span>${q.a[oi]}</span></button>`}).join('')}</div>`}
+function fb(ok,text,cc){return `<div class="fb">${voi(76)}<div class="bubble"><b>${ok?'Chính xác!':'Chưa đúng.'}</b>${text}${cc?`<span class="cc">Căn cứ: ${cc}</span>`:''}</div></div>`}
+const toEnd=()=>requestAnimationFrame(()=>{const b=$('#ovb');b.scrollTo({top:b.scrollHeight,behavior:'smooth'})});
+
+function renderOv(){
+ if(!run)return;const b=$('#ovb');
+ if(run.type==='stage'){
+  const st=run.st,q=st.qs[run.i],p=run.picked,ind=indicators(run.okIds);
+  head('Chặng '+st.n,(run.i+1)+'/6');
+  b.innerHTML=`<div class="dots">${st.qs.map((x,k)=>`<i class="${k<run.res.length?(run.res[k]?'ok':'bad'):k===run.i?'cur':''}"></i>`).join('')}</div>
+  <div class="chips"><div class="chip"><b>${pct(ind.grdp)}</b><span>GRDP</span></div><div class="chip"><b>${ind.ns}</b><span>Ngân sách</span></div><div class="chip"><b>${ind.hl}</b><span>Cử tri</span></div><div class="chip"><b>${ind.kc}</b><span>Kỷ cương</span></div></div>
+  <div class="qcard"><svg class="wm" viewBox="0 0 48 48" aria-hidden="true">${ICON[st.ico]}</svg><div class="qn">${st.t}</div><p>${q.q}</p></div>
+  ${ansBtns(q,run.ord[run.i],p,'ans')}
+  ${p!=null?fb(p===q.c,(p===q.c?'':'Đáp án đúng: '+q.a[q.c]+'. ')+q.why,q.cc)+`<button class="btn full mt" data-act="next">${run.i<5?'Câu tiếp theo':'Xem kết quả'}</button>`:''}`;
+ }else if(run.type==='result'){
+  const st=run.st,s=starsOf(run.ok),nx=run.idx+1<STAGES.length&&unlocked(run.idx+1)?run.idx+1:-1;
+  const msg=run.ok===6?'Xuất sắc! Nắm chắc toàn bộ nội dung chặng.':run.ok>=4?'Tốt lắm. Chơi lại để đạt trọn 6/6.':run.ok>=3?'Đã mở chặng tiếp theo. Xem lại phần giải thích để chắc hơn.':'Cần đạt 3/6 để mở chặng tiếp theo. Thử lại nhé!';
+  head('Kết quả chặng '+st.n,'');
+  b.innerHTML=`<div class="res"><svg class="medal" viewBox="0 0 180 180" aria-hidden="true">${drum(90,90,86,false)}<circle cx="90" cy="90" r="34" fill="#0f2e2a" stroke="#f3d48a" stroke-width="2"/><g transform="translate(66,66)">${ICON[st.ico]}</g></svg>
+  <div class="stars">${[0,1,2].map(k=>star(k<s)).join('')}</div><h2 style="margin:0">Đúng ${run.ok}/6 câu</h2><p class="sub" style="margin:0">${msg}</p>
+  <div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${pct(run.after.grdp)}</b><span>GRDP (trước ${pct(run.before.grdp)})</span></div><div class="stat"><b>${run.after.kc}</b><span>Kỷ cương</span></div></div>
+  <div class="btns">${nx>=0?`<button class="btn" data-act="stage" data-v="${nx}">Chặng tiếp: ${STAGES[nx].n}</button>`:''}<button class="btn ghost" data-act="stage" data-v="${run.idx}">Chơi lại chặng này</button><button class="btn ghost" data-act="close">Về bản đồ</button></div></div>`;
+ }else if(run.type==='arena'){
+  const c=run.cur,mult=run.combo>=5?2:run.combo>=3?1.5:1;
+  head('Đấu trường 60 giây','');
+  b.innerHTML=`<div class="ahud"><div><div class="lab">Điểm</div><div class="s">${run.score}</div></div><div class="ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="#0f2e2a" stroke="#24524a" stroke-width="9"/><circle id="arc" cx="60" cy="60" r="52" fill="none" stroke="#f3d48a" stroke-width="9" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="${(326.7*(1-run.left/60000)).toFixed(1)}"/></svg><div id="atm">${Math.ceil(run.left/1000)}</div></div><div><div class="lab" style="text-align:right">Chuỗi</div><div class="s combo">${run.combo}${mult>1?' ×'+String(mult).replace('.',','):''}</div></div></div>
+  <div class="qcard ${run.flash==='bad'?'shake':''}"><svg class="wm" viewBox="0 0 200 200" aria-hidden="true">${drum(100,100,96,false)}</svg><div class="qn">Câu ${run.n+1}</div><p>${c.q.q}</p></div>
+  ${ansBtns(c.q,c.ord,c.picked,'aans')}`;
+ }else if(run.type==='arenaEnd'){
+  head('Hết giờ!','');
+  b.innerHTML=`<div class="res"><div class="arena-art" style="width:180px"><svg viewBox="0 0 200 200" aria-hidden="true">${drum(100,100,96,false)}<circle cx="100" cy="100" r="44" fill="#0f2e2a" stroke="#f3d48a" stroke-width="2"/></svg><div style="font-size:40px">${run.score}</div></div>
+  <h2 style="margin:0">${run.newBest?'Kỷ lục mới!':'Điểm của bạn'}</h2>
+  <div class="gain"><div class="stat"><b>${run.ok}/${run.n}</b><span>Câu đúng</span></div><div class="stat"><b>${run.maxc}</b><span>Chuỗi dài nhất</span></div><div class="stat"><b>+${run.xp}</b><span>XP</span></div></div>
+  ${run.miss.length?`<div class="card" style="text-align:left;width:100%"><h3>Ôn lại câu sai</h3>${run.miss.slice(0,3).map(q=>`<p style="margin:10px 0 0;font-size:15px"><b>${q.q}</b><br>Đáp án: ${q.a[q.c]}. <span class="lab">${q.cc}</span></p>`).join('')}</div>`:''}
+  <div class="btns"><button class="btn" data-act="arena-start">Chơi lại</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`;
+ }else if(run.type==='tq'){
+  const cd=run.cards[run.i],p=run.picked;
+  head('Ai có thẩm quyền?',(run.i+1)+'/8');
+  b.innerHTML=`<div class="dots">${run.cards.map((x,k)=>`<i class="${k<run.res.length?(run.res[k]?'ok':'bad'):k===run.i?'cur':''}"></i>`).join('')}</div>
+  <div class="tqcard">${cd.t}</div>
+  <div class="bins">${BINS.map(x=>{let c='';if(p!=null){if(x.id===cd.b)c='ok';else if(x.id===p)c='bad'}return `<button class="bin ${c}" data-act="tq-bin" data-v="${x.id}" ${p!=null?'disabled':''}>${x.n}<small>${x.s}</small></button>`}).join('')}</div>
+  ${p!=null?fb(p===cd.b,(p===cd.b?'':'Thuộc thẩm quyền của '+BINS.find(x=>x.id===cd.b).n+'. ')+cd.why,'')+`<button class="btn full mt" data-act="tq-next">${run.i<7?'Thẻ tiếp theo':'Xem kết quả'}</button>`:''}`;
+ }else if(run.type==='tqEnd'){
+  head('Kết quả','');
+  b.innerHTML=`<div class="res">${voi(150)}<h2 style="margin:0">Đúng ${run.ok}/8 thẻ</h2><p class="sub" style="margin:0">${run.ok===8?'Nắm chắc thẩm quyền của từng chủ thể.':'Xem lại các thẻ sai để phân biệt HĐND, Thường trực HĐND và UBND.'}</p><div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${S.tqBest}/8</b><span>Kỷ lục</span></div><div class="stat"><b>${run.ok===8?'Đạt':'Chưa'}</b><span>Huy hiệu</span></div></div><div class="btns"><button class="btn" data-act="tq-start">Chơi lại</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`;
+ }else if(run.type==='qt'){
+  const P=PROCS[run.p],done=run.placed.length===P.s.length;
+  head(P.n,run.placed.length+'/'+P.s.length);
+  b.innerHTML=`<p class="sub" style="margin:0">Chạm các bước theo đúng thứ tự từ đầu đến cuối.</p>
+  <div class="placed">${run.placed.map(i=>`<div><em>${i+1}</em><span>${P.s[i]}</span></div>`).join('')}</div>
+  ${done?`<div class="res mt">${fb(run.mis===0,run.mis===0?'Không sai bước nào.':'Bạn sai '+run.mis+' lần. Hãy nhớ trình tự này.','')}<div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${run.mis}</b><span>Lần sai</span></div><div class="stat"><b>${S.qtBest[run.p]}</b><span>Ít nhất</span></div></div><div class="btns"><button class="btn" data-act="qt-start" data-v="${1-run.p}">Thử quy trình còn lại</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`:`<div class="pool">${run.pool.filter(i=>!run.placed.includes(i)).map(i=>`<button class="step ${run.wrong===i?'shake':''}" data-act="qt-step" data-v="${i}">${P.s[i]}</button>`).join('')}</div><p class="lab mt">Số lần sai: ${run.mis}</p>`}`;
+ }
+}
+
+/* ---------- Chặng ---------- */
+function startStage(i){
+ if(!unlocked(i))return;const st=STAGES[i];
+ if(run&&run.iv)clearInterval(run.iv);
+ run={type:'stage',st,idx:i,i:0,res:[],okIds:[],picked:null,combo:0,xp:0,ord:st.qs.map(q=>shuffle(q.a.map((x,k)=>k))),ind0:indicators()};
+ openOv();$('#ovb').scrollTop=0;
+}
+function answerStage(v){
+ if(run.picked!=null)return;const q=run.st.qs[run.i],ok=+v===q.c;run.picked=+v;run.res.push(ok);S.answered++;
+ if(ok){S.correct++;run.okIds.push(q.id);run.combo++;let g=S.qok.includes(q.id)?2:10;if(run.combo>=3)g+=5;run.xp+=g;addXP(g);if(run.combo>=5)award('chuoi5')}else run.combo=0;
+ save();renderOv();toEnd();
+}
+function nextStageQ(){
+ if(run.i<5){run.i++;run.picked=null;renderOv();$('#ovb').scrollTop=0;return}
+ const st=run.st,ok=run.okIds.length,prev=S.stageBest[st.id]||0;
+ run.okIds.forEach(id=>{if(!S.qok.includes(id))S.qok.push(id)});
+ S.stageBest[st.id]=Math.max(prev,ok);
+ let bonus=ok===6&&prev<6?20:0;if(bonus)addXP(bonus);
+ const after=indicators();
+ if(ok>=4)award(st.id);if(after.grdp>=9.95)award('haiconso');if(after.grdp>=10.95)award('vuotdich');
+ touchStreak();daily('stage');save();
+ run={type:'result',st,idx:run.idx,ok,xp:run.xp+bonus,before:run.ind0,after};
+ renderOv();$('#ovb').scrollTop=0;
+}
+
+/* ---------- Đấu trường ---------- */
+function pickArena(){if(!run.pool.length)run.pool=shuffle(ALLQ);const q=run.pool.pop();run.cur={q,ord:shuffle(q.a.map((x,k)=>k)),picked:null}}
+function startArena(){
+ if(run&&run.iv)clearInterval(run.iv);
+ run={type:'arena',pool:shuffle(ALLQ),score:0,ok:0,n:0,combo:0,maxc:0,miss:[],left:60000,t0:Date.now(),lock:false,flash:''};
+ pickArena();openOv();
+ const r=run;r.iv=setInterval(()=>{if(run!==r){clearInterval(r.iv);return}r.left=Math.max(0,60000-(Date.now()-r.t0));const a=document.getElementById('arc'),t=document.getElementById('atm');if(a)a.setAttribute('stroke-dashoffset',(326.7*(1-r.left/60000)).toFixed(1));if(t)t.textContent=Math.ceil(r.left/1000);if(!r.left)endArena()},100);
+}
+function answerArena(v){
+ const r=run;if(r.lock||r.type!=='arena')return;r.lock=true;const q=r.cur.q,ok=+v===q.c;r.cur.picked=+v;r.n++;S.answered++;
+ if(ok){S.correct++;r.ok++;r.combo++;r.maxc=Math.max(r.maxc,r.combo);const m=r.combo>=5?2:r.combo>=3?1.5:1;r.score+=Math.round(10*m);r.flash='ok';if(r.combo>=5)award('chuoi5')}else{r.combo=0;r.flash='bad';r.miss.push(q)}
+ renderOv();
+ setTimeout(()=>{if(run!==r||r.type!=='arena')return;r.lock=false;r.flash='';pickArena();renderOv()},ok?420:900);
+}
+function endArena(){
+ const r=run;clearInterval(r.iv);S.arenaPlays++;const newBest=r.score>S.arenaBest;if(newBest)S.arenaBest=r.score;
+ const xp=Math.round(r.score/4);addXP(xp);if(r.ok>=8)award('thantoc');if(r.ok>=5)daily('arena');if(r.n)touchStreak();save();
+ run={type:'arenaEnd',score:r.score,ok:r.ok,n:r.n,maxc:r.maxc,miss:r.miss,xp,newBest};renderOv();
+}
+
+/* ---------- Mini-game ---------- */
+function startTq(){if(run&&run.iv)clearInterval(run.iv);run={type:'tq',cards:shuffle(CARDS),i:0,res:[],picked:null};openOv();$('#ovb').scrollTop=0}
+function binTq(v){if(run.picked!=null)return;const ok=v===run.cards[run.i].b;run.picked=v;run.res.push(ok);S.answered++;if(ok)S.correct++;save();renderOv();toEnd()}
+function nextTq(){
+ if(run.i<7){run.i++;run.picked=null;renderOv();$('#ovb').scrollTop=0;return}
+ const ok=run.res.filter(Boolean).length,xp=ok*5;S.tqBest=Math.max(S.tqBest,ok);addXP(xp);if(ok===8)award('thamquyen');daily('mini');touchStreak();save();
+ run={type:'tqEnd',ok,xp};renderOv();$('#ovb').scrollTop=0;
+}
+function startQt(p){if(run&&run.iv)clearInterval(run.iv);run={type:'qt',p:+p,pool:shuffle(PROCS[+p].s.map((x,k)=>k)),placed:[],mis:0,wrong:null,xp:0};openOv();$('#ovb').scrollTop=0}
+function stepQt(v){
+ const i=+v;if(i===run.placed.length){run.placed.push(i);run.wrong=null}else{run.mis++;run.wrong=i}
+ if(run.placed.length===PROCS[run.p].s.length){run.xp=Math.max(5,20-3*run.mis);addXP(run.xp);const b=S.qtBest[run.p];S.qtBest[run.p]=b==null?run.mis:Math.min(b,run.mis);if(run.mis===0)award('quytrinh');daily('mini');touchStreak();save()}
+ renderOv();if(run.placed.length===PROCS[run.p].s.length)toEnd();
+}
+
+/* ---------- Sự kiện ---------- */
+const ACT={
+ tab:v=>{tab=v;confirmReset=false;render();$('#main').scrollTop=0},
+ stage:v=>startStage(+v),ans:answerStage,next:nextStageQ,close:closeOv,
+ 'arena-start':startArena,aans:answerArena,
+ 'tq-start':startTq,'tq-bin':binTq,'tq-next':nextTq,
+ 'qt-start':startQt,'qt-step':stepQt,
+ 'onb-open':openOnb,
+ 'onb-role':v=>{onb.role=v;document.querySelectorAll('.role').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v))},
+ 'onb-done':()=>{S.role=onb.role;S.name=(onb.name||'').trim().slice(0,40)||'Đại biểu mới';S.team=onb.team;save();$('#onb').classList.remove('on');render();toast('Chào mừng '+S.name+'!')},
+ reset:()=>{confirmReset=true;render()},
+ 'reset-no':()=>{confirmReset=false;render()},
+ 'reset-yes':()=>{S=fresh();confirmReset=false;save();tab='map';render();openOnb()}
+};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b||b.disabled)return;const f=ACT[b.dataset.act];if(f)f(b.dataset.v,b)});
+document.addEventListener('keydown',e=>{
+ if(!run||!ov.classList.contains('on'))return;
+ if(e.key==='Escape'){closeOv();return}
+ const k='abcd'.indexOf(e.key.toLowerCase());
+ if(k>=0&&(run.type==='stage'||run.type==='arena')){const bs=document.querySelectorAll('#ovb .ans');if(bs[k]&&!bs[k].disabled)bs[k].click()}
+ if(e.key==='Enter'){const n=document.querySelector('#ovb [data-act="next"],#ovb [data-act="tq-next"]');if(n){e.preventDefault();n.click()}}
+});
+
+/* ---------- Khởi động ---------- */
+function start(data){
+ if(data&&data.S)S=Object.assign(fresh(),data.S);else load();
+ $('#bgart').innerHTML=drum(180,260,300,false)+drum(1430,760,340,false);
+ render();if(!S.role)openOnb();
+}
+try{window.claude?.hot?.snapshot?.(()=>({S}))}catch(e){}
+if(window.claude?.hot?.ready)window.claude.hot.ready(start);else start(window.claude?.hot?.data??{});
+}
+</script>
+</body>
+</html>

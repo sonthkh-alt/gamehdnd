@@ -1,0 +1,631 @@
+{
+  "phien_ban": "2026-11",
+  "ghi_chu": "Bộ câu hỏi mẫu, cần Phòng Công tác HĐND rà soát trước khi phát hành chính thức. Đáp án đúng là phần tử có chỉ số c (bắt đầu từ 0) trong mảng a.",
+  "hanh_trinh": [
+    {
+      "id": "s1",
+      "chang": "Hàm Rồng",
+      "chu_de": "Nền tảng chính quyền hai cấp",
+      "cau_hoi": [
+        {
+          "id": "s1q1",
+          "tag": "kc",
+          "q": "Từ ngày 01/7/2025, chính quyền địa phương được tổ chức theo mô hình nào?",
+          "a": [
+            "Hai cấp: tỉnh và xã",
+            "Ba cấp: tỉnh, huyện, xã",
+            "Hai cấp: tỉnh và huyện",
+            "Một cấp: tỉnh"
+          ],
+          "c": 0,
+          "why": "Chính quyền địa phương gồm cấp tỉnh và cấp xã; chính quyền cấp huyện kết thúc hoạt động từ 01/7/2025.",
+          "cc": "Luật Tổ chức chính quyền địa phương số 72/2025/QH15."
+        },
+        {
+          "id": "s1q2",
+          "tag": "kc",
+          "q": "Đơn vị hành chính cấp xã gồm những loại nào?",
+          "a": [
+            "Xã, phường, đặc khu",
+            "Xã, phường, thị trấn",
+            "Xã, thị trấn, thị xã",
+            "Phường, quận, đặc khu"
+          ],
+          "c": 0,
+          "why": "Đơn vị hành chính cấp xã nay gồm xã, phường và đặc khu; không còn thị trấn.",
+          "cc": "Điều 1 Luật 72/2025/QH15."
+        },
+        {
+          "id": "s1q3",
+          "tag": "kc",
+          "q": "Cơ cấu tổ chức của HĐND gồm những bộ phận nào?",
+          "a": [
+            "Thường trực HĐND, các Ban, Tổ đại biểu và đại biểu HĐND",
+            "Chủ tịch HĐND, UBND và các Ban",
+            "Thường trực HĐND, Văn phòng và các Sở",
+            "Các Ban và Ủy ban MTTQ"
+          ],
+          "c": 0,
+          "why": "UBND là cơ quan chấp hành của HĐND, không nằm trong cơ cấu tổ chức của HĐND.",
+          "cc": "Khoản 1 Điều 29 Luật 72/2025/QH15."
+        },
+        {
+          "id": "s1q4",
+          "tag": "ns",
+          "q": "HĐND cấp xã thành lập những Ban nào?",
+          "a": [
+            "Ban Kinh tế - Ngân sách và Ban Văn hóa - Xã hội",
+            "Ban Pháp chế và Ban Kinh tế - Xã hội",
+            "Ban Pháp chế, Ban Kinh tế - Ngân sách và Ban Văn hóa - Xã hội",
+            "Ban Dân tộc và Ban Pháp chế"
+          ],
+          "c": 0,
+          "why": "Cấp xã không còn Ban Pháp chế, Ban Kinh tế - Xã hội như trước; HĐND cấp xã có 02 Ban mới.",
+          "cc": "Luật 72/2025/QH15."
+        },
+        {
+          "id": "s1q5",
+          "tag": "kc",
+          "q": "Thường trực HĐND gồm những ai?",
+          "a": [
+            "Chủ tịch, Phó Chủ tịch và các Ủy viên là Trưởng Ban của HĐND",
+            "Chủ tịch HĐND và Chủ tịch UBND",
+            "Chủ tịch, Phó Chủ tịch HĐND và Chánh Văn phòng",
+            "Toàn thể đại biểu hoạt động chuyên trách"
+          ],
+          "c": 0,
+          "why": "Các Ủy viên Thường trực HĐND là Trưởng các Ban của HĐND.",
+          "cc": "Luật 72/2025/QH15."
+        },
+        {
+          "id": "s1q6",
+          "tag": "kc",
+          "q": "Luật Tổ chức chính quyền địa phương số 72/2025/QH15 có hiệu lực từ ngày nào?",
+          "a": [
+            "16/6/2025",
+            "01/7/2025",
+            "01/01/2026",
+            "01/3/2025"
+          ],
+          "c": 0,
+          "why": "Luật được thông qua ngày 16/6/2025, có hiệu lực ngay từ ngày thông qua và thay thế Luật số 65/2025/QH15.",
+          "cc": "Luật 72/2025/QH15."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chang": "Thành nhà Hồ",
+      "chu_de": "Tổ chức bộ máy và nhân sự",
+      "cau_hoi": [
+        {
+          "id": "s2q1",
+          "tag": "kc",
+          "q": "Thành viên Thường trực HĐND cấp xã có được đồng thời là thành viên UBND cấp xã không?",
+          "a": [
+            "Không được",
+            "Được, nếu HĐND đồng ý",
+            "Được, nếu là đại biểu chuyên trách",
+            "Chỉ Phó Chủ tịch HĐND được kiêm"
+          ],
+          "c": 0,
+          "why": "Luật tách bạch cơ quan quyền lực và cơ quan chấp hành: thành viên Thường trực HĐND không thể đồng thời là thành viên UBND cấp xã.",
+          "cc": "Luật 72/2025/QH15."
+        },
+        {
+          "id": "s2q2",
+          "tag": "kc",
+          "q": "Mỗi HĐND cấp xã có bao nhiêu Phó Chủ tịch HĐND?",
+          "a": [
+            "01 Phó Chủ tịch",
+            "02 Phó Chủ tịch",
+            "03 Phó Chủ tịch",
+            "Do HĐND xã tự quyết định"
+          ],
+          "c": 0,
+          "why": "Mỗi HĐND cấp xã có 01 Phó Chủ tịch; mỗi Ban của HĐND cấp xã được tính bình quân 02 Phó Trưởng Ban.",
+          "cc": "Nghị quyết 106/2025/UBTVQH15."
+        },
+        {
+          "id": "s2q3",
+          "tag": "hl",
+          "q": "Ai bầu Chủ tịch UBND xã?",
+          "a": [
+            "HĐND xã",
+            "UBND tỉnh",
+            "Cử tri trong xã bầu trực tiếp",
+            "Thường trực HĐND tỉnh"
+          ],
+          "c": 0,
+          "why": "Chủ tịch UBND do HĐND cùng cấp bầu tại kỳ họp.",
+          "cc": "Luật 72/2025/QH15."
+        },
+        {
+          "id": "s2q4",
+          "tag": "kc",
+          "q": "Quy chế làm việc mẫu của HĐND xã, phường, đặc khu được ban hành kèm theo văn bản nào?",
+          "a": [
+            "Nghị quyết 104/2025/UBTVQH15",
+            "Nghị định 30/2020/NĐ-CP",
+            "Nghị quyết 103/2025/UBTVQH15",
+            "Thông tư của Bộ Nội vụ"
+          ],
+          "c": 0,
+          "why": "Nghị quyết 104/2025/UBTVQH15 ngày 26/9/2025 dành cho cấp xã; Quy chế làm việc mẫu của HĐND cấp tỉnh ban hành kèm Nghị quyết 103/2025/UBTVQH15.",
+          "cc": "NQ 103, 104/2025/UBTVQH15."
+        },
+        {
+          "id": "s2q5",
+          "tag": "kc",
+          "q": "Theo Luật 72/2025/QH15, lĩnh vực phụ trách của từng Ban HĐND được xác định thế nào?",
+          "a": [
+            "HĐND quyết định trong Quy chế làm việc",
+            "Luật quy định cứng cho từng Ban",
+            "Do UBND phân công",
+            "Do Chủ tịch UBND tỉnh quyết định"
+          ],
+          "c": 0,
+          "why": "Luật không còn quy định cứng lĩnh vực của từng Ban mà giao HĐND tự quyết định trong quy chế làm việc.",
+          "cc": "Luật 72/2025/QH15."
+        },
+        {
+          "id": "s2q6",
+          "tag": "hl",
+          "q": "Số đại biểu HĐND giảm xuống không đủ 2/3. Trường hợp nào bắt buộc bầu cử bổ sung?",
+          "a": [
+            "Thời gian còn lại của nhiệm kỳ nhiều hơn 18 tháng",
+            "Thời gian còn lại ít hơn 12 tháng",
+            "Bất cứ khi nào thiếu 1 đại biểu",
+            "Chỉ khi UBND đề nghị"
+          ],
+          "c": 0,
+          "why": "Nếu thời gian còn lại của nhiệm kỳ nhiều hơn 18 tháng mà số đại biểu không đủ 2/3 tổng số được bầu thì phải bầu cử bổ sung.",
+          "cc": "Luật 72/2025/QH15."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chang": "Lam Kinh",
+      "chu_de": "Kỳ họp và ban hành nghị quyết",
+      "cau_hoi": [
+        {
+          "id": "s3q1",
+          "tag": "kc",
+          "q": "HĐND họp thường lệ mỗi năm ít nhất mấy kỳ?",
+          "a": [
+            "2 kỳ",
+            "1 kỳ",
+            "3 kỳ",
+            "4 kỳ"
+          ],
+          "c": 0,
+          "why": "Ngoài các kỳ họp thường lệ, HĐND có thể họp chuyên đề hoặc họp để giải quyết công việc phát sinh đột xuất.",
+          "cc": "Luật 72/2025/QH15; Quy chế làm việc của HĐND."
+        },
+        {
+          "id": "s3q2",
+          "tag": "kc",
+          "q": "Cơ quan nào quyết định triệu tập kỳ họp HĐND?",
+          "a": [
+            "Thường trực HĐND",
+            "UBND cùng cấp",
+            "Ủy ban MTTQ cùng cấp",
+            "Văn phòng giúp việc HĐND"
+          ],
+          "c": 0,
+          "why": "Thường trực HĐND triệu tập kỳ họp và phối hợp với UBND chuẩn bị tài liệu, tổ chức kỳ họp.",
+          "cc": "Luật 72/2025/QH15; NQ 103/2025/UBTVQH15."
+        },
+        {
+          "id": "s3q3",
+          "tag": "kc",
+          "q": "Dự thảo nghị quyết trình kỳ họp được cơ quan nào của HĐND thẩm tra?",
+          "a": [
+            "Ban của HĐND",
+            "Sở Tư pháp",
+            "Thường trực HĐND cấp trên",
+            "Tổ đại biểu HĐND"
+          ],
+          "c": 0,
+          "why": "Các Ban của HĐND thẩm tra nội dung được phân công. Sở Tư pháp thẩm định dự thảo nghị quyết quy phạm do UBND trình, đó là việc khác với thẩm tra.",
+          "cc": "Luật 72/2025/QH15; Luật Ban hành VBQPPL 2025."
+        },
+        {
+          "id": "s3q4",
+          "tag": "kc",
+          "q": "Văn bản quy phạm pháp luật của HĐND cấp xã có hình thức là gì?",
+          "a": [
+            "Nghị quyết",
+            "Quyết định",
+            "Chỉ thị",
+            "Thông báo"
+          ],
+          "c": 0,
+          "why": "HĐND cấp xã ban hành nghị quyết; UBND cấp xã ban hành quyết định.",
+          "cc": "Luật Ban hành VBQPPL số 64/2025/QH15."
+        },
+        {
+          "id": "s3q5",
+          "tag": "kc",
+          "q": "Luật Ban hành văn bản quy phạm pháp luật hiện hành là luật nào?",
+          "a": [
+            "Luật số 64/2025/QH15, sửa đổi bởi Luật số 87/2025/QH15",
+            "Luật số 80/2015/QH13",
+            "Luật số 72/2025/QH15",
+            "Luật số 121/2025/QH15"
+          ],
+          "c": 0,
+          "why": "Luật số 80/2015/QH13 đã được thay thế; Luật 72 và 121 là luật về chính quyền địa phương và giám sát.",
+          "cc": "Được viện dẫn tại NQ 114/2025/UBTVQH15."
+        },
+        {
+          "id": "s3q6",
+          "tag": "kc",
+          "q": "Ai ký chứng thực nghị quyết của HĐND?",
+          "a": [
+            "Chủ tịch HĐND",
+            "Chủ tịch UBND",
+            "Chánh Văn phòng",
+            "Trưởng Ban Pháp chế"
+          ],
+          "c": 0,
+          "why": "Nghị quyết của HĐND do Chủ tịch HĐND ký chứng thực.",
+          "cc": "Luật Ban hành VBQPPL 2025."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chang": "Pù Luông",
+      "chu_de": "Giám sát và tiếp xúc cử tri",
+      "cau_hoi": [
+        {
+          "id": "s4q1",
+          "tag": "kc",
+          "q": "Luật Hoạt động giám sát của Quốc hội và HĐND số 121/2025/QH15 có hiệu lực từ ngày nào?",
+          "a": [
+            "01/3/2026",
+            "10/12/2025",
+            "01/7/2025",
+            "01/01/2027"
+          ],
+          "c": 0,
+          "why": "Luật được thông qua ngày 10/12/2025, có hiệu lực từ 01/3/2026, thay thế Luật năm 2015.",
+          "cc": "Luật 121/2025/QH15."
+        },
+        {
+          "id": "s4q2",
+          "tag": "kc",
+          "q": "Nội dung nào KHÔNG thuộc các hình thức giám sát của HĐND được hướng dẫn tại NQ 114/2025/UBTVQH15?",
+          "a": [
+            "Thanh tra hành chính",
+            "Chất vấn",
+            "Giám sát chuyên đề",
+            "Lấy phiếu tín nhiệm"
+          ],
+          "c": 0,
+          "why": "NQ 114 hướng dẫn: chương trình giám sát, chất vấn, giám sát chuyên đề, giải trình, lấy phiếu tín nhiệm. Thanh tra là hoạt động của cơ quan hành chính.",
+          "cc": "NQ 114/2025/UBTVQH15 ngày 24/12/2025."
+        },
+        {
+          "id": "s4q3",
+          "tag": "kc",
+          "q": "Tổ đại biểu HĐND giám sát việc thi hành pháp luật ở địa phương khi nào?",
+          "a": [
+            "Khi được HĐND hoặc Thường trực HĐND cùng cấp giao",
+            "Bất cứ khi nào Tổ trưởng muốn",
+            "Khi UBND đề nghị",
+            "Khi có doanh nghiệp yêu cầu"
+          ],
+          "c": 0,
+          "why": "Tổ đại biểu giám sát khi được giao và báo cáo kết quả để HĐND, Thường trực HĐND xem xét, quyết định.",
+          "cc": "Điều 37 Luật 121/2025/QH15."
+        },
+        {
+          "id": "s4q4",
+          "tag": "hl",
+          "q": "Đối tượng nào thuộc phạm vi chất vấn của đại biểu HĐND cấp xã?",
+          "a": [
+            "Chủ tịch, thành viên khác của UBND và người đứng đầu cơ quan thuộc UBND cấp xã",
+            "Chủ tịch UBND tỉnh",
+            "Giám đốc các Sở",
+            "Bộ trưởng các Bộ"
+          ],
+          "c": 0,
+          "why": "Đại biểu HĐND chất vấn những người thuộc cơ quan do HĐND cùng cấp giám sát.",
+          "cc": "Quy định về hoạt động giám sát của đại biểu HĐND cấp xã."
+        },
+        {
+          "id": "s4q5",
+          "tag": "hl",
+          "q": "Nghị quyết 116/2025/UBTVQH15 quy định về nội dung nào?",
+          "a": [
+            "Tiếp công dân, xử lý đơn và giám sát việc giải quyết khiếu nại, tố cáo, kiến nghị",
+            "Quy chế làm việc mẫu của HĐND tỉnh",
+            "Số lượng Phó Chủ tịch HĐND",
+            "Chế độ chi tiêu của HĐND"
+          ],
+          "c": 0,
+          "why": "Nghị quyết quy định việc tiếp công dân, tiếp nhận, phân loại, xử lý đơn và giám sát việc giải quyết khiếu nại, tố cáo, phản ánh, kiến nghị.",
+          "cc": "NQ 116/2025/UBTVQH15 ngày 24/12/2025."
+        },
+        {
+          "id": "s4q6",
+          "tag": "hl",
+          "q": "Tình huống: cử tri phản ánh một cơ sở xả thải ra kênh kéo dài, UBND xã chậm xử lý. Là đại biểu HĐND xã, anh/chị làm gì cho đúng thẩm quyền?",
+          "a": [
+            "Tiếp nhận, chuyển kiến nghị, theo dõi; cần thì chất vấn Chủ tịch UBND xã tại kỳ họp",
+            "Tự ra quyết định xử phạt cơ sở",
+            "Ký văn bản cá nhân đình chỉ cơ sở",
+            "Không xử lý vì không thuộc trách nhiệm đại biểu"
+          ],
+          "c": 0,
+          "why": "Đại biểu không làm thay cơ quan hành chính. Đại biểu tiếp nhận, chuyển và đôn đốc giải quyết kiến nghị, có quyền chất vấn và đề nghị Thường trực, các Ban đưa vụ việc vào giám sát.",
+          "cc": "Luật 72/2025/QH15; Luật 121/2025/QH15."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chang": "Nghi Sơn",
+      "chu_de": "Tăng trưởng hai con số và chuyển đổi số",
+      "cau_hoi": [
+        {
+          "id": "s5q1",
+          "tag": "ns",
+          "q": "Mục tiêu tăng trưởng GRDP năm 2026 của tỉnh Thanh Hóa là bao nhiêu?",
+          "a": [
+            "Tối thiểu 11%",
+            "8%",
+            "9,5%",
+            "15%"
+          ],
+          "c": 0,
+          "why": "Tại Kỳ họp thứ tư HĐND tỉnh khóa XIX, tỉnh khẳng định giữ vững mục tiêu GRDP 2026 đạt 11%, không điều chỉnh chỉ tiêu.",
+          "cc": "Nghị quyết của HĐND tỉnh về kế hoạch phát triển KT-XH năm 2026."
+        },
+        {
+          "id": "s5q2",
+          "tag": "ns",
+          "q": "Giai đoạn 2026-2030, Thanh Hóa phấn đấu tăng trưởng GRDP bình quân bao nhiêu mỗi năm?",
+          "a": [
+            "Từ 11%/năm trở lên",
+            "7%/năm",
+            "9%/năm",
+            "Khoảng 6,5%/năm"
+          ],
+          "c": 0,
+          "why": "Thanh Hóa xác định duy trì tăng trưởng hai con số, hướng tới trở thành cực tăng trưởng mới của Bắc Trung Bộ.",
+          "cc": "Nghị quyết Đại hội Đảng bộ tỉnh lần thứ XX, nhiệm kỳ 2025-2030."
+        },
+        {
+          "id": "s5q3",
+          "tag": "ns",
+          "q": "Thanh Hóa đặt mục tiêu kinh tế số chiếm bao nhiêu phần trăm GRDP?",
+          "a": [
+            "30%",
+            "10%",
+            "20%",
+            "50%"
+          ],
+          "c": 0,
+          "why": "Cùng với tăng trưởng từ 11%/năm, tỉnh đẩy mạnh chuyển đổi số để kinh tế số chiếm 30% GRDP.",
+          "cc": "Nghị quyết Đại hội Đảng bộ tỉnh lần thứ XX."
+        },
+        {
+          "id": "s5q4",
+          "tag": "ns",
+          "q": "Mục tiêu GRDP bình quân đầu người của Thanh Hóa năm 2030 là bao nhiêu?",
+          "a": [
+            "7.900 USD",
+            "4.500 USD",
+            "12.000 USD",
+            "5.200 USD"
+          ],
+          "c": 0,
+          "why": "Đi kèm mục tiêu kim ngạch xuất khẩu 15 tỷ USD vào năm 2030.",
+          "cc": "Báo cáo chính trị trình Đại hội Đảng bộ tỉnh lần thứ XX."
+        },
+        {
+          "id": "s5q5",
+          "tag": "hl",
+          "q": "Chỉ thị 14/CT-TTg năm 2026 yêu cầu đến hết năm 2026 điều gì?",
+          "a": [
+            "100% cán bộ, công chức, viên chức hiểu biết cơ bản về chuyển đổi số, dùng được nền tảng số",
+            "50% cán bộ có chứng chỉ tin học quốc tế",
+            "100% cán bộ có bằng đại học công nghệ thông tin",
+            "Mỗi cơ quan có một kỹ sư AI"
+          ],
+          "c": 0,
+          "why": "Năm 2026 dùng bộ học liệu theo Quyết định 522/QĐ-BGDĐT để tự học và được xác nhận kết quả; từ 2027 gắn với vị trí việc làm.",
+          "cc": "Chỉ thị 14/CT-TTg năm 2026."
+        },
+        {
+          "id": "s5q6",
+          "tag": "hl",
+          "q": "Nền tảng “Bình dân học vụ số” do cơ quan nào vận hành, tích hợp với VNeID?",
+          "a": [
+            "Bộ Công an",
+            "Bộ Giáo dục và Đào tạo",
+            "Bộ Nội vụ",
+            "Bộ Khoa học và Công nghệ"
+          ],
+          "c": 0,
+          "why": "Bộ Công an vận hành nền tảng; Bộ GD&ĐT phối hợp đăng tải bộ học liệu; hệ thống dùng AI để cá nhân hóa nội dung học.",
+          "cc": "Chỉ thị 14/CT-TTg năm 2026."
+        }
+      ]
+    }
+  ],
+  "dau_truong_bo_sung": [
+    {
+      "id": "x1",
+      "q": "HĐND là cơ quan gì ở địa phương?",
+      "a": [
+        "Cơ quan quyền lực nhà nước ở địa phương, do Nhân dân bầu ra",
+        "Cơ quan hành chính nhà nước ở địa phương",
+        "Cơ quan tư pháp",
+        "Tổ chức chính trị - xã hội"
+      ],
+      "c": 0,
+      "why": "HĐND đại diện cho ý chí, nguyện vọng và quyền làm chủ của Nhân dân địa phương.",
+      "cc": "Hiến pháp; Luật 72/2025/QH15."
+    },
+    {
+      "id": "x2",
+      "q": "UBND là cơ quan gì?",
+      "a": [
+        "Cơ quan chấp hành của HĐND, cơ quan hành chính nhà nước ở địa phương",
+        "Cơ quan quyền lực nhà nước ở địa phương",
+        "Cơ quan giúp việc của HĐND",
+        "Cơ quan kiểm sát"
+      ],
+      "c": 0,
+      "why": "UBND do HĐND cùng cấp bầu và tổ chức thực hiện nghị quyết của HĐND.",
+      "cc": "Hiến pháp; Luật 72/2025/QH15."
+    },
+    {
+      "id": "x3",
+      "q": "Nhiệm kỳ của mỗi khóa HĐND là bao nhiêu năm?",
+      "a": [
+        "5 năm",
+        "4 năm",
+        "3 năm",
+        "6 năm"
+      ],
+      "c": 0,
+      "why": "HĐND tỉnh Thanh Hóa hiện là khóa XIX, nhiệm kỳ 2026-2031.",
+      "cc": "Luật 72/2025/QH15."
+    },
+    {
+      "id": "x4",
+      "q": "GRDP 9 tháng đầu năm 2026 của Thanh Hóa tăng khoảng bao nhiêu?",
+      "a": [
+        "8,54%",
+        "5,1%",
+        "11,2%",
+        "3,9%"
+      ],
+      "c": 0,
+      "why": "Để đạt 11% cả năm, những tháng cuối năm phải tăng tốc mạnh.",
+      "cc": "Số liệu KT-XH tỉnh Thanh Hóa 9 tháng năm 2026."
+    },
+    {
+      "id": "x5",
+      "q": "Hiến pháp năm 2013 được sửa đổi, bổ sung năm 2025 theo nghị quyết nào?",
+      "a": [
+        "Nghị quyết 203/2025/QH15",
+        "Nghị quyết 202/2025/QH15",
+        "Nghị quyết 104/2025/UBTVQH15",
+        "Nghị quyết 114/2025/UBTVQH15"
+      ],
+      "c": 0,
+      "why": "Nghị quyết 202/2025/QH15 là nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh.",
+      "cc": "Nghị quyết 203/2025/QH15 ngày 16/6/2025."
+    },
+    {
+      "id": "x6",
+      "q": "Sau sắp xếp năm 2025, cả nước có bao nhiêu đơn vị hành chính cấp tỉnh?",
+      "a": [
+        "34",
+        "63",
+        "28",
+        "45"
+      ],
+      "c": 0,
+      "why": "Thanh Hóa là một trong các tỉnh giữ nguyên, không sáp nhập.",
+      "cc": "Nghị quyết 202/2025/QH15."
+    }
+  ],
+  "ai_co_tham_quyen": {
+    "chu_the": [
+      {
+        "id": "ht",
+        "n": "HĐND tỉnh",
+        "s": "Cơ quan quyền lực cấp tỉnh"
+      },
+      {
+        "id": "hx",
+        "n": "HĐND xã",
+        "s": "Cơ quan quyền lực cấp xã"
+      },
+      {
+        "id": "tt",
+        "n": "Thường trực HĐND",
+        "s": "Giữa hai kỳ họp"
+      },
+      {
+        "id": "ub",
+        "n": "UBND",
+        "s": "Cơ quan chấp hành"
+      }
+    ],
+    "the": [
+      {
+        "t": "Quyết định dự toán thu, chi ngân sách địa phương của tỉnh",
+        "b": "ht",
+        "why": "HĐND quyết định dự toán và phân bổ ngân sách địa phương cùng cấp; UBND lập và trình."
+      },
+      {
+        "t": "Bầu Trưởng Ban của HĐND tỉnh",
+        "b": "ht",
+        "why": "HĐND tỉnh bầu Trưởng Ban của HĐND tỉnh (Điều 15 Luật 72/2025/QH15)."
+      },
+      {
+        "t": "Bầu Chủ tịch UBND xã",
+        "b": "hx",
+        "why": "Chủ tịch UBND do HĐND cùng cấp bầu."
+      },
+      {
+        "t": "Lấy phiếu tín nhiệm người giữ chức vụ do HĐND xã bầu",
+        "b": "hx",
+        "why": "Lấy phiếu tín nhiệm là hình thức giám sát của HĐND cùng cấp (NQ 114/2025/UBTVQH15)."
+      },
+      {
+        "t": "Quyết định triệu tập kỳ họp HĐND",
+        "b": "tt",
+        "why": "Thường trực HĐND triệu tập kỳ họp, phối hợp với UBND chuẩn bị kỳ họp."
+      },
+      {
+        "t": "Điều hòa, phối hợp hoạt động của các Ban HĐND",
+        "b": "tt",
+        "why": "Đây là nhiệm vụ của Thường trực HĐND."
+      },
+      {
+        "t": "Tổ chức thực hiện nghị quyết của HĐND",
+        "b": "ub",
+        "why": "UBND là cơ quan chấp hành của HĐND, tổ chức thực hiện nghị quyết của HĐND cùng cấp."
+      },
+      {
+        "t": "Ban hành quyết định hành chính quản lý một lĩnh vực trên địa bàn",
+        "b": "ub",
+        "why": "UBND là cơ quan hành chính nhà nước ở địa phương."
+      }
+    ]
+  },
+  "xep_quy_trinh": [
+    {
+      "n": "Một cuộc giám sát chuyên đề",
+      "s": [
+        "Đưa nội dung vào chương trình giám sát được HĐND thông qua",
+        "Thành lập Đoàn giám sát, ban hành kế hoạch",
+        "Cơ quan chịu giám sát gửi báo cáo",
+        "Đoàn làm việc, khảo sát thực tế",
+        "Báo cáo kết quả, kết luận và kiến nghị",
+        "Theo dõi, đôn đốc thực hiện kiến nghị"
+      ]
+    },
+    {
+      "n": "Chuẩn bị và tổ chức kỳ họp",
+      "s": [
+        "Thường trực HĐND quyết định triệu tập, dự kiến chương trình",
+        "Các Ban thẩm tra tờ trình, dự thảo nghị quyết",
+        "Gửi tài liệu kỳ họp đến đại biểu",
+        "Khai mạc; thảo luận, chất vấn",
+        "Biểu quyết thông qua nghị quyết",
+        "Chủ tịch HĐND ký chứng thực nghị quyết"
+      ]
+    }
+  ]
+}
