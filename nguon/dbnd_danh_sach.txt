@@ -1,0 +1,915 @@
+Nguồn: Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn)
+Ngày truy cập: 28/11/2026
+Tệp này sinh tự động bằng tools/lay_bo_may.py, không sửa tay.
+
+
+===== Đại biểu Quốc hội khóa XVI (đương nhiệm) =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Lê Đức Thái | Ủy viên Ban Chấp hành Trung ương Đảng, Bí thư Tỉnh ủy, Trưởng Đoàn ĐBQH tỉnh Thanh Hóa | Đơn vị bầu cử số 4
+2. Lương Thị Hoa | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Phó Trưởng Đoàn ĐBQH tỉnh Thanh Hóa | Đơn vị bầu cử số 4
+3. Bùi Mạnh Khoa | Ủy viên là đại biểu Quốc hội hoạt động chuyên trách tại Ủy ban Pháp luật và Tư pháp của Quốc hội; Phó Chủ tịch nhóm Nghị sỹ hữu nghị Việt Nam - Thụy Điển | Đơn vị bầu cử số 2
+4. Bùi Văn Dũng | Ủy viên là đại biểu Quốc hội hoạt động chuyên trách tại Ủy ban Kinh tế và Tài chính của Quốc hội khóa XVI | Đơn vị bầu cử số 2
+5. Cao Mạnh Linh | Phó Chủ nhiệm Ủy ban Dân nguyện và Giám sát của Quốc hội | Đơn vị bầu cử số 2
+6. Lê Thanh Hoàn | Ủy viên là đại biểu Quốc hội hoạt động chuyên trách tại Ủy ban Pháp luật và Tư pháp của Quốc hội; Phó Chủ tịch Nhóm Nghị sĩ hữu nghị Việt Nam - Venezuel a; Ủy viên Nhóm đại biểu Quốc hội trẻ | Đơn vị bầu cử số 3
+7. Lê Văn Cường | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Bí thư Đảng ủy, Giám đốc Sở Y tế tỉnh Thanh Hóa | Đơn vị bầu cử số 1
+8. Nguyễn Doãn Anh | Ủy viên Ban Chấp hành Trung ương Đảng, Phó Chủ tịch Quốc hội | Đơn vị bầu cử số 6
+9. Nguyễn Lê Ngọc Linh | Giám đốc Hợp tác xã Bản Thổ; Ủy viên Hội nông dân xã Hóa Quỳ; Ủy viên Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Ủy viên Ban Chấp hành Hội nông dân tỉnh Thanh Hóa | Đơn vị bầu cử số 5
+10. Phạm Công Nguyên | Bí thư Đảng ủy Cục Pháp chế và cải cách hành chính, tư pháp trực thuộc Đảng bộ Công an Trung ương; Trung tướng, Cục trưởng Cục Pháp chế và cải cách hành chính, tư pháp - Bộ Công an | Đơn vị bầu cử số 1
+11. Phạm Thế Anh | Ủy viên Ban Thường vụ Đảng ủy, Trưởng phòng Tổ chức - Hành chính - Quản trị , Trường Đại học Hồng Đức | Đơn vị bầu cử số 1
+12. Phạm Văn Sâm | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Phó Bí thư Thường trực Đảng ủy Quân sự tỉnh, Đại tá, Chính ủy, Bộ Chỉ huy Quân sự tỉnh Thanh Hóa | Đơn vị bầu cử số 3
+13. Phan Thị Thùy Linh | Ủy viên hoạt động chuyên trách Ủy ban Văn hóa và Xã hội của Quốc hội | Đơn vị bầu cử số 5
+14. Trần Thế Kính | Vụ trưởng Vụ kiểm sát án dân sự, Viện kiểm sát nhân dân tối cao | Đơn vị bầu cử số 5
+15. Triệu Thế Hùng | Phó Chủ nhiệm Ủy ban Văn hóa và Xã hội của Quốc hội | Đơn vị bầu cử số 4
+16. Vũ Tiến Dũng | Ủy viên Ban Chấp hành Đảng bộ Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa, Phó Chủ tịch Hội Nông dân tỉnh Thanh Hóa, Bí thư Chi bộ, Trưởng Ban Công tác Nông dân | Đơn vị bầu cử số 3
+17. Cao Thị Xuân | Ủy viên Ban Chấp hành Đảng bộ, Phó Chủ tịch Hội đồng Dân tộc của Quốc hội; Chủ tịch Nhóm Nghị sĩ hữu nghị Việt Nam - Romania | Đơn vị bầu cử số 6
+
+Đơn vị bầu cử:
+Số 1: Gồm các phường: Hạc Thành, Quảng Phú, Đông Quang, Đông Sơn, Đông Tiến, Hàm Rồng, Nguyệt Viên, Sầm Sơn, Nam Sầm Sơn và các xã: Hoằng Hóa, Hoằng Tiến, Hoằng Thanh, Hoằng Lộc, Hoằng Châu, Hoằng Sơn, Hoằng Phú, Hoằng Giang
+Số 2: Gồm các phường: Bỉm Sơn, Quang Trung và các xã: Hà Trung, Tống Sơn, Hà Long, Hoạt Giang, Lĩnh Toại, Triệu Lộc, Đông Thành, Hậu Lộc, Hoa Lộc, Vạn Lộc, Nga Sơn, Nga Thắng, Hồ Vương, Tân Tiến, Nga An, Ba Đình
+Số 3: (Cổng chưa ghi địa bàn)
+Số 4: (Cổng chưa ghi địa bàn)
+Số 5: (Cổng chưa ghi địa bàn)
+Số 6: (Cổng chưa ghi địa bàn)
+
+
+===== Đại biểu HĐND tỉnh khóa XIX (đương nhiệm) =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu/default.aspx
+
+1. Nguyễn Thế Anh | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Thường vụ Đảng ủy Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Chánh Văn phòng Ủy ban nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 24
+2. Lê Ngọc Ánh | Ủy viên BCH TW Đoàn; Ủy viên BCH Đảng bộ tỉnh, Ủy viên BCH Đảng bộ các cơ quan Đảng tỉnh; Phó Chủ tịch UB MTTQ VN tỉnh, Bí thư Tỉnh đoàn Thanh Hóa kiêm Trưởng Ban công tác Thanh thiếu nhi, cơ quan Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa | Đơn vị bầu cử số 10
+3. Nguyễn Văn Biện | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy phường, Chủ tịch Hội đồng nhân dân phường Hạc Thành, tỉnh Thanh Hóa | Đơn vị bầu cử số 27
+4. Vi Thị Thanh Bình | Giáo viên Trường Mầm non Luận Khê, xã Tân Thành, tỉnh Thanh Hóa | Đơn vị bầu cử số 9
+5. Trần Duy Bình | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh; Ủy viên Ủy ban nhân dân tỉnh; Bí thư Đảng ủy, Giám đốc Sở Khoa học và Công nghệ tỉnh Thanh Hóa | Đơn vị bầu cử số 19
+6. Cầm Bá Chái | Phó Bí thư Chi bộ, Phó Trưởng Ban Dân tộc, Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 10
+7. Cao Văn Cường | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Thường vụ Đảng ủy Ủy ban nhân dân tỉnh, Phó Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 7
+8. Lâu Thị Dính | Giáo viên mầm non Nhi Sơn, xã Nhi Sơn, tỉnh Thanh Hóa | Đơn vị bầu cử số 1
+9. Hoàng Văn Đồng | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Xây dựng tỉnh Thanh Hóa | Đơn vị bầu cử số 12
+10. Nguyễn Lợi Đức | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy, Chánh Văn phòng Tỉnh ủy Thanh Hóa | Đơn vị bầu cử số 18
+11. Tô Anh Dũng | Phó Bí thư Tỉnh ủy, Chủ tịch Ủy ban nhân dân tỉnh | Đơn vị bầu cử số 13
+12. Đỗ Ngọc Duy | Phó Bí thư Chi bộ, Phó Trưởng Ban Kinh tế - Ngân sách, Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 12
+13. Mai Văn Hải | Ủy viên Ban Thường vụ Tỉnh ủy, Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Sao Vàng, tỉnh Thanh Hóa | Đơn vị bầu cử số 12
+14. Lê Thanh Hải | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hoằng Hóa, tỉnh Thanh Hóa | Đơn vị bầu cử số 19
+15. Nguyễn Quang Hải | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Phó Bí thư Đảng bộ Hội đồng nhân dân tỉnh, Phó Chủ tịch Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 26
+16. Nguyễn Quốc Hải | Ủy viên Ban Chấp hành Đảng bộ Hội đồng nhân dân tỉnh, Bí thư Chi bộ, Trưởng Ban Pháp chế, Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 27
+17. Lương Thị Hạnh | Ủy viên BCH TW Hội LHPN Việt Nam; Ủy viên BCH Đảng bộ tỉnh; Ủy viên BCH các cơ quan Đảng tỉnh; Ủy viên BTV Đảng ủy, Phó Chủ tịch UB MTTQ VN tỉnh, Chủ tịch Hội LHPN tỉnh | Đơn vị bầu cử số 5
+18. Ngô Thị Hồng Hảo | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Chấp hành Đảng bộ các cơ quan Đảng tỉnh, Ủy viên Ban Chấp hành Đảng bộ Hội đồng nhân dân tỉnh; Bí thư Chi bộ, Trưởng Ban Văn hóa - Xã hội, Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 14
+19. Triệu Thị Hiền | Phó Bí thư Chi bộ, Phó Chánh Văn phòng Hội đồng nhân dân và Ủy ban nhân dân xã Thạch Lập, tỉnh Thanh Hóa | Đơn vị bầu cử số 6
+20. Trương Thị Hiền | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Tân Tiến, tỉnh Thanh Hóa | Đơn vị bầu cử số 21
+21. Nguyễn Tiến Hiệu | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh; Bí thư Đảng ủy, Giám đốc Sở Công Thương tỉnh Thanh Hóa | Đơn vị bầu cử số 8
+22. Lê Ngọc Hợp | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Thường vụ, Trưởng Ban Tổ chức Đảng ủy Ủy ban nhân dân tỉnh; Ủy viên Ủy ban nhân dân tỉnh; Bí thư Đảng ủy, Giám đốc Sở Nội vụ tỉnh Thanh Hóa | Đơn vị bầu cử số 16
+23. Nguyễn Văn Hùng | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Tổ chức Tỉnh ủy Thanh Hóa | Đơn vị bầu cử số 6
+24. Lê Quang Hùng | Ủy viên Ban Thường vụ Tỉnh ủy, Ủy viên Ban Thường vụ Đảng ủy Ủy ban nhân dân tỉnh, Phó Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 18
+25. Đinh Văn Hưng | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Kim Tân, tỉnh Thanh Hóa | Đơn vị bầu cử số 10
+26. Yên Tuấn Hưng | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hoa Lộc, tỉnh Thanh Hóa | Đơn vị bầu cử số 20
+27. Lê Xuân Phúc Hưng | Ủy viên chuyên trách Ban Kinh tế - Ngân sách HĐND tỉnh | Đơn vị bầu cử số 23
+28. Hà Thị Hương | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hồi Xuân, tỉnh Thanh Hóa | Đơn vị bầu cử số 3
+29. Lê Thị Hương | Phó Bí thư Chi bộ, Phó Trưởng Ban Pháp chế, Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 20
+30. Lương Thị Thúy Hường | Giáo viên Trường Tiểu học Kỳ Tân, xã Văn Nho, tỉnh Thanh Hóa | Đơn vị bầu cử số 4
+31. Vũ Thị Huyền | Kế toán viên Công ty Trách nhiệm hữu hạn Thương mại, Dịch vụ và Thiết bị Điện Duy Phát Lợi, phường Nghi Sơn, tỉnh Thanh Hóa | Đơn vị bầu cử số 24
+32. Nguyễn Văn Khiên | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy phường, Chủ tịch Hội đồng nhân dân phường Bỉm Sơn, tỉnh Thanh Hóa | Đơn vị bầu cử số 23
+33. Lê Tiến Lam | Ủy viên Ban Thường vụ Tỉnh ủy, Ủy viên Ban Thường vụ Đảng ủy các cơ quan Đảng tỉnh, Bí thư Đảng ủy, Phó Chủ tịch Thường trực Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 15
+34. Lê Thúy Lan | Phó Bí thư Thường trực Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Như Thanh, tỉnh Thanh Hóa | Đơn vị bầu cử số 8
+35. Lê Ngọc Diện (Lê Văn Diện) | Phó Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Chủ tịch Hội Cựu chiến binh tỉnh Thanh Hóa | Đơn vị bầu cử số 13
+36. Mai Xuân Liêm | Ủy viên Ban Thường vụ Tỉnh ủy, Phó Bí thư Thường trực Đảng ủy Ủy ban nhân dân tỉnh, Phó Chủ tịch Thường trực Ủy ban nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 14
+37. Văn Thị Linh | Bác sĩ Bệnh viện Đa khoa Như Thanh, tỉnh Thanh Hóa | Đơn vị bầu cử số 8
+38. Trịnh Hà Hoàng Linh | Phó Giám đốc Sở Tài chính tỉnh Thanh Hóa | Đơn vị bầu cử số 16
+39. Nguyễn Hữu Long | Ủy viên Ban Chấp hành Đảng bộ, Ủy viên Ủy ban Kiểm tra Đảng ủy Hội đồng nhân dân tỉnh, Bí thư Chi bộ, Trưởng Phòng Công tác Quốc hội, Văn phòng Đoàn đại biểu Quốc hội và Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 21
+40. Trần Mạnh Long | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Thường vụ Đảng ủy Hội đồng nhân dân tỉnh, Chánh Văn phòng Văn phòng Đoàn đại biểu Quốc hội và Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 22
+41. Lương Thị Lực | Nông dân (xã Sơn Điện, tỉnh Thanh Hóa) | Đơn vị bầu cử số 2
+42. Nguyễn Thành Lương | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy, Hiệu trưởng Trường Chính trị tỉnh Thanh Hóa | Đơn vị bầu cử số 15
+43. Phạm Đình Minh | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Bá Thước, tỉnh Thanh Hóa | Đơn vị bầu cử số 4
+44. Thượng Tọa Thích Tâm Chính | Ủy viên Hội đồng trị sự Trung ương Giáo hội phật giáo Việt Nam; Ủy viên Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Phó Trưởng Ban Trị sự Phật giáo tỉnh Thanh Hóa, Trụ trì Chùa Khánh Quang, phường Quang Trung, tỉnh Thanh Hóa | Đơn vị bầu cử số 23
+45. Lê Minh Nghĩa | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy, Chủ tịch Hội đồng nhân dân xã Yên Định, tỉnh Thanh Hóa | Đơn vị bầu cử số 15
+46. Nguyễn Thành Luân | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Tân Ninh, tỉnh Thanh Hóa | Đơn vị bầu cử số 13
+47. Phạm Thị Nhàn | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Cẩm Tú, tỉnh Thanh Hóa | Đơn vị bầu cử số 11
+48. Nguyễn Hồng Phong | Ủy viên Dự khuyết Ban Chấp hành Trung ương Đảng, Phó Bí thư Thường trực Tỉnh ủy, Chủ tịch HĐND tỉnh, Bí thư Đảng ủy các cơ quan Đảng tỉnh Thanh Hóa | Đơn vị bầu cử số 24
+49. Trịnh Xuân Phú | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy, Chủ tịch Hội đồng nhân dân phường Tĩnh Gia, tỉnh Thanh Hóa | Đơn vị bầu cử số 24
+50. Hoàng Thị Lan Phương | Ủy viên chuyên trách Ban Văn hóa - Xã hội HĐND tỉnh | Đơn vị bầu cử số 19
+51. Lê Thị Phương | Phó Bí thư Thường trực Đảng ủy phường Đông Sơn, tỉnh Thanh Hóa | Đơn vị bầu cử số 26
+52. Cầm Thị Phượng | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Vạn Xuân, tỉnh Thanh Hóa | Đơn vị bầu cử số 9
+53. Lê Hồng Quang | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Bí thư Đảng ủy xã, Chủ tịch HĐND xã Quan Sơn | Đơn vị bầu cử số 2
+54. Lê Quang Quyền | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Trung Chính, tỉnh Thanh Hóa | Đơn vị bầu cử số 18
+55. Trịnh Tuấn Sinh | Phó Bí thư Tỉnh ủy, Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa | Đơn vị bầu cử số 25
+56. Nguyễn Thị Sơn | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Quảng Ninh, tỉnh Thanh Hóa | Đơn vị bầu cử số 17
+57. Lê Thế Sơn | Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Chủ tịch Hội đồng quản trị Công ty Cổ phần cấp nước Thanh Hóa | Đơn vị bầu cử số 27
+58. Phạm Kim Tân | Phó Bí thư Chi bộ, Tổng Thư ký Liên hiệp các Hội Khoa học và Kỹ thuật Thanh Hóa; Giám đốc Quỹ hỗ trợ sáng tạo kỹ thuật Thanh Hóa | Đơn vị bầu cử số 22
+59. Mai Nhữ Thắng | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hà Long, tỉnh Thanh Hóa | Đơn vị bầu cử số 22
+60. Hoàng Văn Thanh | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Đồng Lương, tỉnh Thanh Hóa | Đơn vị bầu cử số 5
+61. Lương Tiến Thành | Ủy viên Ban Chấp hành Đảng bộ Hội đồng nhân dân tỉnh, Bí thư Chi bộ, Trưởng Ban Dân tộc, Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 3
+62. Phạm Quốc Thành | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Biện Thượng, tỉnh Thanh Hóa | Đơn vị bầu cử số 14
+63. Lương Trọng Thành | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Phó Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Chủ tịch Liên đoàn Lao động tỉnh Thanh Hóa | Đơn vị bầu cử số 21
+64. Trịnh Văn Thế | Phó Giám đốc Sở Tư pháp tỉnh | Đơn vị bầu cử số 1
+65. Phạm Thị Thu | Bí thư Đảng ủy, Chủ tịch Hội đồng nhân dân xã Minh Sơn, tỉnh Thanh Hóa | Đơn vị bầu cử số 6
+66. Vũ Thị Thu | Bác sĩ Bệnh viện Đa khoa Cẩm Thủy, tỉnh Thanh Hóa | Đơn vị bầu cử số 11
+67. Lê Trọng Thụ | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Tài chính tỉnh Thanh Hóa | Đơn vị bầu cử số 27
+68. Lò Thị Thủy | Giáo viên Trường Tiểu học Bãi Trành, xã Xuân Bình, tỉnh Thanh Hóa | Đơn vị bầu cử số 7
+69. Phạm Thị Thanh Thủy | Ủy viên Ban Thường vụ Tỉnh ủy, Chủ nhiệm Ủy ban Kiểm tra Tỉnh ủy Thanh Hóa | Đơn vị bầu cử số 20
+70. Nguyễn Quốc Tiến | Ủy viên Ban Chấp hành Trung ương Hội Nông dân Việt Nam; Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Thường vụ Đảng ủy, Phó Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Chủ tịch Hội Nông dân tỉnh Thanh Hóa | Đơn vị bầu cử số 16
+71. Nguyễn Ngọc Tiến | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Nội chính Tỉnh ủy Thanh Hóa | Đơn vị bầu cử số 17
+72. Lê Văn Tiến | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Nông nghiệp và Môi trường tỉnh Thanh Hóa | Đơn vị bầu cử số 26
+73. Lê Thị Tĩnh | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hóa Quỳ, tỉnh Thanh Hóa | Đơn vị bầu cử số 7
+74. Đỗ Thị Toán | Ủy viên Ban Thường vụ Tỉnh ủy, Phó Chủ tịch Thường trực Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa | Đơn vị bầu cử số 9
+75. Lê Văn Trung | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Văn hóa, Thể thao và Du lịch tỉnh Thanh Hóa | Đơn vị bầu cử số 25
+76. Lê Như Tú | Ủy viên Ban Chấp hành Đảng bộ Hội đồng nhân dân tỉnh, Bí thư Chi bộ, Trưởng Phòng Hành chính, Tổ chức, Quản trị, Văn phòng Đoàn Đại biểu Quốc hội và Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 5
+77. Hoàng Anh Tuấn | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Chi bộ, Trưởng Ban Kinh tế Ngân sách, Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 17
+78. Lê Văn Tuấn | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy phường, Chủ tịch Hội đồng nhân dân phường Sầm Sơn, tỉnh Thanh Hóa | Đơn vị bầu cử số 25
+79. Trương Ngọc Tùng | Đảng ủy viên, Phó Chỉ huy trưởng Ban Chỉ huy Bộ đội Biên phòng, Bộ Chỉ huy Quân sự tỉnh Thanh Hóa | Đơn vị bầu cử số 1
+80. Đầu Thanh Tùng | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Thường vụ Đảng ủy Ủy ban nhân dân tỉnh, Phó Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 19
+81. Nguyễn Tuấn Tưởng | Phó Bí thư Chi bộ, Phó Trưởng Ban Văn hóa - Xã hội, Hội đồng nhân dân tỉnh Thanh Hóa | Đơn vị bầu cử số 4
+82. Đào Xuân Yên | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Tuyên giáo và Dân vận Tỉnh ủy Thanh Hóa | Đơn vị bầu cử số 11
+
+Đơn vị bầu cử:
+Số 1: Gồm các xã: Mường Chanh, Quang Chiểu, Tam Chung, Mường Lát, Pù Nhi, Nhi Sơn, Mường Lý, Trung Lý
+Số 2: Gồm các xã: Na Mèo, Sơn Thủy, Sơn Điện, Mường Mìn, Tam Thanh, Tam Lư, Quan Sơn, Trung Hạ
+Số 3: Gồm các xã: Hồi Xuân, Nam Xuân, Thiên Phủ, Hiền Kiệt, Phú Xuân, Phú Lệ, Trung Thành, Trung Sơn
+Số 4: Gồm các xã: Văn Nho, Thiết Ống, Bá Thước, Cổ Lũng, Pù Luông, Điền Lư, Điền Quang, Quý Lương
+Số 5: Gồm các xã: Linh Sơn, Đồng Lương, Văn Phú, Giao An, Yên Khương, Yên Thắng
+Số 6: Gồm các xã: Ngọc Lặc, Thạch Lập, Ngọc Liên, Minh Sơn, Nguyệt Ấn, Kiên Thọ
+Số 7: Gồm các xã: Như Xuân, Thượng Ninh, Xuân Bình, Hóa Quỳ, Thanh Quân, Thanh Phong
+Số 8: Gồm các xã: Xuân Du, Mậu Lâm, Như Thanh, Yên Thọ, Xuân Thái, Thanh Kỳ
+Số 9: Gồm các xã: Bát Mọt, Yên Nhân, Lương Sơn, Thường Xuân, Luận Thành, Tân Thành, Vạn Xuân, Thắng Lộc, Xuân Chinh
+Số 10: Gồm các xã: Kim Tân, Vân Du, Ngọc Trạo, Thạch Bình, Thành Vinh, Thạch Quảng
+Số 11: Gồm các xã: Cẩm Thạch, Cẩm Thủy, Cẩm Tú, Cẩm Vân, Cẩm Tân
+Số 12: Gồm các xã: Thọ Xuân, Thọ Long, Xuân Hòa, Sao Vàng, Lam Sơn, Thọ Lập, Xuân Tín, Xuân Lập
+Số 13: Gồm các xã: Triệu Sơn, Thọ Bình, Thọ Ngọc, Thọ Phú, Hợp Tiến, An Nông, Tân Ninh, Đồng Tiến
+Số 14: Gồm các xã: Vĩnh Lộc, Tây Đô, Biện Thượng
+Số 15: Gồm các xã: Yên Định, Yên Trường, Yên Phú, Quý Lộc, Yên Ninh, Định Tân, Định Hòa
+Số 16: Gồm các xã: Thiệu Hóa, Thiệu Quang, Thiệu Tiến, Thiệu Toán, Thiệu Trung
+Số 17: Gồm các xã: Lưu Vệ, Quảng Yên, Quảng Ngọc, Quảng Ninh, Quảng Bình, Tiên Trang, Quảng Chính
+Số 18: Gồm các xã: Nông Cống, Thắng Lợi, Trung Chính, Trường Văn, Thăng Bình, Tượng Lĩnh, Công Chính
+Số 19: Gồm các xã: Hoằng Hóa, Hoằng Tiến, Hoằng Thanh, Hoằng Lộc, Hoằng Châu, Hoằng Sơn, Hoằng Phú, Hoằng Giang
+Số 20: Gồm các xã: Triệu Lộc, Đông Thành, Hậu Lộc, Hoa Lộc, Vạn Lộc
+Số 21: Gồm các xã: Nga Sơn, Nga Thắng, Hồ Vương, Tân Tiến, Nga An, Ba Đình
+Số 22: Gồm các xã: Hà Trung, Tống Sơn, Hà Long, Hoạt Giang, Lĩnh Toại
+Số 23: Gồm các phường: Bỉm Sơn, Quang Trung
+Số 24: Gồm các phường: Ngọc Sơn, Tân Dân, Hải Lĩnh, Tĩnh Gia, Đào Duy Từ, Hải Bình, Trúc Lâm, Nghi Sơn và các xã: Các Sơn, Trường Lâm
+Số 25: Gồm các phường: Sầm Sơn, Nam Sầm Sơn
+Số 26: Gồm các phường: Đông Quang, Đông Sơn, Đông Tiến
+Số 27: Gồm các phường: Hạc Thành, Quảng Phú, Hàm Rồng, Nguyệt Viên
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa I =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Lê Tất Đắc | Chủ tịch Ủy ban Hành chính lâm thời tỉnh Thanh Hóa
+2. Lê Trần Đức | (Cổng chưa ghi chức vụ)
+3. Lưu Công Hòa | Thường vụ Tỉnh bộ Việt Minh tỉnh Thanh Hóa
+4. Nguyễn Văn Huệ | Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa
+5. Đặng Văn Hỷ | Chủ tịch Ủy ban Hành chính huyện Vĩnh Lộc, tỉnh Thanh Hóa, Trưởng phòng Chính trị, Bộ Tư pháp; Chánh án Tòa án phúc thẩm Hải Phòng
+6. Lê Đỗ Kỳ | (Cổng chưa ghi chức vụ)
+7. Nguyễn Xuân Kỳ | Chánh văn phòng Ủy ban nhân dân tỉnh Thanh Hóa. Phó văn phòng Ban Thường trực Quốc hội
+8. Nguyễn Hữu Ngọc | (Cổng chưa ghi chức vụ)
+9. Hoàng Sĩ Oánh | Chủ tịch Ủy ban Hành chính huyện Thọ Xuân, tỉnh Thanh Hóa
+10. Lê Trọng Thuần | Phụ trách Việt Minh huyện Quảng Xương, tỉnh Thanh Hóa; Bí thư Huyện ủy huyện Hoằng Hóa, tỉnh Thanh Hóa
+11. Nguyễn Đình Thực | Tỉnh ủy viên dự khuyết, Ủy viên Ủy ban nhân dân lâm thời tỉnh Thanh Hóa
+12. Nguyễn Vĩnh Thụy | (Cổng chưa ghi chức vụ)
+13. Phạm Thúc Tiêu | Thẩm phán Tòa án nhân dân huyện Ngọc Lặc, Chủ tịch Ủy ban Hành chính huyện Ngọc Lặc, tỉnh Thanh Hóa
+14. Nguyễn Văn Tĩnh | (Cổng chưa ghi chức vụ)
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa II =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Vũ Đức Âu | Phó Giám đốc Mỏ Cổ Định, tỉnh Thanh Hóa
+2. Trịnh Xuân Bái | Ủy viên Ủy ban Mặt trận Tổ quốc tỉnh Thanh Hóa, Anh hùng Lao động
+3. Trịnh Thị Bỉnh | Ủy viên Ủy ban Hành chính huyện Yên Định, tỉnh Thanh Hóa
+4. Lò Văn Bường | Chính trị viên Phó Huyện đội Thường Xuân, tỉnh Thanh Hóa; Anh hùng Lực lượng vũ trang nhân dân
+5. Kha Vạng Cân | Kỹ sư, Giám đốc Vụ kỹ thuật Bộ Công nghiệp
+6. Trần Đình Cào | Công nhân nhà máy Điện Thanh Hóa
+7. Lê Tất Đắc | Ủy viên Ban Tổ chức Trung ương, Giám đốc Vụ Cán bộ, Bộ Nội vụ, Chánh Thư ký Liên hiệp Công đoàn các cơ quan Trung ương
+8. Trịnh Ngọc Điệt | Chủ tịch Ủy ban Hành chính tỉnh Thanh Hóa
+9. Nguyễn Hữu Khiếu | Bí thư Tỉnh ủy Thanh Hóa; Phó ban Liên lạc Nông dân toàn quốc
+10. Ngụy Như Kontum | Giáo sư, Thạc sĩ Lý- Hóa, Giám đốc trường Đại học Tổng hợp, Hà Nội
+11. Đinh Văn Liên | Hiệu trưởng Trường cấp II-III tỉnh Thanh Hóa
+12. Nguyễn Văn Lộc | Thứ trưởng Bộ Thủy lợi
+13. Lương Văn Lưu | Chiễn sĩ thi đua lâm nghiệp, Tổ Sơn Tràng, tỉnh Thanh Hóa
+14. Đặng Thị Mùi | Công nhân Nhà máy giấy Lam Sơn, Thanh Hóa
+15. Nguyễn Đình Ngân | Cử nhân, Ủy viên thường trực Ủy ban Mặt trận Tổ quốc tỉnh Thanh Hóa
+16. Lê Văn Nghĩa | Công nhân Nhà máy Điện Thanh Hóa
+17. Tôn Viết Nghiệm | Phó Chủ tịch Ủy ban Hành chính tỉnh Thanh Hóa
+18. Phạm Văn Nĩnh | Ủy viên Ủy ban Hành chính tỉnh Thanh Hóa
+19. Hoàng Sử | Bác sỹ, Phó Giám đốc Viện Ra-đi-um, Giảng viên trường Đại học Y dược
+20. Nghiêm Khắc Tặng | Giám đốc Nhà máy Điện Thanh Hóa
+21. Hoài Thanh | Đại học, Nhà văn, Viện phó Viện Văn học, Ủy viên Thường trực Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam
+22. Nguyễn Công Thiệp | Phó Chủ tịch Ủy ban Mặt trận Tổ quốc huyện Quảng Xương, tỉnh Thanh Hóa; Anh hùng Lao
+23. Trịnh Thuân | Trưởng ban Công tác Nông thôn tỉnh Thanh Hóa
+24. Ngô Thuyền | Bí thư Tỉnh ủy Thanh Hóa
+25. Trần Mạnh Tiến | Trưởng Ty Giao thông Tỉnh Thanh Hóa
+26. Nguyễn Khánh Toàn | Giáo sư, Viện sỹ, Thứ trưởng Bộ Giáo dục, Ủy viên Thường trực Ủy ban Khoa học Nhà nước
+27. Nguyễn Duy Trinh | Ủy viên Bộ Chính trị Ban Chấp hành Trung ương Đảng Lao động Việt Nam, Chủ nhiệm Ủy ban Kế hoạch Nhà nước
+28. Phạm Thị Trinh | Ủy viên Ban Chấp hành Trung ương Hội Liên hiệp Phụ nữ Việt Nam
+29. Phan Trữ | Ủy viên Ban Quản trị Nông trường Sao Vàng, tỉnh Thanh Hóa
+30. Trần Hữu Tước | Bác sỹ, Giáo sư Trường Đại học Y dược, Chủ nhiệm bộ môn tai, mũi , họng, Giám đốc Bệnh viện Bạch Mai ( Hà Nội), Phó Chủ tịch Hội Chữ thập đỏ Việt Nam
+31. Lê Phong Vũ | Phó Chủ nhiệm Hợp tác xã nông nghiệp xã Hoằng Giang, huyện Hoằng Hóa, tỉnh Thanh Hóa
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa III =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Trịnh Xuân Bái | Xã viên Hợp tác xã Nông nghiệp xã Xuân Thành, huyện Thọ Xuân, tỉnh Thanh Hóa; Anh hùng Lao động
+2. Lò Văn Bường | Chính trị viên, Phó Huyện đội Thường Xuân, tỉnh Thanh Hóa;Anh hùng Lực lượng vũ trang Nhân dân
+3. Đặng Văn Cáp | Hội trưởng Hội Đông y Việt Nam
+4. Phạm Ngọc Chức | Ủy viên Hội đồng nhân dân tỉnh, Ủy viên Ban Chấp hành Công đoàn tỉnh, cán bộ Lâm trường Yên Cát, tỉnh Thanh Hóa
+5. Ưng Định | Kỹ sư nông học, Ủy viên Ủy ban Hành chính tỉnh Thanh Hóa, Trưởng ty Nông nghiệp, Hội trưởng Hội phổ biến khoa học và kỹ thuật tỉnh, Ủy viên Ban Chấp hành Trung ương Hội phổ biến khoa học kỹ thuật Việt Nam
+6. Vi Văn Êu | Phó Ban Dân tộc tỉnh Thanh Hóa
+7. Hoàng Văn Hoan | Ủy viện Bộ Chính trị Ban Chấp hành Trung ương Đảng Lao động Việt Nam, Phó Chủ tịch Ủy ban Thường vụ Quốc hội
+8. Nguyễn Xuân Hoạt | Kỹ sư thủy lợi, Phó Ty thủy lợi tỉnh Thanh Hóa
+9. Nguyễn Văn Huê | Đại học Sư phạm, Hiệu trưởng trường Phổ thông cấp I Hải Nhân, huyện Tĩnh Gia, tỉnh Thanh Hóa
+10. Cao Ngọc Khánh | Phó Ban Công tác Nông thôn tỉnh Thanh Hóa
+11. Song Kim | Nghệ sỹ Đoàn Kịch nói Trung ương
+12. Ngụy Như Kontum | Hiệu trưởng Trường Đại học Tổng hợp, Hà Nội
+13. Vũ Khắc Mẫn | Viện phó Viện Thiết kế Thủy lợi và Thủy điện, Bộ Thủy lợi
+14. Đặng Thị Mùi | Thợ xeo giấy, Thư ký Công đoàn Xí nghiệp giấy Lam Sơn, Thanh Hóa
+15. Nguyễn Đình Ngân | Phó Chủ Tịch Ủy ban Mặt trận Tổ quốc tỉnh Thanh Hóa
+16. Lê Văn Nghĩa | Tổ trưởng thợ tiện Nhà máy cưa Mật Sơn, tỉnh Thanh Hóa
+17. Tôn Viết Nghiệm | Phó Chủ tịch Ủy ban Hành chính tỉnh Thanh Hóa
+18. Bùi Đình Ngọa | Trưởng ban Công tác nông thôn huyện Nông Cống, tỉnh Thanh Hóa
+19. Nguyễn Công Thiệp | Phó Chủ tịch Mặt trận Tổ quốc huyện Quảng Xương, tỉnh Thanh Hóa; Anh hùng Lao động
+20. Trần Ngọc Thư | Giám đốc Mỏ Cromit Cổ Định, tỉnh Thanh Hóa
+21. Ngô Văn Thưởng | Chủ nhiệm HTX đánh cá biển Quảng Tiến, huyện Quảng Xương, tỉnh Thanh Hóa
+22. Ngô Thuyền | Chủ tịch Ủy ban Hành chính tỉnh Thanh Hóa
+23. Trần Mạnh Tiến | Trưởng Ty Giao thông Tỉnh Thanh Hóa
+24. Nguyễn Khánh Toàn | Ủy viên Ban Chấp hành Trung ương Đảng Lao động Việt Nam, Thứ trưởng Bộ Giáo dục, Phó Chủ nhiệm Ủy ban Khoa học Nhà nước, Chủ tịch Ủy ban Thiếu niên ,Nhi đồng Trung ương
+25. Trần Thị Trạch | Phó Chủ nhiệm Hợp tác xã Nông nghiệp thôn Vạn Phúc, xã Định Liên, huyện Yên Định, tỉnh Thanh Hóa
+26. Phạm Thị Trinh | (Cổng chưa ghi chức vụ)
+27. Phan Trữ | Giám đốc Nông trường Quốc doanh Sao Vàng, tỉnh Thanh Hóa
+28. Trần Hữu Tước | Giáo sư Trường Đại học Y khoa, Viện trưởng Viện Tai – Mũi – Họng, Bệnh viện Bạch Mai ( Hà Nội)
+29. Bùi Thị Kim Vân | Ủy viên Hội đồng nhân dân huyện, Chủ nhiệm HTX nông nghiệp Muỗng Do, huyện Bá Thước, tỉnh Thanh Hóa
+30. Phạm Thị Xuyến | Ủy viên Ban Hành chính xã, Chủ nhiệm Hợp tác xã nông nghiệp Thổ Phụ, xã Vĩnh Tiến, huyện Vĩnh Lộc, tỉnh Thanh Hóa
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa IV =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Hoàng Anh | Bí thư Ban Chấp hành Trung ương Đảng Lao động Việt Nam, Phó Thủ tướng Chính phủ, Chủ nhiệm Ủy ban Nông nghiệp Trung ương
+2. Bùi Ngọc Bàn | Nghề nghiệp, trình độ, chức vụ và đơn vị công tác: Trung tá, Chính trị viên Tỉnh đội Thanh Hóa
+3. Cao Đức Cang | Hiệu Phó trường Cán bộ dân tộc Trung ương
+4. Đỗ Chanh | Giám đốc Nhà máy điện Thanh Hóa
+5. Vũ Xuân Chiêm | Đại tá, Phó Chủ nhiệm Tổng cục Hậu cần Quân đội nhân dân Việt Nam
+6. Phạm Ngọc Chức | Đội trưởng khai thác gỗ Lâm trường Như Xuân, tỉnh Thanh Hóa
+7. Lê Văn Đại | Cục trưởng Cục sản xuất, Bộ Nội vụ
+8. Hà Văn Dân | Công nhân Trạm vận chuyển lâm sản huyện Quan Hóa, tỉnh Thanh Hóa; Anh hùng Lao
+9. Phạm Minh Do | Chủ tịch Ủy ban Hành chính xã phú Lệ, huyện Quan Hóa, tỉnh Thanh Hóa
+10. Lê Thị Được | Chủ tịch Ủy ban Hành chính xã Hoằng Quý, huyện Hoằng Hóa, tỉnh Thanh Hóa
+11. Mai Quang Hân | Tổ trưởng tổ rèn, Xí nghiệp Vận tải ô tô Thanh Hóa
+12. Nguyễn Thị Hằng | Phó Bí thư Tỉnh đoàn Thanh niên Lao động Hồ Chí Minh tỉnh Thanh Hóa
+13. Hoàng Văn Hiều | Chủ tịch Ủy ban Hành chính tỉnh Thanh Hóa
+14. Hoàng Văn Hoan | Phó Chủ tịch Ủy ban Thường vụ Quốc hội
+15. Đoàn Thị Khánh | Ủy viên Ban Quản trị Hợp tác xã mua bán xã Xuân Thiên, huyện Thọ Xuân, tỉnh Thanh Hóa
+16. Nguyễn Hữu Khiếu | Bộ trưởng Bộ lao động
+17. Lê Văn Lành | Bí thư Huyện ủy huyện Thọ Xuân, tỉnh Thanh Hóa
+18. Nguyễn Thị Liệu | Công nhân Nông trường cao su Thống Nhất, huyện Yên Định, tỉnh Thanh Hóa
+19. Bùi Thị Tuyết Mai | Cán bộ Ty Nông nghiệp tỉnh Thanh Hóa
+20. Hoàng Thị Bích Mợi | Trung đội trưởng dân quan gái Hoa Lộc, huyện Hậu Lộc, tỉnh Thanh Hóa
+21. Tôn Viết Nghiệm | Phó Chủ tịch Ủy ban Hành chính tỉnh Thanh Hóa
+22. Nguyễn Thị Nguyệt | Đội phó Đội sản xuất, Hợp tác xã nông nghiệp xã Yên Trường, huyện Yên Định, tỉnh Thanh
+23. Hoàng Văn Ong | Đội trưởng đánh cá Hợp tác xã Thanh Bình, huyện Tĩnh Gia, tỉnh Thanh Hóa
+24. Hoàng Sử | Chủ nhiệm Khoa Điện quang, Bệnh viện Việt - Đức, Hà Nội
+25. Trịnh Thị Thanh | Phó chủ nhiệm Hợp tác xã Nông nghiệp xã Tiến Lộc, huyện Hậu Lộc, tỉnh Thanh Hóa
+26. Dương Văn Thập | Công nhân Xí nghiệp Phân lân Hàm Rồng, tỉnh Thanh Hóa
+27. Đặng Thí | Bộ trưởng, Chủ nhiệm Văn phòng Phủ Thủ Tướng
+28. Lê Đức Thịnh | Kỹ sư trồng trọt, cán bộ Ty Nông nghiệp Thanh Hóa
+29. Trần Đình Tri | Ủy viên Thư ký Ủy ban Thường vụ Quốc hội
+30. Trần Hữu Tước | Viện trưởng Viện Tai – Mũi – Họng, Bệnh viện Bạch Mai ( Hà Nội)
+31. Vũ Hồng Út | Tổ trưởng lái ca nô phà Ghép, tỉnh Thanh Hóa
+32. Bùi Thị Kim Vân | Thường vụ Huyện ủy huyện Bá Thước, tỉnh Thanh Hóa
+33. Chế Lan Viên | Nhà thơ, Ủy viên Thường vụ Hội Nhà Văn Việt Nam
+34. Nguyễn Văn Xuyến | Kỹ sư chế tạo máy, Trưởng ban Kỹ thuật xí nghiệp Cơ khí Sông Chu, tỉnh Thanh Hóa
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa V =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Hoàng Anh | Bí thư Ban Chấp hành Trung ương Đảng Lao động Việt Nam, Phó Thủ tướng Chính phủ
+2. Cao Đức Cang | Bí thư Đảng ủy, Hiệu Phó trường Cán bộ dân tộc Miền Nam thuộc Ủy ban Dân tộc của Chính phủ, Ủy viên Ủy ban Văn hóa và Xã hội của Quốc hội
+3. Đỗ Chanh | Tỉnh ủy viên, Giám đốc Nhà máy điện Hàm Rồng, tỉnh Thanh Hóa, Ủy viên Ban Chấp hành Tổng Công đoàn Việt Nam; Anh hùng Lao động
+4. Phạm Ngọc Chức | Đảng ủy viên, Đội trưởng đội khai thác gỗ lâm trường Như Xuân, Thanh Hóa; Anh hùng Lao động
+5. Hoàng Minh Côn | Trung tá, Phó Chính ủy Bộ chỉ huy Quân sự tỉnh Thanh Hóa
+6. Hà Văn Dân | Công nhân Công ty Vật tư lâm sản Thanh Hóa, Ủy viên BCH Trung ương Đoàn Thanh niên Lao động Hồ Chí Minh; Anh hùng Lao động
+7. Bùi Thị Gần | Đại học Kinh tế - Kế hoạch, Cán bộ kinh tế - kế hoạch, Ủy ban Nông nghiệp Thanh Hóa
+8. Cao Sơn Hải | Đại học Sư phạm, Phó Bí thư Đảng ủy, Hiệu phó Trường Sư phạm cấp II miền núi Thanh Hóa
+9. Nguyễn Thị Hằng | Bí thư Trung ương Đoàn Thanh niên Lao động Hồ Chí Minh, Ủy viên Ủy Ban Đối ngoại Quốc hội
+10. Hoàng Văn Hiều | Phó Bí thư Tỉnh ủy, Chủ tịch Ủy ban Hành chính tỉnh Thanh Hóa, Ủy viên Ủy ban Kế hoạch và Ngân sách của Quốc hội
+11. Hoàng Văn Hoan | Ủy viên Bộ Chính trị Ban chấp hành Trung ương Đảng Lao động Việt Nam, Phó Chủ tịch Ủy ban Thường vụ Quốc hội, Phó Chủ nhiệm Ủy ban Dự án Pháp luật của Quốc hội
+12. Nguyễn Văn Huê | Ủy viên Ủy ban Hành chính tỉnh Thanh Hóa, Trưởng ban Giáo dục chuyên nghiệp tỉnh, Ủy viên Ủy ban Văn hóa và Xã hội của Quốc hội; Anh hùng Lao động
+13. Lê Thị Bích | Bác sỹ chuyên khoa Nhi – Bệnh viện tỉnh Thanh Hóa
+14. Đoàn Thị Khánh | Phó Chủ nhiệm Hợp tác xã mua bán xã Xuân Thiên, huyện Thọ Xuân, tỉnh Thanh Hóa
+15. Nguyễn Thị Khuyên | Huyện Ủy viên, Chủ tịch Ủy ban nhân dân xã Hoằng Trinh, huyện Hoằng Hóa, tỉnh Thanh Hóa
+16. Mai Thị Lan | Kỹ sư chăn nuôi, Trại phó Trại chăn nuôi lợn huyện Hoằng Hóa, tỉnh Thanh Hóa
+17. Nguyễn Thị Liệu | Công nhân Nông trường cao su Thống Nhất, huyện Yên Định, tỉnh Thanh Hóa
+18. Bùi Thị Tuyết Mai | (Cổng chưa ghi chức vụ)
+19. Khương Thị Máy | Tổ trưởng tổ 6, Đội công trình 5, Công ty Cầu đường, Ty Giao thông Vận tải Thanh Hóa
+20. Vương Quốc Mỹ | Kiến trúc sư, Phó Tiến sĩ, Thứ trưởng Bộ xây dựng
+21. Hoàng Quang Nghị | Ủy viên Ủy ban Nông nghiệp tỉnh Thanh Hóa
+22. Tôn Viết Nghiệm | Tỉnh ủy viên, Trưởng ban Khoa giáo Tỉnh ủy Thanh hóa
+23. Lê Thế Nguyên | Ca trưởng Phân xưởng nghiền Nhà máy Phân lân Hàm Rồng, Ủy viên Ban Chấp hành Công đoàn tỉnh Thanh Hóa
+24. Nguyễn Thị Nguyệt | Đội trưởng Đội sản xuất, Hợp tác xã nông nghiệp xã Yên Trường, huyện Yên Định, tỉnh Thanh Hóa
+25. Vũ Thị Phan | Bác sĩ, Quyền Viện trưởng Viện Sốt rét ký sinh trùng và côn trùng, Bộ y tế
+26. Nguyễn Bá Phát | Thiếu tương, Tư lệnh trưởng Bộ Tư lệnh Hải quân, Ủy viên Hội đồng Khoa học Quân sự, Bộ Quốc phòng
+27. Nguyễn Thị Phúc | Xã viên dệt chiếu Hợp tác xã thủ công nghiệp Tia sáng, xã Nga Bạch, huyện Nga Sơn, tỉnh Thanh Hóa
+28. Trần Sâm | Trung tướng, Thứ trưởng Bộ Quốc phòng, Phó Tổng Tham mưu trưởng kiêm Chủ nhiệm Tổng cục Kỹ thuật Quân đội Nhân dân Việt Nam
+29. Đặng Thí | Chủ nhiệm Ủy ban Liên lạc Kinh tế, kiêm Chủ Nhiệm Ủy ban Thống nhất của Chính phủ
+30. Nguyễn Văn Thơm | Ủy viên Ban Chấp hành Đảng bộ xã, Phó Chủ nhiệm Hợp tác xã Đánh cá Đông Tiến, xã Hải Thanh, huyện Tĩnh Gia, tỉnh Thanh Hóa
+31. Lê Thị Anh Thư | Bí thư chi bộ, công nhân tiện Nhà máy Cơ khí Thanh Hóa
+32. Trần Đình Tri | Chủ nhiệm Văn phòng Ủy ban Thường vụ Quốc hội, Ủy viên Ủy ban Thường vụ Quốc hội, Thư ký Ủy ban Thường vụ Quốc hội
+33. Nguyễn Văn Xuyến | (Cổng chưa ghi chức vụ)
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa VI =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Lê Thị Bích | Bác Sỹ chuyên khoa Nhi – Bệnh viện tỉnh Thanh Hóa
+2. Đỗ Chanh | Giám đốc Nhà máy điện Hàm Rồng, tỉnh Thanh Hóa, Ủy viên Ban Chấp hành Tổng công đoàn Việt Nam; Anh hùng Lao động
+3. Hoàng Minh Côn | Thượng tá, Chính ủy Bộ chỉ huy Quân sự tỉnh Thanh Hóa
+4. Hà Văn Dân | Công nhân vận tải Công ty Vật tư lâm sản Thanh Hóa, Ủy viên BCH Trung ương Đoàn Thanh niên Lao động Hồ Chí Minh; Anh hùng Lao động
+5. Cao Sơn Hải | Hiệu Phó trường Sư phạm cấp II miền núi Thanh Hóa, Ủy viên Ủy ban Văn hóa và Giáo dục của Quốc hội
+6. Nguyễn Thị Hằng | Bí thư Ban Chấp hành Trung ương Đoàn Thanh niên Lao động Hồ Chí Minh, Ủy viên Ủy ban Đối ngoại của Quốc hội
+7. Hoàng Văn Hiều | Phó Bí thư Tỉnh ủy, Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa, Ủy viên Ủy ban Kế hoạch và Ngân sách của Quốc hội
+8. Hoàng Văn Hoan | Ủy viên Bộ Chính trị Ban chấp hành Trung ương Đảng Lao động Việt Nam, Phó Chủ tịch Ủy ban Thường vụ Quốc hội, Ủy viên Ủy ban Dự thảo Hiến pháp
+9. Lê Công Kha | Phó tiến sĩ KHKT, Phó trưởng ban Khoa học Kỹ thuật tỉnh Thanh Hóa
+10. Nguyễn Thị Khuyên | Huyện Ủy viên, Chủ tịch Ủy ban nhân dân xã Hoằng Trinh, huyện Hoằng Hóa, tỉnh Thanh Hóa
+11. Lê Bạch Lan | Kỹ sư Nông nghiệp, Tỉnh ủy viên, Phó Chủ nhiệm Ủy ban Nông nghiệp tỉnh Thanh Hóa
+12. Ngô Minh Loan | Ủy viên dự khuyết Ban Chấp hành Trung ương Đảng Lao động Việt Nam, Bộ trưởng Bô Lương thực và Thực phẩm
+13. Bùi Thị Lực | Cán bộ thú y, Trại chăn nuôi bò xã Cẩm Tú, huyện Cẩm Thủy, tỉnh Thanh Hóa
+14. Bùi Thị Lượn | Ủy viên Ban quản trị Hợp tác xã nông nghiệp xã Quảng Bình, huyện Quảng Xương, tỉnh Thanh Hóa
+15. Đồng Sỹ Nguyên | Trung tướng, Chủ nhiệm Tổng cục Xây dựng Kinh tế Quân đội Nhân dân Việt Nam
+16. Lê Thế Nguyên | Ca trưởng Phân xưởng nghiền Nhà máy Phân lân Hàm Rồng, Ủy viên Ban Chấp hành Liên hiệp Công đoàn tỉnh Thanh Hóa
+17. Nguyễn Thị Nguyệt | Đội trưởng sản xuất, Hợp tác xã nông nghiệp xã Yên Trường, huyện Yên Định, tỉnh Thanh Hóa
+18. Nguyễn Thị Phúc | Tổ trưởng sản xuất Hợp tác xã thủ công nghiệp Tia sáng, xã Nga Bạch, huyện Nga Sơn, tỉnh Thanh Hóa
+19. Bùi Bá Thảo | Chủ nhiệm Hợp tác xã nông nghiệp Thọ Bình, huyện Triệu Sơn, tỉnh Thanh Hóa
+20. Đặng Thí | Bộ trưởng Phủ Thủ Tướng Chính phủ Cộng hòa Xã hội chủ nghĩa Việt Nam
+21. Bùi Khắc Tiến | Công nhân kỹ thuật, tổ trưởng sản xuất Nhà máy Cơ khí Sông Chu, tỉnh Thanh Hóa
+22. Phạm Gia Triệu | Phó Tiến sỹ Y khoa, Đại tá, Viện trưởng Viện Quân y 108 Hà Nội, Ủy viên Ủy ban Y tế và Xã hội của Quốc hội
+23. Lê Thanh Từ | Phó Tiến sỹ Toán-Lý, Bộ trưởng Bộ Đại học và Trung học Chuyên nghiệp
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa VII =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Đỗ Hữu Ái | Ủy viên Thường vụ Ban Chấp hành Đảng bộ xã Thành Công, Chủ nhiệm Hợp tác xã Định Công, xã Thành Công, Thiệu Yên, tỉnh Thanh Hóa
+2. Hoàng Cầm | Ủy viên Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Trung tướng, Tư lệnh Quân khu 4
+3. Hoàng Minh Côn | Đại tá, Chỉ huy phó Bộ chỉ huy Quân sự tỉnh Thanh Hóa
+4. Hoàng Thị Cúc | Kỹ sư chăn nuôi, cán bộ kỹ thuật chăn nuôi Nông trường Sao Vàng, huyện Thọ Xuân, tỉnh Thanh Hóa
+5. Hà Văn Dân | Phó Bí thư Đảng bộ Xí nghiệp Lâm sản Thanh Hóa, Ủy viên Hội đồng Dân tộc của Quốc hội; Anh hùng Lao động
+6. Nguyễn Huy Du | Bí thư Đảng đoàn, Phó Tổng thư ký Hội Nhạc sỹ Việt Nam. Ủy viên Ủy ban Văn hóa và Giáo dục của Quốc hội
+7. Nguyễn Thị Hằng | Bí thư Trung ương Đoàn Thanh niên Cộng sản Hồ Chí Minh, Ủy viên Ủy ban Khoa học và Kỹ thuật của Quốc hội
+8. Lê Hữu Hinh | Ủy viên Thường vụ Tỉnh ủy, Phó Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa
+9. Phạm Thị Hoa | Cán bộ kỹ thuật Hợp tác xã Nông nghiệp Bình Thạnh, huyện Cẩm Thủy, tỉnh Thanh Hóa
+10. Mai Thị Hồng | Tổ trưởng Tổ sản xuất chiếu cói xuất khẩu Hợp tác xã Nga Thủy, huyện Trung Sơn, tỉnh Thanh Hóa
+11. Tố Hữu | Ủy viên Bộ Chính trị Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Phó Chủ tịch Hội đồng Bộ trưởng, Ủy viên Hội đồng Quốc phòng
+12. Lê Bạch Lan | Tỉnh ủy viên, Phó Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa
+13. Trần Thị Mai | Bí thư Đảng ủy Nhà máy Cơ khí tỉnh Thanh Hóa
+14. Lê Viết Minh | Công nhân lái máy kéo nông nghiệp, Trạm máy kéo huyện Thiệu Yên, tỉnh Thanh Hóa
+15. Cao Minh Ngoan | Bí thư Ban Chấp hành Đảng bộ xã Điền Lư, huyện Bá Thước, tỉnh Thanh Hóa
+16. Đồng Sỹ Nguyên | Ủy viên dự khuyết Bộ Chính trị Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Phó chủ tịch Hội đồng Bộ trưởng, Bộ trưởng Bộ Giao thông Vận tải
+17. Hoàng Minh Thi | Thiếu tướng, Tư lệnh Quân khu 4
+18. Đặng Thí | Ủy viên Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Chủ nhiệm Ủy ban Hợp tác Kinh tế với Lào và Campuchia
+19. Bùi Khắc Tiến | Quản đốc Phân xưởng Xí nghiệp Cơ khí Sông Chu, tỉnh Thanh Hóa
+20. Đoàn Trọng Truyến | Kỹ sư nông nghiệp, Giáo sư Kinh tế, Chủ nhiệm Ủy ban Vật giá Nhà nước
+21. Nguyễn Đình Tứ | Ủy viên Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Bộ trưởng Bộ Đại học và Trung học Chuyên nghiêp
+22. Mai Văn Tuân | Viện trưởng Viện Khoa học công tác Kiểm soát, Viện Kiểm sát nhân dân Tối cao, Ủy viên Ủy ban Pháp luật của Quốc hội
+23. Nguyễn Thị Vân | Bác sỹ, Trưởng khoa Y học dân tộc Bệnh viện thị xã Thanh Hóa, Ủy viên Ủy ban Y tế và Xã hội của Quốc hội
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa VIII =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Nguyễn Thái Bá | Linh mục, Tổng thư ký Ủy ban Đoàn kết Công giáo yêu nước Việt Nam
+2. Hà Văn Ban | Phó Bí thư Tỉnh ủy, Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa
+3. Phùng Sỹ Các | Thường vụ Tỉnh ủy, Bí thư Huyện ủy huyện Hoằng Hóa, tỉnh Thanh Hóa, Ủy viên Ủy ban Pháp luật của Quốc hội
+4. Nguyễn Thị Cậy | Đảng ủy viên, công nhân sắp chữ bậc 5/7, Tổ trưởng sản xuất Xí nghiệp in Ba Đình Thanh Hóa
+5. Trần Diệp | Tổng Cục trưởng Tổng cục, Ủy viên Ủy ban Khoa học và Kỹ thuật của Quốc hội
+6. Lê Xuân Đức | Đại học tổng hợp Văn, Phó Chủ tịch Hội Văn học nghệ thuật Thanh Hóa, Ủy viên Ủy ban Thanh niên, Thiếu niên và Nhi đồng của Quốc hội
+7. Nguyễn Khắc Dương | Tỉnh Ủy viên, Đại tá, Phó chỉ huy trưởng Bộ Chỉ huy Quân sự tỉnh Thanh Hóa
+8. Cao Thị Hạnh | Bác sĩ đa khoa, Phó Bí thư Đảng ủy, Phó Giám đốc Bệnh viện huyện Cẩm Thủy, tỉnh Thanh Hóa
+9. Đinh Nho Liêm | Ủy viên Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Thứ trưởng Bộ Ngoại giao
+10. Đồng Sỹ Nguyên | Ủy viên Bộ Chính trị Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Phó Chủ tịch Hội đồng Bộ trưởng
+11. Phạm Văn Phụng | Thường vụ Đảng ủy xã, Chủ nhiệm Hợp tác xã nông nghiệp Nga Thủy, huyện Nga Sơn, tỉnh Thanh Hóa
+12. Nguyễn Nam Sơn | Huyện ủy viên, Giám đốc Lâm trường Thạch Thành, Thanh Hóa
+13. Nguyễn Thị Thanh | Thợ tiện, xã viên Hợp tác xã Cơ khí Thành công, thị xã Thanh Hóa, tỉnh Thanh Hóa
+14. Đặng Thí | Ủy viên Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Bộ trưởng, Chủ nhiệm Ủy ban hợp tác Kinh tế với Lào và Cămpuchia
+15. Phan Thu | Phó Giáo sư, Ủy viên dự khuyết Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Thiếu tướng, Viện trưởng Viện Kỹ thuật Quân sự, Thư ký Ủy ban Khoa học và Kỹ thuật của Quốc hội; Anh hùng Lực lượng vũ trang nhân dân
+16. Bùi Khắc Tiến | Thường vụ Đảng ủy, Quản đốc Phân xưởng Xí nghiệp Cơ khí Sông Chu, tỉnh Thanh Hóa
+17. Lê Văn Toàn | Tiến sỹ kinh tế, Tổng cục trưởng Tổng cục Thống kê; Phó Chủ nhiệm Ủy ban Kinh tế, Kế hoạch và Ngân sách của Quốc hội
+18. Nguyễn Xuân Trạc | Đảng ủy viên, Hiệu trưởng trường Phổ thông cơ sở xã Pù Nhi, huyện Quan Hóa, tỉnh Thanh Hóa, Ủy viên Ủy ban Văn hóa và Giáo dục của Quốc hội; Anh hùng Lao động
+19. Nguyễn Trí Thiệu | Thường vụ Đảng ủy xã, Chủ nhiệm Hợp tác xã Nông nghiệp Xuân Thành, huyện Thọ Xuân, tỉnh Thanh Hóa
+20. Nguyễn Đình Tứ | Ủy viên Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam, Viện trưởng Viện Năng lượng nguyên tử Quốc gia, Ủy viên Hội đồng Nhà nước, Chủ nhiệm Ủy ban Khoa học và kỹ thuật của Quốc hội
+21. Lê Thanh Từ | Phó Bí thư chi bộ, Chủ nhiệm Hợp tác xã đánh cá Quyết Thành, xã Quảng Nham, huyện Quảng Xương, tỉnh Thanh Hóa
+22. Lê Xuân Tuyến | Đảng ủy viên, Bí thư Chi bộ, Trưởng ban Kiểm soát HTX Nông nghiệp Ngọc Phú, xã Minh Sơn, huyện Ngọc Lặc, tỉnh Thanh Hóa, Ủy viên Hội đồng Dân tộc của Quốc hội
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa IX =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Nguyễn Thái Bá | Linh mục, Chủ tịch Ủy ban Đoàn kết Công giáo yêu nước Việt Nam
+2. Lê Văn Chỉ | Thường vụ Đảng ủy, Chủ nhiệm Hợp tác xã nông nghiệp xã Thiệu Đô, huyện Đông Sơn, tỉnh Thanh Hóa
+3. Nguyễn Thanh Chương | Thường vụ Đảng ủy, Phó Giám đốc thứ nhất Nhà máy Xi măng Bỉm Sơn, Ủy viên Ủy ban Kinh tế và Ngân sách của Quốc hội
+4. Lê Viết Dược | Tỉnh ủy viên, Giám đốc Xí nghiệp Liên hiệp Thuốc lá Thanh Hóa, Ủy viên Ủy ban Kinh tế và Ngân sách của Quốc hội
+5. Hà Thị Liên | Tỉnh Ủy viên, Ủy viên Ban Chấp hành Trung ương Đoàn Thanh niên Cộng sản Hồ Chí Minh, Bí thư Đoàn Thanh niên Cộng sản Hồ Chí Minh tỉnh Thanh Hóa, Ủy viên Hội đồng Dân tộc của Quốc hội
+6. Trịnh Xuân Mão | Kỹ sư Nông nghiệp, Tỉnh ủy viên, Giám đốc Sở Nông nghiệp tỉnh Thanh Hóa, Ủy viên Ủy ban Về các vấn đề xã hội của Quốc hội
+7. Đặng Nhật Minh | Tổng thư ký Hội Điện ảnh Việt Nam, Ủy viên Ủy ban Văn hóa, Giáo dục, Thanh niên, Thiếu niên và Nhi đồng của Quốc hội, Nghệ sỹ Ưu tú
+8. Hoàng Thị Ánh Nguyệt | Đảng ủy viên Đảng bộ cơ quan Sở Văn hóa – Thông tin, diễn viên Đoàn Cải lương Thanh Hóa
+9. Hoàng Ngọc Nhất | Thượng tá, Thường vụ Tỉnh ủy, Giám đốc Công an tỉnh Thanh Hóa, Ủy viên Ủy ban Quốc phòng và An ninh của Quốc hội
+10. Lê Khả Phiêu | Cao cấp Chính trị Quân sự, Bí thư Trung ương Đảng Cộng sản Việt Nam, Thượng tướng, Chủ nhiệm Tổng cục Chính trị Quân đội Nhân dân Việt Nam
+11. Phạm Ngọc Quang | Phó hiệu trưởng trường Phổ thông trung học Lam Sơn, thị xã Thanh Hóa, tỉnh Thanh Hóa
+12. Lê Văn Tam | Phó Tổng Giám đốc Liên hiệp Mía đường I, kiêm Giám đốc Nhà máy đường Lam Sơn, tỉnh Thanh Hóa
+13. Lương Ngọc Toản | Giáo sư, Tiến sỹ sinh học, Thứ trưởng Bộ Giáo dục và Đào tạo, Phó Chủ nhiệm Ủy ban Văn hóa, Giáo dục, Thanh niên, Thiếu niên và Nhi đồng của Quốc hội, Thư ký kỳ họp Quốc hội
+14. Lữ Văn Xiệt | Bác sĩ, Trưởng phòng Y tế kiêm Giám đốc Bệnh viện huyện Quan Hóa, Tỉnh Thanh Hóa
+15. Hà Đình Xô | Đảng ủy viên, Chủ nhiệm Hợp tác xã nông nghiệp xã Xuân Thành, huyện Thọ Xuân, tỉnh Thanh Hóa
+16. Nguyễn Thị Bạch Yến | Giáo viên trường Cao đẳng Kinh tế - Kỹ thuật tỉnh Thanh Hóa
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa X =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Lê Quang Bình | Uỷ viên Uỷ ban thường vụ Quốc hội, Chủ nhiệm Uỷ ban Quốc phòng và An ninh của Quốc hội
+2. Nguyễn Thanh Chương | Giám đốc Công ty Xi măng Bỉm Sơn, Ủy viên Ủy ban Kinh tế và Ngân sách của Quốc hội
+3. Lê Văn Diêu | Tiến sỹ Y khoa, Tỉnh ủy viên, Giám đốc sở Y tế, Chủ tịch Hội Y Dược học tỉnh Thanh Hóa, Ủy viên Ủy ban Về các vấn đề Xã hội của Quốc hội, Thầy thuốc ưu tú
+4. Lê Viết Dược | Phó Tổng giám đốc Tổng công ty Thuốc lá Việt Nam, Ủy viên Ủy ban Kinh tế và Ngân sách Quốc hội
+5. Lê Ngọc Hoàn | Bộ trưởng Bộ Giao thông vận tải
+6. Nguyễn Thị Hường | Giáo viên trường Cao đẳng sư phạm Thanh Hóa, Ủy viên Ủy ban Văn hóa, Giáo dục, Thanh niên, Thiếu niên và Nhi đồng của Quốc hội
+7. Lò Khâm Mao | Tỉnh ủy viên, Chủ tịch Ủy ban Mặt trận Tổ quốc tỉnh Thanh Hóa, Ủy viên Hội đồng Dân tộc của Quốc hội
+8. Mai Xuân Minh | Phó bí thư Tỉnh ủy, Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa
+9. Lê Thị Nga | Thẩm phán Tòa án nhân dân thành phố Thanh Hóa, tỉnh Thanh Hóa;Ủy viên Ủy ban Pháp luật của Quốc hội
+10. Lê Khả Phiêu | Ủy viên Thường vụ Thường trực Bộ Chính trị ( khóa VIII);Tổng Bí thư Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam khóa VIII (Hội nghị trung ương 4, khóa VIII bầu ngày 26-12-1997)
+11. Nguyễn Thị Phương | Giáo viên trường Phổ thông trung học Lam Sơn, tỉnh Thanh Hóa
+12. Trần Thị Phương | Phó Hiệu trưởng trường Phổ thông trung học huyện Ngọc Lặc, tỉnh Thanh Hóa
+13. Vũ Quốc Quế | Huyện ủy viên, Chủ tịch Ủy ban nhân dân xã Xuân Thiên, huyện Thọ Xuân, tỉnh Thanh Hóa
+14. Lê Văn Tam | Phó Tổng Giám đốc Công ty mía đường I Việt Nam, Giám đốc Công ty đường Lam Sơn, Thanh Hóa; Anh hùng Lao động
+15. Bùi Ngọc Thanh | Tiến sỹ Kinh tế và Tổ chức lao động, Cao cấp Lý luận chính trị, Cử nhân Thương mại, Phó Chủ nhiệm Ủy ban Về các vần đề Xã hội của Quốc hội, Thư ký kỳ họp Quốc hội: Phó Chủ tịch Hội Nghị sĩ về Dân số và Phát triển
+16. Trịnh Xuân Thu | Đại học An ninh, Cử nhân luật, Cử nhân Chính trị, Ủy viên Ban Thường vụ Tỉnh ủy, Thượng tá, Giám đốc Công an tỉnh Thanh Hóa, Ủy viên Ủy ban Quốc phòng và An ninh của Quốc hội
+17. Nguyễn Văn Tri | Ủy viên Ban Thường vụ Tỉnh ủy, Giám đốc Sở Khoa học Công nghệ và Môi trường tỉnh Thanh Hóa, Ủy viên Ủy ban Khoa học, Công nghệ và Môi trường của Quốc hội
+18. Vũ Đức Tú | Linh mục xứ Ngọc Sơn, xã Định Tường, huyện Yên Định, tỉnh Thanh Hóa
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa XI =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Bùi Văn Bịn | Cao cấp Quân sự, Đại tá, Anh hùng Vũ trang, Chủ tịch Hội Cựu chiến binh huyện Triệu Sơn, tỉnh Thanh Hóa
+2. Lê Quang Bình | Uỷ viên Uỷ ban thường vụ Quốc hội, Chủ nhiệm Uỷ ban Quốc phòng và An ninh của Quốc hội
+3. Lê Văn Cuông | Cử nhân chính trị, Chánh văn phòng Đoàn ĐBQH và HĐND tỉnh, Bí thư Đảng Ủy cơ quan Ủy ban nhân dân tỉnh Thanh Hóa, Ủy viên Ủy ban Khoa học Công nghệ và Môi trường của Quốc hội; Phó Trưởng Đoàn ĐBQH khóa XI tỉnh Thanh Hóa
+4. Lê Văn Diêu | Tiến sỹ Y khoa, Cao cấp lý luận Chính trị, Thầy thuốc ưu tú, Ủy viên Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam, Chủ tịch UBMTTQ tỉnh Thanh Hóa; Phó Chủ nhiệm Ủy ban Về các vấn đề Xã hội của Quốc hội
+5. Lương Thị Hoa | Phó Bí thư Chi đoàn, Ủy viên Ban Chấp hành Đoàn trường, giáo viện trường Phổ thông trung học huyện Như Thanh, tỉnh Thanh Hóa, Ủy viên Hội đồng Dân tộc của Quốc hội
+6. Phạm Thị Hoa | Bác sỹ Y khoa, Trung tâm Y tế huyện Quan Hóa, tỉnh Thanh Hóa
+7. Trần Thị Thanh Huyền | Giáo viên trường Trung học Văn hóa Nghệ thuật tỉnh Thanh Hóa, Ủy viên Ủy ban Văn hóa, Giáo dục, Thanh niên, Thiếu niên, và Nhi đồng của Quốc hội
+8. Bùi Sỹ Lợi | Tỉnh ủy viên, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Ban Cán sự Đảng, Giám đốc Sở Lao động – Thương binh và Xã hội tỉnh Thanh Hóa, Ủy viên Ủy ban Về các vấn đề Xã hội của Quốc hội
+9. Lê Thị Nga | Phó chánh án Tòa án Nhân dân thành phố Thanh Hóa, tỉnh Thanh Hóa; Ủy viên Ủy ban Pháp luật của Quốc hội
+10. Dương Ngọc Ngưu | Cao cấp Lý luận chính trị, Ủy viên Chuyên trách Ủy ban Pháp luật của Quốc hội
+11. Nguyễn Xuân Nguyên | Ủy viên Ban Chấp hành Trung ương Đảng, Ủy viên Hội đồng Quốc phòng và An ninh, Bộ trưởng Bộ Ngoại giao nước CHXHXN Việt Nam
+12. Nguyễn Văn Phát | Ủy viên Ban cán sự Đảng, Phó Giám đốc Sở Khoa học Công nghệ - Môi trường tỉnh Thanh Hóa, Ủy viên Ủy ban Đối ngoại của Quốc hội
+13. Võ Hồng Phúc | Uỷ viên Ban chấp hành Trung ương Đảng, Bộ trưởng Bộ Kế hoạch và Đầu tư
+14. Lê Hữu Sinh | Cao cấp Quân sự, cao cấp Lý luận chính trị, Ủy viên Ban Thường vụ Tỉnh ủy, Ủy viên Ủy ban nhân dân tỉnh, Phó Bí thư Đảng ủy Quân sự tỉnh, Đại tá, Chỉ huy trưởng Bộ chỉ huy Quân sự Thanh Hóa
+15. Bùi Ngọc Thanh | Ủy viên Ủy ban Thường vụ Quốc hội, Chủ nhiệm Văn phòng Quốc hội, Trưởng đoàn Thư ký kỳ họp Quốc hội
+16. Vũ Trung Thịnh | Cử nhân Chính trị, kỹ sư máy hóa, kỹ sư công nghệ đường, Phó Bí thư Đảng ủy, Phó Chủ tịch Hội đồng quản trị, Tổng Giám đốc điều hành Công ty Cổ phần Mía Đường Lam Sơn, tỉnh Thanh Hóa
+17. Trịnh Xuân Thu | (Cổng chưa ghi chức vụ)
+18. Phạm Văn Tích | Cao cấp lý luận Chính trị, Phó Bí thư Thường trực Tỉnh ủy, Chủ tịch Hội đồng nhân dân tỉnh, Trưởng đoàn Đại biểu Quốc hội tỉnh Thanh Hóa, Ủy viên Ủy ban Kinh tế và Ngân sách của Quốc hội
+19. Nguyễn Văn Tri | Cao cấp Lý luận chính trị, Ủy viên Ban Thường vụ Tỉnh ủy, Phó Chủ tịch HĐND tỉnh Thanh Hóa, Phó Chủ nhiệm Ủy ban Khoa học, Công nghệ và Môi trường của Quốc hội
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa XII =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Lê Quang Bình | Uỷ viên Uỷ ban thường vụ Quốc hội, Chủ nhiệm Uỷ ban Quốc phòng và An ninh của Quốc hội
+2. Lê Văn Cuông | Phó Trưởng đoàn chuyên trách Đoàn đại biểu Quốc hội tỉnh Thanh Hoá; Uỷ viên Uỷ ban Khoa học, Công nghệ và Môi trường của Quốc hội
+3. Trịnh Thị Giới | Tỉnh uỷ viên, Chủ tịch Liên đoàn Lao động tỉnh Thanh Hoá, Uỷ viên Hội đồng
+4. Lê Ngọc Hân | Tỉnh uỷ viên, Chủ tịch Liên đoàn Lao động tỉnh Thanh Hoá, Uỷ viên Hội đồng Dân tộc của Quốc hội
+5. Phạm Thị Hoa | Phó Chủ tịch UBND huyện Quan Hoá, tỉnh Thanh Hoá
+6. Vũ Duy Hoà | Tỉnh uỷ viên, Viện trưởng Viện kiểm sát nhân dân tỉnh Thanh Hoá; Uỷ viên Uỷ ban Tư pháp của Quốc hội
+7. Trương Văn Khoa | Chủ tịch Hội cựu chiến binh huyện Bá Thước, tỉnh Thanh Hoá
+8. Nguyễn Anh Liên | Uỷ viên Uỷ ban Trung ương Mặt trận Tổ quốc Việt Nam, Chủ tịch Hội Cựu Thanh niên xung phong Việt Nam
+9. Bùi Sỹ Lợi | Phó Chủ nhiệm Uỷ ban về các vấn đề xã hội của Quốc hội
+10. Nguyễn Thị Lý | Giám đốc xí nghiệp Tự Lập, Đông Hưng, Đông Sơn, Thanh Hoá
+11. Dương Ngọc Ngưu | Phó Chủ nhiệm Uỷ ban Tư pháp của Quốc hội
+12. Nguyễn Văn Phát | Tỉnh uỷ viên, Hiệu trưởng Trường Đại học Hồng Đức, tỉnh T.Hoá; Uỷ viên Uỷ ban Khoa học, Công nghệ và Môi trường của QH
+13. Đinh Tiên Phong | Phó Bí thư Tỉnh ủy Thanh Hoá; Uỷ viên Uỷ ban Quốc phòng và An ninh của Quốc hội
+14. Võ Hồng Phúc | Uỷ viên Ban chấp hành Trung ương Đảng, Bộ trưởng Bộ Kế hoạch và Đầu tư
+15. Nguyễn Đình Phùng | Phó Trưởng đoàn chuyên trách Đoàn Đại biểu Quốc hội tỉnh Thanh Hoá; Uỷ viên Uỷ ban Văn hoá, Giáo dục, Thanh niên, Thiếu niên và Nhi đồng của Quốc hội
+16. Tô Huy Rứa | Ủy viên Bộ chính trị, Bí thư Trung ương Đảng, Trưởng Ban Tổ chức Trung ương
+17. Lê Hồng Sơn | Phó Cục trưởng, Cục người có công, Bộ Lao động- Thương binh- xã hội
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa XIII =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Nguyễn Thành Bộ | Chánh án Tòa án nhân dân tỉnh
+2. Lê Quang Hiệp | Ủy viên Ban chấp hành Đảng ủy Tập đoàn phát triển nhà và đô thị, Bí thư Đảng ủy, Chủ tịch Hội đồng quản trị
+3. Đặng Văn Hiếu | Ủy viên Ban chấp hành Trung ương Đảng, Trung tướng, Thứ trưởng Bộ
+4. Lê Thị Hương | Giáo viên Trung học phổ thông
+5. Bùi Sỹ Lợi | Phó Chủ nhiệm Ủy ban về các vấn đề xã hội của Quốc hội, Ủy viên Ban thường vụ Đảng ủy cơ quan Văn phòng Quốc hội, Bí thư Chi bộ Vụ các vấn đề xã hội
+6. Uông Chu Lưu | Ủy viên Ban chấp hành Trung ương Đảng, Ủy viên Đảng đoàn Quốc hội, Phó Chủ tịch Quốc hội
+7. Lê Nam | Tỉnh ủy viên, Phó Trưởng Đoàn ĐBQH tỉnh Thanh Hóa
+8. Đinh Tiên Phong | Phó bí thư tỉnh ủy tỉnh Thanh Hóa
+9. Nguyễn Hữu Quang | Phó Tổng giám đốc Tổng công ty công nghiệp xi măng Việt Nam
+10. Đinh La Thăng | Ủy viên Ban chấp hành Trung ương Đảng, Chủ tịch Hội đồng thành viên
+11. Lê Minh Thông | Vụ trưởng Vụ Đào tạo, bồi dưỡng cán bộ, Ban tổ chức Trung ương, Ủy viên Ban chấp hành Đảng bộ cơ quan Ban Tổ chức Trung ương, Ủy viên Hội đồng lý luận Trung ương khóa X
+12. Phạm Trí Thức | Vụ trưởng - Giám đốc Trung tâm thông tin khoa học, Viện Nghiên cứu lập pháp thuộc Ủy ban Thường vụ Quốc hội
+13. Hà Thị Vân | Ủy viên Ban chấp hành đảng ủy,Chủ tịch công đoàn, Phó giám đốc Bệnh viện đa khoa
+14. Cao Thị Xuân | Tỉnh ủy viên, Ủy viên Ban chấp hành Trung ương hội, Ủy viên Ban thường vụ Đảng ủy khối các cơ quan tỉnh, Chủ tịch Hội Liên hiệp phụ nữ
+15. Trịnh Xuyên | Thường vụ tỉnh ủy, Đại tá, Bí thư Đảng ủy, Giám đốc Công an tỉnh Thanh Hóa
+16. Đào Xuân Yên | Tỉnh ủy viên, Ủy viên Ban chấp hành Trung ương Đoàn, Bí thư tỉnh đoàn
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa XIV =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+(Cổng chưa có danh sách khóa này)
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa XV =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Lương Cường | Ủy viên Bộ Chính trị, Ủy viên Thường vụ Quân ủy Trung ương, Đại tướng, Chủ nhiệm Tổng cục Chính trị Quân đội nhân dân Việt Nam
+2. Lê Văn Cường | Ủy viên Ủy ban Xã hội của Quốc hội, Bác sĩ Y khoa, Phó Giám đốc Sở Y tế
+3. Đào Ngọc Dung | Ủy viên Trung ương Đảng, Bí thư Ban cán sự Đảng, Bộ trưởng Bộ Lao động - Thương binh và Xã hội
+4. Mai Văn Hải | Ủy viên Ủy ban Kinh tế của Quốc hội, Tỉnh ủy viên, Phó Trưởng Đoàn đại biểu Quốc hội tỉnh Thanh Hóa khóa XV
+5. Lê Thanh Hoàn | Ủy viên chuyên trách Ủy ban Pháp luật của Quốc hội
+6. Vũ Xuân Hùng | Ủy viên Thường trực Ủy ban Quốc phòng và An ninh của Quốc hội, Đại tá
+7. Bùi Mạnh Khoa | Ủy viên chuyên trách Ủy ban Pháp luật của Quốc hội
+8. Cao Mạnh Linh | Ủy viên chuyên trách Ủy ban Tư pháp của Quốc hội
+9. Cầm Thị Mẫn | Ủy viên Hội đồng Dân tộc của Quốc hội, Phó Bí thư Đảng bộ Văn phòng Đoàn đại biểu Quốc hội và Hội đồng nhân dân tỉnh, Đại biểu Quốc hội chuyên trách thuộc Đoàn đại biểu Quốc hội tỉnh Thanh Hóa
+10. Lại Thế Nguyên | Ủy viên Ủy ban Tài chính – Ngân sách của Quốc hội, Phó Bí thư Thường trực Tỉnh ủy, Chủ tịch HĐND tỉnh, Trưởng Đoàn đại biểu Quốc hội tỉnh Thanh Hóa khóa XV
+11. Võ Mạnh Sơn | Ủy viên Ủy ban Xã hội của Quốc hội, Tỉnh ủy viên, Ủy viên Ủy ban Chấp hành Tổng Liên đoàn Lao động Việt Nam, Bí thư Đảng đoàn, Bí thư Đảng ủy cơ quan; Chủ tịch Liên đoàn Lao động tỉnh Thanh Hóa
+12. Trần Văn Thức | Ủy viên Ủy ban Văn hóa, Giáo dục của Quốc hội, Tỉnh ủy viên, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Giáo dục và Đào tạo Thanh Hóa
+13. Cao Thị Xuân | Phó Chủ tịch Hội đồng Dân tộc của Quốc hội
+14. Phạm Thị Xuân | Ủy viên Ủy ban Pháp luật của Quốc hội, Trưởng phòng Kinh tế - Hạ tầng UBND xã Hồi Xuân, Thanh Hóa
+
+
+===== Đại biểu Quốc hội tỉnh Thanh Hóa khóa XVI =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu-qh/default.aspx
+
+1. Bùi Mạnh Khoa | Ủy viên là đại biểu Quốc hội hoạt động chuyên trách tại Ủy ban Pháp luật và Tư pháp của Quốc hội; Phó Chủ tịch nhóm Nghị sỹ hữu nghị Việt Nam - Thụy Điển
+2. Bùi Văn Dũng | Ủy viên là đại biểu Quốc hội hoạt động chuyên trách tại Ủy ban Kinh tế và Tài chính của Quốc hội khóa XVI
+3. Cao Mạnh Linh | Phó Chủ nhiệm Ủy ban Dân nguyện và Giám sát của Quốc hội
+4. Lê Đức Thái | Ủy viên Ban Chấp hành Trung ương Đảng, Bí thư Tỉnh ủy, Trưởng Đoàn ĐBQH tỉnh Thanh Hóa
+5. Lê Thanh Hoàn | Ủy viên là đại biểu Quốc hội hoạt động chuyên trách tại Ủy ban Pháp luật và Tư pháp của Quốc hội; Phó Chủ tịch Nhóm Nghị sĩ hữu nghị Việt Nam - Venezuel a; Ủy viên Nhóm đại biểu Quốc hội trẻ
+6. Lê Văn Cường | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Bí thư Đảng ủy, Giám đốc Sở Y tế tỉnh Thanh Hóa
+7. Lương Thị Hoa | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Phó Trưởng Đoàn ĐBQH tỉnh Thanh Hóa
+8. Nguyễn Doãn Anh | Ủy viên Ban Chấp hành Trung ương Đảng, Phó Chủ tịch Quốc hội
+9. Nguyễn Lê Ngọc Linh | Giám đốc Hợp tác xã Bản Thổ; Ủy viên Hội nông dân xã Hóa Quỳ; Ủy viên Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Ủy viên Ban Chấp hành Hội nông dân tỉnh Thanh Hóa
+10. Phạm Công Nguyên | Bí thư Đảng ủy Cục Pháp chế và cải cách hành chính, tư pháp trực thuộc Đảng bộ Công an Trung ương; Trung tướng, Cục trưởng Cục Pháp chế và cải cách hành chính, tư pháp - Bộ Công an
+11. Phạm Thế Anh | Ủy viên Ban Thường vụ Đảng ủy, Trưởng phòng Tổ chức - Hành chính - Quản trị , Trường Đại học Hồng Đức
+12. Phạm Văn Sâm | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Phó Bí thư Thường trực Đảng ủy Quân sự tỉnh, Đại tá, Chính ủy, Bộ Chỉ huy Quân sự tỉnh Thanh Hóa
+13. Phan Thị Thùy Linh | Ủy viên hoạt động chuyên trách Ủy ban Văn hóa và Xã hội của Quốc hội
+14. Trần Thế Kính | Vụ trưởng Vụ kiểm sát án dân sự, Viện kiểm sát nhân dân tối cao
+15. Triệu Thế Hùng | Phó Chủ nhiệm Ủy ban Văn hóa và Xã hội của Quốc hội
+16. Vũ Tiến Dũng | Ủy viên Ban Chấp hành Đảng bộ Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa, Phó Chủ tịch Hội Nông dân tỉnh Thanh Hóa, Bí thư Chi bộ, Trưởng Ban Công tác Nông dân
+17. Cao Thị Xuân | Ủy viên Ban Chấp hành Đảng bộ, Phó Chủ tịch Hội đồng Dân tộc của Quốc hội; Chủ tịch Nhóm Nghị sĩ hữu nghị Việt Nam - Romania
+
+
+===== Đại biểu HĐND tỉnh Thanh Hóa khóa XVI =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu/default.aspx
+
+1. Nguyễn Mạnh An | Tỉnh ủy viên, Hiệu trưởng trường Đại học Hồng Đức
+2. Nguyễn Văn Ấp | Bí thư Huyện ủy, Chủ tịch HĐND huyện Hậu Lộc. Thành viên Ban pháp chế HĐND tỉnh
+3. Lê Văn Biền | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Thọ Xuân
+4. Hoàng Sỹ Bình | Tỉnh ủy viên – Giám đốc sở Y tế
+5. Bùi Đình Cam | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Nga Sơn
+6. Trịnh Văn Chiến | Bí thư Tỉnh ủy, Chủ tịch HĐND tỉnh
+7. Cao Văn Cường | Giám đốc Ban quản lư Khu bảo tồn thiên nhiên Pù Luông
+8. Hoàng Thị Dạn | Bí thư Đảng ủy, Chủ tịch HĐND xă Thọ Nguyên, Thọ Xuân
+9. Trần Quang Đảng | Thường vụ Tỉnh ủy, Chủ nhiệm Ủy ban Kiểm tra Tỉnh ủy. Trưởng Ban pháp chế HĐND tỉnh
+10. Nguyễn Văn Đệ | Ủy viên UBTWMTTQ Việt Nam, Chủ tịch HĐQT – Tổng Giám đốc Tổng công ty cổ phần Hợp Lực
+11. Lang Thanh Doãn | Chủ tịch UBND xă Bát Mọt
+12. Lê Nhân Đồng | Phó Trưởng Ban dân tộc (chuyên trách) HĐND tỉnh
+13. Thích Tâm Đức | Trưởng Ban trị sự Tỉnh hội Phật giáo Thanh Hóa
+14. Quách Thị Dung | Làm ruộng xă Thành Vân
+15. Nguyễn Xuân Dũng | Tỉnh ủy viên, Ủy viên UBND tỉnh, Giám đốc sở Nội vụ
+16. Lê Văn Dũng | Chánh Văn phòng Đoàn ĐBQH và HĐND tỉnh
+17. Trịnh Ngọc Giao | Tỉnh ủy viên, Chủ tịch Ủy ban MTTQ Việt Nam tỉnh Thanh Hóa. Thành viên Ban văn hóa – xă hội HĐND tỉnh
+18. Phạm Thị Hà | Hiệu trưởng trường THPT Dân tộc nội trú tỉnh Thanh Hóa. Thành viên Ban dân tộc HĐND tỉnh
+19. Lê Thanh Hải | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Như Xuân. Thành viên Ban văn hóa – xă hội HĐND tỉnh
+20. Phạm Thị Hằng | Tỉnh ủy viên, Phó Giám đốc sở Giáo dục và Đào tạo. Thư ký kỳ họp HĐND tỉnh
+21. Lê Minh Hành | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Lang Chánh. Thành viên Ban dân tộc HĐND tỉnh
+22. Ngô Thị Hoa | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Yên Định. Thành viên Ban kinh tế và ngân sách HĐND tỉnh
+23. Trần Văn Hòa | Thường vụ Tỉnh ủy, Trưởng
+24. Vũ Duy Hòa | Tỉnh ủy viên. Viện trưởng Viện kiểm sát nhân dân tỉnh
+25. Hoàng Văn Hoằng | Phó Bí thư Thường trực Tỉnh ủy
+26. Võ Mạnh Hùng | Phó Giám đốc Bệnh viện phụ sản Thanh Hóa. Thành viên Ban văn hóa – xă hội HĐND tỉnh
+27. Nguyễn Văn Hùng | Phó Giám đốc sở Công thương. Thành viên Ban kinh tế và ngân sách HĐND tỉnh
+28. Đỗ Trọng Hưng | Thường vụ Tỉnh ủy, Trưởng Ban Tuyên giáo Tỉnh ủy, Trưởng Ban văn hóa – xă hội HĐND tỉnh
+29. Lê Thị Ích | Bí thư Đảng ủy, Chánh Văn pḥng Đoàn ĐBQH và HĐND tỉnh, Ủy viên Đảng đoàn HĐND tỉnh
+30. Lục Đăng Khoa | Bí thư Huyện ủy, Chủ tịch HĐND huyện Thường Xuân. Thành viên Ban dân tộc HĐND tỉnh
+31. Hà Thanh Khứt | Bí thư Huyện ủy, Chủ tịch HĐND huyện Bá Thước. Thành viên Ban dân tộc HĐND tỉnh
+32. Nguyễn Đức Kiền | Ủy viên BCHTW Hội Cựu chiến binh Việt Nam, Chủ tịch Hội Cựu chiến binh tỉnh Thanh Hóa
+33. Lê Tiến Lam | Phó Trưởng Ban (chuyên trách) kinh tế và ngân sách HĐND tỉnh
+34. Dương Thị Lan | Giáo viên trường Mầm non thị trấn Cẩm Thủy
+35. Lâu Dị Lênh | Bí thư Đảng ủy xã Nhi Sơn, huyện Mường Lát
+36. Nguyễn Thị Liên | Giáo viên Trường trung học phổ thông Quảng Xương I
+37. Nguyễn Ngọc Liệu | Phó Trưởng Ban (chuyên trách) pháp chế HĐND tỉnh
+38. Phạm Văn Liệu | Giảng viên, Bí thư Đảng bộ, Hiệu trưởng trường Cao đẳng Thể dục – Thể thao
+39. Trịnh Thị Loan | Chủ tịch Hội đồng quản trị. Giám đốc Công ty cổ phần Dạ Lan
+40. Lê Ngọc Long | Ủy viên Thường vụ Đảng ủy, Phó Chỉ huy trưởng Bộ đội Biên phòng tỉnh
+41. Phạm Văn Luân | Đại tá, Phó Bí thư Thường trực Đảng ủy, Chính ủy Bộ Chỉ huy Quân sự tỉnh
+42. Trịnh Xuân Lương | Phó Chủ tịch kiêm Tổng thư kư Liên hiệp các Hội khoa học và Kỹ thuật Thanh Hóa
+43. Hoàng Văn Lưu | Tỉnh ủy viên, Ủy viên BCHTW Hội Nông dân Việt Nam; Bí thư Đảng đoàn, Chủ tịch Hội Nông dân tỉnh Thành viên Ban dân tộc HĐND tỉnh
+44. Linh mục TRẦN XUÂN MẠNH | Chủ tịch Ủy ban đoàn kết Công giáo tỉnh Thanh Hóa. Nhà thờ Xứ Điền Hộ, Nga Điền, Nga Sơn. Thành viên Ban văn hóa – xă hội HĐND tỉnh
+45. Lò Đình Múi | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Quan Sơn
+46. Mai Công Nam | Phó Chủ tịch Hội Cựu chiến binh huyện Tĩnh Gia
+47. Trần Văn Ngùy | Bí thư Đảng ủy, Chủ tịch HĐND xă Định Tường, Yên Định
+48. Lại Thế Nguyên | Tỉnh ủy viên, Bí thư Đảng ủy, Chánh Văn pḥng Tỉnh ủy
+49. Cao Minh Nguyệt | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Quan Hóa. Thành viên Ban pháp chế HĐND tỉnh
+50. Trịnh Xuân Như | Bí thư Đảng ủy, Giám đốc Công ty Điện lực Thanh Hóa
+51. Mai Văn Ninh | Ủy viên BCH Trung ương Đảng, Bí thư Tỉnh ủy, Bí thư Đảng đoàn HĐND, Chủ tịch HĐND tỉnh
+52. Phạm Bá Oai | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Hoằng Hóa
+53. Nguyễn Văn Phát | Bí thư Huyện ủy Đông Sơn
+54. Nguyễn Xuân Phi | Thường vụ Tỉnh ủy, Bí thư Thành ủy, Chủ tịch HĐND thành phố Thanh Hóa
+55. Đinh Tiên Phong | Phó Bí thư Tỉnh ủy. Trưởng Đoàn đại biểu Quốc hội Thanh Hóa khóa XIII
+56. Trần B̀ình Quân | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Triệu Sơn
+57. Đỗ Minh Qúy | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Thạch Thành. Thành viên Ban kinh tế và ngân sách HĐND tỉnh
+58. Nguyễn Đức Quyền | Thường vụ Tỉnh ủy, Phó Chủ tịch UBND tỉnh
+59. Phạm Đăng Quyền | Tỉnh ủy viên, Phó Chủ tịch UBND tỉnh
+60. Võ Duy Sang | Tỉnh ủy viên, Bí thư Thị ủy, Chủ tịch HĐND thị xă Sầm Sơn. Thành viên Ban kinh tế và ngân sách HĐND tỉnh
+61. Trịnh Tuấn Sinh | Tỉnh ủy viên, Giám đốc sở Giao thông – Vận tải Thanh Hóa
+62. Phạm Thanh Sơn | Uỷ viên Ban Thường vụ Tỉnh uỷ, Phó Chủ tịch HĐND tỉnh
+63. Ngô Tôn Tẫn | Tỉnh ủy viên, Phó Chủ tịch Thường trực Liên đoàn Lao động tỉnh. Thành viên Ban văn hóa – xă hội HĐND tỉnh
+64. Đỗ Thanh | Giám đốc sở Thông tin và Truyền thông tỉnh Thanh Hóa
+65. Trần Đức Thanh | Ủy viên Đảng đoàn, Ủy viên Thường trực HĐND tỉnh Thanh Hóa
+66. Nguyễn Văn Thành | Tỉnh ủy viên, Trưởng ban Dân vận Tỉnh ủy; Trưởng ban Dân tộc HĐND tỉnh
+67. Trần Văn Thành | Phó Giám đốc Ngân hàng Nông nghiệp và Phát triển nông thôn tỉnh. Thành viên Ban kinh tế và ngân sách HĐND tỉnh
+68. Lê Văn Thiêm | Tỉnh ủy viên, Phó Chánh Thanh tra tỉnh. Thành viên Ban pháp chế HĐND tỉnh
+69. Lê Thị Thìn | Thường vụ Tỉnh ủy, Phó Chủ tịch UBND tỉnh
+70. Lương Minh Thông | Bí thư Huyện ủy, Chủ tịch HĐND huyện Mường Lát
+71. Trần Văn Thuấn | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Nông Cống
+72. Phan Thanh Thuận | Phó Bí thư thường trực Huyện ủy, Chủ tịch HĐND huyện Đông Sơn. Thành viên Ban pháp chế HĐND tỉnh
+73. Nguyễn Xuân Thủy | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Tĩnh Gia
+74. Nguyễn Ngọc Tiến | Phó Bí thư Tỉnh đoàn TNCS Hồ Chí Minh tỉnh Thanh Hóa. Thành viên Thư kư kỳ họp HĐND tỉnh
+75. Hoàng Văn Toản | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Thiệu Hóa
+76. Đỗ Minh Tuấn | Thường vụ Tỉnh ủy, Bí thư Đảng ủy khối các cơ quan tỉnh Thanh Hóa
+77. Nguyễn Anh Tuấn | Phó Trưởng Ban văn hóa – xă hội (chuyên trách) HĐND tỉnh
+78. Đào Anh Tuấn | Chấp hành viên, Cục Trưởng thi hành án dân sự tỉnh Thanh Hóa. Thành viên Ban pháp chế HĐND tỉnh
+79. Trần Văn Tuấn | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Như Thanh. Thảnh viên Ban dân tộc HĐND tỉnh
+80. Lê Đình Tuấn | Phó Trưởng Ban Dân vận Tỉnh ủy. Thành viên Ban pháp chế HĐND tỉnh
+81. Nguyễn Văn Tuấn | Tỉnh ủy viên, Giám đốc sở Văn hóa – Thể thao và Du lịch. Thành viên Ban văn hóa – xă hội HĐND tỉnh
+82. Ngô Văn Tuấn | Bí thư Đảng ủy, Giám đốc sở Xây dựng Thanh Hóa
+83. Nguyễn Quốc Tuấn | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Hà Trung. Thành viên Ban kinh tế và ngân sách HĐND tỉnh
+84. Lê Thanh Tùng | Bí thư Đảng ủy, Phó Tổng Giám đốc Công ty cổ phần Mía đường Lam Sơn, Thanh Hóa
+85. Đinh Cẩm Vân | Tỉnh ủy viên, Giám đốc sở Tài chính Thanh Hóa
+86. Phùng Bá Văn | Thường vụ Tỉnh ủy, Trưởng Ban Tổ chức Tỉnh ủy. Trưởng Ban kinh tế và ngân sách, Ủy viên Đảng đoàn HĐND tỉnh
+87. Vũ Khoa Việt | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Quảng Xương
+88. Nguyễn Bình Vũ | Thường vụ Tỉnh ủy, Ủy viên UBND tỉnh, Giám đốc sở Kế hoạch và Đầu tư
+89. Vũ Đình Xinh | Tỉnh ủy viên, Giám đốc sở Tài nguyên và Môi trường Thanh Hóa
+90. Cao Thị Xuân | Tỉnh ủy viên, Bí thư Huyện ủy Quan Hóa. Trưởng Ban dân tộc HĐND tỉnh
+91. Nguyễn Thị Thanh Xuân | Tỉnh ủy viên, Giám đốc sở Lao động – Thương binh và Xă hội Thanh Hóa Thành viên Ban văn hóa – xă hội HĐND tỉnh
+92. Nguyễn Đình Xứng | Phó Bí thư Tỉnh ủy, Chủ tịch UBND tỉnh
+93. Trịnh Xuyên | Thường vụ Tỉnh ủy, Ủy viên UBND tỉnh, Bí thư Đảng bộ, Giám đốc Công an tỉnh Thanh Hóa
+
+
+===== Đại biểu HĐND tỉnh Thanh Hóa khóa XVII =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu/default.aspx
+
+1. Nguyễn Văn Ấp | Bí thư Huyện ủy, Chủ tịch HĐND huyện Hậu Lộc
+2. Phạm Quốc Bảo | Phó Chánh án Tòa án nhân dân tỉnh. Ủy viên Ban pháp chế Hội đồng nhân dân tỉnh
+3. Đỗ Quốc Cảnh | Tỉnh ủy viên, Chánh Văn phòng Tỉnh ủy
+4. Cầm Bá Chái | Ủy viên chuyên trách Ban dân tộc Hội đồng nhân dân tỉnh
+5. Lê Hoài Châu | Giám đốc, Tổng Biên tập Đài phát thanh - Truyền hình Thanh Hóa, Ủy viên Ban văn hóa – xã hội HĐND tỉnh
+6. Cầm Bá Chiến | Bí thư Đảng ủy, Chủ tịch Hội đồng nhân dân xã Vạn Xuân
+7. Trịnh Văn Chiến | Nguyên Ủy viên TW Đảng, nguyên Bí thư Tỉnh ủy, nguyên Bí thư Đảng đoàn HĐND, nguyên Chủ tịch Hội đồng nhân dân tỉnh
+8. Lê Ngọc Chiến | Bí thư Đảng ủy Khối doanh nghiệp tỉnh
+9. Trần Văn Công | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Quảng Xương
+10. Trần Quang Đảng | Nguyên Thường vụ Tỉnh ủy, nguyên Chủ nhiệm UBKT Tỉnh ủy, nguyên Ủy viên Thường trực HĐND tỉnh, Nguyên Ủy viên Đảng đoàn HĐND, nguyên Trưởng Ban pháp chế HĐND tỉnh
+11. Nguyễn Văn Đệ | Chủ tịch Hiệp hội doanh nghiệp tỉnh, Chủ tịch HĐQT – Tổng Giám đốc Tổng công ty cổ phần Hợp Lực
+12. Phạm Bá Diệm | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Quan Hóa, Ủy viên Ban dân tộc HĐND tỉnh
+13. Lê Ngọc Diện | Đại tá, Chỉ huy trưởng Bộ Chỉ huy quân sự tỉnh
+14. Lê Nhân Đồng | Nguyên Phó Trưởng Ban dân tộc (chuyên trách) HĐND tỉnh
+15. Cao Thị Dung | Bác sỹ Bệnh viện Đa khoa khu vực Ngọc Lặc
+16. Nguyễn Tiến Dũng | Phó Bí thư Huyện ủy, Chủ tịch Ủy ban nhân dân huyện Tĩnh Gia
+17. Trịnh Ngọc Dũng | Tỉnh ủy viên, Ủy viên Ủy ban nhân dân tỉnh, Giám đốc Sở Lao động – Thương binh và Xã hội Thanh Hóa
+18. Lê Đức Giang | Giám đốc Sở Nông nghiệp và Phát triển nông thôn; Ủy viên Ban kinh tế - ngân sách HĐND tỉnh
+19. Hàn Văn Hải | Nghệ sỹ nhân dân. Phó Trưởng Đoàn nghệ thuật chèo Thanh Hóa
+20. Lê Đình Hải | Phó Bí thư Huyện ủy, Chủ tịch Ủy ban nhân dân huyện Thọ Xuân
+21. Mai Văn Hải | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Nga Sơn
+22. Nguyễn Quang Hải | Bí thư Huyện ủy, Chủ tịch HĐND huyện Đông Sơn
+23. Phạm Thị Hằng | Tỉnh ủy viên, Ủy viên Ủy ban nhân dân tỉnh, Giám đốc sở Giáo dục và Đào tạo
+24. Lê Thị Như Hoa | Ủy viên chuyên trách Ban văn hóa – xã hội HĐND tỉnh
+25. Lê Thị Hồng | Cán bộ chuyên trách xã Tân Trường, Tĩnh Gia
+26. Thích Tâm Đức | Trưởng Ban trị sự Tỉnh hội Phật giáo Việt Nam tỉnh Thanh Hóa, Ủy viên Ban văn hóa – xã hội HĐND tỉnh
+27. Lê Quang Hùng | Thường vụ Tỉnh ủy, Chủ nhiệm UBKT Tỉnh ủy
+28. Nguyễn Văn Hùng | Phó Giám đốc sở Công thương, Chi cục Trưởng Chi cục quản lý thị trường
+29. Trịnh Hữu Hùng | Tỉnh ủy viên, Ủy viên Ủy ban nhân dân tỉnh, Giám đốc sở Y tế
+30. Đỗ Trọng Hưng | Ủy viên BCH TW Đảng, Bí thư Tỉnh ủy, Trưởng Đoàn đại biểu Quốc hội tỉnh Thanh Hóa khóa XIV (2016 – 2021), Chủ tịch HĐND tỉnh khóa XVII, nhiệm kỳ 2016 - 2021
+31. Hà Thị Lan Hương | Phó Chủ tịch Hội Nông dân tỉnh Thanh Hóa. Ủy viên Ban dân tộc HĐND tỉnh
+32. Lê Thị Hương | Ủy viên chuyên trách Ban pháp chế HĐND tỉnh
+33. Đinh Xuân Hướng | Chủ tịch UBND huyện Như Thanh; Ủy viên Ban kinh tế - ngân sách HĐND tỉnh
+34. Trương Văn Lịch | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Bá Thước, Ủy viên Ban dân tộc HĐND tỉnh
+35. Trịnh Thị Loan | Chủ tịch Hội đồng quản trị, Giám đốc Công ty cổ phần Dạ Lan
+36. Phạm Đăng Lực | Bí thư Huyện ủy, Chủ tịch HĐND huyện Lang Chánh
+37. Bùi Thị Lương | Kế toán HTX kinh doanh dịch vụ nông nghiệp Thành Long
+38. Hoàng Thị Mai | Phó Hiệu trưởng trường Đại học Hồng Đức, Ủy viên Ban văn hóa – xã hội Hội đồng nhân dân tỉnh
+39. Dương Văn Mạnh | Bí thư Huyện ủy, Chủ tịch Hội đồng nhân dân huyện Như Xuân. Ủy viên Ban pháp chế HĐND tỉnh
+40. Linh mục TRẦN XUÂN MẠNH | Phó Chủ tịch kiêm Tổng thư ký Ủy ban đoàn kết công giáo Việt Nam (Nhà thờ Phúc Lãng, xã Quảng Trung, Quảng Xương)
+41. Bùi Thị Mười | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Thạch Thành, Ủy viên Ban dân tộc HĐND tỉnh
+42. Đỗ Xuân Nam | Bí thư Huyện ủy, Chủ tịch HĐND huyện Thường Xuân, Ủy viên Ban dân tộc HĐND tỉnh
+43. Lưu Thị Nga | Công chức Ủy ban nhân xã Xuân Bái, Thọ Xuân
+44. Lại Thế Nguyên | Phó Bí thư Thường trực Tỉnh ủy, Ủy viên Thường trực, Ủy viên Đảng Đoàn HĐND tỉnh, Trưởng Ban kinh tế - ngân sách HĐND tỉnh
+45. Trịnh Xuân Như | Bí thư Đảng ủy, Giám đốc Công ty Điện lực Thanh Hóa
+46. Nguyễn Bá Nhuần | Nguyên Tỉnh ủy viên, nguyên Ủy viên UBND tỉnh, nguyên Chánh Thanh tra tỉnh Thanh Hóa
+47. Phạm Bá Oai | Tỉnh ủy viên, Ủy viên Đảng đoàn HĐND, Phó Chủ tịch HĐND tỉnh
+48. Nguyễn Văn Phát | Nguyên Thường vụ Tỉnh ủy, nguyên Trưởng Ban Tuyên giáo Tỉnh ủy, Ủy viên Thường trực, Ủy viên Đảng đoàn HĐND, Trưởng Ban văn hóa – xã hội HĐND tỉnh
+49. Nguyễn Xuân Phi | Nguyên Thường vụ Tỉnh ủy, nguyên Bí thư Thành ủy, nguyên Chủ tịch HĐND thành phố Thanh Hóa
+50. Đinh Tiên Phong | Chủ tịch Hội Cựu chiến binh tỉnh Thanh Hóa
+51. Nguyễn Hồng Phong | Chủ tịch Hội doanh nghiệp trẻ tỉnh Thanh Hóa, Tổng Giám đốc CTCP Công nông nghiệp Tiến Nông
+52. Lê Văn Phương | Phó Bí thư Đảng ủy, Tổng Giám đốc Công ty cổ phần mía đường Lam Sơn
+53. Nguyễn Đức Quyền | Nguyên Thường vụ Tỉnh ủy, nguyên Ủy viên Ban cán sự UBND tỉnh, nguyên Phó Chủ tịch Thường trực UBND tỉnh
+54. Phạm Đăng Quyền | Nguyên Tỉnh ủy viên, nguyên Ủy viên Ban cán sự UBND, nguyên Phó Chủ tịch UBND tỉnh
+55. Lê Hữu Quyền | Bí thư Đảng bộ, Giám đốc Ngân hàng chính sách xã hội tỉnh Thanh Hóa. Ủy viên Ban kinh tế - ngân sách HĐND tỉnh
+56. Võ Duy Sang | Nguyên Thường vụ Tỉnh ủy, nguyên Trưởng Ban Nội chính Tỉnh ủy Thanh Hóa, Trưởng Ban Pháp chế HĐND tỉnh
+57. Trịnh Tuấn Sinh | Phó Bí thư Tỉnh ủy, Ủy viên Thường trực HĐND tỉnh, Trưởng Ban Dân tộc HĐND tỉnh
+58. Bùi Đình Sơn | Ủy viên UBND tỉnh, Bí thư Đảng ủy, Giám đốc sở Tư pháp
+59. Lê Đình Sơn | Chủ tịch liên hiệp các Hội khoa học và kỹ thuật tỉnh Thanh Hóa. Ủy viên Ban văn hóa – xã hội HĐND tỉnh
+60. Phạm Thanh Sơn | Nguyên Ủy viên Ban Thường vụ Tỉnh ủy, Ủy viên Đảng Đoàn HĐND, Phó Chủ tịch Thường trực HĐND tỉnh
+61. Ngô Tôn Tẫn | Tỉnh ủy viên, Ủy viên BCH Tổng LĐLĐ Việt Nam, Chủ tịch Liên đoàn Lao động tỉnh. Ủy viên Ban văn hóa – xã hội HĐND tỉnh
+62. Mai Nhữ Thắng | Phó Bí thư Huyện ủy, Chủ tịch UBND huyện Nông Cống
+63. Lê Quốc Thành | Ủy viên chuyên trách Ban kinh tế - ngân sách HĐND tỉnh
+64. Nguyễn Văn Thành | Thường vụ Tỉnh ủy, Trưởng Ban Dân vận Tỉnh ủy; Ủy viên Thường trực, Ủy viên Đảng đoàn HĐND, Trưởng Ban dân tộc HĐND tỉnh
+65. Nguyễn Văn Thi | Ủy viên Ban Thường vụ Tỉnh ủy, Phó Chủ tịch UBND tỉnh, Trưởng Ban Quản lý KKT Nghi Sơn và các khu công nghiệp tỉnh
+66. Lê Thị Thìn | Nguyên Thường vụ Tỉnh ủy, nguyên Ủy viên Ban cán sự UBND, nguyên Phó Chủ tịch UBND tỉnh
+67. Lương Minh Thông | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Mường Lát
+68. Nguyễn Văn Thú | Đại tá, Phó Chính ủy Bộ đội Biên phòng Thanh Hóa, Ủy viên Ban pháp chế HĐND tỉnh
+69. Lê Đức Thuận | Ủy viên Thường trực, Ủy viên Đảng đoàn HĐND, Chánh Văn phòng HĐND tỉnh
+70. Phan Thanh Thuận | Phó Trưởng Ban pháp chế (chuyên trách) HĐND tỉnh
+71. Nguyễn Tiến Thuận | Bí thư Thị ủy, Chủ tịch HĐND thị xã Bỉm Sơn. Ủy viên Ban pháp chế HĐND tỉnh
+72. Vũ Ngọc Thưởng | Phó Bí thư Thường trực Huyện ủy, Chủ tịch HĐND huyện Yên Định. Ủy viên Ban kinh tế - ngân sách HĐND tỉnh
+73. Đinh Ngọc Thúy | Phó Trưởng Ban kinh tế - ngân sách (chuyên trách) HĐND tỉnh
+74. Phạm Thị Thanh Thủy | Tỉnh ủy viên, Chủ tịch UBMTTQ VN tỉnh Thanh Hóa, Chủ tịch Hội liên hiệp Phụ nữ Thanh Hóa
+75. Phạm Văn Tiến | Nguyên Bí thư Huyện ủy, nguyên Chủ tịch Hội đồng nhân dân huyện Cẩm Thủy. Ủy viên Ban dân tộc HĐND tỉnh
+76. Nguyễn Ngọc Tiến | Thường vụ Tỉnh ủy, Trưởng Ban Nội chính Tỉnh ủy
+77. Nguyễn Quốc Tiến | Phó Bí thư thường trực Huyện ủy, Chủ tịch HĐND huyện Nông Cống
+78. Hoàng Văn Toản | Tỉnh ủy viên, Bí thư Huyện ủy Thiệu Hóa
+79. Lê Văn Trung | Tỉnh ủy viên, Ủy viên BCH TW Đoàn, Bí thư Tỉnh đoàn TNCS Hồ Chí Minh tỉnh Thanh Hóa. Ủy viên Ban văn hóa – xã hội HĐND tỉnh
+80. Trịnh Xuân Trường | Phó Giám đốc Công ty trách nhiệm hữu hạn Xuân Trường
+81. Đỗ Minh Tuấn | Phó Bí thư Tỉnh ủy, Chủ tịch UBND tỉnh Thanh Hóa
+82. Lê Văn Tuấn | Phó Bí thư Huyện ủy, Chủ tịch Ủy ban nhân dân huyện Ngọc Lặc
+83. Lê Quang Tuấn | Bí thư Huyện ủy, Chủ tịch Hội đồng nhân dân huyện Vĩnh Lộc. Ủy viên Ban kinh tế - ngân sách HĐND tỉnh
+84. Nguyễn Anh Tuấn | Nguyên Phó Trưởng Ban văn hóa – xã hội (chuyên trách) HĐND tỉnh
+85. Nguyễn Văn Tuấn | Ủy viên Ban thường vụ Tỉnh ủy, Bí thư Đảng đoàn, Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa
+86. Nguyễn Văn Tuấn | Phó Bí thư Huyện ủy, Chủ tịch Ủy ban nhân dân huyện Hà Trung
+87. Trần Văn Tuấn | Tỉnh ủy viên, Bí thư Huyện ủy, Chủ tịch HĐND huyện Như Thanh. Ủy viên Ban kinh tế - ngân sách Hội đồng nhân dân tỉnh
+88. Lương Văn Tưởng | Tỉnh ủy viên, Ủy viên UBND tỉnh, Trưởng Ban Dân tộc tỉnh
+89. Hà Thị Tuyến | Trưởng phòng Tài nguyên và Môi trường Ủy ban nhân huyện Quan sơn. Ủy viên Ban pháp chế Hội đồng nhân dân tỉnh
+90. Đinh Cẩm Vân | Nguyên Tỉnh ủy viên, Ủy viên UBND tỉnh, nguyên Giám đốc sở Tài chính Thanh Hóa
+91. Sung Thị Xia | Chủ tịch Hội Liên hiệp phụ nữ xã Nhi Sơn, Mường Lát
+92. Nguyễn Đình Xứng | Nguyên Phó Bí thư Tỉnh ủy, nguyên Bí thư Ban cán sự, nguyên Chủ tịch Ủy ban nhân dân tỉnh nhiệm kỳ 2016-2021
+93. Trịnh Xuyên | Thiếu tướng, nguyên Thường vụ Tỉnh ủy, nguyên Giám đốc Công an tỉnh Thanh Hóa
+94. Triệu Thị Yến | (Cổng chưa ghi chức vụ)
+
+
+===== Đại biểu HĐND tỉnh Thanh Hóa khóa XVIII =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu/default.aspx
+
+1. Phạm Thị Ngọc Anh | Bác sĩ Bệnh viện Đa khoa khu vực Ngọc Lặc, tỉnh Thanh Hóa
+2. Nguyễn Văn Biện | Tỉnh ủy viên, Bí thư Đảng ủy, Chủ tịch HĐND phường Hạc Thành, Ủy viên Ban Văn hóa – Xã hội HĐND tỉnh
+3. Mai Xuân Bình | Tỉnh ủy viên, Giám đốc Sở Tư pháp tỉnh Thanh Hóa
+4. Hà Văn Ca | Tỉnh ủy viên, Bí thư Đảng ủy xã, Chủ tịch HĐND xã Trung Lý, Ủy viên Dân tộc HĐND tỉnh Thanh Hóa
+5. Cầm Bá Chái | Phó Trưởng Ban Dân tộc HĐND tỉnh Thanh Hóa
+6. Lê Văn Châu | Tỉnh ủy viên, Bí thư Đảng ủy, Chủ tịch HĐND xã Cẩm Thủy
+7. Cao Văn Cường | Tỉnh ủy viên, Phó Chủ tịch UBND tỉnh Thanh Hóa
+8. Lê Văn Dậu | Bí thư Đảng ủy, Chủ tịch HĐND xã Hà Trung, tỉnh Thanh Hóa
+9. Bùi Thị Diệu | Công chức HĐND xã Thành Vinh, tỉnh Thanh Hóa
+10. Thao Thị Dua | Viên chức Trung tâm cung ứng dịch vụ công xã Pù Nhi, tỉnh Thanh Hóa
+11. Nguyễn Tiến Dũng | Bí thư Đảng ủy xã Như Thanh
+12. Đỗ Ngọc Duy | Phó Trưởng Ban Kinh tế - Ngân sách HĐND tỉnh Thanh Hóa
+13. Lê Đình Hải | Nguyên Bí thư Huyện ủy, Chủ tịch HĐND huyện Thọ Xuân, tỉnh Thanh Hóa; thành viên Ban Kinh tế - Ngân sách HĐND tỉnh
+14. Trần Văn Hải | Nguyên Phó Bí thư Đảng bộ UBND tỉnh
+15. Nguyễn Quốc Hải | Trưởng Ban Pháp chế HĐND tỉnh Thanh Hóa
+16. Nguyễn Quang Hải | Tỉnh ủy viên, Phó Chủ tịch HĐND tỉnh Thanh Hóa
+17. Hàn Văn Hải | Giám đốc Nhà hát Nghệ thuật Lam Sơn Thanh Hóa, Ủy viên Ban Văn hóa – Xã hội HĐND tỉnh Thanh Hóa
+18. Lê Thanh Hải | Tỉnh ủy viên, Bí thư Đảng ủy, Chủ tịch HĐND xã Hoằng Hóa, tỉnh Thanh Hóa
+19. Ngô Thị Hồng Hảo | Tỉnh ủy viên, Trưởng Ban Văn hóa - Xã hội HĐND tỉnh
+20. Lê Thị Thu Hiền | Giáo viên Trường Tiểu học Xuân Hưng, xã Xuân Hòa, tỉnh Thanh Hóa
+21. Nguyễn Tiến Hiệu | Ủy viên Ban Thường vụ Tỉnh ủy, Giám đốc Sở Công thương
+22. Trịnh Thị Hoa | Phó Chủ tịch Liên đoàn Lao động tỉnh Thanh Hóa, Ủy viên Ban Pháp chế HĐND tỉnh
+23. Nguyễn Xuân Hồng | Bí thư Đảng ủy, Chủ tịch HĐND xã Linh Sơn, Ủy viên Ban Dân tộc HĐND tỉnh Thanh Hóa
+24. Lê Văn Huân (thượng Tọa Thích Tâm Đức) | Uỷ viên Ban thường trực Hội Đồng Trị sự GHPGVN; Phó ban thường trực Ban Pháp chế TW GHPG VN; Chứng minh Ban trị sự GHPGVN tỉnh Thanh Hoá
+25. Nguyễn Văn Hùng | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Tổ chức Tỉnh ủy
+26. Lê Quang Hùng | Ủy viên Ban Thường vụ Tỉnh ủy, Phó Chủ tịch UBND tỉnh
+27. Hà Thị Hương | Tỉnh ủy viên, Bí thư Đảng ủy, Chủ tịch HĐND xã Hồi Xuân, Ủy viên Ban Pháp chế HĐND tỉnh Thanh Hóa
+28. Lê Thị Hương | Phó Trưởng Ban Pháp chế HĐND tỉnh Thanh Hóa
+29. Vũ Thị Hương | Tỉnh ủy viên, Giám đốc Sở Dân tộc và Tôn giáo tỉnh Thanh Hóa
+30. Phạm Khánh Huyền | Chủ trang trại Thôn Chun, xã Thiết Ống, tỉnh Thanh Hóa
+31. Nguyễn Văn Khiên | Tỉnh ủy viên, Bí thư Đảng ủy, Chủ tịch HĐND phường Bỉm Sơn, tỉnh Thanh Hóa
+32. Lê Đăng Khoa | Giám đốc Bệnh viện Nhi Thanh Hóa, Ủy viên Ban Dân tộc HĐND tỉnh
+33. Lê Tiến Lam | Ủy viên Ban Thường vụ Tỉnh ủy, Phó Chủ tịch Thường trực HĐND tỉnh Thanh Hóa
+34. Cầm Bá Lâm | Bí thư Đảng ủy, Chủ tịch HĐND xã Luận Thành, tỉnh Thanh Hóa, Ủy viên Ban Dân tộc HĐND tỉnh Thanh Hóa
+35. Mai Xuân Liêm | Ủy viên Ban Thường vụ Tỉnh ủy, Phó Chủ tịch UBND tỉnh Thanh Hóa
+36. Trần Mạnh Long | Tỉnh ủy viên, Chánh Văn phòng Đoàn đại biểu Quốc hội và Hội đồng nhân dân tỉnh Thanh Hóa
+37. Lương Thị Lưu | Phó Bí thư Thường trực Đảng ủy xã Bát Mọt, tỉnh Thanh Hóa
+38. Linh Mục Trần Xuân Mạnh | Phó Chủ tịch không chuyên trách Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam, Chủ tịch Trung ương Ủy ban Đoàn kết Công giáo Việt Nam, Chủ tịch Ủy ban Đoàn kết Công giáo tỉnh Thanh Hóa
+39. Bùi Thị Mười | Nguyên Phó Trưởng Ban Tuyên giáo - Dân vận Tỉnh ủy
+40. Lê Minh Nghĩa | Tỉnh ủy viên, Bí thư Đảng ủy, Chủ tịch HĐND xã Yên Định, tỉnh Thanh Hóa
+41. Đinh Tiên Phong | Phó Chủ tịch Ủy ban MTTQ Việt Nam tỉnh, Chủ tịch Hội Cựu chiến binh tỉnh Thanh Hóa
+42. Triệu Thị Quý | Nhân viên Phòng khám Đa khoa Giang Sơn, xã Cẩm Thủy, tỉnh Thanh Hóa
+43. Lê Hữu Quyền | Bí thư Đảng bộ, Giám đốc Ngân hàng Chính sách xã hội tỉnh Thanh Hóa, Ủy viên Ban Kinh tế - Ngân sách HĐND tỉnh Thanh Hóa
+44. Trịnh Tuấn Sinh | Phó Bí thư Tỉnh ủy, Chủ tịch Ủy ban MTTQ Việt Nam tỉnh Thanh Hóa
+45. Phạm Kim Tân | Tổng Thư ký, Trưởng Ban Khoa học và Công nghệ, Tư vấn phản biện và Giám định xã hội, Liên hiệp các Hội Khoa học và Kỹ thuật Thanh Hóa, Giám đốc Quỹ Hỗ trợ Sáng tạo kỹ thuật Thanh Hóa
+46. Mai Nhữ Thắng | Bí thư Đảng ủy, Chủ tịch HĐND xã Hà Long, tỉnh Thanh Hóa
+47. Lương Tất Thắng | Nguyên Bí thư Đảng ủy, Chủ tịch HĐND xã Hải Bình, Ủy viên Ban Kinh tế - Ngân sách HĐND tỉnh Thanh Hóa
+48. Hoàng Văn Thanh | Bí thư Đảng ủy, Chủ tịch HĐND xã Đồng Lương, tỉnh Thanh Hóa
+49. Lương Tiến Thành | Trưởng Ban Dân tộc HĐND tỉnh tỉnh Thanh Hóa
+50. Nguyễn Văn Thành | Tổng Giám đốc Tổng Công ty Cổ phần Hợp Lực, tỉnh Thanh Hóa
+51. Trịnh Tuấn Thành | Tỉnh ủy viên, Bí thư Đảng ủy, Chủ tịch HĐND phường Quảng Phú, tỉnh Thanh Hóa
+52. Hoàng Văn Thi | Phó Chánh Văn phòng Ủy ban nhân dân tỉnh Thanh Hóa, Ủy viên Ban Văn hóa – Xã hội HĐND tỉnh Thanh Hóa
+53. Nguyễn Đức Thịnh | Phó Giám đốc sở Tài chính
+54. Lê Xuân Thu | Tỉnh ủy viên, Phó Trưởng Ban Tổ chức Tỉnh ủy
+55. Lê Trọng Thụ | Tỉnh ủy viên, Giám đốc Sở Tài chính
+56. Trịnh Xuân Thúy | Tỉnh ủy viên, Phó Trưởng Ban Nội chính Tỉnh ủy Thanh Hóa
+57. Đinh Ngọc Thúy | Nguyên Phó Trưởng Ban Kinh tế - Ngân sách HĐND tỉnh Thanh Hóa
+58. Phạm Thị Thanh Thủy | Ủy viên Ban Thường vụ Tỉnh ủy, Chủ nhiệm Ủy ban Kiểm tra Tỉnh ủy Thanh Hóa
+59. Nguyễn Ngọc Tiến | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Nội chính Tỉnh ủy
+60. Nguyễn Quốc Tiến | Tỉnh ủy viên, Phó Chủ tịch Ủy ban MTTQ Việt Nam tỉnh, Chủ tịch Hội Nông dân tỉnh
+61. Bùi Huy Toàn | Bí thư Đảng ủy, Chủ tịch HĐND xã Ngọc Liên, Ủy viên Ban Pháp chế HĐND tỉnh Thanh Hóa
+62. Lê Văn Trung | Tỉnh ủy viên, Giám đốc Sở Văn hóa, Thể thao và Du lịch
+63. Hoàng Anh Tuấn | Trưởng Ban Kinh tế - Ngân sách HĐND tỉnh Thanh Hóa
+64. Vũ Văn Tùng | Ủy viên Ban Thường vụ Tỉnh ủy, Chỉ huy trưởng Bộ Chỉ huy quân sự tỉnh Thanh Hóa
+65. Đầu Thanh Tùng | Tỉnh ủy viên, Phó Chủ tịch UBND tỉnh Thanh Hóa
+66. Nguyễn Tuấn Tưởng | Phó Trưởng Ban Văn hóa - Xã hội HĐND tỉnh Thanh Hóa
+67. Nguyễn Ngọc Túy | Phó Trưởng Ban Tuyên giáo và Dân vận Tỉnh ủy
+68. Vũ Thị Huyền | Kế toán Công ty Trách nhiệm hữu hạn Thương mại Dịch vụ và Thiết bị điện Duy Phát Lợi, phường Nghi Sơn, tỉnh Thanh Hóa
+69. Đào Xuân Yên | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Tuyên giáo và Dân vận Tỉnh ủy Thanh Hóa
+
+
+===== Đại biểu HĐND tỉnh Thanh Hóa khóa XIX =====
+Địa chỉ: https://dbndthanhhoa.gov.vn/portal/Home/danh-sach-dai-bieu/default.aspx
+
+1. Nguyễn Thế Anh | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Thường vụ Đảng ủy Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Chánh Văn phòng Ủy ban nhân dân tỉnh Thanh Hóa
+2. Lê Ngọc Ánh | Ủy viên BCH TW Đoàn; Ủy viên BCH Đảng bộ tỉnh, Ủy viên BCH Đảng bộ các cơ quan Đảng tỉnh; Phó Chủ tịch UB MTTQ VN tỉnh, Bí thư Tỉnh đoàn Thanh Hóa kiêm Trưởng Ban công tác Thanh thiếu nhi, cơ quan Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa
+3. Nguyễn Văn Biện | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy phường, Chủ tịch Hội đồng nhân dân phường Hạc Thành, tỉnh Thanh Hóa
+4. Vi Thị Thanh Bình | Giáo viên Trường Mầm non Luận Khê, xã Tân Thành, tỉnh Thanh Hóa
+5. Trần Duy Bình | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh; Ủy viên Ủy ban nhân dân tỉnh; Bí thư Đảng ủy, Giám đốc Sở Khoa học và Công nghệ tỉnh Thanh Hóa
+6. Cầm Bá Chái | Phó Bí thư Chi bộ, Phó Trưởng Ban Dân tộc, Hội đồng nhân dân tỉnh Thanh Hóa
+7. Cao Văn Cường | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Thường vụ Đảng ủy Ủy ban nhân dân tỉnh, Phó Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa
+8. Lâu Thị Dính | Giáo viên mầm non Nhi Sơn, xã Nhi Sơn, tỉnh Thanh Hóa
+9. Hoàng Văn Đồng | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Xây dựng tỉnh Thanh Hóa
+10. Nguyễn Lợi Đức | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy, Chánh Văn phòng Tỉnh ủy Thanh Hóa
+11. Tô Anh Dũng | Phó Bí thư Tỉnh ủy, Chủ tịch Ủy ban nhân dân tỉnh
+12. Đỗ Ngọc Duy | Phó Bí thư Chi bộ, Phó Trưởng Ban Kinh tế - Ngân sách, Hội đồng nhân dân tỉnh Thanh Hóa
+13. Mai Văn Hải | Ủy viên Ban Thường vụ Tỉnh ủy, Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Sao Vàng, tỉnh Thanh Hóa
+14. Lê Thanh Hải | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hoằng Hóa, tỉnh Thanh Hóa
+15. Nguyễn Quang Hải | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Phó Bí thư Đảng bộ Hội đồng nhân dân tỉnh, Phó Chủ tịch Hội đồng nhân dân tỉnh Thanh Hóa
+16. Nguyễn Quốc Hải | Ủy viên Ban Chấp hành Đảng bộ Hội đồng nhân dân tỉnh, Bí thư Chi bộ, Trưởng Ban Pháp chế, Hội đồng nhân dân tỉnh Thanh Hóa
+17. Lương Thị Hạnh | Ủy viên BCH TW Hội LHPN Việt Nam; Ủy viên BCH Đảng bộ tỉnh; Ủy viên BCH các cơ quan Đảng tỉnh; Ủy viên BTV Đảng ủy, Phó Chủ tịch UB MTTQ VN tỉnh, Chủ tịch Hội LHPN tỉnh
+18. Ngô Thị Hồng Hảo | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Chấp hành Đảng bộ các cơ quan Đảng tỉnh, Ủy viên Ban Chấp hành Đảng bộ Hội đồng nhân dân tỉnh; Bí thư Chi bộ, Trưởng Ban Văn hóa - Xã hội, Hội đồng nhân dân tỉnh Thanh Hóa
+19. Triệu Thị Hiền | Phó Bí thư Chi bộ, Phó Chánh Văn phòng Hội đồng nhân dân và Ủy ban nhân dân xã Thạch Lập, tỉnh Thanh Hóa
+20. Trương Thị Hiền | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Tân Tiến, tỉnh Thanh Hóa
+21. Nguyễn Tiến Hiệu | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh; Bí thư Đảng ủy, Giám đốc Sở Công Thương tỉnh Thanh Hóa
+22. Lê Ngọc Hợp | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Thường vụ, Trưởng Ban Tổ chức Đảng ủy Ủy ban nhân dân tỉnh; Ủy viên Ủy ban nhân dân tỉnh; Bí thư Đảng ủy, Giám đốc Sở Nội vụ tỉnh Thanh Hóa
+23. Nguyễn Văn Hùng | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Tổ chức Tỉnh ủy Thanh Hóa
+24. Lê Quang Hùng | Ủy viên Ban Thường vụ Tỉnh ủy, Ủy viên Ban Thường vụ Đảng ủy Ủy ban nhân dân tỉnh, Phó Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa
+25. Đinh Văn Hưng | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Kim Tân, tỉnh Thanh Hóa
+26. Yên Tuấn Hưng | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hoa Lộc, tỉnh Thanh Hóa
+27. Lê Xuân Phúc Hưng | Ủy viên chuyên trách Ban Kinh tế - Ngân sách HĐND tỉnh
+28. Hà Thị Hương | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hồi Xuân, tỉnh Thanh Hóa
+29. Lê Thị Hương | Phó Bí thư Chi bộ, Phó Trưởng Ban Pháp chế, Hội đồng nhân dân tỉnh Thanh Hóa
+30. Lương Thị Thúy Hường | Giáo viên Trường Tiểu học Kỳ Tân, xã Văn Nho, tỉnh Thanh Hóa
+31. Vũ Thị Huyền | Kế toán viên Công ty Trách nhiệm hữu hạn Thương mại, Dịch vụ và Thiết bị Điện Duy Phát Lợi, phường Nghi Sơn, tỉnh Thanh Hóa
+32. Nguyễn Văn Khiên | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy phường, Chủ tịch Hội đồng nhân dân phường Bỉm Sơn, tỉnh Thanh Hóa
+33. Lê Tiến Lam | Ủy viên Ban Thường vụ Tỉnh ủy, Ủy viên Ban Thường vụ Đảng ủy các cơ quan Đảng tỉnh, Bí thư Đảng ủy, Phó Chủ tịch Thường trực Hội đồng nhân dân tỉnh Thanh Hóa
+34. Lê Thúy Lan | Phó Bí thư Thường trực Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Như Thanh, tỉnh Thanh Hóa
+35. Lê Ngọc Diện (Lê Văn Diện) | Phó Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Chủ tịch Hội Cựu chiến binh tỉnh Thanh Hóa
+36. Mai Xuân Liêm | Ủy viên Ban Thường vụ Tỉnh ủy, Phó Bí thư Thường trực Đảng ủy Ủy ban nhân dân tỉnh, Phó Chủ tịch Thường trực Ủy ban nhân dân tỉnh Thanh Hóa
+37. Văn Thị Linh | Bác sĩ Bệnh viện Đa khoa Như Thanh, tỉnh Thanh Hóa
+38. Trịnh Hà Hoàng Linh | Phó Giám đốc Sở Tài chính tỉnh Thanh Hóa
+39. Nguyễn Hữu Long | Ủy viên Ban Chấp hành Đảng bộ, Ủy viên Ủy ban Kiểm tra Đảng ủy Hội đồng nhân dân tỉnh, Bí thư Chi bộ, Trưởng Phòng Công tác Quốc hội, Văn phòng Đoàn đại biểu Quốc hội và Hội đồng nhân dân tỉnh Thanh Hóa
+40. Trần Mạnh Long | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Thường vụ Đảng ủy Hội đồng nhân dân tỉnh, Chánh Văn phòng Văn phòng Đoàn đại biểu Quốc hội và Hội đồng nhân dân tỉnh Thanh Hóa
+41. Lương Thị Lực | Nông dân (xã Sơn Điện, tỉnh Thanh Hóa)
+42. Nguyễn Thành Lương | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy, Hiệu trưởng Trường Chính trị tỉnh Thanh Hóa
+43. Phạm Đình Minh | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Bá Thước, tỉnh Thanh Hóa
+44. Thượng Tọa Thích Tâm Chính | Ủy viên Hội đồng trị sự Trung ương Giáo hội phật giáo Việt Nam; Ủy viên Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Phó Trưởng Ban Trị sự Phật giáo tỉnh Thanh Hóa, Trụ trì Chùa Khánh Quang, phường Quang Trung, tỉnh Thanh Hóa
+45. Lê Minh Nghĩa | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy, Chủ tịch Hội đồng nhân dân xã Yên Định, tỉnh Thanh Hóa
+46. Nguyễn Thành Luân | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Tân Ninh, tỉnh Thanh Hóa
+47. Phạm Thị Nhàn | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Cẩm Tú, tỉnh Thanh Hóa
+48. Nguyễn Hồng Phong | Ủy viên Dự khuyết Ban Chấp hành Trung ương Đảng, Phó Bí thư Thường trực Tỉnh ủy, Chủ tịch HĐND tỉnh, Bí thư Đảng ủy các cơ quan Đảng tỉnh Thanh Hóa
+49. Trịnh Xuân Phú | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy, Chủ tịch Hội đồng nhân dân phường Tĩnh Gia, tỉnh Thanh Hóa
+50. Hoàng Thị Lan Phương | Ủy viên chuyên trách Ban Văn hóa - Xã hội HĐND tỉnh
+51. Lê Thị Phương | Phó Bí thư Thường trực Đảng ủy phường Đông Sơn, tỉnh Thanh Hóa
+52. Cầm Thị Phượng | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Vạn Xuân, tỉnh Thanh Hóa
+53. Lê Hồng Quang | Ủy viên Ban Chấp hành Đảng bộ tỉnh; Bí thư Đảng ủy xã, Chủ tịch HĐND xã Quan Sơn
+54. Lê Quang Quyền | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Trung Chính, tỉnh Thanh Hóa
+55. Trịnh Tuấn Sinh | Phó Bí thư Tỉnh ủy, Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa
+56. Nguyễn Thị Sơn | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Quảng Ninh, tỉnh Thanh Hóa
+57. Lê Thế Sơn | Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Chủ tịch Hội đồng quản trị Công ty Cổ phần cấp nước Thanh Hóa
+58. Phạm Kim Tân | Phó Bí thư Chi bộ, Tổng Thư ký Liên hiệp các Hội Khoa học và Kỹ thuật Thanh Hóa; Giám đốc Quỹ hỗ trợ sáng tạo kỹ thuật Thanh Hóa
+59. Mai Nhữ Thắng | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hà Long, tỉnh Thanh Hóa
+60. Hoàng Văn Thanh | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Đồng Lương, tỉnh Thanh Hóa
+61. Lương Tiến Thành | Ủy viên Ban Chấp hành Đảng bộ Hội đồng nhân dân tỉnh, Bí thư Chi bộ, Trưởng Ban Dân tộc, Hội đồng nhân dân tỉnh Thanh Hóa
+62. Phạm Quốc Thành | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Biện Thượng, tỉnh Thanh Hóa
+63. Lương Trọng Thành | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Phó Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Chủ tịch Liên đoàn Lao động tỉnh Thanh Hóa
+64. Trịnh Văn Thế | Phó Giám đốc Sở Tư pháp tỉnh
+65. Phạm Thị Thu | Bí thư Đảng ủy, Chủ tịch Hội đồng nhân dân xã Minh Sơn, tỉnh Thanh Hóa
+66. Vũ Thị Thu | Bác sĩ Bệnh viện Đa khoa Cẩm Thủy, tỉnh Thanh Hóa
+67. Lê Trọng Thụ | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Tài chính tỉnh Thanh Hóa
+68. Lò Thị Thủy | Giáo viên Trường Tiểu học Bãi Trành, xã Xuân Bình, tỉnh Thanh Hóa
+69. Phạm Thị Thanh Thủy | Ủy viên Ban Thường vụ Tỉnh ủy, Chủ nhiệm Ủy ban Kiểm tra Tỉnh ủy Thanh Hóa
+70. Nguyễn Quốc Tiến | Ủy viên Ban Chấp hành Trung ương Hội Nông dân Việt Nam; Ủy viên Ban Chấp hành Đảng bộ tỉnh; Ủy viên Ban Thường vụ Đảng ủy, Phó Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh, Chủ tịch Hội Nông dân tỉnh Thanh Hóa
+71. Nguyễn Ngọc Tiến | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Nội chính Tỉnh ủy Thanh Hóa
+72. Lê Văn Tiến | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Nông nghiệp và Môi trường tỉnh Thanh Hóa
+73. Lê Thị Tĩnh | Bí thư Đảng ủy xã, Chủ tịch Hội đồng nhân dân xã Hóa Quỳ, tỉnh Thanh Hóa
+74. Đỗ Thị Toán | Ủy viên Ban Thường vụ Tỉnh ủy, Phó Chủ tịch Thường trực Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Thanh Hóa
+75. Lê Văn Trung | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban chấp hành Đảng bộ Ủy ban nhân dân tỉnh, Ủy viên Ủy ban nhân dân tỉnh, Bí thư Đảng ủy, Giám đốc Sở Văn hóa, Thể thao và Du lịch tỉnh Thanh Hóa
+76. Lê Như Tú | Ủy viên Ban Chấp hành Đảng bộ Hội đồng nhân dân tỉnh, Bí thư Chi bộ, Trưởng Phòng Hành chính, Tổ chức, Quản trị, Văn phòng Đoàn Đại biểu Quốc hội và Hội đồng nhân dân tỉnh Thanh Hóa
+77. Hoàng Anh Tuấn | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Chi bộ, Trưởng Ban Kinh tế Ngân sách, Hội đồng nhân dân tỉnh Thanh Hóa
+78. Lê Văn Tuấn | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Bí thư Đảng ủy phường, Chủ tịch Hội đồng nhân dân phường Sầm Sơn, tỉnh Thanh Hóa
+79. Trương Ngọc Tùng | Đảng ủy viên, Phó Chỉ huy trưởng Ban Chỉ huy Bộ đội Biên phòng, Bộ Chỉ huy Quân sự tỉnh Thanh Hóa
+80. Đầu Thanh Tùng | Ủy viên Ban Chấp hành Đảng bộ tỉnh, Ủy viên Ban Thường vụ Đảng ủy Ủy ban nhân dân tỉnh, Phó Chủ tịch Ủy ban nhân dân tỉnh Thanh Hóa
+81. Nguyễn Tuấn Tưởng | Phó Bí thư Chi bộ, Phó Trưởng Ban Văn hóa - Xã hội, Hội đồng nhân dân tỉnh Thanh Hóa
+82. Đào Xuân Yên | Ủy viên Ban Thường vụ Tỉnh ủy, Trưởng Ban Tuyên giáo và Dân vận Tỉnh ủy Thanh Hóa

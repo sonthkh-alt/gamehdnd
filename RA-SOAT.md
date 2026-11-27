@@ -85,3 +85,21 @@ Ngày 27/11/2026 bổ sung 10 thẻ cho trò "Ai có thẩm quyền?" và 2 quy 
 | Quy trình "HĐND xem xét báo cáo công tác" | khoản 2 Điều 16 Nghị quyết 114/2025/UBTVQH15 |
 
 Điểm nên xem: thẻ "thành lập, giải thể, đặt tên, đổi tên thôn" đúng với xã; ở phường là tổ dân phố (Điều 24), thẻ đã ghi rõ "thôn". Hai thẻ về biên chế phân biệt "quyết định" (HĐND) và "quản lý" (UBND) theo đúng câu chữ của Luật.
+
+## Mục Bộ máy (thêm ngày 28/11/2026)
+
+Toàn bộ nội dung lấy tự động từ Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn) ngày 28/11/2026 bằng `tools/lay_bo_may.py`; bản chụp nằm ở `nguon/dbnd_*.txt`. Văn phòng nên xem các điểm sau trước khi dùng chính thức:
+
+| Điểm cần xem | Hiện trạng trong game |
+|---|---|
+| Danh sách HĐND tỉnh khóa XIX trên Cổng có 82 người, trong khi kỳ họp thứ nhất xác nhận tư cách 85 đại biểu (câu th-007) | Game ghi "số liệu đếm theo danh sách đang đăng trên Cổng". Nếu Cổng thiếu người thì bổ sung trên Cổng rồi chạy lại công cụ |
+| Cổng chưa đăng danh sách ĐBQH khóa XIV (2016 - 2021); danh sách khóa XV có 14 người, khóa XI có vài dòng nhập trùng | Khóa XIV hiện gạch ngang, không bấm được; dòng trùng (cùng tên, cùng ngày sinh) đã được gộp |
+| Cổng mới có trang riêng của Ban Pháp chế; trang của ba Ban còn lại và của bốn phòng thuộc Văn phòng báo lỗi không tìm thấy | Ba Ban chỉ ghi Trưởng Ban, Phó Trưởng Ban, Ủy viên chuyên trách theo danh bạ. Các phòng ghi theo danh bạ, chưa thấy ai ghi chức danh Trưởng phòng |
+| Trang "Cơ cấu tổ chức" của Đoàn ĐBQH trên Cổng vẫn mô tả khóa XV; trang "Chức năng, nhiệm vụ" dẫn Luật Tổ chức Quốc hội 2014 và Nghị quyết 08/2002/NQ-QH11 | Game không dùng trang cơ cấu khóa XV; tám nhiệm vụ của Đoàn hiển thị nguyên văn theo Cổng, ghi rõ "theo trang Giới thiệu trên Cổng" |
+| Quy chế làm việc của Văn phòng trên Cổng ban hành năm 2021 (Quyết định 309/QĐ-VP) | Game trích Điều 1 (vị trí, chức năng) và dùng cho 2 câu của trò "Ai giữ cương vị nào?". Nếu đã có quy chế mới thì cập nhật trên Cổng rồi chạy lại công cụ |
+| Năm của các khóa Quốc hội (I: 1946 - 1960 ... XVI: 2026 - 2031) và HĐND tỉnh (XVI: 2011 - 2016, XVII: 2016 - 2021, XVIII: 2021 - 2026) | Cổng không ghi trong danh sách nên được ghi sẵn trong công cụ (bảng `NK_QH`, `NK_HD`); cần đối chiếu lại |
+| Chức vụ của đại biểu các khóa trước | Giữ nguyên như Cổng đăng, game không chỉnh sửa |
+| Ảnh chân dung 97 đại biểu khóa đương nhiệm (2 đại biểu HĐND tỉnh chưa có ảnh trên Cổng) | Lấy từ Cổng, cắt còn 240 × 300, ghi nguồn. Cần Văn phòng xác nhận đồng ý dùng trong game công khai |
+| Họ tên, chức danh công chức các phòng của Văn phòng | Lấy từ danh bạ công khai trên Cổng, không kèm số điện thoại. Nếu không muốn nêu tên chuyên viên trong game công khai thì bỏ nhóm này trong `tools/lay_bo_may.py` |
+
+Trò "Ai giữ cương vị nào?" không có câu soạn tay về nhân sự: câu hỏi và đáp án sinh từ `data/bo-may.js` (hàm `bmPool()` trong `index.html`), nên đúng sai phụ thuộc hoàn toàn vào dữ liệu của Cổng.

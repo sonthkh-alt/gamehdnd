@@ -10,10 +10,11 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 - **Hành trình dọc sông Mã:** 10 chặng gắn với 10 di tích, thắng cảnh xứ Thanh; mỗi chặng một chuyên đề và ba cấp độ Dễ, Vừa, Khó. Mỗi lượt 8 câu, đúng từ 5 câu thì vượt cấp. Mỗi ngôi sao làm tăng GRDP của "tỉnh ảo"; đích là mốc 11%.
 - **Ngân hàng 570 câu hỏi** (198 dễ, 224 vừa, 148 khó; 219 câu tình huống), mỗi câu có giải thích và căn cứ đến điều, khoản.
 - **Thi đấu:** Đấu trường 60 giây (chọn cấp độ), Thi thử 30 câu trong 25 phút (đạt từ 21/30, tải được phiếu kết quả dạng ảnh PNG), Ôn câu sai (luyện lại các câu từng trả lời sai cho đến khi đúng).
-- **Trò chơi nhỏ:** Ai có thẩm quyền? (22 thẻ), Xếp đúng quy trình (4 quy trình), Lật thẻ di sản, Ảnh này ở đâu? (đoán địa danh qua ảnh thật).
+- **Trò chơi nhỏ:** Ai có thẩm quyền? (22 thẻ), Xếp đúng quy trình (4 quy trình), Lật thẻ di sản, Ảnh này ở đâu? (đoán địa danh qua ảnh thật), Ai giữ cương vị nào? (câu hỏi sinh từ dữ liệu mục Bộ máy).
+- **Bộ máy dân cử:** mục giới thiệu tổ chức, nhân sự theo Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn): Thường trực và bốn Ban của HĐND tỉnh khóa XIX, 82 đại biểu HĐND tỉnh kèm ảnh chân dung và đơn vị bầu cử (tìm theo tên, lọc theo đơn vị), Đoàn ĐBQH tỉnh khóa XVI, lãnh đạo và các phòng của Văn phòng, danh sách đại biểu Quốc hội bầu tại Thanh Hóa từ khóa I và đại biểu HĐND tỉnh từ khóa XVI. Kèm trò chơi "Ai giữ cương vị nào?".
 - **Thẻ di sản:** vượt cấp Dễ của mỗi chặng để mở một thẻ tranh sơn mài kèm lời dẫn và ảnh tư liệu.
 - **Thư viện ảnh xứ Thanh:** 59 ảnh tư liệu từ Wikimedia Commons về cả 10 chặng và nhiều địa danh khác (Bến En, đảo Hòn Nẹ, núi Nưa, sông Mã, đền Lê Lai, đền Lê Hoàn, nghè Xuân Phả, đền Mai An Tiêm, cửa biển Lạch Sung, hang Co Luồng, đảo cò Tiến Nông, chùa Sùng Nghiêm...), có chú thích, tác giả, giấy phép; lọc theo địa danh, xem ảnh lớn.
-- **Phim giới thiệu** 46 giây, âm thanh trống hội, trợ giúp 50:50 và "xem căn cứ", 22 huy hiệu, nhiệm vụ hằng ngày, chuỗi ngày học.
+- **Phim giới thiệu** 46 giây, âm thanh trống hội, trợ giúp 50:50 và "xem căn cứ", 24 huy hiệu, nhiệm vụ hằng ngày, chuỗi ngày học.
 - **Chế độ ôn tập tự do** (trong Hồ sơ): mở sẵn mọi chặng để tập huấn theo chuyên đề.
 - **Tiện ích:** sao lưu và khôi phục tiến trình bằng tệp `.json` (khi đổi máy), chọn chế độ đồ họa (Tự động, 3D cao, 3D nhẹ, 2D), cài lên màn hình chính của điện thoại và chơi khi mất mạng (PWA).
 - **Bố cục:** điện thoại một cột, sa bàn 3D nằm đầu trang và ngay trên câu hỏi; màn hình rộng từ 1000px chia hai khoang, sa bàn bên trái, bảng chơi bên phải. Máy không chạy được WebGL tự chuyển về giao diện 2D như bản trước.
@@ -43,11 +44,13 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 | `manifest.webmanifest`, `sw.js`, `assets/icon/` | Tệp cài đặt, service worker và biểu tượng để cài game như một ứng dụng, chơi khi mất mạng |
 | `data/cau-hoi.json` | Ngân hàng câu hỏi bản đầy đủ để rà soát: câu hỏi, 4 phương án, giải thích, căn cứ, văn bản nguồn và đoạn trích nguyên văn |
 | `data/cau-hoi.js` | Bản gọn để game nạp, sinh tự động từ tệp JSON |
+| `data/bo-may.json`, `data/bo-may.js` | Dữ liệu mục Bộ máy (tổ chức, nhân sự, danh sách đại biểu các khóa), sinh tự động từ Cổng thông tin điện tử của cơ quan; không sửa tay |
+| `tools/lay_bo_may.py` | Tải lại thông tin từ Cổng dbndthanhhoa.gov.vn, sinh hai tệp trên, ảnh chân dung trong `assets/img/db/` và bản chụp trong `nguon/dbnd_*.txt` |
 | `tools/build_bank.py` | Kiểm tra và sinh `data/cau-hoi.js` từ `data/cau-hoi.json` |
 | `tools/kiem_tra_cau_hoi.py` | Kiểm tra định dạng câu hỏi và đối chiếu từng đoạn trích với văn bản trong `nguon/` |
 | `tools/tai_anh_ve_may.py` | Tải các ảnh đang nạp từ Wikimedia Commons về lưu hẳn trong kho |
 | `tools/phim/` | Bộ công cụ dựng lại phim giới thiệu (xem `tools/phim/HUONG-DAN.md`) |
-| `nguon/` | Nguyên văn 26 văn bản pháp luật, văn bản của tỉnh và 22 bài Wikipedia làm căn cứ câu hỏi |
+| `nguon/` | Nguyên văn 26 văn bản pháp luật, văn bản của tỉnh và 22 bài Wikipedia làm căn cứ câu hỏi; ba tệp `dbnd_*.txt` chụp nội dung Cổng thông tin điện tử của cơ quan dùng cho mục Bộ máy |
 | `CLAUDE.md` | Hướng dẫn cho Claude Code khi làm việc với kho này |
 | `RA-SOAT.md` | Danh sách câu hỏi nên được Phòng Công tác HĐND xem kỹ, kèm lý do |
 | `tools/HUONG-DAN-SOAN-CAU-HOI.md` | Quy trình soạn và rà soát câu hỏi mới |
@@ -112,6 +115,12 @@ echo "export * from 'three';" > entry.js
 npx esbuild entry.js --bundle --format=iife --global-name=THREE --minify --outfile=three.min.js
 ```
 
+### Mục Bộ máy
+
+Nội dung mục Bộ máy lấy từ Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (https://dbndthanhhoa.gov.vn), bản đang dùng chụp ngày 28/11/2026. Khi nhân sự thay đổi, chạy `python tools/lay_bo_may.py` (cần Python có thư viện Pillow, mất khoảng 10 đến 15 phút vì công cụ tải lần lượt hơn 200 trang và ảnh, có nghỉ giữa các lần tải), xem lại thay đổi bằng `git diff data/bo-may.json`, rồi commit và push. Thêm `--cache <thư mục>` để giữ các trang đã tải, `--khong-anh` để không tải lại ảnh.
+
+Công cụ chỉ lấy họ tên, chức vụ, đơn vị bầu cử, giới tính và ảnh chân dung; số điện thoại, ngày sinh, quê quán, nơi ở và thư điện tử cá nhân có trên Cổng đều không đưa vào kho. Ảnh chân dung (97 ảnh, cắt còn 240 × 300 điểm ảnh) nằm trong `assets/img/db/`. Cuối trang Cổng ghi: "Khi phát hành thông tin đề nghị ghi rõ nguồn: dbndthanhhoa.gov.vn"; game ghi nguồn này ở mục Bộ máy, ở từng trang đại biểu và ở màn hình Căn cứ và nguồn ảnh.
+
 ### Cài như một ứng dụng
 
 Trên trang công khai (https), trình duyệt cho phép "Thêm vào màn hình chính" (điện thoại) hoặc "Cài đặt ứng dụng" (Chrome, Edge trên máy tính). `sw.js` lưu sẵn mã, câu hỏi và các ảnh đã xem để chơi được khi mất mạng; mã và câu hỏi luôn ưu tiên bản mới trên mạng. Khi cần buộc mọi máy xóa bộ nhớ đệm cũ, đổi hằng `V` ở đầu `sw.js`.
@@ -132,9 +141,11 @@ Bộ câu hỏi được soạn từ nguyên văn các văn bản hiện hành (
 - Nghị quyết 202/2025/QH15; Nghị quyết 1686/NQ-UBTVQH15 về sắp xếp đơn vị hành chính cấp xã của tỉnh Thanh Hóa.
 - Nghị quyết 45/2025/NQ-HĐND, 36/2026/NQ-HĐND và 55/NQ-HĐND năm 2026 của HĐND tỉnh Thanh Hóa; Chỉ thị 08/CT-TTg và 14/CT-TTg năm 2026.
 - Báo Thanh Hóa điện tử và Wikipedia tiếng Việt (riêng phần lịch sử, văn hóa, di sản).
+- Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn), truy cập ngày 28/11/2026: riêng cho mục Bộ máy và trò "Ai giữ cương vị nào?".
 
 ## Lưu ý
 
+- Mục Bộ máy là **bản chụp ngày 28/11/2026** của Cổng thông tin điện tử; nhân sự thay đổi thì phải chạy lại `tools/lay_bo_may.py`. Một số chỗ Cổng chưa đủ: chưa có danh sách ĐBQH khóa XIV, chưa có trang riêng của ba Ban (chỉ có Ban Pháp chế) và của bốn phòng thuộc Văn phòng, danh sách HĐND tỉnh khóa XIX có 82 người. Chi tiết ở `RA-SOAT.md`.
 - Bộ câu hỏi **cần được Phòng Công tác HĐND rà soát trước khi dùng chính thức**. Một số điểm nên xem kỹ:
   - Quy chế làm việc mẫu (điểm a khoản 2 Điều 16 của Nghị quyết 103 và 104) ghi Chủ tịch HĐND giới thiệu cả Phó Chủ tịch, Ủy viên UBND, trong khi Điều 36 Luật 72/2025/QH15 giao Chủ tịch UBND giới thiệu. Các câu hỏi chỉ dùng phần hai văn bản thống nhất.
   - Nghị quyết 96/2023/QH15 về lấy phiếu tín nhiệm ban hành khi còn cấp huyện; 6 câu liên quan chỉ hỏi quy tắc chung hoặc cấp tỉnh.

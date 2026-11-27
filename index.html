@@ -308,6 +308,45 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
 .chips2 button{flex:none;min-height:36px;padding:2px 12px;border-radius:99px;border:1px solid var(--line);background:var(--panel);font-size:13.5px;white-space:nowrap}
 .chips2 button[aria-pressed=true]{border-color:var(--gold2);color:var(--gold2);background:#24544a}
 .pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:8px}
+/* Mục Bộ máy dân cử */
+.seg.bm4 button{font-size:13.5px;padding:0 2px;white-space:nowrap}
+.bot.n6{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media(max-width:430px){.bot.n6 button{font-size:11.5px}}
+.plist{display:grid;gap:8px}
+.pr{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;align-items:center;width:100%;padding:8px;border-radius:14px;border:1px solid var(--line);background:var(--panel);text-align:left}
+.pr b{display:block;line-height:1.25}
+.pr small{display:block;color:var(--mute);font-size:13px;line-height:1.35;margin-top:2px}
+.pf{display:grid;place-items:center;width:56px;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:radial-gradient(#1f5249,#0b2522);box-shadow:0 0 0 1.5px var(--gold);font:700 18px var(--disp);color:var(--gold2);flex:none}
+.pf img{width:100%;height:100%;object-fit:cover}
+.pgd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.pc{display:grid;gap:6px;justify-items:center;align-content:start;padding:8px 4px;border-radius:12px;border:1px solid var(--line);background:var(--panel);text-align:center}
+.pc .pf{width:100%;max-width:92px;font-size:28px}
+.pc b{font-size:13px;line-height:1.2;font-weight:600}
+.pc small{font-size:11.5px;color:var(--mute);line-height:1.2}
+.bmh{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;align-items:center}
+.bmh .pf{width:132px;border-radius:14px;font-size:40px}
+.bmh h3{font-size:23px;margin:4px 0 6px}
+.bmh p{margin:0;color:var(--gold2);font-weight:600;line-height:1.35}
+.bml>div{padding:9px 0;border-top:1px solid var(--line);font-size:14.5px;line-height:1.45}
+.bml>div:first-child{border-top:0;padding-top:0}
+.bml>div:last-child{padding-bottom:0}
+.bml small{display:block;color:var(--mute);font-size:13px}
+.kr{display:grid;grid-template-columns:92px minmax(0,1fr) 34px;gap:10px;align-items:center;width:100%;min-height:48px;padding:4px 0;border:0;border-top:1px solid var(--line);background:none;text-align:left}
+.kr:first-child{border-top:0}
+.kr[disabled]{opacity:.55;cursor:default}
+.kr b{font-family:var(--disp)}
+.kr small{display:block;color:var(--mute);font-size:12px}
+.kr .bar{height:8px;border-radius:9px;background:#0a211e;overflow:hidden}
+.kr .bar i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.kr .n{text-align:right;font-weight:600}
+.bmf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.bmq{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:center;margin:14px 0}
+.bmq.np{grid-template-columns:minmax(0,1fr)}
+.bmq .pf{width:96px;border-radius:12px;font-size:30px}
+.bmq p{margin:0;font:600 19px/1.35 var(--body)}
+details.card summary{cursor:pointer;font-weight:600}
+details.card ol{margin:10px 0 0;padding-left:20px;font-size:14.5px;line-height:1.5}
+details.card li{margin-top:6px}
 .pgrid button{aspect-ratio:1;border:0;padding:0;border-radius:8px;overflow:hidden;background:var(--panel)}
 .lb{position:absolute;inset:0;z-index:33;background:rgba(3,12,11,.96);display:none;flex-direction:column}
 .lb.on{display:flex}
@@ -452,6 +491,7 @@ img.voi3{display:block;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(0,0,
 </div>
 <div class="splash" id="splash" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="url(#gDrum)"/><g fill="none" stroke="#6e4116" stroke-width="1.6" opacity=".8"><circle cx="100" cy="100" r="86"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="56"/><circle cx="100" cy="100" r="38"/></g><path d="M100 70l6.5 15.800 16.300-5-9.900 13.800 14.600 8.800-17 1.200 2.600 16.800-13.100-10.800-13.100 10.800 2.600-16.800-17-1.200 14.600-8.800-9.900-13.800 16.300 5z" fill="#fff1c4"/></svg><b>Nghị trường số</b><span>Đang dựng sa bàn xứ Thanh…</span></div>
 <script src="data/cau-hoi.js"></script>
+<script src="data/bo-may.js"></script>
 <script src="assets/img/credits.js"></script>
 <script src="assets/art.js"></script>
 <script src="assets/img/gallery.js"></script>
@@ -478,6 +518,14 @@ const BYCD={};BANK.forEach(q=>{(BYCD[q.cd]=BYCD[q.cd]||[]).push(q)});
 const CRED=window.NTS_CREDITS||{};
 const GAL_ALL=window.NTS_GALLERY||[];
 let GAL=GAL_ALL;
+/* ---------- Bộ máy dân cử (data/bo-may.js, sinh bằng tools/lay_bo_may.py từ Cổng thông tin điện tử dbndthanhhoa.gov.vn) ---------- */
+const BM=window.NTS_BOMAY||null,BMP=BM?{hd:BM.hdnd,qh:BM.dbqh}:{};
+let bmTab='hd',bmDv=0,bmQ='';
+const bmFind=(kind,id)=>BMP[kind]?BMP[kind].db.find(p=>p.id===+id):null;
+const fold=t=>String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');
+const pf=(p,lazy)=>`<span class="pf">${p&&p.anh?`<img src="${p.anh}" alt="" ${lazy?'loading="lazy"':''}>`:esc((String(p&&p.ten||'?').trim().split(/\s+/).pop()||'?')[0])}</span>`;
+const bmRole=(kind,p)=>{if(kind==='qh')return p.vt||'Đại biểu Quốc hội';const t=BM.hdnd.tt.find(x=>x.id===p.id);return t?t.vt:'Đại biểu HĐND tỉnh'};
+const prow=(kind,p,sub)=>p.id?`<button class="pr" data-act="bm-p" data-v="${kind}-${p.id}">${pf(p,1)}<span><b>${esc(p.ten)}</b><small>${esc(sub)}</small></span></button>`:`<div class="pr">${pf(p,1)}<span><b>${esc(p.ten)}</b><small>${esc(sub)}</small></span></div>`;
 const galOf=k=>GAL.map((g,i)=>[g,i]).filter(([g])=>g.st===k);
 const ARTS=window.NTS_ART||null;
 const art=(k,cls)=>ARTS?ARTS.svg(k,cls):'';
@@ -619,13 +667,15 @@ const GLY={
  book:'<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M5 17a3 3 0 0 1 3-3h11"/>',
  gem:'<path d="M6 4h12l3 5-9 11L3 9z M3 9h18 M9 4l3 5 3-5"/>',
  eye:'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
- img:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/>'};
+ img:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/>',
+ org:'<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5V12 M5 16.5V12h14v4.5"/>'};
 const NAV=[
  ['map','Hành trình','<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14"/>'],
  ['arena','Thi đấu','<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><path d="M12 8.5l1 2.6h2.8l-2.2 1.7.8 2.7-2.4-1.6-2.4 1.6.8-2.7-2.2-1.7H11z"/>'],
  ['mini','Trò chơi','<path d="M4 8h4a2 2 0 1 1 4 0h4v4a2 2 0 1 1 0 4v4H4z"/>'],
  ['disan','Di sản','<path d="M4 20h16 M6 20V10 M10 20V10 M14 20V10 M18 20V10 M3 10l9-6 9 6z"/>'],
- ['me','Hồ sơ','<circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/>']];
+ ['bm','Bộ máy','<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5V12 M5 16.5V12h14v4.5"/>'],
+ ['me','Hồ sơ','<circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/>']].filter(t=>t[0]!=='bm'||BM);
 const FLAME='<svg viewBox="0 0 24 24" aria-hidden="true">'+GLY.flame+'</svg>';
 const XI='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"/></svg>';
 const LOCK='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
@@ -646,6 +696,7 @@ const BADGES=STAGES.map(s=>({id:'s_'+s.id,n:s.n,d:'Vượt cấp Dễ ở chặn
  {id:'matxu',n:'Mắt xứ Thanh',d:'Đoán đúng từ 7/8 ảnh di sản',g:'eye'},
  {id:'haiconso',n:'Hai con số',d:'GRDP tỉnh ảo đạt 10%',g:'chart'},
  {id:'vuotdich',n:'Vượt đích 11%',d:'GRDP tỉnh ảo đạt 11%',g:'flag'},
+ {id:'bomay',n:'Thuộc bộ máy',d:'Đúng từ 7/8 câu ở trò Ai giữ cương vị nào',g:'org'},
  {id:'chuyencan',n:'Chuyên cần',d:'Học 3 ngày liên tiếp',g:'cal'}]);
 
 const AV={tinh:{b:'#1f3a5f',h:'#1d1410'},xa:{b:'#b8322a',h:'#1d1410'},cv:{b:'#2f6f8f',h:'#2a1a10'},dan:{b:'#3f7a4f',h:'#1d1410'}};
@@ -660,7 +711,7 @@ function av(role,size){
 
 /* ---------- Trạng thái ---------- */
 const KEY='nghitruongso-v2';
-const fresh=()=>({name:'',role:'',team:'',xp:0,ok:{},wr:{},stars:{},best:{},badges:[],cards:[],streak:0,last:'',daily:{d:'',done:{}},week:{k:'',xp:0},arenaBest:0,arenaPlays:0,tqBest:0,qtBest:{},memBest:0,picBest:0,examBest:0,exams:0,answered:0,correct:0,snd:true,free:false,intro:false,gfx:'auto'});
+const fresh=()=>({name:'',role:'',team:'',xp:0,ok:{},wr:{},stars:{},best:{},badges:[],cards:[],streak:0,last:'',daily:{d:'',done:{}},week:{k:'',xp:0},arenaBest:0,arenaPlays:0,tqBest:0,qtBest:{},memBest:0,picBest:0,examBest:0,exams:0,answered:0,correct:0,snd:true,free:false,intro:false,gfx:'auto',bmBest:0});
 let S=fresh(),tab='map',run=null,onb=null,confirmReset=false,arenaLv=0,heroT=null,heroI=0,galF='all',lbI=-1,lbList=[];
 function load(){
  try{const raw=localStorage.getItem(KEY);if(raw){S=Object.assign(fresh(),JSON.parse(raw));return}
@@ -713,10 +764,10 @@ function renderTop(){
  const L=level(S.xp);
  $('#top').innerHTML=`${av(S.role||'xa',42)}<div class="who"><div class="nm">${esc(S.name||'Khách tham quan')}</div><div class="lvl">${L.name}, ${fmt(S.xp)} XP</div><div class="xpbar" title="${L.nx?'Còn '+fmt(L.nx-S.xp)+' XP lên cấp':'Cấp cao nhất'}"><i style="width:${L.p}%"></i></div></div><div class="streak" title="Chuỗi ngày học">${FLAME}<span>${S.streak}</span></div><button class="ib" data-act="snd" aria-label="${S.snd?'Tắt âm thanh':'Bật âm thanh'}" aria-pressed="${S.snd}">${SND(S.snd)}</button>`;
 }
-function renderNav(){$('#nav').innerHTML=NAV.map(([id,n,ic])=>`<button data-act="tab" data-v="${id}" ${tab===id?'aria-current="page"':''}><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg>${n}</button>`).join('')}
+function renderNav(){$('#nav').className='bot'+(NAV.length>5?' n6':'');$('#nav').innerHTML=NAV.map(([id,n,ic])=>`<button data-act="tab" data-v="${id}" ${tab===id?'aria-current="page"':''}><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg>${n}</button>`).join('')}
 function render(){
  if(heroT){clearInterval(heroT);heroT=null}
- setWide();renderTop();renderNav();const m=$('#main');m.innerHTML=({map:tabMap,arena:tabArena,mini:tabMini,disan:tabDisan,me:tabMe})[tab]();bindMe();sync3d();
+ setWide();renderTop();renderNav();const m=$('#main');m.innerHTML=({map:tabMap,arena:tabArena,mini:tabMini,bm:tabBm,disan:tabDisan,me:tabMe})[tab]();bindMe();sync3d();
  if(tab==='map'&&!g3&&!RM&&HERO.length>1){heroT=setInterval(()=>{const ps=document.querySelectorAll('.hero img.ph');if(!ps.length)return;ps[heroI%ps.length].classList.remove('on');heroI=(heroI+1)%ps.length;ps[heroI].classList.add('on');const c=$('#hcap');if(c)c.textContent=hcap(HERO[heroI])},6000)}
 }
 const hcap=s=>(CRED[s.img]&&CRED[s.img].cap)||s.cap;
@@ -769,6 +820,7 @@ function tabMini(){
  return `<div class="pad" style="padding-top:16px"><h1>Trò chơi</h1><p class="sub">Mỗi lượt chỉ 2 đến 3 phút.</p></div>
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.bins}</svg></div><div><h3>Ai có thẩm quyền?</h3><p>Đưa 8 việc (rút từ kho ${CARDS.length} thẻ) về đúng chủ thể: HĐND tỉnh, HĐND xã, Thường trực HĐND hay UBND.</p><div class="lab">Kỷ lục: ${S.tqBest}/8</div><button class="btn sm mt" data-act="tq-start">Chơi ngay</button></div></section>
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.steps}</svg></div><div><h3>Xếp đúng quy trình</h3><p>Chạm các bước theo đúng thứ tự. Càng ít bước sai, càng nhiều XP.</p><div class="row2">${PROCS.map((p,i)=>`<button class="btn sm ghost" data-act="qt-start" data-v="${i}">${p.n}</button>`).join('')}</div><div class="lab mt">${(n=>n?'Đã chơi '+n+'/'+PROCS.length+' quy trình, '+PROCS.filter((p,i)=>S.qtBest[i]===0).length+' quy trình không sai bước nào':'Chưa có lượt chơi')(PROCS.filter((p,i)=>S.qtBest[i]!=null).length)}</div></div></section>
+ ${BM?bmGameCard():''}
  <section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.cards}</svg></div><div><h3>Lật thẻ di sản</h3><p>Tìm 6 cặp tranh di tích, thắng cảnh xứ Thanh. Lật càng ít lượt càng giỏi.</p><div class="lab">${S.memBest?'Ít lượt nhất: '+S.memBest:'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="mem-start">Chơi ngay</button></div></section>
  ${GAL.filter(g=>!g.nq).length>=8?`<section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.img}</svg></div><div><h3>Ảnh này ở đâu?</h3><p>Nhìn ảnh tư liệu thật, đoán đúng địa danh xứ Thanh. 8 ảnh mỗi lượt.</p><div class="lab">${S.picBest?'Kỷ lục: '+S.picBest+'/8':'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="pic-start">Chơi ngay</button></div></section>`:''}`;
 }
@@ -800,7 +852,43 @@ function tabMe(){
  <div class="row2"><button class="btn ghost" data-act="backup">Sao lưu tiến trình</button><button class="btn ghost" data-act="restore">Khôi phục</button></div><input type="file" id="rsf" accept="application/json,.json" hidden>
  ${confirmReset?`<div class="card"><p style="margin:0 0 10px">Xóa toàn bộ XP, huy hiệu và tiến trình trên máy này?</p><div class="row2"><button class="btn red" data-act="reset-yes">Xóa tiến trình</button><button class="btn ghost" data-act="reset-no">Giữ lại</button></div></div>`:`<button class="btn ghost full" data-act="reset">Chơi lại từ đầu</button>`}</div></section>`;
 }
-function bindMe(){const n=$('#nm');if(n)n.addEventListener('input',()=>{S.name=n.value.slice(0,40);save();renderTop()});const f=$('#rsf');if(f)f.addEventListener('change',()=>{if(f.files&&f.files[0])restore(f.files[0])})}
+const bmGameCard=()=>`<section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.org}</svg></div><div><h3>Ai giữ cương vị nào?</h3><p>8 câu về lãnh đạo HĐND tỉnh, Đoàn ĐBQH và Văn phòng, theo Cổng thông tin điện tử của cơ quan.</p><div class="lab">${S.bmBest?'Kỷ lục: '+S.bmBest+'/8':'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="bmq-start">Chơi ngay</button></div></section>`;
+function bmGrid(kind,all){
+ const B=BMP[kind],q=all?'':fold(bmQ.trim());
+ const L=B.db.filter(p=>(all||!bmDv||p.dv===bmDv)&&(!q||fold(p.ten).includes(q)||fold(p.cv).includes(q)));
+ return L.length?L.map(p=>`<button class="pc" data-act="bm-p" data-v="${kind}-${p.id}">${pf(p,1)}<b>${esc(p.ten)}</b><small>${p.dv?'Đơn vị số '+p.dv:''}</small></button>`).join(''):'<p class="hint" style="grid-column:1/-1;margin:0">Không tìm thấy đại biểu phù hợp.</p>';
+}
+const bmDvText=()=>bmDv&&BM.hdnd.dv[bmDv]?'Đơn vị bầu cử số '+bmDv+'. '+BM.hdnd.dv[bmDv]+'.':'Chạm vào một đại biểu để xem chức vụ và đơn vị bầu cử.';
+function tabBm(){
+ if(!BM)return `<div class="pad" style="padding-top:16px"><h1>Bộ máy</h1><p class="sub">Chưa nạp được dữ liệu bộ máy.</p></div>`;
+ const H=BM.hdnd,Q=BM.dbqh,V=BM.vp,C=BM.coquan||{};
+ const stats=B=>`<div class="stats"><div class="stat"><b>${B.tk.tong}</b><span>Đại biểu</span></div><div class="stat"><b>${B.tk.nu}</b><span>Đại biểu nữ</span></div><div class="stat"><b>${B.tk.dv}</b><span>Đơn vị bầu cử</span></div></div>`;
+ const people=L=>`<div class="card bml">${L.map(x=>`<div><b>${esc(x.ten)}</b><small>${esc(x.cv)}</small></div>`).join('')}</div>`;
+ const kr=(kind,k,mx)=>`<button class="kr" data-act="bm-k" data-v="${kind}-${k.k}" ${k.n?'':'disabled'} aria-label="Khóa ${k.k}, ${k.nk}${k.n?', '+k.n+' đại biểu':', chưa có danh sách'}"><span><b>Khóa ${k.k}</b><small>${k.nk}</small></span><span class="bar"><i style="width:${Math.round(k.n/mx*100)}%"></i></span><span class="n">${k.n||'–'}</span></button>`;
+ let h=`<div class="pad" style="padding-top:16px"><h1>Bộ máy dân cử</h1><p class="sub">Tổ chức, nhân sự của Đoàn ĐBQH, HĐND tỉnh và Văn phòng, theo Cổng thông tin điện tử dbndthanhhoa.gov.vn ngày ${BM.ngay}.</p>
+ <div class="seg bm4" role="group" aria-label="Chọn nội dung">${[['hd','HĐND tỉnh'],['qh','Đoàn ĐBQH'],['vp','Văn phòng'],['nk','Nhiệm kỳ']].map(([k,n])=>`<button data-act="bm-tab" data-v="${k}" aria-pressed="${bmTab===k}">${n}</button>`).join('')}</div></div>`;
+ if(bmTab==='hd')h+=`<section class="sec"><h2>HĐND tỉnh khóa ${H.khoa}</h2><p class="sub" style="margin:-4px 0 12px">Nhiệm kỳ ${H.nk}. Số liệu đếm theo danh sách đang đăng trên Cổng, có thể khác số đại biểu được bầu đầu nhiệm kỳ; trong đó ${H.tk.dtts} đại biểu là người dân tộc thiểu số.</p>${stats(H)}</section>
+ <section class="sec"><h2>Thường trực HĐND tỉnh</h2><div class="plist">${H.tt.map(p=>prow('hd',p,p.vt)).join('')}</div></section>
+ ${bmGameCard()}
+ <section class="sec"><h2>Các Ban của HĐND tỉnh</h2><div class="plist">${H.ban.map(b=>`<div class="card"><h3 style="margin-bottom:10px">${b.n}</h3><div class="bml">${b.tv.map(x=>`<div><b>${esc(x.ten)}</b><small>${esc(x.cv)}</small></div>`).join('')}</div></div>`).join('')}</div>${H.ban.some(b=>b.tv.length<5)?'<p class="hint">Ban nào Cổng chưa đăng trang riêng thì mới ghi Trưởng Ban, Phó Trưởng Ban và Ủy viên hoạt động chuyên trách theo danh bạ của Cổng.</p>':''}</section>
+ <section class="sec"><h2>${H.tk.tong} đại biểu</h2><div class="bmf"><input type="text" id="bmS" placeholder="Tìm tên, chức vụ" value="${esc(bmQ)}" autocomplete="off" aria-label="Tìm đại biểu theo tên hoặc chức vụ"><select id="bmD" aria-label="Lọc theo đơn vị bầu cử"><option value="0">Mọi đơn vị</option>${Object.keys(H.dv).filter(k=>k!=='0').map(k=>`<option value="${k}" ${bmDv===+k?'selected':''}>Đơn vị số ${k}</option>`).join('')}</select></div>
+ <p class="hint" id="bmT">${esc(bmDvText())}</p><div class="pgd" id="bmG">${bmGrid('hd')}</div></section>`;
+ else if(bmTab==='qh')h+=`<section class="sec"><h2>Đoàn ĐBQH khóa ${Q.khoa}</h2><p class="sub" style="margin:-4px 0 12px">Nhiệm kỳ ${Q.nk}. Số liệu đếm theo danh sách đang đăng trên Cổng; trong đó ${Q.tk.dtts} đại biểu là người dân tộc thiểu số.</p>${stats(Q)}</section>
+ ${Q.db.some(p=>p.vt)?`<section class="sec"><h2>Lãnh đạo Đoàn</h2><div class="plist">${Q.db.filter(p=>p.vt).map(p=>prow('qh',p,p.vt)).join('')}</div></section>`:''}
+ <section class="sec"><h2>${Q.tk.tong} đại biểu Quốc hội</h2><p class="sub" style="margin:-4px 0 0">Chạm vào một đại biểu để xem chức vụ và đơn vị bầu cử.</p><div class="pgd">${bmGrid('qh',true)}</div></section>
+ ${Q.nv.length?`<section class="sec"><details class="card"><summary>Chức năng, nhiệm vụ của Đoàn ĐBQH tỉnh</summary><ol>${Q.nv.map(x=>`<li>${esc(x)}.</li>`).join('')}</ol><p class="credit">Theo trang Giới thiệu trên Cổng thông tin điện tử của Đoàn.</p></details></section>`:''}`;
+ else if(bmTab==='vp')h+=`<section class="sec"><h2>Văn phòng</h2><div class="card"><h3 style="margin-bottom:8px">${esc(V.ten)}</h3><p style="margin:0;font-size:15px">${esc(V.vitri)}</p>${V.cancu?`<p class="credit">Trích Điều 1 Quy chế làm việc của Văn phòng, ban hành kèm theo ${esc(V.cancu.split(' về việc')[0])}.</p>`:''}</div></section>
+ <section class="sec"><h2>Lãnh đạo Văn phòng</h2>${people(V.ld)}</section>
+ <section class="sec"><h2>Các phòng</h2><div class="plist">${V.phong.map(p=>`<div class="card"><h3 style="margin-bottom:10px">${esc(p.n)}</h3>${p.ns.length?`<div class="bml">${p.ns.map(x=>`<div><b>${esc(x.ten)}</b><small>${esc(x.cv)}</small></div>`).join('')}</div>`:'<p class="hint" style="margin:0">Cổng chưa ghi nhân sự của phòng này.</p>'}</div>`).join('')}</div><p class="hint">Nhân sự các phòng ghi theo danh bạ trên Cổng; game không đăng số điện thoại cá nhân.</p></section>
+ <section class="sec"><h2>Liên hệ cơ quan</h2><div class="card bml">${C.diachi?`<div><small>Địa chỉ</small>${esc(C.diachi)}</div>`:''}${C.dt?`<div><small>Điện thoại</small>${esc(C.dt)}</div>`:''}${C.email?`<div><small>Thư điện tử</small>${esc(C.email)}</div>`:''}<div><small>Cổng thông tin điện tử</small><a href="${esc(BM.nguon)}" target="_blank" rel="noopener">dbndthanhhoa.gov.vn</a></div></div></section>`;
+ else{const mq=Math.max(...BM.khoa.qh.map(k=>k.n),1),mh=Math.max(...BM.khoa.hd.map(k=>k.n),1);
+ h+=`<section class="sec"><h2>Đại biểu Quốc hội</h2><p class="sub" style="margin:-4px 0 12px">Đại biểu Quốc hội bầu tại Thanh Hóa từ khóa I. Chạm vào một khóa để xem danh sách.</p><div class="card">${BM.khoa.qh.map(k=>kr('qh',k,mq)).join('')}</div></section>
+ <section class="sec"><h2>HĐND tỉnh</h2><p class="sub" style="margin:-4px 0 12px">Cổng hiện đăng danh sách đại biểu HĐND tỉnh từ khóa ${BM.khoa.hd[0].k}.</p><div class="card">${BM.khoa.hd.map(k=>kr('hd',k,mh)).join('')}</div>
+ <p class="hint">Con số là số người có tên trong danh sách trên Cổng, có thể khác số đại biểu được bầu đầu nhiệm kỳ. Khóa để gạch ngang là khóa Cổng chưa đăng danh sách. Năm của từng khóa là phần game bổ sung để tiện theo dõi.</p></section>`}
+ return h+`<p class="note">Nhân sự thay đổi theo thời gian; nội dung mục này chụp từ Cổng ngày ${BM.ngay}. Bản mới nhất và tiểu sử đầy đủ xem tại <a href="${esc(BM.nguon)}" target="_blank" rel="noopener">dbndthanhhoa.gov.vn</a>. Ảnh chân dung: Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa.</p>`;
+}
+function bindMe(){const bs=$('#bmS'),bd=$('#bmD');if(bs)bs.addEventListener('input',()=>{bmQ=bs.value;$('#bmG').innerHTML=bmGrid('hd')});if(bd)bd.addEventListener('change',()=>{bmDv=+bd.value;$('#bmG').innerHTML=bmGrid('hd');$('#bmT').textContent=bmDvText()});
+ const n=$('#nm');if(n)n.addEventListener('input',()=>{S.name=n.value.slice(0,40);save();renderTop()});const f=$('#rsf');if(f)f.addEventListener('change',()=>{if(f.files&&f.files[0])restore(f.files[0])})}
 /* Sao lưu, khôi phục tiến trình bằng một tệp .json (dùng khi đổi máy hoặc đổi trình duyệt) */
 function backup(){
  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({app:'nghitruongso',v:2,at:new Date().toISOString(),S})],{type:'application/json'}));
@@ -944,12 +1032,36 @@ function renderOvBody(){
  }else if(run.type==='card'){
   const s=STAGES[run.idx];b.className='ovb flush';head('Thẻ di sản','');
   b.innerHTML=`${strip?'':`<div class="photo">${pic(s.img)}<div class="pt"><span class="eb">Chặng ${run.idx+1} · ${s.t}</span><h2>${s.n}</h2></div></div>`}<div class="pad"><p class="lore">${s.lore}</p>${figure(s)}<div class="btns mt"><button class="btn" data-act="stage" data-v="${run.idx}">Đến chặng ${s.n}</button><button class="btn ghost" data-act="close">Đóng</button></div></div>`;
+ }else if(run.type==='bmp'){
+  const kind=run.kind,B=BMP[kind],p=bmFind(kind,run.id),same=p.dv?B.db.filter(x=>x.dv===p.dv&&x.id!==p.id):[];
+  const bans=kind==='hd'?BM.hdnd.ban.map(x=>{const m=x.tv.find(y=>y.ten===p.ten);return m?x.n+' ('+m.cv.split(';')[0]+')':''}).filter(Boolean):[];
+  head(kind==='qh'?'Đại biểu Quốc hội':'Đại biểu HĐND tỉnh','');
+  b.innerHTML=`<div class="bmh">${pf(p)}<div><span class="eb">${kind==='qh'?'Quốc hội':'HĐND tỉnh'} khóa ${B.khoa} · ${B.nk}</span><h3>${esc(p.ten)}</h3><p>${esc(bmRole(kind,p))}</p></div></div>
+  <div class="card mt bml"><div><small>Chức vụ, nghề nghiệp</small>${esc(p.cv)}</div>${bans.length?`<div><small>Tham gia</small>${esc(bans.join('; '))}</div>`:''}${p.dv?`<div><small>Đơn vị bầu cử số ${p.dv}</small>${B.dv[p.dv]?esc(B.dv[p.dv]):'Cổng chưa ghi địa bàn của đơn vị này.'}</div>`:''}</div>
+  ${same.length?`<h3 style="margin-top:22px">Cùng đơn vị bầu cử số ${p.dv}</h3><div class="plist mt">${same.map(x=>prow(kind,x,bmRole(kind,x))).join('')}</div>`:''}
+  <p class="credit">Thông tin và ảnh: Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa, ngày ${BM.ngay}. <a href="${esc(BM.nguon)}/portal/Home/${kind==='qh'?'danh-sach-dai-bieu-qh':'danh-sach-dai-bieu'}/detail.aspx?v=${p.id}" target="_blank" rel="noopener">Xem tiểu sử trên Cổng</a></p>
+  <button class="btn ghost full mt" data-act="close">Đóng</button>`;
+ }else if(run.type==='bmk'){
+  const K=BM.khoa[run.kind].find(x=>x.k===run.k);
+  head((run.kind==='qh'?'Quốc hội':'HĐND tỉnh')+' khóa '+K.k,K.n+' đại biểu');
+  b.innerHTML=`<span class="eb">Nhiệm kỳ ${K.nk}</span><h3 style="margin:4px 0 4px;font-size:22px">${run.kind==='qh'?'Đại biểu Quốc hội bầu tại Thanh Hóa':'Đại biểu HĐND tỉnh Thanh Hóa'}</h3><p class="sub">${K.n} đại biểu có tên trong danh sách trên Cổng, trong đó ${K.nu} nữ. Chức vụ ghi theo Cổng.</p>
+  <div class="card mt bml">${K.db.map(([t,c],i)=>`<div><b>${i+1}. ${esc(t)}</b>${c?`<small>${esc(c)}</small>`:''}</div>`).join('')}</div><button class="btn ghost full mt" data-act="close">Đóng</button>`;
+ }else if(run.type==='bmq'){
+  const r=run,it=r.qs[r.i],pk=r.picked;
+  head('Ai giữ cương vị nào?',(r.i+1)+'/'+r.qs.length);
+  b.innerHTML=`<div class="dots">${r.qs.map((x,k)=>`<i class="${k<r.res.length?(r.res[k]?'ok':'bad'):k===r.i?'cur':''}"></i>`).join('')}</div>
+  <div class="bmq ${it.p?'':'np'}">${it.p?pf(it.p):''}<p>${esc(it.q)}</p></div>${ansBtns(it,r.ord[r.i],pk,'bmq-ans')}
+  ${pk!=null?fb(pk===0,esc(it.why),'')+`<button class="btn full mt" data-act="bmq-next">${r.i<r.qs.length-1?'Câu tiếp theo':'Xem kết quả'}</button>`:''}`;
+ }else if(run.type==='bmqEnd'){
+  head('Kết quả','');
+  b.innerHTML=`<div class="res">${voi(140)}<h2 style="margin:0">Đúng ${run.ok}/${run.n} câu</h2><p class="sub" style="margin:0">${run.ok>=run.n-1?'Bạn nắm rất chắc bộ máy dân cử của tỉnh.':'Xem lại mục Bộ máy rồi thử lần nữa nhé.'}</p><div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${S.bmBest}/${run.n}</b><span>Kỷ lục</span></div><div class="stat"><b>${run.ok>=run.n-1?'Đạt':'Chưa'}</b><span>Huy hiệu</span></div></div><div class="btns"><button class="btn" data-act="bmq-start">Chơi lại</button><button class="btn ghost" data-act="tab-bm">Xem mục Bộ máy</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`;
  }else if(run.type==='credits'){
   head('Căn cứ và nguồn ảnh','');
   const docs=['Hiến pháp năm 2013 (sửa đổi, bổ sung theo Nghị quyết 203/2025/QH15)','Luật Tổ chức chính quyền địa phương số 72/2025/QH15','Luật Hoạt động giám sát của Quốc hội và HĐND số 121/2025/QH15','Luật Bầu cử đại biểu Quốc hội và đại biểu HĐND (văn bản hợp nhất 83/VBHN-VPQH năm 2026)','Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15, sửa đổi bởi Luật số 87/2025/QH15','Luật Ngân sách nhà nước số 89/2025/QH15','Luật Tiếp công dân năm 2013, sửa đổi bởi Luật số 136/2025/QH15','Nghị quyết 103/2025/UBTVQH15 và 104/2025/UBTVQH15: Quy chế làm việc mẫu của HĐND cấp tỉnh, cấp xã','Nghị quyết 106, 107, 108/2025/UBTVQH15 về số lượng Phó Chủ tịch, Phó Trưởng Ban; cơ cấu người ứng cử; Ban Dân tộc','Nghị quyết 114/2025/UBTVQH15 hướng dẫn hoạt động giám sát của HĐND','Nghị quyết 116/2025/UBTVQH15 về tiếp công dân, xử lý đơn, giám sát giải quyết khiếu nại, tố cáo','Nghị quyết liên tịch 72/2025/NQLT/UBTVQH15-CP-ĐCTUBTWMTTQVN về tiếp xúc cử tri (đã sửa đổi năm 2025)','Nghị quyết 96/2023/QH15 về lấy phiếu tín nhiệm, bỏ phiếu tín nhiệm','Nghị quyết 202/2025/QH15 và Nghị quyết 1686/NQ-UBTVQH15 về sắp xếp đơn vị hành chính','Nghị quyết 45/2025/NQ-HĐND, 36/2026/NQ-HĐND, 55/NQ-HĐND năm 2026 của HĐND tỉnh Thanh Hóa','Chỉ thị 08/CT-TTg và Chỉ thị 14/CT-TTg năm 2026','Báo Thanh Hóa điện tử; Wikipedia tiếng Việt (phần lịch sử, văn hóa)'];
   b.innerHTML=`<h3>Căn cứ soạn câu hỏi</h3><p class="sub">Mỗi câu hỏi đều ghi điều, khoản làm căn cứ và đã được đối chiếu với nguyên văn văn bản. Bộ câu hỏi vẫn cần Phòng Công tác HĐND rà soát trước khi dùng chính thức.</p><div class="card mt">${docs.map(d=>`<div class="crd">${d}</div>`).join('')}</div>
   <h3 class="mt" style="margin-top:22px">Đồ họa 3D, tranh và ảnh</h3><p class="sub">Sa bàn 3D và mười cụm mô hình di sản được dựng riêng cho game bằng mã, là hình cách điệu chứ không theo đúng tỷ lệ; dùng thư viện three.js (giấy phép MIT). Mười bức tranh phong cách sơn mài của các chặng được vẽ riêng cho game. Ảnh tư liệu lấy từ Wikimedia Commons, dùng theo giấy phép ghi kèm; ảnh đã được cắt và thu nhỏ.</p><div class="card mt">${STAGES.map(s=>{const c=CRED[s.img];return c?`<div class="crd"><b>${s.n}</b>: ${esc(c.title)}. Tác giả: ${esc(c.author)}. Giấy phép: ${esc(c.lic)}. <a href="${esc(c.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`:''}).join('')}</div>
   ${GAL.length?`<h3 style="margin-top:22px">Thư viện ảnh (${GAL.length} ảnh)</h3><div class="card mt">${GAL.map(g=>`<div class="crd"><b>${esc(g.pl)}</b>: ${esc(g.cap)}. Tác giả: ${esc(g.author)}. Giấy phép: ${esc(g.lic)}. <a href="${esc(g.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`).join('')}</div>`:''}
+  ${BM?`<h3 style="margin-top:22px">Mục Bộ máy</h3><p class="sub">Thông tin tổ chức, nhân sự và ảnh chân dung đại biểu lấy từ Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn) ngày ${BM.ngay}; ảnh đã được cắt và thu nhỏ. Game chỉ đăng họ tên, chức vụ, đơn vị bầu cử. Năm của các khóa là phần game bổ sung, không lấy từ danh sách trên Cổng.</p>`:''}
   <p class="hint">Phim giới thiệu dựng từ các tranh, ảnh trên; nhạc và tiếng trống được tổng hợp bằng máy.</p>`;
  }
 }
@@ -1092,6 +1204,42 @@ function nextPic(){
  const ok=run.res.filter(Boolean).length,n=run.items.length,xp=ok*5+(ok===n?10:0);S.picBest=Math.max(S.picBest||0,ok);addXP(xp);if(ok>=7)award('matxu');daily('mini');touchStreak();save();if(ok>=7){SFX.win();burst(14)}
  run={type:'picEnd',ok,n,xp};renderOv();$('#ovb').scrollTop=0;
 }
+/* Trò "Ai giữ cương vị nào?": câu hỏi sinh từ dữ liệu bộ máy nên luôn khớp với mục Bộ máy */
+function bmPool(){
+ const H=BM.hdnd,Q=BM.dbqh,V=BM.vp,P=[],src='Theo Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa ngày '+BM.ngay+': ';
+ const pick=(ok,pool,ex)=>{const o=shuffle([...new Set(pool)].filter(x=>x!==ok&&!(ex||[]).includes(x))).slice(0,3);return o.length===3?[ok].concat(o):null};
+ const add=(q,a,why,p)=>{if(a&&new Set(a).size===4)P.push({q,a,why,p:p||null})};
+ const ttN=H.tt.map(p=>p.ten),ttV=H.tt.map(p=>p.vt),pct=H.tt.filter(p=>/Phó Chủ tịch/.test(p.vt)).map(p=>p.ten);
+ H.tt.forEach(p=>{const w=src+p.ten+', '+p.cv+'.';
+  add(`Ai là ${p.vt} Thanh Hóa khóa ${H.khoa}, nhiệm kỳ ${H.nk}?`,pick(p.ten,ttN,/Phó Chủ tịch/.test(p.vt)?pct:[]),w);
+  add(`Đại biểu ${p.ten} giữ cương vị nào trong Thường trực HĐND tỉnh khóa ${H.khoa}?`,pick(p.vt,ttV,/Phó Chủ tịch/.test(p.vt)?ttV.filter(v=>/Phó Chủ tịch/.test(v)):[]),w,p)});
+ const qhN=Q.db.map(p=>p.ten),qhL=Q.db.filter(p=>p.vt).map(p=>p.ten);
+ Q.db.filter(p=>p.vt).forEach(p=>add(`Ai là ${p.vt} Thanh Hóa khóa ${Q.khoa}?`,pick(p.ten,qhN,qhL),src+p.ten+', '+p.cv+'.'));
+ const pho=[];H.ban.forEach(x=>x.tv.forEach(y=>{if(/^Phó Trưởng Ban|chuyên trách/.test(y.cv))pho.push(y.ten)}));
+ H.ban.forEach(x=>{const ph=x.tv.filter(y=>/^Phó Trưởng Ban/.test(y.cv));if(ph.length===1)add(`Ai là Phó Trưởng ${x.n} HĐND tỉnh Thanh Hóa khóa ${H.khoa}?`,pick(ph[0].ten,pho,x.tv.map(y=>y.ten)),src+ph[0].ten+', Phó Trưởng '+x.n+' HĐND tỉnh.')});
+ const chanh=V.ld.find(x=>/Chánh Văn phòng/.test(x.cv)&&!/Phó Chánh/.test(x.cv)),vpN=V.ld.filter(x=>x!==chanh).map(x=>x.ten);
+ V.phong.forEach(p=>p.ns.forEach(x=>{if(/phòng/i.test(x.cv))vpN.push(x.ten)}));
+ if(chanh)add(`Ai là Chánh ${V.ten}?`,pick(chanh.ten,vpN),src+chanh.ten+', '+chanh.cv+'.');
+ const d1='Điều 1 Quy chế làm việc của Văn phòng: "'+V.vitri+'"';
+ if(/tương đương Sở/.test(V.vitri))add('Theo Quy chế làm việc của Văn phòng Đoàn ĐBQH và HĐND tỉnh Thanh Hóa, Văn phòng là cơ quan như thế nào?',['Cơ quan tương đương Sở','Cơ quan tương đương phòng thuộc Sở','Đơn vị sự nghiệp công lập thuộc UBND tỉnh','Cơ quan chuyên môn thuộc UBND tỉnh'],d1);
+ if(/chỉ đạo trực tiếp của Trưởng đoàn, Phó Trưởng đoàn đại biểu Quốc hội và Thường trực Hội đồng nhân dân tỉnh/.test(V.vitri))add('Văn phòng Đoàn ĐBQH và HĐND tỉnh Thanh Hóa chịu sự lãnh đạo, chỉ đạo trực tiếp của ai?',['Trưởng đoàn, Phó Trưởng đoàn ĐBQH và Thường trực HĐND tỉnh','Chủ tịch UBND tỉnh','Chánh Văn phòng UBND tỉnh','Giám đốc Sở Nội vụ'],d1);
+ if(H.ban.length===4&&H.ban.some(x=>x.n==='Ban Dân tộc'))add(`HĐND tỉnh Thanh Hóa khóa ${H.khoa} có những Ban nào?`,[H.ban.map(x=>x.n).join(', '),'Ban Pháp chế, Ban Kinh tế - Ngân sách, Ban Văn hóa - Xã hội, Ban Đô thị','Ban Pháp chế, Ban Kinh tế, Ban Ngân sách, Ban Văn hóa - Xã hội','Ban Pháp chế, Ban Kinh tế - Xã hội, Ban Dân tộc, Ban Đô thị'],src+'Thường trực HĐND tỉnh có bốn Ủy viên là Trưởng Ban của '+H.ban.map(x=>x.n).join(', ')+'.');
+ const num=(n,ds,dv)=>[n].concat(ds.map(d=>n+d)).map(x=>x+' '+dv);
+ if(H.nk)add(`HĐND tỉnh Thanh Hóa khóa ${H.khoa} thuộc nhiệm kỳ nào?`,[H.nk].concat(['2021 - 2026','2025 - 2030','2027 - 2032','2024 - 2029'].filter(x=>x!==H.nk).slice(0,3)),src+'HĐND tỉnh Thanh Hóa khóa '+H.khoa+', nhiệm kỳ '+H.nk+'.');
+ if(H.tk.dv>6)add(`Theo danh sách trên Cổng, đại biểu HĐND tỉnh khóa ${H.khoa} được bầu ở bao nhiêu đơn vị bầu cử?`,num(H.tk.dv,[-3,-1,3],'đơn vị'),src+'các đại biểu HĐND tỉnh khóa '+H.khoa+' ứng cử tại '+H.tk.dv+' đơn vị bầu cử.');
+ if(Q.tk.dv>3)add(`Theo danh sách trên Cổng, đại biểu Quốc hội khóa ${Q.khoa} của tỉnh Thanh Hóa được bầu ở bao nhiêu đơn vị bầu cử?`,num(Q.tk.dv,[-2,-1,2],'đơn vị'),src+'các đại biểu Quốc hội khóa '+Q.khoa+' ứng cử tại '+Q.tk.dv+' đơn vị bầu cử trong tỉnh.');
+ return P;
+}
+function startBmq(){
+ if(!BM)return;const qs=shuffle(bmPool()).slice(0,8);if(qs.length<4){toast('Chưa đủ dữ liệu bộ máy');return}
+ stopRun();run={type:'bmq',qs,ord:qs.map(()=>shuffle([0,1,2,3])),i:0,res:[],picked:null};openOv();$('#ovb').scrollTop=0;
+}
+function ansBmq(v){if(!run||run.type!=='bmq'||run.picked!=null)return;const ok=+v===0;run.picked=+v;run.res.push(ok);S.answered++;if(ok){S.correct++;SFX.ok();burst(7)}else SFX.bad();if(g3)G3.react(ok?'ok':'bad');save();renderOv();toEnd()}
+function nextBmq(){
+ if(run.i<run.qs.length-1){run.i++;run.picked=null;renderOv();$('#ovb').scrollTop=0;return}
+ const ok=run.res.filter(Boolean).length,n=run.qs.length,xp=ok*5+(ok===n?10:0);S.bmBest=Math.max(S.bmBest||0,ok);addXP(xp);if(ok>=n-1)award('bomay');daily('mini');touchStreak();save();if(ok>=n-1){SFX.win();burst(14)}
+ run={type:'bmqEnd',ok,n,xp};renderOv();$('#ovb').scrollTop=0;
+}
 function startMem(){
  const six=shuffle(STAGES).slice(0,6),deck=shuffle(six.concat(six).map(s=>({k:s.img,n:s.n,id:s.id})));
  stopRun();run={type:'mem',deck,open:[],found:[],moves:0,lock:false,xp:0,note:''};openOv();$('#ovb').scrollTop=0;
@@ -1130,6 +1278,11 @@ const ACT={
  photo:(v,b)=>openLb(v,b&&b.dataset.l),'lb-close':closeLb,'lb-go':lbGo,
  galf:v=>{galF=v;const y=$('#main').scrollTop;render();$('#main').scrollTop=y},
  'pic-start':startPic,'pic-ans':ansPic,'pic-next':nextPic,
+ 'bm-tab':v=>{bmTab=v;SFX.tap();render();$('#main').scrollTop=0},
+ 'bm-p':v=>{const [k,id]=String(v).split('-');if(!bmFind(k,id))return;stopRun();run={type:'bmp',kind:k,id:+id};openOv();$('#ovb').scrollTop=0},
+ 'bm-k':v=>{const [k,kk]=String(v).split('-');if(!BM||!BM.khoa[k])return;stopRun();run={type:'bmk',kind:k,k:kk};openOv();$('#ovb').scrollTop=0},
+ 'bmq-start':startBmq,'bmq-ans':ansBmq,'bmq-next':nextBmq,
+ 'tab-bm':()=>{closeOv();tab='bm';render();$('#main').scrollTop=0},
  'tab-disan':()=>{closeOv();tab='disan';render();$('#main').scrollTop=0},
  'cine-play':()=>{const v=$('#vid');if(v){v.muted=!S.snd;const p=v.play();if(p&&p.catch)p.catch(()=>{})}},
  'onb-open':openOnb,
@@ -1149,8 +1302,8 @@ document.addEventListener('keydown',e=>{
  if(e.key==='Escape'){closeOv();return}
  if(e.target&&/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;
  const k='abcd'.indexOf(e.key.toLowerCase());
- if(k>=0&&(run.type==='stage'||run.type==='arena'||run.type==='exam'||run.type==='pic')){const bs=document.querySelectorAll('#ovb .ans');if(bs[k]&&!bs[k].disabled)bs[k].click()}
- if(e.key==='Enter'){const n=document.querySelector('#ovb [data-act="next"],#ovb [data-act="tq-next"],#ovb [data-act="pic-next"]');if(n){e.preventDefault();n.click()}}
+ if(k>=0&&(run.type==='stage'||run.type==='arena'||run.type==='exam'||run.type==='pic'||run.type==='bmq')){const bs=document.querySelectorAll('#ovb .ans');if(bs[k]&&!bs[k].disabled)bs[k].click()}
+ if(e.key==='Enter'){const n=document.querySelector('#ovb [data-act="next"],#ovb [data-act="tq-next"],#ovb [data-act="pic-next"],#ovb [data-act="bmq-next"]');if(n){e.preventDefault();n.click()}}
 });
 
 /* ---------- Điều phối 3D: đặt khung sa bàn đúng chỗ, chọn góc máy theo màn hình đang mở ---------- */
@@ -1162,8 +1315,9 @@ function sync3d(){
  o3.className='ov3d'+(strip?' on':'')+(strip===2?' tall':'');
  G3.mount(wide?$('#stage'):strip?o3:(!rt&&tab==='map')?$('#hero3d'):null);
  const onSt=rt==='info'||rt==='card'||rt==='stage'||rt==='result';let mode='map',i=selSt;
- if(rt){if(onSt){mode='focus';i=run.idx}else if(rt==='arena')mode='fly';else if(/^(exam|tq|qt)/.test(rt)){mode='focus';i=STAGES.length-1}else mode='idle'}
+ if(rt){if(onSt){mode='focus';i=run.idx}else if(rt==='arena')mode='fly';else if(/^(exam|tq|qt|bm)/.test(rt)){mode='focus';i=STAGES.length-1}else mode='idle'}
  else if(tour){mode='focus';i=tour.i}
+ else if(tab==='bm'&&BM){mode='focus';i=STAGES.length-1}
  else if(tab!=='map')mode='idle';
  G3.setView(mode,i);G3.setFree(wide||mode!=='map');
  const nx=nextNode();
@@ -1189,7 +1343,8 @@ function renderHud(){
   <div class="hinfo"><span class="eb">Chặng ${i+1}/10 · ${s.t}</span><h3>${s.n}</h3></div>
   <button class="hnav" data-act="g-next" aria-label="Chặng sau" ${i<STAGES.length-1?'':'disabled'}><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
   <div class="hgo"><span class="lv">${pills}</span><button class="btn sm" data-act="g-enter">${un?'Vào chặng':'Xem chặng'}</button></div></div>`;
- }else if(wide)h=`<div class="htop">${brand}</div>`;
+ }else if(wide&&tab==='bm'&&BM)h=`<div class="htop">${brand}</div><div class="hbot"><div class="hcapb"><span class="eb">Địa chỉ cơ quan</span><h2>${esc((BM.coquan.diachi||'Phường Hạc Thành').split(',')[0].replace(/^p/,'P'))}</h2><p>Đoàn ĐBQH và HĐND tỉnh Thanh Hóa</p></div></div>`;
+ else if(wide)h=`<div class="htop">${brand}</div>`;
  if(h!==hudC){hudC=h;G3.hud.innerHTML=h}
 }
 function goSel(i){if(!g3||i<0||i>=STAGES.length)return;selSt=i;SFX.tap();G3.select(i);renderHud()}

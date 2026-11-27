@@ -32,6 +32,9 @@ Văn bản pháp luật được lấy nguyên văn từ luatvietnam.vn (toàn v
 | `nq1686` | Nghị quyết 1686/NQ-UBTVQH15 về sắp xếp đơn vị hành chính cấp xã của tỉnh Thanh Hóa năm 2025 |
 | `ct08` | Chỉ thị 08/CT-TTg năm 2026 về tổ chức kỳ họp thứ nhất HĐND các cấp nhiệm kỳ 2026–2031 |
 | `ct14` | Chỉ thị 14/CT-TTg năm 2026 về bồi dưỡng, đánh giá kiến thức, kỹ năng số cho cán bộ, công chức, viên chức |
+| `dbnd_to_chuc` | Bản chụp các trang giới thiệu trên Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn): Thường trực HĐND tỉnh, Ban Pháp chế, danh bạ các Ban và Văn phòng (đã bỏ số điện thoại), chức năng, nhiệm vụ của Đoàn ĐBQH. Sinh bằng `tools/lay_bo_may.py`, dùng cho mục Bộ máy |
+| `dbnd_van_phong` | Chức năng, nhiệm vụ và Quy chế làm việc của Văn phòng Đoàn ĐBQH và HĐND tỉnh (Quyết định 309/QĐ-VP ngày 03/8/2021), theo Cổng |
+| `dbnd_danh_sach` | Danh sách đại biểu Quốc hội bầu tại Thanh Hóa (khóa I đến XVI) và đại biểu HĐND tỉnh (khóa XVI đến XIX) theo Cổng: họ tên, chức vụ, đơn vị bầu cử |
 | `wiki_*` | 22 bài Wikipedia tiếng Việt (phần lịch sử, văn hóa, di sản), giấy phép CC BY-SA 4.0; tên bài ghi ở dòng đầu mỗi tệp. 6 bài chưa có câu hỏi nào, để dành soạn thêm: `wiki_le_loi`, `wiki_ho_quy_ly`, `wiki_song_ma`, `wiki_cau_ham_rong`, `wiki_khu_kinh_te_nghi_son`, `wiki_vuon_quoc_gia_ben_en`. Không dùng Wikipedia cho số liệu hành chính, dân số, kinh tế (đã lỗi thời sau sắp xếp năm 2025). |
 
 9 câu hỏi (th-006 đến th-014) dựa trên các bài Báo Thanh Hóa điện tử năm 2026; bài báo có bản quyền nên không chép vào kho. Các bài đó:

@@ -4,13 +4,14 @@ Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hó
 
 ## Cấu trúc
 
-- `index.html`: toàn bộ giao diện và lô-gic (HTML, CSS, JS trong một tệp). Nạp thêm `data/cau-hoi.js`, `assets/img/credits.js`, `assets/art.js`, `assets/img/gallery.js`, rồi `assets/vendor/three.min.js`, `assets/3d/mo-hinh.js`, `assets/3d/the-gioi.js`.
+- `index.html`: toàn bộ giao diện và lô-gic (HTML, CSS, JS trong một tệp). Nạp thêm `data/cau-hoi.js`, `data/bo-may.js`, `assets/img/credits.js`, `assets/art.js`, `assets/img/gallery.js`, rồi `assets/vendor/three.min.js`, `assets/3d/mo-hinh.js`, `assets/3d/the-gioi.js`.
 - `assets/3d/mo-hinh.js` (`window.NTS_MODELS`): mô hình dựng bằng mã, gồm Voi Đồng, trống đồng và 10 hàm `build.<khóa>` cho 10 chặng. `assets/3d/the-gioi.js` (`window.NTS_3D`): sa bàn, camera, ghim chặng, hiệu ứng. `assets/vendor/three.min.js`: three.js r170 gộp một tệp, không sửa tay.
 - `manifest.webmanifest`, `sw.js`, `assets/icon/`: cài game như ứng dụng, chơi khi mất mạng. Thêm tệp mã mới thì bổ sung vào mảng `CORE` trong `sw.js`.
 - `data/cau-hoi.json`: ngân hàng câu hỏi bản đầy đủ (nguồn chính để sửa). `data/cau-hoi.js`: bản gọn sinh tự động, không sửa tay.
+- `data/bo-may.json`, `data/bo-may.js` (`window.NTS_BOMAY`): dữ liệu mục Bộ máy, sinh bằng `tools/lay_bo_may.py` từ Cổng thông tin điện tử dbndthanhhoa.gov.vn; không sửa tay. Ảnh chân dung đại biểu ở `assets/img/db/`.
 - `nguon/`: nguyên văn văn bản pháp luật và bài Wikipedia làm căn cứ câu hỏi; mỗi câu hỏi trỏ tới một tệp ở đây qua trường `tep_nguon`.
 - `assets/art.js`: 10 tranh SVG phong cách sơn mài cho 10 chặng. `assets/img/gallery.js`: thư viện ảnh tư liệu (Wikimedia Commons). `assets/img/credits.js`: ảnh chính của từng chặng.
-- `tools/`: `build_bank.py` (sinh cau-hoi.js), `kiem_tra_cau_hoi.py` (kiểm tra câu hỏi), `tai_anh_ve_may.py` (tải ảnh Commons về kho), `xem-3d.html` (xem riêng sa bàn 3D), `phim/` (dựng phim giới thiệu).
+- `tools/`: `build_bank.py` (sinh cau-hoi.js), `kiem_tra_cau_hoi.py` (kiểm tra câu hỏi), `lay_bo_may.py` (lấy dữ liệu mục Bộ máy từ Cổng), `tai_anh_ve_may.py` (tải ảnh Commons về kho), `xem-3d.html` (xem riêng sa bàn 3D), `phim/` (dựng phim giới thiệu).
 
 ## Đồ họa 3D
 
@@ -24,6 +25,13 @@ Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hó
 ## Nội dung trò chơi nhỏ
 
 - Thẻ "Ai có thẩm quyền?" (`CARDS`) và các bước "Xếp đúng quy trình" (`PROCS`) nằm trong `index.html`, cũng chỉ soạn từ văn bản trong `nguon/`; phần `why`, `cc` ghi rõ điều, khoản. Mỗi thẻ chỉ được đúng với một trong bốn chủ thể.
+
+## Mục Bộ máy
+
+- Tab "Bộ máy" (`tabBm()` trong `index.html`) và trò "Ai giữ cương vị nào?" (`bmPool()`) chỉ đọc `window.NTS_BOMAY`; không ghi tên người, chức vụ trực tiếp vào `index.html`. Thiếu `data/bo-may.js` thì tab tự ẩn, game vẫn phải chạy.
+- Muốn cập nhật nhân sự: chạy `python tools/lay_bo_may.py` (cần Pillow), xem `git diff data/bo-may.json`, không sửa tay dữ liệu và không bổ sung theo trí nhớ. Riêng năm của các khóa nằm trong bảng `NK_QH`, `NK_HD` của công cụ vì Cổng không ghi.
+- Chỉ đưa vào kho họ tên, chức vụ, đơn vị bầu cử, giới tính, ảnh chân dung. Không đưa số điện thoại, ngày sinh, quê quán, nơi ở, thư điện tử cá nhân dù Cổng có đăng.
+- Luôn ghi nguồn "dbndthanhhoa.gov.vn" và ngày chụp (`BM.ngay`) ở nơi hiển thị; số liệu đếm từ danh sách phải nói rõ là "theo danh sách trên Cổng".
 
 ## Quy tắc khi sửa câu hỏi
 
@@ -39,6 +47,8 @@ Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hó
 - Chỉ dùng ảnh giấy phép tự do (CC BY, CC BY-SA, CC0, phạm vi công cộng), ghi tác giả và giấy phép trong `gallery.js`. Không dùng ảnh chỉ có giấy phép GFDL, ảnh báo chí, ảnh trang du lịch.
 - Mục trong `gallery.js`: `k` khóa, `st` chặng (hoặc `th` cho ảnh chung xứ Thanh), `pl` địa danh (dùng cho trò "Ảnh này ở đâu?"), `cap` chú thích, `src` ảnh lớn, `th` ảnh nhỏ, `author`, `lic`, `page`; `nq: 1` để loại khỏi trò đoán ảnh (ảnh hiện vật bảo tàng, món ăn, ảnh chụp từ trên cao).
 - Khi tải từ Wikimedia, dùng User-Agent có địa chỉ kho và tôn trọng Retry-After (đã làm sẵn trong `tools/tai_anh_ve_may.py`).
+
+- Ngoại lệ duy nhất: ảnh chân dung đại biểu trong `assets/img/db/` lấy từ Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (Cổng cho phát hành lại khi ghi rõ nguồn), chỉ dùng trong mục Bộ máy, không đưa vào `gallery.js`. Không lấy ảnh tin bài trên Cổng vì nhiều ảnh là của báo chí.
 
 ## Đưa lên mạng
 
