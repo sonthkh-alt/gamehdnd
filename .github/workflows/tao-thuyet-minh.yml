@@ -1,10 +1,17 @@
 # Tổng hợp tệp âm thanh thuyết minh bằng VieNeu-TTS v3 Turbo (mã nguồn mở, Apache 2.0) trên máy chủ GitHub,
 # ghi vào assets/audio/tm/ và data/thuyet-minh.js, commit lên main rồi gọi workflow đồng bộ trang web.
-# CHỈ chạy khi bấm tay: tab Actions > "Tao thuyet minh" > Run workflow.
-# Lưu ý: workflow này chưa được chạy thử lần nào; nghe lại toàn bộ tệp trước khi dùng chính thức.
+# Tự chạy khi lời thuyết minh hoặc công cụ tổng hợp thay đổi; cũng có thể bấm tay ở tab Actions.
+# Chỉ tổng hợp những đoạn còn thiếu hoặc đã đổi lời. Sau đó cho máy chép lại lời (Whisper) để rà soát:
+# xem assets/audio/tm/kiem-tra.txt. Vẫn cần người nghe lại trước khi dùng chính thức.
 name: Tao thuyet minh
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - data/thuyet-minh.json
+      - tools/tao_thuyet_minh.py
+      - .github/workflows/tao-thuyet-minh.yml
   workflow_dispatch:
     inputs:
       lam_lai:
@@ -23,23 +30,32 @@ concurrency:
 jobs:
   tao:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Cai thu vien
-        run: pip install vieneu lameenc
+        run: pip install vieneu lameenc 2>&1 | tail -n 3
       - name: Tong hop giong doc
         env:
           HF_HUB_DISABLE_PROGRESS_BARS: "1"
         run: |
-          if [ "${{ inputs.lam_lai }}" = "true" ]; then
-            python tools/tao_thuyet_minh.py --tong-hop --lam-lai
-          else
-            python tools/tao_thuyet_minh.py --tong-hop
+          set -o pipefail
+          THEM=""
+          if [ "${{ inputs.lam_lai }}" = "true" ]; then THEM="--lam-lai"; fi
+          if ! python tools/tao_thuyet_minh.py --tong-hop $THEM 2>&1 | tee tong-hop.log; then
+            # Ghi phần cuối nhật ký thành chú thích lỗi để đọc được qua trang Actions
+            MSG=$(tail -n 30 tong-hop.log | sed 's/%/%25/g' | sed ':a;N;$!ba;s/\n/%0A/g')
+            echo "::error title=Tong hop that bai::$MSG"
+            exit 1
           fi
+      - name: May chep lai loi de ra soat
+        continue-on-error: true
+        run: |
+          pip install faster-whisper 2>&1 | tail -n 1
+          python tools/kiem_tra_thuyet_minh.py 2>&1 | tail -n 60
       - name: Commit tep am thanh
         run: |
           git config user.name "github-actions[bot]"
@@ -49,6 +65,7 @@ jobs:
             echo "Khong co gi thay doi."
           else
             git commit -m "Tong hop tep am thanh thuyet minh"
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
       - name: Dong bo trang web
