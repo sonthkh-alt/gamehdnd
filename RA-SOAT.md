@@ -112,3 +112,8 @@ Trò "Ai giữ cương vị nào?" không có câu soạn tay về nhân sự: c
 - Những chỗ cần nghe kỹ bằng tai vì bản máy chép khác lời gốc ở cả hai giọng hoặc ở tên riêng: "chìa khóa" (chặng 9, máy chép thành "chiều khóa"), "vươn khơi" (chặng 9), "cưỡi cơn gió mạnh" và "Đền Bà Triệu" (chặng 5), "tỉnh lỵ xứ Thanh" và "hình thành" (chặng 10), "gìn giữ", "lệ làng" (chặng 8, giọng nữ), "Pù Luông", "nếp nhà sàn" (chặng 7, giọng nam), "UNESCO" (chặng 3, giọng nam), các câu ngắn báo kết quả của giọng nam ("Chưa vượt cấp", "Chúc mừng").
 - Lần tổng hợp đầu, giọng nữ ở chặng 3 có dấu hiệu đọc thiếu "và đại biểu" (cụm lặp "Tổ đại biểu và đại biểu"); lời đã sửa thành "Tổ đại biểu và từng đại biểu của Hội đồng nhân dân" rồi tổng hợp lại. Câu "Hết giờ!" quá ngắn, máy đọc không rõ, đã đổi thành "Hết giờ rồi! Cùng xem kết quả nhé."
 - Tùy chọn "Đọc câu hỏi và giải thích" dùng giọng của thiết bị và tự đổi một số chữ viết tắt (HĐND, UBND, ĐBQH, UBTVQH, số hiệu văn bản) thành chữ đầy đủ; số hiệu phức tạp có thể đọc chưa chuẩn, nên mặc định tắt.
+
+## Lời nói đầu và nhạc nền (thêm ngày 28/11/2026)
+
+- Lời nói đầu (`chao`) được viết lại, có nhắc năm địa danh: trống đồng Đông Sơn, cầu Hàm Rồng, Thành nhà Hồ, biển Sầm Sơn, cảng Nghi Sơn. Lời hướng dẫn trang Hành trình (`hanhtrinh`) nêu "tám câu hỏi, đúng từ năm câu là vượt cấp", khớp luật chơi hiện tại.
+- Nhạc nền là nhạc máy tự soạn trên thang ngũ cung, chưa có ai nghe duyệt; lúc làm chỉ kiểm tra được bằng số đo âm lượng và ảnh phổ. Nếu nghe chưa hợp với bản sắc xứ Thanh, nên thay bằng bản thu có bản quyền hợp lệ (xem README, mục Nhạc nền).

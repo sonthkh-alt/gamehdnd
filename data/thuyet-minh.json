@@ -2,30 +2,134 @@
  "ghi_chu": "Lời thuyết minh của game. 'doc' là lời để ĐỌC: viết đủ chữ, không viết tắt, số và ngày tháng viết bằng chữ để máy đọc đúng. Lời của 10 chặng (c0 đến c9) phải khớp nội dung với trường 'lore' của chặng trong index.html. Sửa xong chạy: python tools/tao_thuyet_minh.py (sinh lại data/thuyet-minh.js); muốn có tệp âm thanh thu sẵn thì xem README, mục Thuyết minh.",
  "may": "VieNeu-TTS v3 Turbo",
  "giong": {
-  "nu": {"ten": "Mai Anh", "nhan": "Giọng nữ"},
-  "nam": {"ten": "Thiện Minh", "nhan": "Giọng nam"}
+  "nu": {
+   "ten": "Mai Anh",
+   "nhan": "Giọng nữ"
+  },
+  "nam": {
+   "ten": "Thiện Minh",
+   "nhan": "Giọng nam"
+  }
+ },
+ "nhac": {
+  "tep": "assets/audio/nhac-nen.mp3",
+  "ghi_chu": "Nhạc nền tự soạn, tổng hợp bằng tools/tao_nhac_nen.py. Để trống \"tep\" nếu không dùng nhạc nền."
  },
  "muc": [
-  {"k": "chao", "ten": "Lời chào khi vào game", "doc": "Chào mừng bạn đến với Nghị trường số, hành trình học tập dành cho đại biểu Hội đồng nhân dân hai cấp tỉnh Thanh Hóa. Dọc dòng sông Mã có mười chặng, gắn với mười di tích, thắng cảnh xứ Thanh. Mỗi chặng là một chuyên đề, với ba cấp độ: dễ, vừa và khó. Voi Đồng sẽ đồng hành và giải thích căn cứ sau mỗi câu trả lời. Chúc bạn có một hành trình bổ ích."},
-  {"k": "thu", "ten": "Câu nghe thử khi đổi giọng", "doc": "Xin chào, tôi sẽ thuyết minh cùng bạn trên hành trình dọc sông Mã."},
-  {"k": "c0", "ten": "Chặng 1: Đông Sơn", "doc": "Chặng một. Đông Sơn. Năm một nghìn chín trăm hai mươi tư, những đồ đồng đầu tiên được tìm thấy ở làng Đông Sơn bên bờ sông Mã, và tên làng trở thành tên của cả một nền văn hóa thời dựng nước. Hành trình bắt đầu từ cội nguồn ấy: Hiến pháp, mô hình chính quyền địa phương hai cấp, phân quyền và phân cấp."},
-  {"k": "c1", "ten": "Chặng 2: Hàm Rồng", "doc": "Chặng hai. Hàm Rồng. Cầu Hàm Rồng bắc qua sông Mã, khánh thành ngày mười chín tháng năm năm một nghìn chín trăm sáu mươi tư, gắn với chiến thắng Hàm Rồng năm một nghìn chín trăm sáu mươi lăm của quân và dân Thanh Hóa. Lá phiếu là nhịp cầu nối cử tri với cơ quan dân cử: chặng này nói về nguyên tắc bầu cử, ứng cử, hiệp thương và xác định người trúng cử."},
-  {"k": "c2", "ten": "Chặng 3: Thành nhà Hồ", "doc": "Chặng ba. Thành nhà Hồ. Kinh đô nước Đại Ngu được dựng bằng những khối đá lớn, chỉ trong khoảng ba tháng đầu năm một nghìn ba trăm chín mươi bảy. Ngày hai mươi bảy tháng sáu năm hai nghìn không trăm mười một, UNESCO công nhận nơi đây là Di sản văn hóa thế giới. Bộ máy cũng cần vững như thành đá: Thường trực Hội đồng nhân dân, các Ban, Tổ đại biểu và từng đại biểu của Hội đồng nhân dân."},
-  {"k": "c3", "ten": "Chặng 4: Lam Kinh", "doc": "Chặng bốn. Lam Kinh. Sau mười năm khởi nghĩa Lam Sơn, từ năm một nghìn bốn trăm mười tám đến năm một nghìn bốn trăm hai mươi tám, Lê Thái Tổ cho dựng kinh thành Lam Kinh trên đất quê hương. Nơi đây là di tích quốc gia đặc biệt từ năm hai nghìn không trăm mười hai. Chặng này trả lời câu hỏi quen thuộc ở nghị trường: việc này ai quyết, Hội đồng nhân dân, Ủy ban nhân dân, hay Chủ tịch Ủy ban nhân dân?"},
-  {"k": "c4", "ten": "Chặng 5: Đền Bà Triệu", "doc": "Chặng năm. Đền Bà Triệu. Năm hai trăm bốn mươi tám, Bà Triệu phất cờ khởi nghĩa chống quân Đông Ngô, với chí lớn: cưỡi cơn gió mạnh, đạp luồng sóng dữ. Tiếng nói ở nghị trường cũng cần bản lĩnh và đúng quy tắc: triệu tập, chương trình, thảo luận, biểu quyết, theo quy chế làm việc của Hội đồng nhân dân tỉnh và Hội đồng nhân dân xã."},
-  {"k": "c5", "ten": "Chặng 6: Sầm Sơn", "doc": "Chặng sáu. Sầm Sơn. Sầm Sơn là bãi biển nổi tiếng của xứ Thanh, với núi Trường Lệ soi bóng xuống sóng. Giám sát cũng là soi cho rõ: chất vấn, giải trình, giám sát chuyên đề, xem xét báo cáo, và theo dõi việc thực hiện kiến nghị sau giám sát."},
-  {"k": "c6", "ten": "Chặng 7: Pù Luông", "doc": "Chặng bảy. Pù Luông. Trong tiếng Thái, Pù Luông nghĩa là núi lớn. Giữa ruộng bậc thang và những nếp nhà sàn ở phía tây bắc Thanh Hóa, đại biểu về với cử tri: tiếp xúc cử tri, tiếp công dân, xử lý đơn thư, và theo đến cùng các kiến nghị."},
-  {"k": "c7", "ten": "Chặng 8: Cẩm Lương", "doc": "Chặng tám. Cẩm Lương. Ở miền núi phía tây Thanh Hóa, đồng bào Mường gìn giữ đàn cá suối Cẩm Lương qua nhiều đời bằng một lệ làng: không ai đánh bắt. Lệ đúng thì bền. Chặng này nói về thẩm quyền, hình thức, hiệu lực của nghị quyết Hội đồng nhân dân và quyết định của Ủy ban nhân dân."},
-  {"k": "c8", "ten": "Chặng 9: Nghi Sơn", "doc": "Chặng chín. Nghi Sơn. Khu kinh tế Nghi Sơn được thành lập ngày mười lăm tháng năm năm hai nghìn không trăm linh sáu ở phía nam Thanh Hóa, có cảng biển Nghi Sơn, là một động lực phát triển của tỉnh. Muốn vươn khơi phải chắc tay hòm chìa khóa: dự toán, phân bổ, điều chỉnh và quyết toán ngân sách địa phương."},
-  {"k": "c9", "ten": "Chặng 10: Hạc Thành", "doc": "Chặng mười. Hạc Thành. Hạc Thành là tên gọi xưa của đô thị tỉnh lỵ xứ Thanh, nay là tên phường trung tâm, hình thành sau sắp xếp năm hai nghìn không trăm hai mươi lăm. Chặng về đích: một trăm sáu mươi sáu xã, phường của tỉnh, Hội đồng nhân dân tỉnh khóa mười chín, mục tiêu tăng trưởng hai con số, và những trang sử, di sản đáng tự hào."},
-  {"k": "bomay", "ten": "Giới thiệu mục Bộ máy", "doc": "Mục Bộ máy giới thiệu tổ chức và nhân sự của Hội đồng nhân dân tỉnh, Đoàn đại biểu Quốc hội tỉnh và Văn phòng, theo Cổng thông tin điện tử của cơ quan. Chạm vào từng đại biểu để xem chức vụ và đơn vị bầu cử."},
-  {"k": "dau", "ten": "Bắt đầu Đấu trường", "doc": "Đấu trường sáu mươi giây. Bắt đầu!"},
-  {"k": "hetgio", "ten": "Hết giờ Đấu trường", "doc": "Hết giờ rồi! Cùng xem kết quả nhé."},
-  {"k": "thi", "ten": "Vào phòng thi thử", "doc": "Bài thi thử gồm ba mươi câu, làm trong hai mươi lăm phút. Đúng từ hai mươi mốt câu là đạt. Chúc bạn bình tĩnh, tự tin."},
-  {"k": "thidat", "ten": "Thi thử đạt", "doc": "Chúc mừng! Bạn đã đạt bài thi thử."},
-  {"k": "thichua", "ten": "Thi thử chưa đạt", "doc": "Bài thi chưa đạt. Hãy ôn lại các câu sai rồi thi lại nhé."},
-  {"k": "basao", "ten": "Vượt cấp với ba sao", "doc": "Xuất sắc! Bạn giành trọn ba sao."},
-  {"k": "dat", "ten": "Vượt cấp", "doc": "Chúc mừng! Bạn đã vượt cấp."},
-  {"k": "chuadat", "ten": "Chưa vượt cấp", "doc": "Chưa vượt cấp. Hãy xem lại căn cứ rồi thử lần nữa nhé."}
+  {
+   "k": "chao",
+   "ten": "Lời nói đầu",
+   "doc": "Chào mừng bạn đến với Nghị trường số, hành trình học tập dành cho đại biểu Hội đồng nhân dân hai cấp tỉnh Thanh Hóa. Chúng ta sẽ đi dọc dòng sông Mã, qua mười di tích, thắng cảnh của xứ Thanh: từ trống đồng Đông Sơn, cầu Hàm Rồng, Thành nhà Hồ, đến biển Sầm Sơn và cảng Nghi Sơn. Mỗi chặng là một chuyên đề, với ba cấp độ: dễ, vừa và khó. Voi Đồng sẽ đồng hành và giải thích căn cứ sau mỗi câu trả lời. Chúc bạn có một hành trình bổ ích."
+  },
+  {
+   "k": "hanhtrinh",
+   "ten": "Hướng dẫn ở trang Hành trình (đọc nối sau lời nói đầu)",
+   "doc": "Trang Hành trình có mười chặng dọc sông Mã. Hãy chạm vào một di tích để chọn chặng rồi bắt đầu. Mỗi lượt có tám câu hỏi, đúng từ năm câu là vượt cấp. Mỗi ngôi sao bạn giành được giúp tỉnh ảo tăng trưởng thêm."
+  },
+  {
+   "k": "chaolai",
+   "ten": "Lời chào khi mở lại game trong ngày",
+   "doc": "Chào mừng bạn trở lại Nghị trường số. Hành trình dọc sông Mã đang chờ bạn."
+  },
+  {
+   "k": "thu",
+   "ten": "Câu nghe thử khi đổi giọng",
+   "doc": "Xin chào, tôi sẽ thuyết minh cùng bạn trên hành trình dọc sông Mã."
+  },
+  {
+   "k": "c0",
+   "ten": "Chặng 1: Đông Sơn",
+   "doc": "Chặng một. Đông Sơn. Năm một nghìn chín trăm hai mươi tư, những đồ đồng đầu tiên được tìm thấy ở làng Đông Sơn bên bờ sông Mã, và tên làng trở thành tên của cả một nền văn hóa thời dựng nước. Hành trình bắt đầu từ cội nguồn ấy: Hiến pháp, mô hình chính quyền địa phương hai cấp, phân quyền và phân cấp."
+  },
+  {
+   "k": "c1",
+   "ten": "Chặng 2: Hàm Rồng",
+   "doc": "Chặng hai. Hàm Rồng. Cầu Hàm Rồng bắc qua sông Mã, khánh thành ngày mười chín tháng năm năm một nghìn chín trăm sáu mươi tư, gắn với chiến thắng Hàm Rồng năm một nghìn chín trăm sáu mươi lăm của quân và dân Thanh Hóa. Lá phiếu là nhịp cầu nối cử tri với cơ quan dân cử: chặng này nói về nguyên tắc bầu cử, ứng cử, hiệp thương và xác định người trúng cử."
+  },
+  {
+   "k": "c2",
+   "ten": "Chặng 3: Thành nhà Hồ",
+   "doc": "Chặng ba. Thành nhà Hồ. Kinh đô nước Đại Ngu được dựng bằng những khối đá lớn, chỉ trong khoảng ba tháng đầu năm một nghìn ba trăm chín mươi bảy. Ngày hai mươi bảy tháng sáu năm hai nghìn không trăm mười một, UNESCO công nhận nơi đây là Di sản văn hóa thế giới. Bộ máy cũng cần vững như thành đá: Thường trực Hội đồng nhân dân, các Ban, Tổ đại biểu và từng đại biểu của Hội đồng nhân dân."
+  },
+  {
+   "k": "c3",
+   "ten": "Chặng 4: Lam Kinh",
+   "doc": "Chặng bốn. Lam Kinh. Sau mười năm khởi nghĩa Lam Sơn, từ năm một nghìn bốn trăm mười tám đến năm một nghìn bốn trăm hai mươi tám, Lê Thái Tổ cho dựng kinh thành Lam Kinh trên đất quê hương. Nơi đây là di tích quốc gia đặc biệt từ năm hai nghìn không trăm mười hai. Chặng này trả lời câu hỏi quen thuộc ở nghị trường: việc này ai quyết, Hội đồng nhân dân, Ủy ban nhân dân, hay Chủ tịch Ủy ban nhân dân?"
+  },
+  {
+   "k": "c4",
+   "ten": "Chặng 5: Đền Bà Triệu",
+   "doc": "Chặng năm. Đền Bà Triệu. Năm hai trăm bốn mươi tám, Bà Triệu phất cờ khởi nghĩa chống quân Đông Ngô, với chí lớn: cưỡi cơn gió mạnh, đạp luồng sóng dữ. Tiếng nói ở nghị trường cũng cần bản lĩnh và đúng quy tắc: triệu tập, chương trình, thảo luận, biểu quyết, theo quy chế làm việc của Hội đồng nhân dân tỉnh và Hội đồng nhân dân xã."
+  },
+  {
+   "k": "c5",
+   "ten": "Chặng 6: Sầm Sơn",
+   "doc": "Chặng sáu. Sầm Sơn. Sầm Sơn là bãi biển nổi tiếng của xứ Thanh, với núi Trường Lệ soi bóng xuống sóng. Giám sát cũng là soi cho rõ: chất vấn, giải trình, giám sát chuyên đề, xem xét báo cáo, và theo dõi việc thực hiện kiến nghị sau giám sát."
+  },
+  {
+   "k": "c6",
+   "ten": "Chặng 7: Pù Luông",
+   "doc": "Chặng bảy. Pù Luông. Trong tiếng Thái, Pù Luông nghĩa là núi lớn. Giữa ruộng bậc thang và những nếp nhà sàn ở phía tây bắc Thanh Hóa, đại biểu về với cử tri: tiếp xúc cử tri, tiếp công dân, xử lý đơn thư, và theo đến cùng các kiến nghị."
+  },
+  {
+   "k": "c7",
+   "ten": "Chặng 8: Cẩm Lương",
+   "doc": "Chặng tám. Cẩm Lương. Ở miền núi phía tây Thanh Hóa, đồng bào Mường gìn giữ đàn cá suối Cẩm Lương qua nhiều đời bằng một lệ làng: không ai đánh bắt. Lệ đúng thì bền. Chặng này nói về thẩm quyền, hình thức, hiệu lực của nghị quyết Hội đồng nhân dân và quyết định của Ủy ban nhân dân."
+  },
+  {
+   "k": "c8",
+   "ten": "Chặng 9: Nghi Sơn",
+   "doc": "Chặng chín. Nghi Sơn. Khu kinh tế Nghi Sơn được thành lập ngày mười lăm tháng năm năm hai nghìn không trăm linh sáu ở phía nam Thanh Hóa, có cảng biển Nghi Sơn, là một động lực phát triển của tỉnh. Muốn vươn khơi phải chắc tay hòm chìa khóa: dự toán, phân bổ, điều chỉnh và quyết toán ngân sách địa phương."
+  },
+  {
+   "k": "c9",
+   "ten": "Chặng 10: Hạc Thành",
+   "doc": "Chặng mười. Hạc Thành. Hạc Thành là tên gọi xưa của đô thị tỉnh lỵ xứ Thanh, nay là tên phường trung tâm, hình thành sau sắp xếp năm hai nghìn không trăm hai mươi lăm. Chặng về đích: một trăm sáu mươi sáu xã, phường của tỉnh, Hội đồng nhân dân tỉnh khóa mười chín, mục tiêu tăng trưởng hai con số, và những trang sử, di sản đáng tự hào."
+  },
+  {
+   "k": "bomay",
+   "ten": "Giới thiệu mục Bộ máy",
+   "doc": "Mục Bộ máy giới thiệu tổ chức và nhân sự của Hội đồng nhân dân tỉnh, Đoàn đại biểu Quốc hội tỉnh và Văn phòng, theo Cổng thông tin điện tử của cơ quan. Chạm vào từng đại biểu để xem chức vụ và đơn vị bầu cử."
+  },
+  {
+   "k": "dau",
+   "ten": "Bắt đầu Đấu trường",
+   "doc": "Đấu trường sáu mươi giây. Bắt đầu!"
+  },
+  {
+   "k": "hetgio",
+   "ten": "Hết giờ Đấu trường",
+   "doc": "Hết giờ rồi! Cùng xem kết quả nhé."
+  },
+  {
+   "k": "thi",
+   "ten": "Vào phòng thi thử",
+   "doc": "Bài thi thử gồm ba mươi câu, làm trong hai mươi lăm phút. Đúng từ hai mươi mốt câu là đạt. Chúc bạn bình tĩnh, tự tin."
+  },
+  {
+   "k": "thidat",
+   "ten": "Thi thử đạt",
+   "doc": "Chúc mừng! Bạn đã đạt bài thi thử."
+  },
+  {
+   "k": "thichua",
+   "ten": "Thi thử chưa đạt",
+   "doc": "Bài thi chưa đạt. Hãy ôn lại các câu sai rồi thi lại nhé."
+  },
+  {
+   "k": "basao",
+   "ten": "Vượt cấp với ba sao",
+   "doc": "Xuất sắc! Bạn giành trọn ba sao."
+  },
+  {
+   "k": "dat",
+   "ten": "Vượt cấp",
+   "doc": "Chúc mừng! Bạn đã vượt cấp."
+  },
+  {
+   "k": "chuadat",
+   "ten": "Chưa vượt cấp",
+   "doc": "Chưa vượt cấp. Hãy xem lại căn cứ rồi thử lần nữa nhé."
+  }
  ]
 }

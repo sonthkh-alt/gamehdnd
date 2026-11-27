@@ -56,7 +56,10 @@ def sinh_js(D, so):
         for g in D["giong"]:
             if so.get(m["k"], {}).get(g) == h and os.path.exists(os.path.join(DIR, g, m["k"] + ".mp3")):
                 clip.setdefault(m["k"], {})[g] = h
-    o = {"dir": REL, "may": D.get("may", ""), "giong": D["giong"], "muc": muc, "clip": clip}
+    nhac = (D.get("nhac") or {}).get("tep", "")
+    if nhac and not os.path.exists(os.path.join(ROOT, nhac)):
+        nhac = ""  # chưa có tệp nhạc thì game không phát nhạc nền
+    o = {"dir": REL, "may": D.get("may", ""), "giong": D["giong"], "nhac": nhac, "muc": muc, "clip": clip}
     js = ("/* Sinh tự động bằng tools/tao_thuyet_minh.py từ data/thuyet-minh.json. Không sửa tay. */\n"
           "window.NTS_TM=" + json.dumps(o, ensure_ascii=False, separators=(",", ":")) + ";\n")
     open(OUT_JS, "w", encoding="utf8", newline="\n").write(js)

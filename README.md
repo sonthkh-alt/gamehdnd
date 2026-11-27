@@ -14,6 +14,8 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 - **Thi đấu:** Đấu trường 60 giây (chọn cấp độ), Thi thử 30 câu trong 25 phút (đạt từ 21/30, tải được phiếu kết quả dạng ảnh PNG), Ôn câu sai (luyện lại các câu từng trả lời sai cho đến khi đúng).
 - **Trò chơi nhỏ:** Ai có thẩm quyền? (22 thẻ), Xếp đúng quy trình (4 quy trình), Lật thẻ di sản, Ảnh này ở đâu? (đoán địa danh qua ảnh thật), Ai giữ cương vị nào? (câu hỏi sinh từ dữ liệu mục Bộ máy).
 - **Bộ máy dân cử:** mục giới thiệu tổ chức, nhân sự theo Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn): Thường trực và bốn Ban của HĐND tỉnh khóa XIX, 82 đại biểu HĐND tỉnh kèm ảnh chân dung và đơn vị bầu cử (tìm theo tên, lọc theo đơn vị), Đoàn ĐBQH tỉnh khóa XVI, lãnh đạo và các phòng của Văn phòng, danh sách đại biểu Quốc hội bầu tại Thanh Hóa từ khóa I và đại biểu HĐND tỉnh từ khóa XVI. Kèm trò chơi "Ai giữ cương vị nào?".
+- **Màn chào và lời nói đầu:** mỗi lần mở game có màn chào với nút "Vào nghị trường" (trình duyệt chỉ cho phát tiếng sau một lần chạm). Lần đầu trong ngày game đọc lời nói đầu rồi nối sang hướng dẫn của trang Hành trình; các lần sau chỉ chào ngắn. Trang Hành trình có nút "Nghe lời nói đầu" để nghe lại.
+- **Nhạc nền:** bản nhạc tự soạn trên thang ngũ cung (đàn dây gảy, sáo, trống hội, chiêng, tiếng nước), nhỏ lại khi có thuyết minh và khi trả lời câu hỏi, tắt khi thi thử và ở Đấu trường. Bật, tắt trong Hồ sơ.
 - **Thuyết minh bằng giọng nói tiếng Việt:** lời chào, lời dẫn của 10 chặng di sản (tự phát khi mở chặng lần đầu, có nút nghe lại), bay tham quan có thuyết minh (ống kính chờ đọc xong mới sang di sản kế tiếp), lời báo kết quả khi vượt cấp, thi thử, đấu trường. Tùy chọn thêm: đọc câu hỏi và giải thích ở Hành trình, Ôn câu sai. Bật, tắt trong Hồ sơ.
 - **Thẻ di sản:** vượt cấp Dễ của mỗi chặng để mở một thẻ tranh sơn mài kèm lời dẫn và ảnh tư liệu.
 - **Thư viện ảnh xứ Thanh:** 59 ảnh tư liệu từ Wikimedia Commons về cả 10 chặng và nhiều địa danh khác (Bến En, đảo Hòn Nẹ, núi Nưa, sông Mã, đền Lê Lai, đền Lê Hoàn, nghè Xuân Phả, đền Mai An Tiêm, cửa biển Lạch Sung, hang Co Luồng, đảo cò Tiến Nông, chùa Sùng Nghiêm...), có chú thích, tác giả, giấy phép; lọc theo địa danh, xem ảnh lớn.
@@ -51,6 +53,7 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 | `tools/lay_bo_may.py` | Tải lại thông tin từ Cổng dbndthanhhoa.gov.vn, sinh hai tệp trên, ảnh chân dung trong `assets/img/db/` và bản chụp trong `nguon/dbnd_*.txt` |
 | `data/thuyet-minh.json`, `data/thuyet-minh.js` | Lời thuyết minh (bản để sửa) và bản gọn game nạp, kèm danh sách tệp âm thanh còn khớp lời |
 | `tools/tao_thuyet_minh.py` | Sinh `data/thuyet-minh.js`; thêm `--tong-hop` để tổng hợp tệp âm thanh vào `assets/audio/tm/` |
+| `tools/tao_nhac_nen.py` | Soạn và tổng hợp nhạc nền `assets/audio/nhac-nen.mp3` (cần numpy, lameenc) |
 | `tools/kiem_tra_thuyet_minh.py` | Cho máy chép lại lời các tệp thuyết minh (Whisper) để rà soát, ghi vào `assets/audio/tm/kiem-tra.txt` |
 | `.github/workflows/tao-thuyet-minh.yml` | Tổng hợp tệp âm thanh thuyết minh trên máy chủ GitHub khi lời thuyết minh thay đổi |
 | `assets/audio/tm/` | Tệp âm thanh thuyết minh (`nu/`, `nam/`), sổ `clips.json` ghi tệp nào ứng với lời nào, bản máy chép lời `kiem-tra.txt` |
@@ -131,20 +134,24 @@ Công cụ chỉ lấy họ tên, chức vụ, đơn vị bầu cử, giới tí
 
 ### Thuyết minh bằng giọng nói
 
-Lời thuyết minh nằm trong `data/thuyet-minh.json` (21 đoạn). Trường `doc` là lời để đọc: viết đủ chữ, không viết tắt, số và ngày tháng viết bằng chữ. Lời của 10 chặng phải khớp với lời dẫn (`lore`) của chặng trong `index.html`. Sửa xong chạy `python tools/tao_thuyet_minh.py` để sinh lại `data/thuyet-minh.js`.
+Lời thuyết minh nằm trong `data/thuyet-minh.json` (23 đoạn, gồm lời nói đầu `chao`, hướng dẫn trang Hành trình `hanhtrinh`, lời chào ngắn `chaolai`). Trường `doc` là lời để đọc: viết đủ chữ, không viết tắt, số và ngày tháng viết bằng chữ. Lời của 10 chặng phải khớp với lời dẫn (`lore`) của chặng trong `index.html`. Sửa xong chạy `python tools/tao_thuyet_minh.py` để sinh lại `data/thuyet-minh.js`.
 
 Game phát thuyết minh theo hai tầng:
 
 1. **Tệp thu sẵn** trong `assets/audio/tm/<giọng>/<khóa>.mp3` (giọng `nu`, `nam`), nếu có và còn khớp lời. Mỗi tệp gắn với mã băm của lời đã dùng để tổng hợp, nên sửa lời mà chưa tổng hợp lại thì game không phát nhầm tệp cũ.
 2. **Giọng tiếng Việt của thiết bị** (Web Speech) cho những đoạn chưa có tệp. Chất lượng tùy máy: trình duyệt Edge có giọng tự nhiên trực tuyến, Chrome và Android dùng giọng Google, iPhone dùng giọng có sẵn của máy; máy không có giọng tiếng Việt thì game báo rõ trong Hồ sơ.
 
-Kho đã có tệp thu sẵn cho cả 21 đoạn với hai giọng Bắc (nữ "Mai Anh", nam "Thiện Minh"), tổng hợp ngày 28/11/2026 bằng VieNeu-TTS v3 Turbo trên máy chủ GitHub; người chơi chọn giọng trong Hồ sơ. Ba cách tạo lại hoặc thay tệp:
+Kho đã có tệp thu sẵn cho các đoạn với hai giọng Bắc (nữ "Mai Anh", nam "Thiện Minh"), tổng hợp ngày 28/11/2026 bằng VieNeu-TTS v3 Turbo trên máy chủ GitHub; người chơi chọn giọng trong Hồ sơ. Ba cách tạo lại hoặc thay tệp:
 
 - **Tổng hợp trên GitHub (đang dùng):** workflow "Tao thuyet minh" tự chạy mỗi khi `data/thuyet-minh.json` thay đổi trên nhánh `main` và chỉ tổng hợp lại đoạn đã đổi lời; cũng có thể bấm Run workflow ở tab Actions (đặt `lam_lai` là `true` để tổng hợp lại tất cả). Máy chủ GitHub cài VieNeu-TTS v3 Turbo (mô hình tiếng Việt mã nguồn mở, giấy phép Apache 2.0, 48 kHz, tác giả Phạm Nguyễn Ngọc Bảo), tổng hợp hai giọng ghi trong `data/thuyet-minh.json` (nữ "Mai Anh", nam "Thiện Minh", đều giọng Bắc), commit tệp vào kho và cập nhật trang web. Xong, workflow cho máy chép lại lời từng tệp (Whisper) vào `assets/audio/tm/kiem-tra.txt` để rà soát.
 - **Tổng hợp trên máy:** `pip install vieneu lameenc` rồi `python tools/tao_thuyet_minh.py --tong-hop`. Trên máy Windows đang bật Smart App Control, một thư viện của VieNeu-TTS bị chặn nên cách này không chạy được nếu không đổi thiết lập bảo mật.
-- **Giọng người thật:** nhờ phát thanh viên thu 21 đoạn, lưu đúng tên `assets/audio/tm/nu/<khóa>.mp3` (hoặc `nam/`), rồi chạy `python tools/tao_thuyet_minh.py --nhan-tep`. Đây là cách cho chất lượng cao nhất.
+- **Giọng người thật:** nhờ phát thanh viên thu các đoạn, lưu đúng tên `assets/audio/tm/nu/<khóa>.mp3` (hoặc `nam/`), rồi chạy `python tools/tao_thuyet_minh.py --nhan-tep`. Đây là cách cho chất lượng cao nhất.
 
 Đổi giọng máy: sửa tên giọng trong mục `giong` của `data/thuyet-minh.json` (danh sách 23 giọng có sẵn ở trang mô hình VieNeu-TTS-v3-Turbo trên Hugging Face) rồi tổng hợp lại với `--lam-lai`. Không dùng giọng đọc của Microsoft Edge lấy qua thư viện `edge-tts`: Microsoft không cấp quyền phát hành lại âm thanh tạo theo cách đó. Tệp tổng hợp xong cần được nghe lại toàn bộ trước khi dùng chính thức, nhất là tên riêng, năm tháng.
+
+### Nhạc nền
+
+`assets/audio/nhac-nen.mp3` (dài khoảng 107 giây, lặp lại) do `python tools/tao_nhac_nen.py` tạo ra: nhạc tự soạn, tổng hợp hoàn toàn bằng máy trên thang ngũ cung Rê (rê, mi, son, la, si), dùng lại bốn câu đàn của nhạc phim giới thiệu, thêm tiếng sáo, trống hội, chiêng và tiếng nước. Đây không phải bản thu một làn điệu dân ca có thật. Muốn dùng bản thu thật (ví dụ hò sông Mã, dân ca Đông Anh) thì cần bản có quyền sử dụng hợp lệ, chép đè lên tệp này; nên chọn bản mở đầu và kết thúc lặng để lặp lại không gắt. Không dùng nhạc nền: để trống trường `tep` trong mục `nhac` của `data/thuyet-minh.json` rồi chạy `python tools/tao_thuyet_minh.py`.
 
 ### Cài như một ứng dụng
 

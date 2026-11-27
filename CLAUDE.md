@@ -30,6 +30,8 @@ Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hó
 
 - Lời đọc ở `data/thuyet-minh.json` (trường `doc`: viết đủ chữ, số và ngày tháng viết bằng chữ, không viết tắt); `data/thuyet-minh.js` (`window.NTS_TM`) sinh bằng `python tools/tao_thuyet_minh.py`, không sửa tay. Lời của `c0` đến `c9` phải khớp nội dung với `lore` của chặng trong `index.html`; sửa một bên thì sửa cả bên kia.
 - Trong `index.html`, đối tượng `TM` phát thuyết minh: có tệp `assets/audio/tm/<giọng>/<khóa>.mp3` khớp mã băm thì phát tệp, không thì đọc bằng giọng tiếng Việt của thiết bị (`speechSynthesis`). Mọi chỗ phát đều đi qua `TM.play(khóa)`; `TM.on()` đã gồm điều kiện bật âm thanh (`S.snd`) và bật thuyết minh (`S.tm`). Mở màn mới, đổi tab, đóng màn phủ đều phải dừng (`TM.stop()`).
+- Mỗi lần mở game có màn chào `#chaoM`; chạm "Vào nghị trường" (`ACT.vao`) mới đặt `entered=true`, mở bảng chọn nhân vật cho người mới, đọc lời nói đầu (`tmHello`, `tmLoiDau`) và bật nhạc nền. Không gọi phát tiếng trước thời điểm này.
+- Nhạc nền: đối tượng `NH` phát `assets/audio/nhac-nen.mp3` (tạo bằng `tools/tao_nhac_nen.py`; đường dẫn lấy từ mục `nhac` của `data/thuyet-minh.json`). `NH.sync()` tự quyết định phát, nhỏ lại hay dừng theo màn đang mở; thêm loại màn chơi mới thì xem lại hàm `NH.factor()`.
 - Chỉ tự phát sau một thao tác của người chơi (trình duyệt chặn tự phát âm thanh) và mỗi đoạn chỉ tự phát một lần trong một phiên (`tmAuto`).
 - Tệp âm thanh chỉ tạo bằng công cụ có quyền phát hành lại: VieNeu-TTS (Apache 2.0) qua `tools/tao_thuyet_minh.py --tong-hop` hoặc workflow "Tao thuyet minh", hoặc giọng người thật. Không dùng `edge-tts` hay dịch vụ không cấp quyền phát hành lại. Luôn ghi rõ đây là giọng máy ở màn hình nguồn.
 
