@@ -138,7 +138,7 @@ Game phát thuyết minh theo hai tầng:
 
 **Hiện kho chưa có tệp thu sẵn**, game đang chạy ở tầng 2. Ba cách để có tệp thu sẵn:
 
-- **Tổng hợp trên GitHub (khuyến nghị):** vào tab Actions của kho, chọn "Tao thuyet minh", bấm Run workflow. Máy chủ GitHub cài VieNeu-TTS v3 Turbo (mô hình tiếng Việt mã nguồn mở, giấy phép Apache 2.0, 48 kHz, tác giả Phạm Nguyễn Ngọc Bảo), tổng hợp hai giọng ghi trong `data/thuyet-minh.json` (nữ "Mai Anh", nam "Anh Khôi", đều giọng Bắc), commit tệp vào kho và cập nhật trang web. Workflow này chưa được chạy thử lần nào.
+- **Tổng hợp trên GitHub (khuyến nghị):** vào tab Actions của kho, chọn "Tao thuyet minh", bấm Run workflow. Máy chủ GitHub cài VieNeu-TTS v3 Turbo (mô hình tiếng Việt mã nguồn mở, giấy phép Apache 2.0, 48 kHz, tác giả Phạm Nguyễn Ngọc Bảo), tổng hợp hai giọng ghi trong `data/thuyet-minh.json` (nữ "Mai Anh", nam "Thiện Minh", đều giọng Bắc), commit tệp vào kho và cập nhật trang web. Workflow này chưa được chạy thử lần nào.
 - **Tổng hợp trên máy:** `pip install vieneu lameenc` rồi `python tools/tao_thuyet_minh.py --tong-hop`. Trên máy Windows đang bật Smart App Control, một thư viện của VieNeu-TTS bị chặn nên cách này không chạy được nếu không đổi thiết lập bảo mật.
 - **Giọng người thật:** nhờ phát thanh viên thu 21 đoạn, lưu đúng tên `assets/audio/tm/nu/<khóa>.mp3` (hoặc `nam/`), rồi chạy `python tools/tao_thuyet_minh.py --nhan-tep`. Đây là cách cho chất lượng cao nhất.
 

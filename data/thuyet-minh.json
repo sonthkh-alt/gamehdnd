@@ -3,7 +3,7 @@
  "may": "VieNeu-TTS v3 Turbo",
  "giong": {
   "nu": {"ten": "Mai Anh", "nhan": "Giọng nữ"},
-  "nam": {"ten": "Anh Khôi", "nhan": "Giọng nam"}
+  "nam": {"ten": "Thiện Minh", "nhan": "Giọng nam"}
  },
  "muc": [
   {"k": "chao", "ten": "Lời chào khi vào game", "doc": "Chào mừng bạn đến với Nghị trường số, hành trình học tập dành cho đại biểu Hội đồng nhân dân hai cấp tỉnh Thanh Hóa. Dọc dòng sông Mã có mười chặng, gắn với mười di tích, thắng cảnh xứ Thanh. Mỗi chặng là một chuyên đề, với ba cấp độ: dễ, vừa và khó. Voi Đồng sẽ đồng hành và giải thích căn cứ sau mỗi câu trả lời. Chúc bạn có một hành trình bổ ích."},
