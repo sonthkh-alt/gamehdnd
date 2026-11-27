@@ -1,0 +1,130 @@
+Bản máy chép lại các tệp thuyết minh (Whisper medium), ngày 27/11/2026.
+Điểm giống là tỷ lệ từ trùng với lời gốc (1.00 là trùng hết). Đoạn có năm tháng thường thấp vì máy chép số bằng chữ số.
+Tệp này sinh tự động bằng tools/kiem_tra_thuyet_minh.py; chỉ để rà soát, game không dùng.
+
+[nu/chao] dài 20.1 giây, 156 KB, điểm giống 0.91
+  lời gốc : Chào mừng bạn đến với Nghị trường số, hành trình học tập dành cho đại biểu Hội đồng nhân dân hai cấp tỉnh Thanh Hóa. Dọc dòng sông Mã có mười chặng, gắn với mười di tích, thắng cảnh xứ Thanh. Mỗi chặng là một chuyên đề, với ba cấp độ: dễ, vừa và khó. Voi Đồng sẽ đồng hành và giải thích căn cứ sau mỗi câu trả lời. Chúc bạn có một hành trình bổ ích.
+  máy chép: Chào mừng bạn đến với nghị trường số hành trình học tập dành cho đại biểu hội đồng nhân dân 2 cấp tỉnh thanh hóa. Dọc dòng sông Mã có 10 chặng, gắn với 10 di tích, thắng cành sứ thanh. Mỗi chặng là một chuyên đề với 3 cấp độ dễ, vừa và khó. Voi đồng sẽ đồng hành và giải thích căn cứ sau mỗi câu trả lời. Chúc bạn có một hành trình bộ ích.
+[nu/thu] dài 3.9 giây, 30 KB, điểm giống 1.00
+  lời gốc : Xin chào, tôi sẽ thuyết minh cùng bạn trên hành trình dọc sông Mã.
+  máy chép: Xin chào, tôi sẽ thuyết minh cùng bạn trên hành trình dọc sông mã.
+[nu/c0] dài 16.4 giây, 127 KB, điểm giống 0.90
+  lời gốc : Chặng một. Đông Sơn. Năm một nghìn chín trăm hai mươi tư, những đồ đồng đầu tiên được tìm thấy ở làng Đông Sơn bên bờ sông Mã, và tên làng trở thành tên của cả một nền văn hóa thời dựng nước. Hành trình bắt đầu từ cội nguồn ấy: Hiến pháp, mô hình chính quyền địa phương hai cấp, phân quyền và phân cấp.
+  máy chép: Trạng 1, Đông Sơn, năm 1924, những đồ đồng đầu tiên được tìm thấy ở làng Đông Sơn bên bờ sông Mã và tên làng trở thành tên của cả một nền văn hóa thời dựng nước. Hành trình bắt đầu từ cội nguồn ấy, hiến Pháp, mô hình chính quyền địa phương hai cấp, phân quyền và phân cấp.
+[nu/c1] dài 19.3 giây, 150 KB, điểm giống 0.80
+  lời gốc : Chặng hai. Hàm Rồng. Cầu Hàm Rồng bắc qua sông Mã, khánh thành ngày mười chín tháng năm năm một nghìn chín trăm sáu mươi tư, gắn với chiến thắng Hàm Rồng năm một nghìn chín trăm sáu mươi lăm của quân và dân Thanh Hóa. Lá phiếu là nhịp cầu nối cử tri với cơ quan dân cử: chặng này nói về nguyên tắc bầu cử, ứng cử, hiệp thương và xác định người trúng cử.
+  máy chép: Chặng 2, Hàm Rồng. Cầu Hàm Rồng bắt qua sông Mã, khánh thành ngày 19 tháng 5-1964, gắn với chiến thắng Hàm Rồng năm 1965 của quân và dân Thanh Hóa. Lá phiếu là nhiệp cầu nối cử tri với cơ quan dân cử, chặng này nói về nguyên tắc bầu cử, ứng cử, hiệp thương và xác định người trúng cử.
+[nu/c2] dài 23.0 giây, 179 KB, điểm giống 0.80
+  lời gốc : Chặng ba. Thành nhà Hồ. Kinh đô nước Đại Ngu được dựng bằng những khối đá lớn, chỉ trong khoảng ba tháng đầu năm một nghìn ba trăm chín mươi bảy. Ngày hai mươi bảy tháng sáu năm hai nghìn không trăm mười một, UNESCO công nhận nơi đây là Di sản văn hóa thế giới. Bộ máy cũng cần vững như thành đá: Thường trực Hội đồng nhân dân, các Ban, Tổ đại biểu và từng đại biểu của Hội đồng nhân dân.
+  máy chép: Trạng 3 thành nhà hồ. Tình đồ nước Đại Ngu được dựng bằng những khối đá lớn, chỉ trong khoảng 3 tháng đầu năm 1397. Ngày 27 tháng 6 năm 2011, UNESCO công nhận nơi đây là di sản văn hóa thế giới. Bộ máy cũng cần vững như thành đá, thường trực hội đồng nhân dân, các ban, tổ đại biểu và từng đại biểu của hội đồng nhân dân.
+[nu/c3] dài 23.0 giây, 180 KB, điểm giống 0.82
+  lời gốc : Chặng bốn. Lam Kinh. Sau mười năm khởi nghĩa Lam Sơn, từ năm một nghìn bốn trăm mười tám đến năm một nghìn bốn trăm hai mươi tám, Lê Thái Tổ cho dựng kinh thành Lam Kinh trên đất quê hương. Nơi đây là di tích quốc gia đặc biệt từ năm hai nghìn không trăm mười hai. Chặng này trả lời câu hỏi quen thuộc ở nghị trường: việc này ai quyết, Hội đồng nhân dân, Ủy ban nhân dân, hay Chủ tịch Ủy ban nhân dân?
+  máy chép: Chặng 4, Lam Kinh, sau 10 năm khởi nghĩa Lam Sơn, từ năm 1418 đến năm 1428. Lê Thái Tổ cho dựng Kinh thành Lam Kinh trên đất quê hương. Nơi đây là si tích quốc gia đặc biệt từ năm 2012. Chặng này trả lời câu hỏi quen thuộc ở nghị trường. Việc này ai quyết? Hội đồng nhân dân, Ủy ban nhân dân hay chủ tịch Ủy ban nhân dân?
+[nu/c4] dài 18.2 giây, 142 KB, điểm giống 0.81
+  lời gốc : Chặng năm. Đền Bà Triệu. Năm hai trăm bốn mươi tám, Bà Triệu phất cờ khởi nghĩa chống quân Đông Ngô, với chí lớn: cưỡi cơn gió mạnh, đạp luồng sóng dữ. Tiếng nói ở nghị trường cũng cần bản lĩnh và đúng quy tắc: triệu tập, chương trình, thảo luận, biểu quyết, theo quy chế làm việc của Hội đồng nhân dân tỉnh và Hội đồng nhân dân xã.
+  máy chép: Trạng 5 đền 3 triệu, năm 248, bà triệu phết cờ khởi nghĩa chống quân Đông Ngo với chí lớn, cỡi cơn gió mạnh, đạp luồng sóng sữ. Tiếng nói ở nghị trường cũng cần bản lĩnh và đúng quy tắc, triệu tập, chương trình, thảo luận, điều quyết theo quy chế làm việc của Hội đồng nhân dân tỉnh và Hội đồng nhân dân xã.
+[nu/c5] dài 15.0 giây, 117 KB, điểm giống 0.92
+  lời gốc : Chặng sáu. Sầm Sơn. Sầm Sơn là bãi biển nổi tiếng của xứ Thanh, với núi Trường Lệ soi bóng xuống sóng. Giám sát cũng là soi cho rõ: chất vấn, giải trình, giám sát chuyên đề, xem xét báo cáo, và theo dõi việc thực hiện kiến nghị sau giám sát.
+  máy chép: Trạng 6, Sầm Sơn Sầm Sơn là bãi biển nổi tiếng của Sứ Thanh với núi Trường Lệ Soi Bóng xuống sóng. Giám sát cũng là so cho rõ chất vấn, giải trình, giám sát chuyên đề, xem xét báo cáo và theo dõi việc thực hiện kiến nghị sau giám sát.
+[nu/c6] dài 13.1 giây, 102 KB, điểm giống 0.96
+  lời gốc : Chặng bảy. Pù Luông. Trong tiếng Thái, Pù Luông nghĩa là núi lớn. Giữa ruộng bậc thang và những nếp nhà sàn ở phía tây bắc Thanh Hóa, đại biểu về với cử tri: tiếp xúc cử tri, tiếp công dân, xử lý đơn thư, và theo đến cùng các kiến nghị.
+  máy chép: Trạng bầy Pù Luông trong tiếng Thái, Pù Luông nghĩa là núi lớn, giữa ruộng bậc thang và những nếp nhà sàn ở phía Tây Bắc thanh hóa đại biểu về với cử tri tiếp xúc cử tri tiếp công dân, xử lý đơn thư và theo đến cùng các kiến nghị.
+[nu/c7] dài 15.8 giây, 123 KB, điểm giống 0.92
+  lời gốc : Chặng tám. Cẩm Lương. Ở miền núi phía tây Thanh Hóa, đồng bào Mường gìn giữ đàn cá suối Cẩm Lương qua nhiều đời bằng một lệ làng: không ai đánh bắt. Lệ đúng thì bền. Chặng này nói về thẩm quyền, hình thức, hiệu lực của nghị quyết Hội đồng nhân dân và quyết định của Ủy ban nhân dân.
+  máy chép: Trạng 8 Cẩm Lương ở miền núi phía Tây Thanh Hóa, đồng bào mường diền giữ đàn cá suối Cẩm Lương qua nhiều đời bằng một lệ lảng không ai đánh bắt, lệ đúng thì bền. Trạng này nói về thẩm quyền, hình thức, hiệu lực của nghị quyết hội đồng nhân dân và quyết định của Ủy ban nhân dân.
+[nu/c8] dài 16.2 giây, 126 KB, điểm giống 0.82
+  lời gốc : Chặng chín. Nghi Sơn. Khu kinh tế Nghi Sơn được thành lập ngày mười lăm tháng năm năm hai nghìn không trăm linh sáu ở phía nam Thanh Hóa, có cảng biển Nghi Sơn, là một động lực phát triển của tỉnh. Muốn vươn khơi phải chắc tay hòm chìa khóa: dự toán, phân bổ, điều chỉnh và quyết toán ngân sách địa phương.
+  máy chép: Trạng 9, Nghi Sơn, khu kinh tế Nghi Sơn được thành lập ngày 15 tháng 5 năm 2006 ở phía Nam Thanh Hóa, có cảng biển Nghi Sơn, là một động lược phát triển của tỉnh. Muốn Vương Khơi phải chắc tay hòm chiều khóa, dự toán, phân bổ, điều chỉnh và quyết toán ngân sách địa phương.
+[nu/c9] dài 19.2 giây, 150 KB, điểm giống 0.75
+  lời gốc : Chặng mười. Hạc Thành. Hạc Thành là tên gọi xưa của đô thị tỉnh lỵ xứ Thanh, nay là tên phường trung tâm, hình thành sau sắp xếp năm hai nghìn không trăm hai mươi lăm. Chặng về đích: một trăm sáu mươi sáu xã, phường của tỉnh, Hội đồng nhân dân tỉnh khóa mười chín, mục tiêu tăng trưởng hai con số, và những trang sử, di sản đáng tự hào.
+  máy chép: Trạng 10 Hạc Thành, Hạc Thành là tên gọi xưa của đô thị tỉnh Lị Sứ Thanh. Này là tên phường trung tâm, hình thành sau sắp xét năm 2025. Trạng về Đích, 166 xã, phường của tỉnh, hội đồng nhân dân tỉnh khóa 19, mục tiêu tăng trưởng 2 con số và những trang sử, di sản đáng tự hào.
+[nu/bomay] dài 12.4 giây, 96 KB, điểm giống 0.92
+  lời gốc : Mục Bộ máy giới thiệu tổ chức và nhân sự của Hội đồng nhân dân tỉnh, Đoàn đại biểu Quốc hội tỉnh và Văn phòng, theo Cổng thông tin điện tử của cơ quan. Chạm vào từng đại biểu để xem chức vụ và đơn vị bầu cử.
+  máy chép: Một bộ máy giới thiệu tổ chức và nhân sự của Hội đồng nhân dân tình, đoàn đại biểu Quốc hội, tình và văn phòng, theo cổng thông tin biện tử của cơ quan, chạm vào từng đại biểu để xem chức vụ và đơn vị bầu cử.
+[nu/dau] dài 2.0 giây, 15 KB, điểm giống 0.77
+  lời gốc : Đấu trường sáu mươi giây. Bắt đầu!
+  máy chép: Đấu trường 60 giây bắt đầu
+[nu/hetgio] dài 2.1 giây, 16 KB, điểm giống 1.00
+  lời gốc : Hết giờ rồi! Cùng xem kết quả nhé.
+  máy chép: Hết giờ rồi, cùng xem kết quả nhé!
+[nu/thi] dài 6.6 giây, 51 KB, điểm giống 0.78
+  lời gốc : Bài thi thử gồm ba mươi câu, làm trong hai mươi lăm phút. Đúng từ hai mươi mốt câu là đạt. Chúc bạn bình tĩnh, tự tin.
+  máy chép: Bài thi thử gồm 30 câu, làm trong 25 phút, đúng từ 21 câu là đạt, chúc bạn bình tĩnh tự tin.
+[nu/thidat] dài 2.1 giây, 16 KB, điểm giống 0.88
+  lời gốc : Chúc mừng! Bạn đã đạt bài thi thử.
+  máy chép: Chúc mừng, bạn đã đặt bài thi thử
+[nu/thichua] dài 3.4 giây, 26 KB, điểm giống 1.00
+  lời gốc : Bài thi chưa đạt. Hãy ôn lại các câu sai rồi thi lại nhé.
+  máy chép: Bài thi chưa đạt, hãy ôn lại các câu sai rồi thi lại nhé!
+[nu/basao] dài 2.4 giây, 18 KB, điểm giống 0.57
+  lời gốc : Xuất sắc! Bạn giành trọn ba sao.
+  máy chép: xuất sắc! Bạn dành chọn 3 sao!
+[nu/dat] dài 1.7 giây, 13 KB, điểm giống 0.83
+  lời gốc : Chúc mừng! Bạn đã vượt cấp.
+  máy chép: Chúc mừng, bạn đã vượt cước!
+[nu/chuadat] dài 3.2 giây, 25 KB, điểm giống 0.92
+  lời gốc : Chưa vượt cấp. Hãy xem lại căn cứ rồi thử lần nữa nhé.
+  máy chép: Chưa vượt cấp, hãy xem lại căn cứ rồi cửa lần nữa nhé!
+[nam/chao] dài 18.2 giây, 142 KB, điểm giống 0.90
+  lời gốc : Chào mừng bạn đến với Nghị trường số, hành trình học tập dành cho đại biểu Hội đồng nhân dân hai cấp tỉnh Thanh Hóa. Dọc dòng sông Mã có mười chặng, gắn với mười di tích, thắng cảnh xứ Thanh. Mỗi chặng là một chuyên đề, với ba cấp độ: dễ, vừa và khó. Voi Đồng sẽ đồng hành và giải thích căn cứ sau mỗi câu trả lời. Chúc bạn có một hành trình bổ ích.
+  máy chép: Chào mừng bạn đến với nghị trường số, hành trình học tập dành cho đại biểu hội đồng nhân dân 2 cấp tỉnh Thanh Hóa. Dọc dòng sông Mã có 10 trặng, gắn với 10 di tích. Thắng cảnh sứ Thanh, mỗi trặng là một chuyên đề với 3 cấp độ dễ vừa và khó. Vòi đồng sẽ đồng hành và giải thích căn cứ sau mỗi câu trả lời. Chúc bạn có một hành trình bổ ích.
+[nam/thu] dài 3.2 giây, 25 KB, điểm giống 1.00
+  lời gốc : Xin chào, tôi sẽ thuyết minh cùng bạn trên hành trình dọc sông Mã.
+  máy chép: Xin chào, tôi sẽ thuyết minh cùng bạn trên hành trình dọc sông mã.
+[nam/c0] dài 14.9 giây, 116 KB, điểm giống 0.90
+  lời gốc : Chặng một. Đông Sơn. Năm một nghìn chín trăm hai mươi tư, những đồ đồng đầu tiên được tìm thấy ở làng Đông Sơn bên bờ sông Mã, và tên làng trở thành tên của cả một nền văn hóa thời dựng nước. Hành trình bắt đầu từ cội nguồn ấy: Hiến pháp, mô hình chính quyền địa phương hai cấp, phân quyền và phân cấp.
+  máy chép: Trạng 1, Đông Sơn, năm 1924, những đồ đồng đầu tiên được tìm thấy ở làng Đông Sơn bên bờ sông Mã và tên làng trở thành tên của cả một nền văn hóa thời dựng nước. Hành trình bắt đầu từ cội nguồn ấy, hiến pháp, mô hình chính quyền địa phương hai cấp, phân quyền và phân cấp.
+[nam/c1] dài 17.7 giây, 138 KB, điểm giống 0.74
+  lời gốc : Chặng hai. Hàm Rồng. Cầu Hàm Rồng bắc qua sông Mã, khánh thành ngày mười chín tháng năm năm một nghìn chín trăm sáu mươi tư, gắn với chiến thắng Hàm Rồng năm một nghìn chín trăm sáu mươi lăm của quân và dân Thanh Hóa. Lá phiếu là nhịp cầu nối cử tri với cơ quan dân cử: chặng này nói về nguyên tắc bầu cử, ứng cử, hiệp thương và xác định người trúng cử.
+  máy chép: Chặng 2, Hạm Rồng. Cầu Hạm Rồng bắc qua sung mã khánh thành ngày 19 tháng 5, 1964, gắn với chiến thắng Hạm Rồng năm 1965 của quân và dân Thanh Hóa. Lá phiếu là nhiệp cầu nối cử chi với cơ quan dân cử. Chặng này nói về nguyên tắc bầu cử, ứng cử, hiệp thương và xác định người trúng cử.
+[nam/c2] dài 19.7 giây, 154 KB, điểm giống 0.79
+  lời gốc : Chặng ba. Thành nhà Hồ. Kinh đô nước Đại Ngu được dựng bằng những khối đá lớn, chỉ trong khoảng ba tháng đầu năm một nghìn ba trăm chín mươi bảy. Ngày hai mươi bảy tháng sáu năm hai nghìn không trăm mười một, UNESCO công nhận nơi đây là Di sản văn hóa thế giới. Bộ máy cũng cần vững như thành đá: Thường trực Hội đồng nhân dân, các Ban, Tổ đại biểu và từng đại biểu của Hội đồng nhân dân.
+  máy chép: Trạng 3. Thành nhà hổ. Kinh đô nước Đại Ngu được dựng bằng những khối đá lớn chỉ trong khoảng 3 tháng đầu năm 1397, ngày 27 tháng 6 năm 2011. Onesco công nhận nơi đây là di sản văn hóa thế giới. Bộ máy cũng cần vững như Thành đá, cường trực hội đồng nhân dân, các ban, tổ đại biểu và từng đại biểu của hội đồng nhân dân.
+[nam/c3] dài 19.9 giây, 155 KB, điểm giống 0.80
+  lời gốc : Chặng bốn. Lam Kinh. Sau mười năm khởi nghĩa Lam Sơn, từ năm một nghìn bốn trăm mười tám đến năm một nghìn bốn trăm hai mươi tám, Lê Thái Tổ cho dựng kinh thành Lam Kinh trên đất quê hương. Nơi đây là di tích quốc gia đặc biệt từ năm hai nghìn không trăm mười hai. Chặng này trả lời câu hỏi quen thuộc ở nghị trường: việc này ai quyết, Hội đồng nhân dân, Ủy ban nhân dân, hay Chủ tịch Ủy ban nhân dân?
+  máy chép: Trạng 4, Lam Kinh, sau 10 năm khởi nghĩa Lam Sơn, từ năm 1418 đến năm 1428, lệ thái tổ cho dựng kinh thành Lam Kinh trên đất quê hương. Nơi đây là di tích quốc gia đặc biệt từ năm 2012. Trạng này trả lời câu hỏi quen thuộc ở nghị trường, việc này ai quyết, hội đồng nhân dân, ủy ban nhân dân, hay chủ tịch ủy ban nhân dân?
+[nam/c4] dài 16.6 giây, 130 KB, điểm giống 0.88
+  lời gốc : Chặng năm. Đền Bà Triệu. Năm hai trăm bốn mươi tám, Bà Triệu phất cờ khởi nghĩa chống quân Đông Ngô, với chí lớn: cưỡi cơn gió mạnh, đạp luồng sóng dữ. Tiếng nói ở nghị trường cũng cần bản lĩnh và đúng quy tắc: triệu tập, chương trình, thảo luận, biểu quyết, theo quy chế làm việc của Hội đồng nhân dân tỉnh và Hội đồng nhân dân xã.
+  máy chép: Chẳng năm, đêm bà triệu. Năm 248, bà triệu phất cờ khởi nghĩa chống quân Đông Ngo với chí lớn gửi cơn gió mạnh đạp luồng sóng giữ. Tiếng nói ở nghị trường cũng cần bản lĩnh và đúng quy tắc, triệu tập, chương trình, thảo luận, biểu quyết theo quy chế làm việc của hội đồng nhân dân tỉnh và hội đồng nhân dân xã.
+[nam/c5] dài 13.3 giây, 104 KB, điểm giống 0.94
+  lời gốc : Chặng sáu. Sầm Sơn. Sầm Sơn là bãi biển nổi tiếng của xứ Thanh, với núi Trường Lệ soi bóng xuống sóng. Giám sát cũng là soi cho rõ: chất vấn, giải trình, giám sát chuyên đề, xem xét báo cáo, và theo dõi việc thực hiện kiến nghị sau giám sát.
+  máy chép: Trạng 6, Sầm Sơn. Sầm Sơn là bãi biển nổi tiếng của Sứ Thanh, với núi trường lệ soi bóng xuống sóng. Giám sát cũng là soi cho rõ, chất vấn, giải trình, giám sát chuyên đề, xem xét báo cáo và theo dõi việc thực hiện kiến nghị sau giám sát.
+[nam/c6] dài 12.5 giây, 97 KB, điểm giống 0.87
+  lời gốc : Chặng bảy. Pù Luông. Trong tiếng Thái, Pù Luông nghĩa là núi lớn. Giữa ruộng bậc thang và những nếp nhà sàn ở phía tây bắc Thanh Hóa, đại biểu về với cử tri: tiếp xúc cử tri, tiếp công dân, xử lý đơn thư, và theo đến cùng các kiến nghị.
+  máy chép: Trạng 7, Pù Luôn, trong tiếng Thái Pù Luôn nghĩa là núi lớn, giữa ruộng bậc than và những nét nhà sản ở phía Tây Bắc thanh hóa, đại biểu về với cử tri, tiếp xúc cử tri tiếp công dân, xử lý đơn thư và theo đến cùng các kiến nghị.
+[nam/c7] dài 14.4 giây, 112 KB, điểm giống 0.93
+  lời gốc : Chặng tám. Cẩm Lương. Ở miền núi phía tây Thanh Hóa, đồng bào Mường gìn giữ đàn cá suối Cẩm Lương qua nhiều đời bằng một lệ làng: không ai đánh bắt. Lệ đúng thì bền. Chặng này nói về thẩm quyền, hình thức, hiệu lực của nghị quyết Hội đồng nhân dân và quyết định của Ủy ban nhân dân.
+  máy chép: Trạng 8 Cẩm Lương ở miền núi phía Tây Thanh Hóa, đồng bào mường gìn giữ đàn cá suối Cẩm Lương qua nhiều đời bằng một lệ làng không ai đánh bắt, lệ đúng thì bền. Trạng này nói về thầm quyền, hình thức, hiệu lực của nghị quyết hội đồng nhân dân và quyết định của Ủy ban nhân dân.
+[nam/c8] dài 15.8 giây, 123 KB, điểm giống 0.79
+  lời gốc : Chặng chín. Nghi Sơn. Khu kinh tế Nghi Sơn được thành lập ngày mười lăm tháng năm năm hai nghìn không trăm linh sáu ở phía nam Thanh Hóa, có cảng biển Nghi Sơn, là một động lực phát triển của tỉnh. Muốn vươn khơi phải chắc tay hòm chìa khóa: dự toán, phân bổ, điều chỉnh và quyết toán ngân sách địa phương.
+  máy chép: Trạng 9, Nghi Sơn, khu kinh tế Nghi Sơn được thành lập ngày 15 tháng 5-2006 ở phía nam Thanh Hóa. Có cảng biển Nghi Sơn là một động lực phát triển của tỉnh. Muốn Vương Khơi phải trắc tay hỏng chiều khóa, dự toán, phân bổ, điều chỉnh và quyết toán ngân sách địa phương.
+[nam/c9] dài 18.0 giây, 140 KB, điểm giống 0.74
+  lời gốc : Chặng mười. Hạc Thành. Hạc Thành là tên gọi xưa của đô thị tỉnh lỵ xứ Thanh, nay là tên phường trung tâm, hình thành sau sắp xếp năm hai nghìn không trăm hai mươi lăm. Chặng về đích: một trăm sáu mươi sáu xã, phường của tỉnh, Hội đồng nhân dân tỉnh khóa mười chín, mục tiêu tăng trưởng hai con số, và những trang sử, di sản đáng tự hào.
+  máy chép: Trạng 10 Hạc Thành. Hạc Thành là tên gọi xưa của đô thị tỉnh Lị Sứ Thanh. Này là tên phường trung tâm, thành thành sau sắp xếp năm 2025. Trạng Vệ Đích. 166 xã, phường của tỉnh, hội đồng nhân dân tỉnh khóa 19, mục tiêu tăng trưởng 2 con số và những trang sử di sản đáng tự hào.
+[nam/bomay] dài 10.7 giây, 83 KB, điểm giống 0.98
+  lời gốc : Mục Bộ máy giới thiệu tổ chức và nhân sự của Hội đồng nhân dân tỉnh, Đoàn đại biểu Quốc hội tỉnh và Văn phòng, theo Cổng thông tin điện tử của cơ quan. Chạm vào từng đại biểu để xem chức vụ và đơn vị bầu cử.
+  máy chép: Một bộ máy giới thiệu tổ chức và nhân sự của hội đồng nhân dân tỉnh, đoàn đại biểu Quốc hội tỉnh và văn phòng theo cổng thông tin điện tử của cơ quan, chạm vào từng đại biểu để xem chức vụ và đơn vị bầu cử.
+[nam/dau] dài 2.0 giây, 15 KB, điểm giống 0.62
+  lời gốc : Đấu trường sáu mươi giây. Bắt đầu!
+  máy chép: nấu trường 60 giây, bắt đầu.
+[nam/hetgio] dài 2.2 giây, 17 KB, điểm giống 1.00
+  lời gốc : Hết giờ rồi! Cùng xem kết quả nhé.
+  máy chép: Hết giờ rồi, cùng xem kết quả nhé.
+[nam/thi] dài 6.1 giây, 47 KB, điểm giống 0.78
+  lời gốc : Bài thi thử gồm ba mươi câu, làm trong hai mươi lăm phút. Đúng từ hai mươi mốt câu là đạt. Chúc bạn bình tĩnh, tự tin.
+  máy chép: Bài thi thử gồm 30 câu, làm trong 25 phút. Đúng từ 21 câu là đạt. Chúc bạn bình tĩnh, tự tin.
+[nam/thidat] dài 2.0 giây, 15 KB, điểm giống 1.00
+  lời gốc : Chúc mừng! Bạn đã đạt bài thi thử.
+  máy chép: Chúc mừng, bạn đã đạt bài thi thử!
+[nam/thichua] dài 3.0 giây, 23 KB, điểm giống 0.93
+  lời gốc : Bài thi chưa đạt. Hãy ôn lại các câu sai rồi thi lại nhé.
+  máy chép: Bằng thi chưa đạt, hãy ôn lại các câu sai rồi thi lại nhé.
+[nam/basao] dài 2.2 giây, 17 KB, điểm giống 0.43
+  lời gốc : Xuất sắc! Bạn giành trọn ba sao.
+  máy chép: xuất sắc, bản dành chọn 3 sao.
+[nam/dat] dài 1.4 giây, 11 KB, điểm giống 0.83
+  lời gốc : Chúc mừng! Bạn đã vượt cấp.
+  máy chép: Túc mừng, bạn đã vượt cấp.
+[nam/chuadat] dài 3.2 giây, 24 KB, điểm giống 0.85
+  lời gốc : Chưa vượt cấp. Hãy xem lại căn cứ rồi thử lần nữa nhé.
+  máy chép: Chiều vượt tấp. Hãy xem lại căn cứ rồi thử lần nữa nhé.
