@@ -51,7 +51,9 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 | `tools/lay_bo_may.py` | Tải lại thông tin từ Cổng dbndthanhhoa.gov.vn, sinh hai tệp trên, ảnh chân dung trong `assets/img/db/` và bản chụp trong `nguon/dbnd_*.txt` |
 | `data/thuyet-minh.json`, `data/thuyet-minh.js` | Lời thuyết minh (bản để sửa) và bản gọn game nạp, kèm danh sách tệp âm thanh còn khớp lời |
 | `tools/tao_thuyet_minh.py` | Sinh `data/thuyet-minh.js`; thêm `--tong-hop` để tổng hợp tệp âm thanh vào `assets/audio/tm/` |
-| `.github/workflows/tao-thuyet-minh.yml` | Tổng hợp tệp âm thanh thuyết minh trên máy chủ GitHub, chỉ chạy khi bấm tay |
+| `tools/kiem_tra_thuyet_minh.py` | Cho máy chép lại lời các tệp thuyết minh (Whisper) để rà soát, ghi vào `assets/audio/tm/kiem-tra.txt` |
+| `.github/workflows/tao-thuyet-minh.yml` | Tổng hợp tệp âm thanh thuyết minh trên máy chủ GitHub khi lời thuyết minh thay đổi |
+| `assets/audio/tm/` | Tệp âm thanh thuyết minh (`nu/`, `nam/`), sổ `clips.json` ghi tệp nào ứng với lời nào, bản máy chép lời `kiem-tra.txt` |
 | `tools/build_bank.py` | Kiểm tra và sinh `data/cau-hoi.js` từ `data/cau-hoi.json` |
 | `tools/kiem_tra_cau_hoi.py` | Kiểm tra định dạng câu hỏi và đối chiếu từng đoạn trích với văn bản trong `nguon/` |
 | `tools/tai_anh_ve_may.py` | Tải các ảnh đang nạp từ Wikimedia Commons về lưu hẳn trong kho |
@@ -136,9 +138,9 @@ Game phát thuyết minh theo hai tầng:
 1. **Tệp thu sẵn** trong `assets/audio/tm/<giọng>/<khóa>.mp3` (giọng `nu`, `nam`), nếu có và còn khớp lời. Mỗi tệp gắn với mã băm của lời đã dùng để tổng hợp, nên sửa lời mà chưa tổng hợp lại thì game không phát nhầm tệp cũ.
 2. **Giọng tiếng Việt của thiết bị** (Web Speech) cho những đoạn chưa có tệp. Chất lượng tùy máy: trình duyệt Edge có giọng tự nhiên trực tuyến, Chrome và Android dùng giọng Google, iPhone dùng giọng có sẵn của máy; máy không có giọng tiếng Việt thì game báo rõ trong Hồ sơ.
 
-**Hiện kho chưa có tệp thu sẵn**, game đang chạy ở tầng 2. Ba cách để có tệp thu sẵn:
+Kho đã có tệp thu sẵn cho cả 21 đoạn với hai giọng Bắc (nữ "Mai Anh", nam "Thiện Minh"), tổng hợp ngày 28/11/2026 bằng VieNeu-TTS v3 Turbo trên máy chủ GitHub; người chơi chọn giọng trong Hồ sơ. Ba cách tạo lại hoặc thay tệp:
 
-- **Tổng hợp trên GitHub (khuyến nghị):** vào tab Actions của kho, chọn "Tao thuyet minh", bấm Run workflow. Máy chủ GitHub cài VieNeu-TTS v3 Turbo (mô hình tiếng Việt mã nguồn mở, giấy phép Apache 2.0, 48 kHz, tác giả Phạm Nguyễn Ngọc Bảo), tổng hợp hai giọng ghi trong `data/thuyet-minh.json` (nữ "Mai Anh", nam "Thiện Minh", đều giọng Bắc), commit tệp vào kho và cập nhật trang web. Workflow này chưa được chạy thử lần nào.
+- **Tổng hợp trên GitHub (đang dùng):** workflow "Tao thuyet minh" tự chạy mỗi khi `data/thuyet-minh.json` thay đổi trên nhánh `main` và chỉ tổng hợp lại đoạn đã đổi lời; cũng có thể bấm Run workflow ở tab Actions (đặt `lam_lai` là `true` để tổng hợp lại tất cả). Máy chủ GitHub cài VieNeu-TTS v3 Turbo (mô hình tiếng Việt mã nguồn mở, giấy phép Apache 2.0, 48 kHz, tác giả Phạm Nguyễn Ngọc Bảo), tổng hợp hai giọng ghi trong `data/thuyet-minh.json` (nữ "Mai Anh", nam "Thiện Minh", đều giọng Bắc), commit tệp vào kho và cập nhật trang web. Xong, workflow cho máy chép lại lời từng tệp (Whisper) vào `assets/audio/tm/kiem-tra.txt` để rà soát.
 - **Tổng hợp trên máy:** `pip install vieneu lameenc` rồi `python tools/tao_thuyet_minh.py --tong-hop`. Trên máy Windows đang bật Smart App Control, một thư viện của VieNeu-TTS bị chặn nên cách này không chạy được nếu không đổi thiết lập bảo mật.
 - **Giọng người thật:** nhờ phát thanh viên thu 21 đoạn, lưu đúng tên `assets/audio/tm/nu/<khóa>.mp3` (hoặc `nam/`), rồi chạy `python tools/tao_thuyet_minh.py --nhan-tep`. Đây là cách cho chất lượng cao nhất.
 
@@ -168,7 +170,7 @@ Bộ câu hỏi được soạn từ nguyên văn các văn bản hiện hành (
 
 ## Lưu ý
 
-- Thuyết minh hiện đọc bằng **giọng máy của thiết bị**, chưa có tệp thu sẵn; xem mục Thuyết minh bằng giọng nói.
+- Thuyết minh là **giọng máy tổng hợp** (VieNeu-TTS), mới được máy chép lại lời để rà soát, **chưa có người nghe duyệt**; xem mục Thuyết minh bằng giọng nói và `RA-SOAT.md`.
 - Mục Bộ máy là **bản chụp ngày 28/11/2026** của Cổng thông tin điện tử; nhân sự thay đổi thì phải chạy lại `tools/lay_bo_may.py`. Một số chỗ Cổng chưa đủ: chưa có danh sách ĐBQH khóa XIV, chưa có trang riêng của ba Ban (chỉ có Ban Pháp chế) và của bốn phòng thuộc Văn phòng, danh sách HĐND tỉnh khóa XIX có 82 người. Chi tiết ở `RA-SOAT.md`.
 - Bộ câu hỏi **cần được Phòng Công tác HĐND rà soát trước khi dùng chính thức**. Một số điểm nên xem kỹ:
   - Quy chế làm việc mẫu (điểm a khoản 2 Điều 16 của Nghị quyết 103 và 104) ghi Chủ tịch HĐND giới thiệu cả Phó Chủ tịch, Ủy viên UBND, trong khi Điều 36 Luật 72/2025/QH15 giao Chủ tịch UBND giới thiệu. Các câu hỏi chỉ dùng phần hai văn bản thống nhất.
