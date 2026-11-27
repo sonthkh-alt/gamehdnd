@@ -4,11 +4,26 @@ Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hó
 
 ## Cấu trúc
 
-- `index.html`: toàn bộ giao diện và lô-gic (HTML, CSS, JS trong một tệp). Nạp thêm `data/cau-hoi.js`, `assets/img/credits.js`, `assets/art.js`, `assets/img/gallery.js`.
+- `index.html`: toàn bộ giao diện và lô-gic (HTML, CSS, JS trong một tệp). Nạp thêm `data/cau-hoi.js`, `assets/img/credits.js`, `assets/art.js`, `assets/img/gallery.js`, rồi `assets/vendor/three.min.js`, `assets/3d/mo-hinh.js`, `assets/3d/the-gioi.js`.
+- `assets/3d/mo-hinh.js` (`window.NTS_MODELS`): mô hình dựng bằng mã, gồm Voi Đồng, trống đồng và 10 hàm `build.<khóa>` cho 10 chặng. `assets/3d/the-gioi.js` (`window.NTS_3D`): sa bàn, camera, ghim chặng, hiệu ứng. `assets/vendor/three.min.js`: three.js r170 gộp một tệp, không sửa tay.
+- `manifest.webmanifest`, `sw.js`, `assets/icon/`: cài game như ứng dụng, chơi khi mất mạng. Thêm tệp mã mới thì bổ sung vào mảng `CORE` trong `sw.js`.
 - `data/cau-hoi.json`: ngân hàng câu hỏi bản đầy đủ (nguồn chính để sửa). `data/cau-hoi.js`: bản gọn sinh tự động, không sửa tay.
 - `nguon/`: nguyên văn văn bản pháp luật và bài Wikipedia làm căn cứ câu hỏi; mỗi câu hỏi trỏ tới một tệp ở đây qua trường `tep_nguon`.
 - `assets/art.js`: 10 tranh SVG phong cách sơn mài cho 10 chặng. `assets/img/gallery.js`: thư viện ảnh tư liệu (Wikimedia Commons). `assets/img/credits.js`: ảnh chính của từng chặng.
-- `tools/`: `build_bank.py` (sinh cau-hoi.js), `kiem_tra_cau_hoi.py` (kiểm tra câu hỏi), `tai_anh_ve_may.py` (tải ảnh Commons về kho), `phim/` (dựng phim giới thiệu).
+- `tools/`: `build_bank.py` (sinh cau-hoi.js), `kiem_tra_cau_hoi.py` (kiểm tra câu hỏi), `tai_anh_ve_may.py` (tải ảnh Commons về kho), `xem-3d.html` (xem riêng sa bàn 3D), `phim/` (dựng phim giới thiệu).
+
+## Đồ họa 3D
+
+- Giữ nguyên tắc không có bước build và mở `index.html` bằng tệp vẫn chạy: chỉ dùng thẻ `<script>` thường, không dùng `type="module"`, không nạp thư viện từ CDN.
+- Mô hình chỉ dựng bằng mã và họa tiết canvas; không thêm tệp mô hình, ảnh chất liệu tải từ nơi khác.
+- `index.html` nói chuyện với 3D qua `NTS_3D` trong hàm `sync3d()` (đặt khung vào `#stage` trên màn hình rộng, `#hero3d` ở tab Hành trình, `#ov3d` khi đang chơi) và `renderHud()`. Biến `g3` là đang chạy 3D; mọi lời gọi `G3.*` phải kiểm tra `g3` vì máy không có WebGL hoặc người chơi chọn 2D thì game dùng giao diện 2D cũ (phải luôn chạy được).
+- Cụm mô hình quay mặt chính về +z, mặt đất y = 0; hàm `build.<khóa>` trả về `{obj, H, R, spot, face, tick}`. Khối chuyển động phải đánh dấu `dyn(...)` trước khi `bake()` gộp lưới.
+- Vị trí 10 chặng nằm trong bảng `PLACE` của `the-gioi.js`; đổi vị trí phải xem lại sông (`RIV`) và bờ biển (`coastX`) để mô hình không nằm đè lên nước.
+- Sau khi sửa 3D: mở `tools/xem-3d.html?v=focus&i=<0..9>` xem từng chặng, rồi kiểm tra game ở cỡ điện thoại và cỡ màn hình rộng, cả khi chọn Đồ họa 2D.
+
+## Nội dung trò chơi nhỏ
+
+- Thẻ "Ai có thẩm quyền?" (`CARDS`) và các bước "Xếp đúng quy trình" (`PROCS`) nằm trong `index.html`, cũng chỉ soạn từ văn bản trong `nguon/`; phần `why`, `cc` ghi rõ điều, khoản. Mỗi thẻ chỉ được đúng với một trong bốn chủ thể.
 
 ## Quy tắc khi sửa câu hỏi
 
@@ -32,4 +47,4 @@ Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hó
 
 ## Kiểm tra giao diện
 
-Chạy `python -m http.server 8765` ở thư mục gốc rồi mở http://localhost:8765. Kiểm tra ở cỡ điện thoại (khoảng 390px), không được tràn ngang, không lỗi console.
+Chạy `python -m http.server 8765` ở thư mục gốc rồi mở http://localhost:8765. Kiểm tra ở cỡ điện thoại (khoảng 390px) và cỡ màn hình rộng (từ 1000px, bố cục hai khoang), không được tràn ngang, không lỗi console.

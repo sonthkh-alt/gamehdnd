@@ -6,14 +6,17 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 
 ## Nội dung game
 
+- **Sa bàn 3D xứ Thanh:** toàn bộ hành trình diễn ra trên một sa bàn 3D dựng bằng mã: núi phía tây, đồng bằng, sông Mã, sông Chu, biển Đông và 10 cụm mô hình di sản (trống đồng Đông Sơn, cầu Hàm Rồng có đoàn tàu chạy qua, cổng đá Thành nhà Hồ, chính điện Lam Kinh, đền Bà Triệu, bãi biển Sầm Sơn, ruộng bậc thang và cọn nước Pù Luông, suối cá Cẩm Lương, cảng Nghi Sơn, quảng trường Hạc Thành). Linh vật Voi Đồng đi theo người chơi, nhảy mừng khi trả lời đúng, lắc đầu khi sai; vượt cấp thì có pháo hoa. Chặng chưa mở bị mây che. Nút "Tham quan" cho ống kính bay lần lượt qua 10 di sản; Đấu trường 60 giây bay dọc sông Mã từ núi ra biển.
 - **Hành trình dọc sông Mã:** 10 chặng gắn với 10 di tích, thắng cảnh xứ Thanh; mỗi chặng một chuyên đề và ba cấp độ Dễ, Vừa, Khó. Mỗi lượt 8 câu, đúng từ 5 câu thì vượt cấp. Mỗi ngôi sao làm tăng GRDP của "tỉnh ảo"; đích là mốc 11%.
 - **Ngân hàng 570 câu hỏi** (198 dễ, 224 vừa, 148 khó; 219 câu tình huống), mỗi câu có giải thích và căn cứ đến điều, khoản.
-- **Thi đấu:** Đấu trường 60 giây (chọn cấp độ), Thi thử 30 câu trong 25 phút (đạt từ 21/30).
-- **Trò chơi nhỏ:** Ai có thẩm quyền?, Xếp đúng quy trình, Lật thẻ di sản, Ảnh này ở đâu? (đoán địa danh qua ảnh thật).
+- **Thi đấu:** Đấu trường 60 giây (chọn cấp độ), Thi thử 30 câu trong 25 phút (đạt từ 21/30, tải được phiếu kết quả dạng ảnh PNG), Ôn câu sai (luyện lại các câu từng trả lời sai cho đến khi đúng).
+- **Trò chơi nhỏ:** Ai có thẩm quyền? (22 thẻ), Xếp đúng quy trình (4 quy trình), Lật thẻ di sản, Ảnh này ở đâu? (đoán địa danh qua ảnh thật).
 - **Thẻ di sản:** vượt cấp Dễ của mỗi chặng để mở một thẻ tranh sơn mài kèm lời dẫn và ảnh tư liệu.
 - **Thư viện ảnh xứ Thanh:** 59 ảnh tư liệu từ Wikimedia Commons về cả 10 chặng và nhiều địa danh khác (Bến En, đảo Hòn Nẹ, núi Nưa, sông Mã, đền Lê Lai, đền Lê Hoàn, nghè Xuân Phả, đền Mai An Tiêm, cửa biển Lạch Sung, hang Co Luồng, đảo cò Tiến Nông, chùa Sùng Nghiêm...), có chú thích, tác giả, giấy phép; lọc theo địa danh, xem ảnh lớn.
 - **Phim giới thiệu** 46 giây, âm thanh trống hội, trợ giúp 50:50 và "xem căn cứ", 22 huy hiệu, nhiệm vụ hằng ngày, chuỗi ngày học.
 - **Chế độ ôn tập tự do** (trong Hồ sơ): mở sẵn mọi chặng để tập huấn theo chuyên đề.
+- **Tiện ích:** sao lưu và khôi phục tiến trình bằng tệp `.json` (khi đổi máy), chọn chế độ đồ họa (Tự động, 3D cao, 3D nhẹ, 2D), cài lên màn hình chính của điện thoại và chơi khi mất mạng (PWA).
+- **Bố cục:** điện thoại một cột, sa bàn 3D nằm đầu trang và ngay trên câu hỏi; màn hình rộng từ 1000px chia hai khoang, sa bàn bên trái, bảng chơi bên phải. Máy không chạy được WebGL tự chuyển về giao diện 2D như bản trước.
 
 | Chặng | Di sản | Chuyên đề | Số câu |
 |---|---|---|---|
@@ -33,6 +36,11 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 | Tệp | Nội dung |
 |---|---|
 | `index.html` | Giao diện và toàn bộ lô-gic game (HTML, CSS, JavaScript); mở trực tiếp trên máy cũng chạy |
+| `assets/3d/mo-hinh.js` | Bộ mô hình 3D dựng bằng mã: linh vật Voi Đồng, trống đồng, 10 cụm di sản |
+| `assets/3d/the-gioi.js` | Thế giới 3D: địa hình, sông, biển, cây, làng, camera, ghim chặng, hiệu ứng; giao tiếp với game qua `window.NTS_3D` |
+| `assets/vendor/three.min.js` | Thư viện three.js r170 (giấy phép MIT), bản gộp một tệp |
+| `tools/xem-3d.html` | Trang xem riêng sa bàn 3D để chỉnh mô hình, không kèm giao diện game |
+| `manifest.webmanifest`, `sw.js`, `assets/icon/` | Tệp cài đặt, service worker và biểu tượng để cài game như một ứng dụng, chơi khi mất mạng |
 | `data/cau-hoi.json` | Ngân hàng câu hỏi bản đầy đủ để rà soát: câu hỏi, 4 phương án, giải thích, căn cứ, văn bản nguồn và đoạn trích nguyên văn |
 | `data/cau-hoi.js` | Bản gọn để game nạp, sinh tự động từ tệp JSON |
 | `tools/build_bank.py` | Kiểm tra và sinh `data/cau-hoi.js` từ `data/cau-hoi.json` |
@@ -86,9 +94,27 @@ Cách 3, không dùng Git: tải tệp ZIP tại https://github.com/sonthkh-alt/
 2. Commit và push lên nhánh `main` (GitHub Desktop: Commit to main → Push origin).
 3. Workflow "Dong bo trang web" tự đưa bản mới lên nhánh `gh-pages`; trang https://sonthkh-alt.github.io/gamehdnd/ cập nhật sau khoảng 1–2 phút. Xem tiến trình ở tab Actions của kho.
 
-### Lưu hẳn ảnh vào kho
+### Ảnh trong kho
 
-Máy chủ đám mây soạn game bị Wikimedia giới hạn tải ảnh, nên phần lớn ảnh đang được trình duyệt nạp thẳng từ Commons. Trên máy tính của bạn, chạy `python tools/tai_anh_ve_may.py` để tải toàn bộ ảnh về `assets/img/g/` và chuyển game sang dùng ảnh trong kho, rồi commit, push. Sau đó có thể dựng lại phim giới thiệu với ảnh thật theo `tools/phim/HUONG-DAN.md`.
+Toàn bộ 59 ảnh tư liệu đã được tải về `assets/img/g/` (ngày 27/11/2026) bằng `python tools/tai_anh_ve_may.py`; game không còn nạp ảnh từ máy chủ ngoài. Khi thêm ảnh mới vào `assets/img/gallery.js` bằng đường dẫn Commons, chạy lại công cụ này để tải về kho. Có thể dựng lại phim giới thiệu với ảnh thật theo `tools/phim/HUONG-DAN.md` (cần cài ffmpeg).
+
+### Đồ họa 3D
+
+- Không có bước build: `index.html` nạp `assets/vendor/three.min.js`, `assets/3d/mo-hinh.js`, `assets/3d/the-gioi.js` bằng thẻ `<script>` thường nên mở trực tiếp bằng tệp vẫn chạy.
+- Mọi mô hình đều dựng bằng mã (khối hộp, trụ, mặt tròn xoay, họa tiết vẽ bằng canvas), không dùng tệp mô hình hay ảnh ngoài. Muốn sửa một cụm di sản: sửa hàm `build.<khóa>` trong `mo-hinh.js`. Muốn dời vị trí trên sa bàn: sửa bảng `PLACE` trong `the-gioi.js`.
+- Xem riêng sa bàn khi chỉnh sửa: `python -m http.server 8765` rồi mở `http://localhost:8765/tools/xem-3d.html?v=focus&i=3` (`v` là `map`, `focus`, `idle`, `fly`; `i` là số chặng từ 0 đến 9; thêm `q=low` để xem chế độ nhẹ).
+- Chất lượng tự hạ xuống "3D nhẹ" (tắt bóng đổ, giảm độ phân giải) nếu máy dựng hình chậm; người chơi cũng tự chọn được trong Hồ sơ → Tùy chọn → Đồ họa.
+- Tạo lại `three.min.js` khi muốn đổi phiên bản three.js (làm ở một thư mục tạm, không cần đưa `node_modules` vào kho):
+
+```bash
+npm install three@0.170.0 esbuild
+echo "export * from 'three';" > entry.js
+npx esbuild entry.js --bundle --format=iife --global-name=THREE --minify --outfile=three.min.js
+```
+
+### Cài như một ứng dụng
+
+Trên trang công khai (https), trình duyệt cho phép "Thêm vào màn hình chính" (điện thoại) hoặc "Cài đặt ứng dụng" (Chrome, Edge trên máy tính). `sw.js` lưu sẵn mã, câu hỏi và các ảnh đã xem để chơi được khi mất mạng; mã và câu hỏi luôn ưu tiên bản mới trên mạng. Khi cần buộc mọi máy xóa bộ nhớ đệm cũ, đổi hằng `V` ở đầu `sw.js`.
 
 ## Căn cứ nội dung
 
@@ -113,9 +139,9 @@ Bộ câu hỏi được soạn từ nguyên văn các văn bản hiện hành (
   - Quy chế làm việc mẫu (điểm a khoản 2 Điều 16 của Nghị quyết 103 và 104) ghi Chủ tịch HĐND giới thiệu cả Phó Chủ tịch, Ủy viên UBND, trong khi Điều 36 Luật 72/2025/QH15 giao Chủ tịch UBND giới thiệu. Các câu hỏi chỉ dùng phần hai văn bản thống nhất.
   - Nghị quyết 96/2023/QH15 về lấy phiếu tín nhiệm ban hành khi còn cấp huyện; 6 câu liên quan chỉ hỏi quy tắc chung hoặc cấp tỉnh.
   - Câu hỏi về mục tiêu, chỉ tiêu của tỉnh lấy theo Nghị quyết 55/NQ-HĐND ngày 17/7/2026; cần cập nhật khi tỉnh điều chỉnh.
-- Điểm của các đội trên bảng xếp hạng là dữ liệu minh họa.
+- Điểm của các đội trên bảng xếp hạng là dữ liệu minh họa (game là trang tĩnh, chưa có máy chủ để gom điểm). Muốn tổng hợp kết quả một lớp tập huấn, có thể đề nghị người học gửi phiếu kết quả thi thử (ảnh PNG do game tạo).
 - Tiến trình người chơi chỉ lưu trên trình duyệt của từng máy; game không thu thập hay gửi dữ liệu cá nhân đi đâu.
 - Mười bức tranh của các chặng được vẽ riêng cho game. Ảnh tư liệu lấy từ Wikimedia Commons, chỉ chọn ảnh giấy phép tự do (CC BY, CC BY-SA, CC0, phạm vi công cộng); tác giả, giấy phép ghi trong `assets/img/gallery.js`, `assets/img/credits.js` và mục "Căn cứ pháp lý và nguồn ảnh" của game.
-- 5 ảnh được lưu trong kho; 54 ảnh còn lại được trình duyệt người chơi nạp trực tiếp từ máy chủ Wikimedia Commons ở cỡ ảnh chuẩn mà Commons cho phép nhúng (vì máy chủ đám mây soạn game bị Wikimedia giới hạn tải). Vì vậy khi mở game, trình duyệt sẽ kết nối tới upload.wikimedia.org. Nếu nơi nhúng trang chặn ảnh ngoài, game tự dùng 5 ảnh trong kho và ẩn trò "Ảnh này ở đâu?".
-- Muốn lưu hẳn một ảnh vào kho: tải ảnh từ trang gốc ghi trong `gallery.js`, đặt vào `assets/img/g/<khóa>.jpg` rồi sửa `src` của mục đó thành đường dẫn trong kho.
+- Cả 59 ảnh tư liệu đều nằm trong kho (`assets/img/g/`), game không kết nối tới máy chủ ảnh bên ngoài. Kết nối ngoài duy nhất là phông chữ Google Fonts; thiếu mạng thì trình duyệt dùng phông có sẵn trên máy.
+- Mô hình 3D là hình cách điệu để dễ nhận ra từng di sản, không phải bản dựng đúng tỷ lệ. Vị trí các di sản trên sa bàn theo hướng địa lý tương đối (núi phía tây và tây bắc, biển phía đông), khoảng cách đã được giãn cho dễ nhìn.
 - Nhạc và tiếng trống trong phim, trong game được tổng hợp bằng máy.

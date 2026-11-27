@@ -41,7 +41,7 @@ window.NTS_CREDITS={
   "lic": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_B%C3%A0_Tri%E1%BB%87u%2C_Tri%E1%BB%87u_L%E1%BB%99c%2C_H%E1%BA%ADu_L%E1%BB%99c%2C_Thanh_H%C3%B3a.jpeg",
   "cap": "Đền Bà Triệu, ảnh năm 2016",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/%C4%90%E1%BB%81n_B%C3%A0_Tri%E1%BB%87u%2C_Tri%E1%BB%87u_L%E1%BB%99c%2C_H%E1%BA%ADu_L%E1%BB%99c%2C_Thanh_H%C3%B3a.jpeg/1280px-%C4%90%E1%BB%81n_B%C3%A0_Tri%E1%BB%87u%2C_Tri%E1%BB%87u_L%E1%BB%99c%2C_H%E1%BA%ADu_L%E1%BB%99c%2C_Thanh_H%C3%B3a.jpeg"
+  "file": "assets/img/g/batrieu-3.jpg"
  },
  "samson": {
   "title": "Bãi biển Sầm Sơn chụp từ hòn Cổ Giải.jpg",
@@ -49,7 +49,7 @@ window.NTS_CREDITS={
   "lic": "CC0",
   "page": "https://commons.wikimedia.org/wiki/File%3AB%C3%A3i_bi%E1%BB%83n_S%E1%BA%A7m_S%C6%A1n_ch%E1%BB%A5p_t%E1%BB%AB_h%C3%B2n_C%E1%BB%95_Gi%E1%BA%A3i.jpg",
   "cap": "Bãi biển Sầm Sơn nhìn từ hòn Cổ Giải, ảnh năm 2022",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/B%C3%A3i_bi%E1%BB%83n_S%E1%BA%A7m_S%C6%A1n_ch%E1%BB%A5p_t%E1%BB%AB_h%C3%B2n_C%E1%BB%95_Gi%E1%BA%A3i.jpg/1280px-B%C3%A3i_bi%E1%BB%83n_S%E1%BA%A7m_S%C6%A1n_ch%E1%BB%A5p_t%E1%BB%AB_h%C3%B2n_C%E1%BB%95_Gi%E1%BA%A3i.jpg"
+  "file": "assets/img/g/samson-1.jpg"
  },
  "camluong": {
   "title": "Suoi ca Cam Luong.jpg",
@@ -57,7 +57,7 @@ window.NTS_CREDITS={
   "lic": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File%3ASuoi_ca_Cam_Luong.jpg",
   "cap": "Đàn cá thần ở suối cá Cẩm Lương",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Suoi_ca_Cam_Luong.jpg/1280px-Suoi_ca_Cam_Luong.jpg"
+  "file": "assets/img/g/camluong-1.jpg"
  },
  "nghison": {
   "title": "HaiHoa BinhMinh.JPG",
@@ -65,7 +65,7 @@ window.NTS_CREDITS={
   "lic": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File%3AHaiHoa_BinhMinh.JPG",
   "cap": "Bình minh trên biển Hải Hòa, vùng Nghi Sơn",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/HaiHoa_BinhMinh.JPG/1280px-HaiHoa_BinhMinh.JPG"
+  "file": "assets/img/g/nghison-2.jpg"
  },
  "hacthanh": {
   "title": "Tượng đài Lê Lợi, Lam Sơn, Thanh Hóa.jpeg",
@@ -73,6 +73,6 @@ window.NTS_CREDITS={
   "lic": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File%3AT%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_L%C3%AA_L%E1%BB%A3i%2C_Lam_S%C6%A1n%2C_Thanh_H%C3%B3a.jpeg",
   "cap": "Tượng đài Lê Lợi, phường Hạc Thành",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_L%C3%AA_L%E1%BB%A3i%2C_Lam_S%C6%A1n%2C_Thanh_H%C3%B3a.jpeg/1280px-T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_L%C3%AA_L%E1%BB%A3i%2C_Lam_S%C6%A1n%2C_Thanh_H%C3%B3a.jpeg"
+  "file": "assets/img/g/hacthanh-1.jpg"
  }
 };

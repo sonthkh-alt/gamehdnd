@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Xem thử sa bàn 3D – Nghị trường số</title>
+<!-- Trang dành cho người phát triển: xem riêng thế giới 3D, không kèm giao diện game.
+     Chạy `python -m http.server 8765` ở thư mục gốc rồi mở http://localhost:8765/tools/xem-3d.html
+     Tham số: ?v=map|focus|idle|fly  &i=0..9 (chặng)  &q=low|high  &az=, &el= (lệch góc nhìn khi cận cảnh) -->
+<style>
+html,body{height:100%;margin:0;background:#071816;color:#f9f1df;font:14px/1.4 system-ui,sans-serif}
+#host{position:fixed;inset:0}
+.g3d{position:absolute;inset:0;overflow:hidden}
+.g3d canvas{width:100%;height:100%;display:block}
+.g3d-pins{position:absolute;inset:0;pointer-events:none}
+.pin{position:absolute;left:0;top:0;pointer-events:auto;border:1px solid #f5d98f;background:#74140f;color:#fff;border-radius:99px;padding:2px 8px;font:600 12px system-ui}
+.pin.lock{background:#234;opacity:.8}.pin.sel{background:#b8281f}
+#bar{position:fixed;left:8px;top:8px;display:flex;gap:4px;flex-wrap:wrap;z-index:5}
+#bar button{font:inherit;padding:4px 8px}
+</style>
+</head>
+<body>
+<div id="host"></div>
+<div id="bar"></div>
+<script src="../assets/vendor/three.min.js"></script>
+<script src="../assets/3d/mo-hinh.js"></script>
+<script src="../assets/3d/the-gioi.js"></script>
+<script>
+const q=new URLSearchParams(location.search),N=['Đông Sơn','Hàm Rồng','Thành nhà Hồ','Lam Kinh','Đền Bà Triệu','Sầm Sơn','Pù Luông','Cẩm Lương','Nghi Sơn','Hạc Thành'];
+const G=NTS_3D,t0=performance.now();
+const ok=G.init({stages:N.map(n=>({n})),quality:q.get('q')||'high',reduced:q.has('rm'),onSelect:i=>console.log('chọn',i),onEnter:i=>go('focus',i)});
+window.BUILD_MS=Math.round(performance.now()-t0);
+function go(v,i){G.setView(v,i,{snap:q.has('snap')});G.setFree(v!=='map');if(v==='focus')G.setMascot(i);if(v==='map')G.select(i||0)}
+if(ok){
+ G.mount(document.getElementById('host'));
+ const lock=+(q.get('lock')||10);
+ G.setStates(N.map((n,i)=>({open:i<lock,stars:i<3?9-i*3:0,cur:i===3})));
+ go(q.get('v')||'map',+(q.get('i')||0));
+ const d=G.debug();if(q.get('az'))d.cam.azOff=+q.get('az');if(q.get('el'))d.cam.elOff=+q.get('el');if(q.get('fly'))G.flyTo(+q.get('fly'));
+ const bar=document.getElementById('bar');
+ [['map','Bản đồ'],['idle','Toàn cảnh'],['fly','Bay sông Mã']].forEach(([v,n])=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>go(v,G.sel());bar.appendChild(b)});
+ N.forEach((n,i)=>{const b=document.createElement('button');b.textContent=(i+1)+'. '+n;b.onclick=()=>go('focus',i);bar.appendChild(b)});
+ [['ok','Đúng'],['bad','Sai'],['win','Thắng']].forEach(([k,n])=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>G.react(k);bar.appendChild(b)});
+ if(q.has('nobar'))bar.style.display='none';
+}else document.body.insertAdjacentHTML('beforeend','<p style="padding:60px 16px">Máy này không chạy được WebGL: '+(G.error||'')+'</p>');
+</script>
+</body>
+</html>

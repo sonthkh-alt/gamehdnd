@@ -59,6 +59,29 @@ Tìm câu theo mã trong `data/cau-hoi.json`.
 | th-034 | Phương án sai "Hồng Đức" không có trong nguồn (là niên hiệu của vua Lê Thánh Tông). |
 | th-038, th-039, th-048, th-050 | Đã sửa ở vòng rà soát thứ hai để tránh nhận định còn tranh cãi, tránh tên huyện cũ và tránh lộ đáp án. |
 
-## Chú thích ảnh chưa được xem tận mắt
+## Chú thích ảnh
 
-54 ảnh trong thư viện được nạp trực tiếp từ Wikimedia Commons nên chưa được xem trên máy soạn game; chú thích soạn theo mô tả gốc trên Commons. Nên mở trang và xem lại, nhất là: `nghison-1`, `nghison-2`, `nghison-3` (biển Hải Hòa và vùng ven biển Nghi Sơn), `hamrong-5` (mô tả gốc chỉ ghi "quảng trường Thanh Hóa"), `batrieu-5`, `batrieu-6`, `hamrong-7` (cầu đường sắt qua sông Mã thời Pháp). Chú thích nằm ở trường `cap` trong `assets/img/gallery.js`.
+Ngày 27/11/2026, cả 59 ảnh đã được tải về kho và xem lại từng ảnh so với chú thích. Ba chú thích đã sửa cho khớp với nội dung ảnh:
+
+| Khóa ảnh | Đã sửa |
+|---|---|
+| `nghison-3` | Ảnh chụp từ trên cao một làng quê có ruộng và nhà mái đỏ, không thấy biển; bỏ chữ "ven biển", đánh dấu `nq` để không dùng cho trò "Ảnh này ở đâu?". |
+| `batrieu-5` | Ảnh là hàng trụ đá nghi môn, chú thích cũ chỉ ghi "một góc". |
+| `batrieu-6` | Ảnh là nghi môn nhìn qua đường sắt, chú thích cũ ghi "một công trình". |
+
+Vẫn nên được người am hiểu địa phương xem lại: `hamrong-5` (mô tả gốc trên Commons chỉ ghi quảng trường Hàm Rồng; ảnh là một khoảng sân, đường và đồi cây), `nghison-1`, `nghison-2` (bãi biển Hải Hòa: tên địa danh theo mô tả gốc, ảnh chỉ thấy bãi biển), `hamrong-7` (cầu vòm thép thời Pháp thuộc, theo mô tả gốc là cầu đường sắt qua sông Mã). Chú thích nằm ở trường `cap` trong `assets/img/gallery.js`.
+
+## Nội dung trò chơi nhỏ mới thêm
+
+Ngày 27/11/2026 bổ sung 10 thẻ cho trò "Ai có thẩm quyền?" và 2 quy trình cho trò "Xếp đúng quy trình" (trong `index.html`, mảng `CARDS` và `PROCS`). Căn cứ đã đối chiếu với văn bản trong `nguon/`:
+
+| Nội dung | Căn cứ |
+|---|---|
+| Giải tán HĐND cấp xã; quyết định tổng biên chế cấp xã toàn tỉnh (HĐND tỉnh) | điểm e khoản 1, điểm a khoản 2 Điều 15 Luật 72/2025/QH15 |
+| Thành lập, giải thể, đặt tên, đổi tên thôn; thông qua quy hoạch, kế hoạch sử dụng đất của xã (HĐND xã) | điểm d khoản 2, điểm a khoản 5 Điều 21 Luật 72/2025/QH15 |
+| Thành lập Tổ đại biểu; phê chuẩn Phó Trưởng Ban, Ủy viên của Ban; quyết định việc đưa ra bãi nhiệm đại biểu (Thường trực HĐND) | khoản 7, 9, 10 Điều 31 Luật 72/2025/QH15 |
+| Phân bổ khoản chưa phân bổ chi tiết; quản lý biên chế; ban hành Quy chế làm việc của UBND (UBND) | khoản 5, 7, 9 Điều 16 và khoản 4, 6, 8 Điều 22 Luật 72/2025/QH15 |
+| Quy trình "Phiên chất vấn tại kỳ họp" | khoản 2 Điều 23, khoản 1 Điều 24 Nghị quyết 114/2025/UBTVQH15 |
+| Quy trình "HĐND xem xét báo cáo công tác" | khoản 2 Điều 16 Nghị quyết 114/2025/UBTVQH15 |
+
+Điểm nên xem: thẻ "thành lập, giải thể, đặt tên, đổi tên thôn" đúng với xã; ở phường là tổ dân phố (Điều 24), thẻ đã ghi rõ "thôn". Hai thẻ về biên chế phân biệt "quyết định" (HĐND) và "quản lý" (UBND) theo đúng câu chữ của Luật.
