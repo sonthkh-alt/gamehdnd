@@ -1,17 +1,17 @@
 # Nghị trường số – hướng dẫn cho Claude Code
 
-Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hóa. Trang tĩnh, không có bước build: mở `index.html` là chạy. Toàn bộ chữ trong game và tài liệu viết bằng tiếng Việt.
+Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hóa. Trang tĩnh, không có bước build: mở `index.html` là chạy. Toàn bộ chữ trong game và tài liệu viết bằng tiếng Việt. Tác giả game: Hà Ngọc Sơn, Phó Chánh Văn phòng Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (ghi ở màn hình "Tác giả, căn cứ và nguồn", cuối tab Hồ sơ, thẻ meta author và README).
 
 ## Cấu trúc
 
-- `index.html`: toàn bộ giao diện và lô-gic (HTML, CSS, JS trong một tệp). Nạp thêm `data/cau-hoi.js`, `data/bo-may.js`, `assets/img/credits.js`, `assets/art.js`, `assets/img/gallery.js`, rồi `assets/vendor/three.min.js`, `assets/3d/mo-hinh.js`, `assets/3d/the-gioi.js`.
+- `index.html`: toàn bộ giao diện và lô-gic (HTML, CSS, JS trong một tệp). Nạp thêm `data/cau-hoi.js`, `data/bo-may.js`, `data/thuyet-minh.js`, `assets/img/credits.js`, `assets/art.js`, `assets/img/gallery.js`, rồi `assets/vendor/three.min.js`, `assets/3d/mo-hinh.js`, `assets/3d/the-gioi.js`.
 - `assets/3d/mo-hinh.js` (`window.NTS_MODELS`): mô hình dựng bằng mã, gồm Voi Đồng, trống đồng và 10 hàm `build.<khóa>` cho 10 chặng. `assets/3d/the-gioi.js` (`window.NTS_3D`): sa bàn, camera, ghim chặng, hiệu ứng. `assets/vendor/three.min.js`: three.js r170 gộp một tệp, không sửa tay.
 - `manifest.webmanifest`, `sw.js`, `assets/icon/`: cài game như ứng dụng, chơi khi mất mạng. Thêm tệp mã mới thì bổ sung vào mảng `CORE` trong `sw.js`.
 - `data/cau-hoi.json`: ngân hàng câu hỏi bản đầy đủ (nguồn chính để sửa). `data/cau-hoi.js`: bản gọn sinh tự động, không sửa tay.
 - `data/bo-may.json`, `data/bo-may.js` (`window.NTS_BOMAY`): dữ liệu mục Bộ máy, sinh bằng `tools/lay_bo_may.py` từ Cổng thông tin điện tử dbndthanhhoa.gov.vn; không sửa tay. Ảnh chân dung đại biểu ở `assets/img/db/`.
 - `nguon/`: nguyên văn văn bản pháp luật và bài Wikipedia làm căn cứ câu hỏi; mỗi câu hỏi trỏ tới một tệp ở đây qua trường `tep_nguon`.
 - `assets/art.js`: 10 tranh SVG phong cách sơn mài cho 10 chặng. `assets/img/gallery.js`: thư viện ảnh tư liệu (Wikimedia Commons). `assets/img/credits.js`: ảnh chính của từng chặng.
-- `tools/`: `build_bank.py` (sinh cau-hoi.js), `kiem_tra_cau_hoi.py` (kiểm tra câu hỏi), `lay_bo_may.py` (lấy dữ liệu mục Bộ máy từ Cổng), `tai_anh_ve_may.py` (tải ảnh Commons về kho), `xem-3d.html` (xem riêng sa bàn 3D), `phim/` (dựng phim giới thiệu).
+- `tools/`: `build_bank.py` (sinh cau-hoi.js), `kiem_tra_cau_hoi.py` (kiểm tra câu hỏi), `lay_bo_may.py` (lấy dữ liệu mục Bộ máy từ Cổng), `tao_thuyet_minh.py` (sinh dữ liệu và tệp âm thanh thuyết minh), `tai_anh_ve_may.py` (tải ảnh Commons về kho), `xem-3d.html` (xem riêng sa bàn 3D), `phim/` (dựng phim giới thiệu).
 
 ## Đồ họa 3D
 
@@ -25,6 +25,13 @@ Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hó
 ## Nội dung trò chơi nhỏ
 
 - Thẻ "Ai có thẩm quyền?" (`CARDS`) và các bước "Xếp đúng quy trình" (`PROCS`) nằm trong `index.html`, cũng chỉ soạn từ văn bản trong `nguon/`; phần `why`, `cc` ghi rõ điều, khoản. Mỗi thẻ chỉ được đúng với một trong bốn chủ thể.
+
+## Thuyết minh bằng giọng nói
+
+- Lời đọc ở `data/thuyet-minh.json` (trường `doc`: viết đủ chữ, số và ngày tháng viết bằng chữ, không viết tắt); `data/thuyet-minh.js` (`window.NTS_TM`) sinh bằng `python tools/tao_thuyet_minh.py`, không sửa tay. Lời của `c0` đến `c9` phải khớp nội dung với `lore` của chặng trong `index.html`; sửa một bên thì sửa cả bên kia.
+- Trong `index.html`, đối tượng `TM` phát thuyết minh: có tệp `assets/audio/tm/<giọng>/<khóa>.mp3` khớp mã băm thì phát tệp, không thì đọc bằng giọng tiếng Việt của thiết bị (`speechSynthesis`). Mọi chỗ phát đều đi qua `TM.play(khóa)`; `TM.on()` đã gồm điều kiện bật âm thanh (`S.snd`) và bật thuyết minh (`S.tm`). Mở màn mới, đổi tab, đóng màn phủ đều phải dừng (`TM.stop()`).
+- Chỉ tự phát sau một thao tác của người chơi (trình duyệt chặn tự phát âm thanh) và mỗi đoạn chỉ tự phát một lần trong một phiên (`tmAuto`).
+- Tệp âm thanh chỉ tạo bằng công cụ có quyền phát hành lại: VieNeu-TTS (Apache 2.0) qua `tools/tao_thuyet_minh.py --tong-hop` hoặc workflow "Tao thuyet minh", hoặc giọng người thật. Không dùng `edge-tts` hay dịch vụ không cấp quyền phát hành lại. Luôn ghi rõ đây là giọng máy ở màn hình nguồn.
 
 ## Mục Bộ máy
 

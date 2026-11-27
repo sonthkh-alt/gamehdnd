@@ -1,0 +1,57 @@
+# Tổng hợp tệp âm thanh thuyết minh bằng VieNeu-TTS v3 Turbo (mã nguồn mở, Apache 2.0) trên máy chủ GitHub,
+# ghi vào assets/audio/tm/ và data/thuyet-minh.js, commit lên main rồi gọi workflow đồng bộ trang web.
+# CHỈ chạy khi bấm tay: tab Actions > "Tao thuyet minh" > Run workflow.
+# Lưu ý: workflow này chưa được chạy thử lần nào; nghe lại toàn bộ tệp trước khi dùng chính thức.
+name: Tao thuyet minh
+
+on:
+  workflow_dispatch:
+    inputs:
+      lam_lai:
+        description: "Tổng hợp lại toàn bộ, kể cả đoạn đã có (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: tao-thuyet-minh
+  cancel-in-progress: false
+
+jobs:
+  tao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Cai thu vien
+        run: pip install vieneu lameenc
+      - name: Tong hop giong doc
+        env:
+          HF_HUB_DISABLE_PROGRESS_BARS: "1"
+        run: |
+          if [ "${{ inputs.lam_lai }}" = "true" ]; then
+            python tools/tao_thuyet_minh.py --tong-hop --lam-lai
+          else
+            python tools/tao_thuyet_minh.py --tong-hop
+          fi
+      - name: Commit tep am thanh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/audio/tm data/thuyet-minh.js
+          if git diff --cached --quiet; then
+            echo "Khong co gi thay doi."
+          else
+            git commit -m "Tong hop tep am thanh thuyet minh"
+            git push origin HEAD:main
+          fi
+      - name: Dong bo trang web
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run dong-bo-trang-web.yml --ref main

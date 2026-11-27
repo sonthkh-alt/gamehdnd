@@ -103,3 +103,10 @@ Toàn bộ nội dung lấy tự động từ Cổng thông tin điện tử Đo
 | Họ tên, chức danh công chức các phòng của Văn phòng | Lấy từ danh bạ công khai trên Cổng, không kèm số điện thoại. Nếu không muốn nêu tên chuyên viên trong game công khai thì bỏ nhóm này trong `tools/lay_bo_may.py` |
 
 Trò "Ai giữ cương vị nào?" không có câu soạn tay về nhân sự: câu hỏi và đáp án sinh từ `data/bo-may.js` (hàm `bmPool()` trong `index.html`), nên đúng sai phụ thuộc hoàn toàn vào dữ liệu của Cổng.
+
+## Thuyết minh bằng giọng nói (thêm ngày 28/11/2026)
+
+- 21 đoạn lời trong `data/thuyet-minh.json`. Lời của 10 chặng chép từ lời dẫn sẵn có của chặng, chỉ đổi cách viết cho máy đọc (năm, ngày tháng viết bằng chữ; "HĐND", "UBND" viết đủ) và thêm câu mở "Chặng một. Đông Sơn." Chặng 4 đổi "(1418-1428)" thành "từ năm ... đến năm ..."; chặng 3 đảo trật tự câu về UNESCO cho dễ nghe, không thêm dữ kiện mới.
+- Lời chào, lời vào thi, lời báo kết quả là lời mới soạn; các con số trong đó (mười chặng, ba cấp độ, ba mươi câu, hai mươi lăm phút, hai mươi mốt câu) khớp với luật chơi hiện tại, đổi luật chơi thì phải sửa lời.
+- Chưa có ai nghe kiểm tra: lúc soạn chỉ thử được bằng giọng giả lập. Khi có tệp thu sẵn cần nghe lại toàn bộ, chú ý tên riêng (Pù Luông, Cẩm Lương, Đại Ngu, Trường Lệ, UNESCO) và năm tháng.
+- Tùy chọn "Đọc câu hỏi và giải thích" dùng giọng của thiết bị và tự đổi một số chữ viết tắt (HĐND, UBND, ĐBQH, UBTVQH, số hiệu văn bản) thành chữ đầy đủ; số hiệu phức tạp có thể đọc chưa chuẩn, nên mặc định tắt.

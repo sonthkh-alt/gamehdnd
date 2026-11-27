@@ -8,6 +8,7 @@
 <title>Nghị trường số</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Game học tập 3D về Hội đồng nhân dân hai cấp tỉnh Thanh Hóa: sa bàn 10 di sản xứ Thanh, hơn 500 câu hỏi từ dễ đến khó.">
+<meta name="author" content="Hà Ngọc Sơn, Phó Chánh Văn phòng Đoàn ĐBQH và HĐND tỉnh Thanh Hóa">
 <meta name="theme-color" content="#74140f">
 <link rel="icon" href="assets/icon/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icon/icon-180.png">
@@ -308,6 +309,14 @@ input[type=text],select{width:100%;min-height:48px;font-size:16px;padding:0 12px
 .chips2 button{flex:none;min-height:36px;padding:2px 12px;border-radius:99px;border:1px solid var(--line);background:var(--panel);font-size:13.5px;white-space:nowrap}
 .chips2 button[aria-pressed=true]{border-color:var(--gold2);color:var(--gold2);background:#24544a}
 .pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:8px}
+/* Thuyết minh bằng giọng nói */
+.tmb{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:12px;padding:6px 16px 6px 12px;border-radius:99px;border:1.5px solid var(--gold);background:rgba(7,24,22,.6);color:var(--gold2);font-weight:600;font-size:14.5px}
+.tmb svg{width:22px;height:22px;flex:none}
+.tmb[aria-pressed=true]{background:#24544a;box-shadow:0 0 0 3px rgba(245,217,143,.18)}
+.tmb[aria-pressed=true] svg{animation:tmp .9s ease-in-out infinite alternate}
+@keyframes tmp{to{transform:scale(1.16)}}
+@media(prefers-reduced-motion:reduce){.tmb[aria-pressed=true] svg{animation:none}}
+.tacgia{text-align:center}
 /* Mục Bộ máy dân cử */
 .seg.bm4 button{font-size:13.5px;padding:0 2px;white-space:nowrap}
 .bot.n6{grid-template-columns:repeat(6,minmax(0,1fr))}
@@ -492,6 +501,7 @@ img.voi3{display:block;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(0,0,
 <div class="splash" id="splash" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="url(#gDrum)"/><g fill="none" stroke="#6e4116" stroke-width="1.6" opacity=".8"><circle cx="100" cy="100" r="86"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="56"/><circle cx="100" cy="100" r="38"/></g><path d="M100 70l6.5 15.800 16.300-5-9.900 13.800 14.600 8.800-17 1.200 2.600 16.800-13.100-10.800-13.100 10.800 2.600-16.800-17-1.200 14.600-8.800-9.900-13.800 16.300 5z" fill="#fff1c4"/></svg><b>Nghị trường số</b><span>Đang dựng sa bàn xứ Thanh…</span></div>
 <script src="data/cau-hoi.js"></script>
 <script src="data/bo-may.js"></script>
+<script src="data/thuyet-minh.js"></script>
 <script src="assets/img/credits.js"></script>
 <script src="assets/art.js"></script>
 <script src="assets/img/gallery.js"></script>
@@ -711,7 +721,7 @@ function av(role,size){
 
 /* ---------- Trạng thái ---------- */
 const KEY='nghitruongso-v2';
-const fresh=()=>({name:'',role:'',team:'',xp:0,ok:{},wr:{},stars:{},best:{},badges:[],cards:[],streak:0,last:'',daily:{d:'',done:{}},week:{k:'',xp:0},arenaBest:0,arenaPlays:0,tqBest:0,qtBest:{},memBest:0,picBest:0,examBest:0,exams:0,answered:0,correct:0,snd:true,free:false,intro:false,gfx:'auto',bmBest:0});
+const fresh=()=>({name:'',role:'',team:'',xp:0,ok:{},wr:{},stars:{},best:{},badges:[],cards:[],streak:0,last:'',daily:{d:'',done:{}},week:{k:'',xp:0},arenaBest:0,arenaPlays:0,tqBest:0,qtBest:{},memBest:0,picBest:0,examBest:0,exams:0,answered:0,correct:0,snd:true,free:false,intro:false,gfx:'auto',bmBest:0,tm:'on',tmg:'nu',tmq:false});
 let S=fresh(),tab='map',run=null,onb=null,confirmReset=false,arenaLv=0,heroT=null,heroI=0,galF='all',lbI=-1,lbList=[];
 function load(){
  try{const raw=localStorage.getItem(KEY);if(raw){S=Object.assign(fresh(),JSON.parse(raw));return}
@@ -743,6 +753,51 @@ const SFX={
  bad(){tone(196,0,.3,'sawtooth',.08,104)},
  flip(){tone(880,0,.04,'triangle',.05)},
  win(){[0,.17,.34,.42].forEach(t=>SFX.drum(t));[523,587,698,784,1047].forEach((f,i)=>tone(f,.12+i*.11,.24,'triangle',.12))}};
+/* ---------- Thuyết minh bằng giọng nói ----------
+   Lời đọc nằm trong data/thuyet-minh.js. Đoạn nào có tệp thu sẵn còn khớp lời (mục clip) thì phát tệp;
+   chưa có thì đọc bằng giọng tiếng Việt có sẵn của thiết bị (Web Speech). Tắt âm thanh thì thuyết minh cũng tắt. */
+const TMD=window.NTS_TM||null,SYN=('speechSynthesis' in window)?window.speechSynthesis:null,tmBlob={},tmHeard={};
+let tmVs=[];
+const tmLoadV=()=>{try{tmVs=SYN?SYN.getVoices().filter(v=>/^vi([-_]|$)/i.test(v.lang)):[]}catch(e){tmVs=[]}};
+const tmVoice=()=>{if(!tmVs.length)return null;const rx=S.tmg==='nam'?/nam ?minh|male/i:/hoai ?my|hoài my|linh|female/i,sc=v=>(/natural|neural/i.test(v.name)?8:0)+(/online/i.test(v.name)?4:0)+(/google/i.test(v.name)?3:0)+(rx.test(v.name)?2:0);return tmVs.slice().sort((a,b)=>sc(b)-sc(a))[0]};
+const TM={key:'',a:null,u:null,cb:null,n:0,
+ on(){return !!TMD&&S.snd&&S.tm!=='off'},
+ clip(k){const m=TMD&&TMD.muc[k],c=TMD&&TMD.clip&&TMD.clip[k];if(!m||!c)return '';const g=c[S.tmg]===m.h?S.tmg:Object.keys(c).find(x=>c[x]===m.h);return g?TMD.dir+g+'/'+k+'.mp3':''},
+ hasClips(){return !!TMD&&Object.keys(TMD.giong).every(g=>Object.keys(TMD.muc).some(k=>TMD.clip[k]&&TMD.clip[k][g]===TMD.muc[k].h))},
+ can(k){return !!(TMD&&TMD.muc[k])&&(!!this.clip(k)||!!tmVoice())},
+ stop(){this.n++;const f=this.cb;this.cb=null;this.key='';if(this.a){try{this.a.pause()}catch(e){}this.a=null}if(SYN){try{SYN.cancel()}catch(e){}}tmUi();if(f)f(false)},
+ begin(k,cb){this.stop();const id=++this.n;this.key=k;this.cb=cb||null;tmUi();return [id,ok=>{if(id!==this.n)return;this.n++;this.cb=null;this.key='';this.a=null;tmUi();if(cb)cb(ok)}]},
+ play(k,cb){
+  if(!this.on()||!this.can(k)){this.stop();if(cb)cb(false);return false}
+  const [id,fin]=this.begin(k,cb),src=this.clip(k);
+  if(!src){this.say(TMD.muc[k].doc,id,fin);return true}
+  const go=u=>{if(id!==this.n)return;const a=new Audio(u);this.a=a;a.onended=()=>fin(true);a.onerror=()=>this.say(TMD.muc[k].doc,id,fin);const pr=a.play();if(pr&&pr.catch)pr.catch(()=>fin(false))};
+  if(tmBlob[src])go(tmBlob[src]);
+  else if(/^https?:$/.test(location.protocol))fetch(src).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(b=>go(tmBlob[src]=URL.createObjectURL(b))).catch(()=>{if(id===this.n)this.say(TMD.muc[k].doc,id,fin)});
+  else go(src);
+  return true},
+ /* Đọc một đoạn văn bất kỳ bằng giọng của thiết bị (câu hỏi, giải thích) */
+ text(k,t,cb){if(!this.on()||!tmVoice()){this.stop();if(cb)cb(false);return false}const [id,fin]=this.begin(k,cb);this.say(t,id,fin);return true},
+ /* Chia thành câu ngắn: giọng trực tuyến của một số trình duyệt tự ngắt nếu đọc một mạch quá dài */
+ say(t,id,fin){
+  const v=tmVoice();if(!SYN||!v){fin(false);return}
+  const parts=(String(t).match(/[^.!?;:]+[.!?;:]*/g)||[]).map(x=>x.trim()).filter(Boolean);let i=0;
+  const next=()=>{if(id!==this.n)return;if(i>=parts.length){fin(true);return}const u=new SpeechSynthesisUtterance(parts[i++]);u.lang=v.lang||'vi-VN';u.voice=v;u.rate=1;u.onend=next;u.onerror=()=>fin(false);this.u=u;try{SYN.speak(u)}catch(e){fin(false)}};
+  next()}};
+function tmUi(){document.querySelectorAll('[data-tm]').forEach(b=>{const on=TM.key===b.dataset.tm;b.setAttribute('aria-pressed',on);const l=b.querySelector('span');if(l)l.textContent=on?'Dừng thuyết minh':b.dataset.l})}
+const tmBtn=(k,l)=>TMD&&TMD.muc[k]&&S.tm!=='off'?`<button class="tmb" data-act="tm" data-v="${k}" data-tm="${k}" data-l="${l||'Nghe thuyết minh'}" aria-pressed="${TM.key===k}">${SND(true)}<span>${TM.key===k?'Dừng thuyết minh':(l||'Nghe thuyết minh')}</span></button>`:'';
+/* Tự phát một lần cho mỗi đoạn trong một phiên chơi; muốn nghe lại thì bấm nút */
+function tmAuto(k){if(TM.on()&&!tmHeard[k]&&TM.can(k)){tmHeard[k]=1;TM.play(k)}}
+const tmStatus=()=>!TMD?'Chưa nạp được lời thuyết minh.':TM.hasClips()?'Giọng đọc thu sẵn: '+TMD.giong[TMD.giong[S.tmg]?S.tmg:Object.keys(TMD.giong)[0]].ten+' ('+TMD.may+').':tmVs.length?'Đang dùng giọng đọc tiếng Việt của thiết bị: '+tmVoice().name+'.':'Thiết bị này chưa có giọng đọc tiếng Việt nên chưa phát được thuyết minh.';
+/* Đọc câu hỏi, giải thích bằng giọng của thiết bị: đổi chữ viết tắt thành chữ đầy đủ để máy đọc xuôi tai hơn */
+const TMAB=[[/HĐND/g,'Hội đồng nhân dân'],[/UBND/g,'Ủy ban nhân dân'],[/ĐBQH/g,'đại biểu Quốc hội'],[/UBTVQH\d*/g,'Ủy ban Thường vụ Quốc hội'],[/UB ?MTTQ/g,'Ủy ban Mặt trận Tổ quốc'],[/MTTQ/g,'Mặt trận Tổ quốc'],[/(\d+)\/(\d{4})\//g,'$1 năm $2 '],[/\bQH(\d+)/g,'Quốc hội khóa $1'],[/\bNQ-/g,'Nghị quyết '],[/KT-XH/g,'kinh tế, xã hội'],[/\bVBHN-VPQH\b/g,'văn bản hợp nhất của Văn phòng Quốc hội'],[/\bCT-TTg\b/g,'chỉ thị của Thủ tướng']];
+const tmNorm=t=>TMAB.reduce((x,[a,b])=>x.replace(a,b),String(t));
+function tmQ(){
+ if(!S.tmq||!run||run.type!=='stage'||!TM.on())return;const q=run.qs[run.i];
+ if(run.picked==null)TM.text('q',tmNorm(q.q+(/[.?!:]\s*$/.test(q.q)?' ':'. ')+run.ord[run.i].map((oi,k)=>'ABCD'[k]+'. '+q.a[oi]).join('. ')));
+ else TM.text('q',tmNorm((run.picked===0?'Chính xác. ':'Chưa đúng. ')+q.why));
+}
+if(SYN){tmLoadV();try{SYN.addEventListener('voiceschanged',()=>{tmLoadV();if(tab==='me'&&!run)render()})}catch(e){}}
 function burst(n){
  if(RM)return;const fx=$('#fx');let h='';
  for(let i=0;i<(n||9);i++){const a=Math.random()*360,d=90+Math.random()*130,x=Math.cos(a*Math.PI/180)*d,y=Math.sin(a*Math.PI/180)*d;h+=`<svg viewBox="-22 -10 42 20" style="--x:${x.toFixed(0)}px;--y:${y.toFixed(0)}px;--a:${a.toFixed(0)}deg;animation-delay:${(Math.random()*.12).toFixed(2)}s"><path d="${BIRD}" fill="#f5d98f" stroke="#f5d98f" stroke-width="1.2" stroke-linecap="round"/></svg>`}
@@ -845,12 +900,16 @@ function tabMe(){
  <section class="sec"><h2>Thống kê</h2><div class="stats"><div class="stat"><b>${nOk()}/${NQ}</b><span>Câu đã nắm</span></div><div class="stat"><b>${S.answered?Math.round(S.correct/S.answered*100):0}%</b><span>Tỷ lệ đúng</span></div><div class="stat"><b>${S.streak}</b><span>Ngày liên tiếp</span></div></div></section>
  <section class="sec"><h2>Huy hiệu ${S.badges.length}/${BADGES.length}</h2><div class="card bdg">${BADGES.map(b=>`<div class="bd ${S.badges.includes(b.id)?'':'off'}" title="${b.d}"><div class="m">${b.ico?`<svg viewBox="0 0 48 48" style="stroke:none">${ICON[b.ico]}</svg>`:`<svg viewBox="0 0 24 24">${GLY[b.g]}</svg>`}</div><span>${b.n}</span></div>`).join('')}</div></section>
  <section class="sec"><h2>Tùy chọn</h2><div class="card">
- <div class="sw"><div>Âm thanh trống hội<small>Tiếng trống, tiếng chuông khi trả lời.</small></div><button class="tog" role="switch" aria-checked="${S.snd}" data-act="snd" aria-label="Âm thanh"></button></div>
+ <div class="sw"><div>Âm thanh trống hội<small>Tiếng trống, tiếng chuông khi trả lời. Tắt mục này thì thuyết minh cũng tắt.</small></div><button class="tog" role="switch" aria-checked="${S.snd}" data-act="snd" aria-label="Âm thanh"></button></div>
+ <div class="sw"><div>Thuyết minh bằng giọng nói<small>Lời chào, lời dẫn từng chặng di sản và khi bay tham quan, lời báo kết quả. ${tmStatus()}</small></div><button class="tog" role="switch" aria-checked="${S.tm!=='off'}" data-act="tm-tog" aria-label="Thuyết minh bằng giọng nói"></button></div>
+ ${TMD&&S.tm!=='off'&&TM.hasClips()?`<div class="seg g2" role="group" aria-label="Chọn giọng thuyết minh" style="margin:0 0 12px">${Object.keys(TMD.giong).map(g=>`<button data-act="tm-g" data-v="${g}" aria-pressed="${S.tmg===g}">${esc(TMD.giong[g].nhan)}</button>`).join('')}</div>`:''}
+ <div class="sw"><div>Đọc câu hỏi và giải thích<small>Ở Hành trình và Ôn câu sai. Dùng giọng đọc tiếng Việt của thiết bị nên chất lượng tùy máy; văn bản có nhiều số hiệu có thể đọc chưa trôi chảy.</small></div><button class="tog" role="switch" aria-checked="${!!S.tmq}" data-act="tm-q" aria-label="Đọc câu hỏi và giải thích"></button></div>
  <div class="sw"><div>Chế độ ôn tập tự do<small>Mở sẵn mọi chặng và cấp độ, dùng khi tập huấn theo chuyên đề.</small></div><button class="tog" role="switch" aria-checked="${S.free}" data-act="free" aria-label="Chế độ ôn tập tự do"></button></div>
  <div class="sw" style="display:block"><div>Đồ họa<small>${g3?'Đang chạy 3D ('+(G3.quality()==='low'?'tiết kiệm':'chất lượng cao')+').':S.gfx==='off'?'Đang dùng giao diện 2D.':'Máy này chưa chạy được 3D, game đang dùng giao diện 2D.'} Máy yếu nên chọn 3D tiết kiệm hoặc 2D.</small></div><div class="seg g4" role="group" aria-label="Chế độ đồ họa">${[['auto','Tự động'],['high','3D cao'],['low','3D nhẹ'],['off','2D']].map(([k,n])=>`<button data-act="gfx" data-v="${k}" aria-pressed="${(S.gfx||'auto')===k}">${n}</button>`).join('')}</div></div>
- </div><div class="btns mt"><button class="btn ghost full" data-act="credits">Căn cứ pháp lý và nguồn ảnh</button>
+ </div><div class="btns mt"><button class="btn ghost full" data-act="credits">Tác giả, căn cứ pháp lý và nguồn ảnh</button>
  <div class="row2"><button class="btn ghost" data-act="backup">Sao lưu tiến trình</button><button class="btn ghost" data-act="restore">Khôi phục</button></div><input type="file" id="rsf" accept="application/json,.json" hidden>
- ${confirmReset?`<div class="card"><p style="margin:0 0 10px">Xóa toàn bộ XP, huy hiệu và tiến trình trên máy này?</p><div class="row2"><button class="btn red" data-act="reset-yes">Xóa tiến trình</button><button class="btn ghost" data-act="reset-no">Giữ lại</button></div></div>`:`<button class="btn ghost full" data-act="reset">Chơi lại từ đầu</button>`}</div></section>`;
+ ${confirmReset?`<div class="card"><p style="margin:0 0 10px">Xóa toàn bộ XP, huy hiệu và tiến trình trên máy này?</p><div class="row2"><button class="btn red" data-act="reset-yes">Xóa tiến trình</button><button class="btn ghost" data-act="reset-no">Giữ lại</button></div></div>`:`<button class="btn ghost full" data-act="reset">Chơi lại từ đầu</button>`}</div></section>
+ <p class="note tacgia">Nghị trường số<br>Tác giả: Hà Ngọc Sơn, Phó Chánh Văn phòng Đoàn ĐBQH và HĐND tỉnh Thanh Hóa</p>`;
 }
 const bmGameCard=()=>`<section class="sec card game"><div class="gm"><svg viewBox="0 0 24 24" aria-hidden="true">${GLY.org}</svg></div><div><h3>Ai giữ cương vị nào?</h3><p>8 câu về lãnh đạo HĐND tỉnh, Đoàn ĐBQH và Văn phòng, theo Cổng thông tin điện tử của cơ quan.</p><div class="lab">${S.bmBest?'Kỷ lục: '+S.bmBest+'/8':'Chưa có lượt chơi'}</div><button class="btn sm mt" data-act="bmq-start">Chơi ngay</button></div></section>`;
 function bmGrid(kind,all){
@@ -865,7 +924,7 @@ function tabBm(){
  const stats=B=>`<div class="stats"><div class="stat"><b>${B.tk.tong}</b><span>Đại biểu</span></div><div class="stat"><b>${B.tk.nu}</b><span>Đại biểu nữ</span></div><div class="stat"><b>${B.tk.dv}</b><span>Đơn vị bầu cử</span></div></div>`;
  const people=L=>`<div class="card bml">${L.map(x=>`<div><b>${esc(x.ten)}</b><small>${esc(x.cv)}</small></div>`).join('')}</div>`;
  const kr=(kind,k,mx)=>`<button class="kr" data-act="bm-k" data-v="${kind}-${k.k}" ${k.n?'':'disabled'} aria-label="Khóa ${k.k}, ${k.nk}${k.n?', '+k.n+' đại biểu':', chưa có danh sách'}"><span><b>Khóa ${k.k}</b><small>${k.nk}</small></span><span class="bar"><i style="width:${Math.round(k.n/mx*100)}%"></i></span><span class="n">${k.n||'–'}</span></button>`;
- let h=`<div class="pad" style="padding-top:16px"><h1>Bộ máy dân cử</h1><p class="sub">Tổ chức, nhân sự của Đoàn ĐBQH, HĐND tỉnh và Văn phòng, theo Cổng thông tin điện tử dbndthanhhoa.gov.vn ngày ${BM.ngay}.</p>
+ let h=`<div class="pad" style="padding-top:16px"><h1>Bộ máy dân cử</h1><p class="sub">Tổ chức, nhân sự của Đoàn ĐBQH, HĐND tỉnh và Văn phòng, theo Cổng thông tin điện tử dbndthanhhoa.gov.vn ngày ${BM.ngay}.</p>${tmBtn('bomay','Nghe giới thiệu')}
  <div class="seg bm4" role="group" aria-label="Chọn nội dung">${[['hd','HĐND tỉnh'],['qh','Đoàn ĐBQH'],['vp','Văn phòng'],['nk','Nhiệm kỳ']].map(([k,n])=>`<button data-act="bm-tab" data-v="${k}" aria-pressed="${bmTab===k}">${n}</button>`).join('')}</div></div>`;
  if(bmTab==='hd')h+=`<section class="sec"><h2>HĐND tỉnh khóa ${H.khoa}</h2><p class="sub" style="margin:-4px 0 12px">Nhiệm kỳ ${H.nk}. Số liệu đếm theo danh sách đang đăng trên Cổng, có thể khác số đại biểu được bầu đầu nhiệm kỳ; trong đó ${H.tk.dtts} đại biểu là người dân tộc thiểu số.</p>${stats(H)}</section>
  <section class="sec"><h2>Thường trực HĐND tỉnh</h2><div class="plist">${H.tt.map(p=>prow('hd',p,p.vt)).join('')}</div></section>
@@ -920,9 +979,9 @@ function renderOnb(){
 /* ---------- Lớp chơi ---------- */
 const ov=$('#ov');
 function stopRun(){if(run&&run.iv)clearInterval(run.iv)}
-function openOv(){if(tour){clearTimeout(tour.t);tour=null}ov.classList.add('on');renderOv()}
+function openOv(){if(tour){clearTimeout(tour.t);tour=null}TM.stop();ov.classList.add('on');renderOv()}
 function closeOv(){
- const r=run;stopRun();run=null;ov.classList.remove('on');
+ const r=run;stopRun();TM.stop();run=null;ov.classList.remove('on');
  if(r&&(r.type==='result'||r.type==='stage')&&!r.prac){const nx=nextNode();selSt=nx?nx[0]:r.idx}else if(r&&(r.type==='info'||r.type==='card'))selSt=r.idx;
  render();
 }
@@ -940,7 +999,7 @@ function renderOvBody(){
   const s=STAGES[run.idx],n=(BYCD[s.id]||[]).length;b.className='ovb flush';
   head('Chặng '+(run.idx+1)+': '+s.n,'');
   b.innerHTML=`${strip?'':`<div class="photo">${pic(s.img)}<div class="pt"><span class="eb">${s.t}</span><h2>${s.n}</h2></div></div>`}
-  <div class="pad"><p class="lore">${s.lore}</p>
+  <div class="pad"><p class="lore">${s.lore}</p>${tmBtn('c'+run.idx)}
   <div class="lvl-list">${[1,2,3].map(m=>{const o=isOpen(run.idx,m),v=stv(s.id,m),c=(BYCD[s.id]||[]).filter(q=>q.m===m),k=c.filter(q=>S.ok[q.id]).length,bs=S.best[s.id+m];
    return `<button class="lvb ${o?'open':''}" data-act="play" data-v="${run.idx}-${m}" ${o?'':'disabled'}><span><b>Cấp ${LV[m-1]}</b><small>${o?`Đã nắm ${k}/${c.length} câu${bs!=null?', lượt tốt nhất '+bs+'/'+RUN:''}`:(m===1?'Vượt cấp Dễ ở chặng trước để mở':'Vượt cấp '+LV[m-2]+' để mở')}</small></span><span class="stars">${o?[0,1,2].map(i=>star(i<v)).join(''):LOCK}</span></button>`}).join('')}</div>
   <p class="hint">Kho câu hỏi của chặng: ${n} câu. Mỗi lượt ${RUN} câu, ưu tiên câu bạn chưa gặp hoặc từng trả lời sai.</p>${figure(s)}</div>`;
@@ -1031,7 +1090,7 @@ function renderOvBody(){
   b.innerHTML=`<div class="res">${voi(140)}<h2 style="margin:0">Đúng ${run.ok}/${run.n} ảnh</h2><p class="sub" style="margin:0">${run.ok>=7?'Tinh mắt lắm! Bạn thuộc xứ Thanh như lòng bàn tay.':'Ghé thư viện ảnh ở mục Di sản để ngắm kỹ hơn rồi thử lại nhé.'}</p><div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${S.picBest}/8</b><span>Kỷ lục</span></div><div class="stat"><b>${run.ok>=7?'Đạt':'Chưa'}</b><span>Huy hiệu</span></div></div><div class="btns"><button class="btn" data-act="pic-start">Chơi lại</button><button class="btn ghost" data-act="tab-disan">Xem thư viện ảnh</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`;
  }else if(run.type==='card'){
   const s=STAGES[run.idx];b.className='ovb flush';head('Thẻ di sản','');
-  b.innerHTML=`${strip?'':`<div class="photo">${pic(s.img)}<div class="pt"><span class="eb">Chặng ${run.idx+1} · ${s.t}</span><h2>${s.n}</h2></div></div>`}<div class="pad"><p class="lore">${s.lore}</p>${figure(s)}<div class="btns mt"><button class="btn" data-act="stage" data-v="${run.idx}">Đến chặng ${s.n}</button><button class="btn ghost" data-act="close">Đóng</button></div></div>`;
+  b.innerHTML=`${strip?'':`<div class="photo">${pic(s.img)}<div class="pt"><span class="eb">Chặng ${run.idx+1} · ${s.t}</span><h2>${s.n}</h2></div></div>`}<div class="pad"><p class="lore">${s.lore}</p>${tmBtn('c'+run.idx)}${figure(s)}<div class="btns mt"><button class="btn" data-act="stage" data-v="${run.idx}">Đến chặng ${s.n}</button><button class="btn ghost" data-act="close">Đóng</button></div></div>`;
  }else if(run.type==='bmp'){
   const kind=run.kind,B=BMP[kind],p=bmFind(kind,run.id),same=p.dv?B.db.filter(x=>x.dv===p.dv&&x.id!==p.id):[];
   const bans=kind==='hd'?BM.hdnd.ban.map(x=>{const m=x.tv.find(y=>y.ten===p.ten);return m?x.n+' ('+m.cv.split(';')[0]+')':''}).filter(Boolean):[];
@@ -1056,18 +1115,20 @@ function renderOvBody(){
   head('Kết quả','');
   b.innerHTML=`<div class="res">${voi(140)}<h2 style="margin:0">Đúng ${run.ok}/${run.n} câu</h2><p class="sub" style="margin:0">${run.ok>=run.n-1?'Bạn nắm rất chắc bộ máy dân cử của tỉnh.':'Xem lại mục Bộ máy rồi thử lần nữa nhé.'}</p><div class="gain"><div class="stat"><b>+${run.xp}</b><span>XP</span></div><div class="stat"><b>${S.bmBest}/${run.n}</b><span>Kỷ lục</span></div><div class="stat"><b>${run.ok>=run.n-1?'Đạt':'Chưa'}</b><span>Huy hiệu</span></div></div><div class="btns"><button class="btn" data-act="bmq-start">Chơi lại</button><button class="btn ghost" data-act="tab-bm">Xem mục Bộ máy</button><button class="btn ghost" data-act="close">Thoát</button></div></div>`;
  }else if(run.type==='credits'){
-  head('Căn cứ và nguồn ảnh','');
+  head('Tác giả, căn cứ và nguồn','');
   const docs=['Hiến pháp năm 2013 (sửa đổi, bổ sung theo Nghị quyết 203/2025/QH15)','Luật Tổ chức chính quyền địa phương số 72/2025/QH15','Luật Hoạt động giám sát của Quốc hội và HĐND số 121/2025/QH15','Luật Bầu cử đại biểu Quốc hội và đại biểu HĐND (văn bản hợp nhất 83/VBHN-VPQH năm 2026)','Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15, sửa đổi bởi Luật số 87/2025/QH15','Luật Ngân sách nhà nước số 89/2025/QH15','Luật Tiếp công dân năm 2013, sửa đổi bởi Luật số 136/2025/QH15','Nghị quyết 103/2025/UBTVQH15 và 104/2025/UBTVQH15: Quy chế làm việc mẫu của HĐND cấp tỉnh, cấp xã','Nghị quyết 106, 107, 108/2025/UBTVQH15 về số lượng Phó Chủ tịch, Phó Trưởng Ban; cơ cấu người ứng cử; Ban Dân tộc','Nghị quyết 114/2025/UBTVQH15 hướng dẫn hoạt động giám sát của HĐND','Nghị quyết 116/2025/UBTVQH15 về tiếp công dân, xử lý đơn, giám sát giải quyết khiếu nại, tố cáo','Nghị quyết liên tịch 72/2025/NQLT/UBTVQH15-CP-ĐCTUBTWMTTQVN về tiếp xúc cử tri (đã sửa đổi năm 2025)','Nghị quyết 96/2023/QH15 về lấy phiếu tín nhiệm, bỏ phiếu tín nhiệm','Nghị quyết 202/2025/QH15 và Nghị quyết 1686/NQ-UBTVQH15 về sắp xếp đơn vị hành chính','Nghị quyết 45/2025/NQ-HĐND, 36/2026/NQ-HĐND, 55/NQ-HĐND năm 2026 của HĐND tỉnh Thanh Hóa','Chỉ thị 08/CT-TTg và Chỉ thị 14/CT-TTg năm 2026','Báo Thanh Hóa điện tử; Wikipedia tiếng Việt (phần lịch sử, văn hóa)'];
-  b.innerHTML=`<h3>Căn cứ soạn câu hỏi</h3><p class="sub">Mỗi câu hỏi đều ghi điều, khoản làm căn cứ và đã được đối chiếu với nguyên văn văn bản. Bộ câu hỏi vẫn cần Phòng Công tác HĐND rà soát trước khi dùng chính thức.</p><div class="card mt">${docs.map(d=>`<div class="crd">${d}</div>`).join('')}</div>
+  b.innerHTML=`<h3>Tác giả</h3><div class="card mt"><b>Hà Ngọc Sơn</b><div class="lab" style="margin-top:2px">Phó Chánh Văn phòng Đoàn ĐBQH và HĐND tỉnh Thanh Hóa</div></div>
+  <h3 style="margin-top:22px">Căn cứ soạn câu hỏi</h3><p class="sub">Mỗi câu hỏi đều ghi điều, khoản làm căn cứ và đã được đối chiếu với nguyên văn văn bản. Bộ câu hỏi vẫn cần Phòng Công tác HĐND rà soát trước khi dùng chính thức.</p><div class="card mt">${docs.map(d=>`<div class="crd">${d}</div>`).join('')}</div>
   <h3 class="mt" style="margin-top:22px">Đồ họa 3D, tranh và ảnh</h3><p class="sub">Sa bàn 3D và mười cụm mô hình di sản được dựng riêng cho game bằng mã, là hình cách điệu chứ không theo đúng tỷ lệ; dùng thư viện three.js (giấy phép MIT). Mười bức tranh phong cách sơn mài của các chặng được vẽ riêng cho game. Ảnh tư liệu lấy từ Wikimedia Commons, dùng theo giấy phép ghi kèm; ảnh đã được cắt và thu nhỏ.</p><div class="card mt">${STAGES.map(s=>{const c=CRED[s.img];return c?`<div class="crd"><b>${s.n}</b>: ${esc(c.title)}. Tác giả: ${esc(c.author)}. Giấy phép: ${esc(c.lic)}. <a href="${esc(c.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`:''}).join('')}</div>
   ${GAL.length?`<h3 style="margin-top:22px">Thư viện ảnh (${GAL.length} ảnh)</h3><div class="card mt">${GAL.map(g=>`<div class="crd"><b>${esc(g.pl)}</b>: ${esc(g.cap)}. Tác giả: ${esc(g.author)}. Giấy phép: ${esc(g.lic)}. <a href="${esc(g.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`).join('')}</div>`:''}
   ${BM?`<h3 style="margin-top:22px">Mục Bộ máy</h3><p class="sub">Thông tin tổ chức, nhân sự và ảnh chân dung đại biểu lấy từ Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn) ngày ${BM.ngay}; ảnh đã được cắt và thu nhỏ. Game chỉ đăng họ tên, chức vụ, đơn vị bầu cử. Năm của các khóa là phần game bổ sung, không lấy từ danh sách trên Cổng.</p>`:''}
+  ${TMD?`<h3 style="margin-top:22px">Thuyết minh bằng giọng nói</h3><p class="sub">${TM.hasClips()?'Lời thuyết minh được tổng hợp sẵn bằng '+esc(TMD.may)+', mô hình giọng nói tiếng Việt mã nguồn mở (giấy phép Apache 2.0) của tác giả Phạm Nguyễn Ngọc Bảo; đây là giọng máy, không phải giọng người thật.':'Lời thuyết minh hiện được đọc bằng giọng tiếng Việt có sẵn của thiết bị, nên mỗi máy nghe một khác; đây là giọng máy, không phải giọng người thật.'} Lời đọc soạn theo đúng lời dẫn của từng chặng.</p>`:''}
   <p class="hint">Phim giới thiệu dựng từ các tranh, ảnh trên; nhạc và tiếng trống được tổng hợp bằng máy.</p>`;
  }
 }
 
 /* ---------- Hành trình ---------- */
-function openInfo(i){stopRun();run={type:'info',idx:+i};openOv();$('#ovb').scrollTop=0}
+function openInfo(i){stopRun();run={type:'info',idx:+i};openOv();$('#ovb').scrollTop=0;tmAuto('c'+(+i))}
 function pickRun(cd,m){
  const all=BYCD[cd]||[],pool=all.filter(q=>q.m===m);
  const wr=shuffle(pool.filter(q=>S.wr[q.id]&&!S.ok[q.id])),fr=shuffle(pool.filter(q=>!S.ok[q.id]&&!S.wr[q.id])),dn=shuffle(pool.filter(q=>S.ok[q.id]));
@@ -1079,23 +1140,23 @@ function startStage(v){
  const [i,m]=String(v).split('-').map(Number);if(!isOpen(i,m)){openInfo(i);return}
  const st=STAGES[i],qs=pickRun(st.id,m);if(!qs.length){toast('Chưa nạp được kho câu hỏi');return}
  stopRun();run={type:'stage',st,idx:i,m,i:0,qs,res:[],picked:null,combo:0,maxc:0,xp:0,l50:false,lh:false,cut:null,hint:false,ord:qs.map(q=>shuffle([0,1,2,3]))};
- SFX.drum();openOv();$('#ovb').scrollTop=0;if(g3)G3.react('drum');
+ SFX.drum();openOv();$('#ovb').scrollTop=0;if(g3)G3.react('drum');tmQ();
 }
 /* Ôn câu sai: lượt luyện từ sổ câu từng trả lời sai, không tính sao */
 const wrongQs=()=>BANK.filter(q=>S.wr[q.id]&&!S.ok[q.id]);
 function startPrac(){
  const qs=shuffle(wrongQs()).slice(0,10);if(!qs.length){toast('Sổ câu sai đang trống');return}
  stopRun();run={type:'stage',prac:true,st:{n:'Ôn câu sai'},idx:SIDX[qs[0].cd],m:0,i:0,qs,res:[],picked:null,combo:0,maxc:0,xp:0,l50:false,lh:false,cut:null,hint:false,ord:qs.map(q=>shuffle([0,1,2,3]))};
- SFX.drum();openOv();$('#ovb').scrollTop=0;
+ SFX.drum();openOv();$('#ovb').scrollTop=0;tmQ();
 }
 function answerStage(v){
  if(run.picked!=null)return;const q=run.qs[run.i],ok=+v===0;run.picked=+v;run.res.push(ok);const was=!!S.ok[q.id];mark(q,ok);
  if(ok){run.combo++;run.maxc=Math.max(run.maxc,run.combo);let g=run.prac?6:was?3:[10,15,20][run.m-1];if(run.hint)g=Math.ceil(g/2);if(run.combo>=3)g+=5;run.xp+=g;addXP(g);if(run.combo>=5)award('chuoi5');SFX.ok();burst(run.combo>=3?12:7)}else{run.combo=0;SFX.bad()}
  if(g3)G3.react(ok?'ok':'bad');
- save();renderOv();toEnd();
+ save();renderOv();toEnd();tmQ();
 }
 function nextStageQ(){
- if(run.i<run.qs.length-1){run.i++;run.picked=null;run.cut=null;run.hint=false;if(run.prac)run.idx=SIDX[run.qs[run.i].cd];renderOv();$('#ovb').scrollTop=0;return}
+ if(run.i<run.qs.length-1){run.i++;run.picked=null;run.cut=null;run.hint=false;if(run.prac)run.idx=SIDX[run.qs[run.i].cd];renderOv();$('#ovb').scrollTop=0;tmQ();return}
  if(run.prac){const ok=run.res.filter(Boolean).length;touchStreak();save();run={type:'pracEnd',ok,n:run.qs.length,xp:run.xp,maxc:run.maxc};renderOv();$('#ovb').scrollTop=0;return}
  const st=run.st,ok=run.res.filter(Boolean).length,s=starsOf(ok),k=st.id+run.m,prev=S.stars[k]||0;
  let bonus=0;if(s>prev){bonus=(s-prev)*15;S.stars[k]=s}
@@ -1110,6 +1171,7 @@ function nextStageQ(){
  let next=null;if(s>=1){if(run.m<3)next=[run.idx,run.m+1];if(run.m===1&&run.idx+1<STAGES.length&&stv(STAGES[run.idx+1].id,1)<1)next=[run.idx+1,1]}
  run={type:'result',st,idx:run.idx,m:run.m,ok,s,xp:run.xp+bonus,maxc:run.maxc,after,newCard,next};
  renderOv();$('#ovb').scrollTop=0;if(g3&&s>=1)G3.react('win');
+ const rr=run;setTimeout(()=>{if(run===rr)TM.play(s>=3?'basao':s>=1?'dat':'chuadat')},s>=1?900:250);
 }
 function life50(){if(run.type!=='stage'||run.l50||run.picked!=null)return;run.l50=true;run.cut=shuffle([1,2,3]).slice(0,2);SFX.tap();renderOv()}
 function lifeHint(){if(run.type!=='stage'||run.lh||run.picked!=null)return;run.lh=true;run.hint=true;SFX.tap();renderOv()}
@@ -1120,7 +1182,7 @@ function pickArena(){if(!run.pool.length)run.pool=arenaPool();const q=run.pool.p
 function startArena(){
  if(!NQ){toast('Chưa nạp được kho câu hỏi');return}
  stopRun();run={type:'arena',pool:arenaPool(),score:0,ok:0,n:0,combo:0,maxc:0,miss:[],left:60000,t0:Date.now(),lock:false,flash:''};
- pickArena();SFX.drum();openOv();
+ pickArena();SFX.drum();openOv();TM.play('dau');
  const r=run;r.iv=setInterval(()=>{if(run!==r){clearInterval(r.iv);return}r.left=Math.max(0,60000-(Date.now()-r.t0));const a=document.getElementById('arc'),t=document.getElementById('atm');if(a)a.setAttribute('stroke-dashoffset',(326.7*(1-r.left/60000)).toFixed(1));if(t)t.textContent=Math.ceil(r.left/1000);if(g3)G3.flyTo(1-r.left/60000);if(!r.left)endArena()},100);
 }
 function answerArena(v){
@@ -1132,7 +1194,7 @@ function answerArena(v){
 function endArena(){
  const r=run;clearInterval(r.iv);S.arenaPlays++;const newBest=r.score>S.arenaBest;if(newBest)S.arenaBest=r.score;
  const xp=Math.round(r.score/4);addXP(xp);if(r.ok>=8)award('thantoc');if(r.ok>=5)daily('arena');if(r.n)touchStreak();save();SFX.drum();
- run={type:'arenaEnd',score:r.score,ok:r.ok,n:r.n,maxc:r.maxc,miss:r.miss,xp,newBest};renderOv();
+ run={type:'arenaEnd',score:r.score,ok:r.ok,n:r.n,maxc:r.maxc,miss:r.miss,xp,newBest};renderOv();TM.play('hetgio');
 }
 
 /* ---------- Thi thử ---------- */
@@ -1141,7 +1203,7 @@ function startExam(){
  let qs=[];STAGES.forEach(s=>[1,2,3].forEach(m=>{const p=(BYCD[s.id]||[]).filter(q=>q.m===m);if(p.length)qs.push(p[Math.floor(Math.random()*p.length)])}));
  qs=shuffle(qs).slice(0,30);
  stopRun();run={type:'exam',qs,ord:qs.map(()=>shuffle([0,1,2,3])),ans:qs.map(()=>null),i:0,left:25*60000,t0:Date.now(),confirm:false};
- openOv();$('#ovb').scrollTop=0;
+ openOv();$('#ovb').scrollTop=0;TM.play('thi');
  const r=run;r.iv=setInterval(()=>{if(run!==r){clearInterval(r.iv);return}r.left=Math.max(0,25*60000-(Date.now()-r.t0));const t=document.getElementById('extm');if(t)t.textContent=mmss(r.left);if(!r.left)submitExam()},500);
 }
 function examAns(v){if(run.type!=='exam')return;run.ans[run.i]=+v;SFX.tap();if(run.i<29&&!run.confirm)run.i++;renderOv();$('#ovb').scrollTop=0}
@@ -1151,6 +1213,7 @@ function submitExam(){
  r.qs.forEach((q,k)=>{const p=r.ans[k],y=p===0;if(p!=null)mark(q,y);if(y){ok++;by[q.cd]=(by[q.cd]||0)+1}else miss.push({q,p})});
  S.exams++;S.examBest=Math.max(S.examBest,ok);const xp=ok*5+(ok>=21?40:0);addXP(xp);if(ok>=21){award('sathach');SFX.win();burst(16)}touchStreak();save();
  run={type:'examEnd',ok,by,miss,xp,used:25*60000-r.left};renderOv();$('#ovb').scrollTop=0;if(g3&&ok>=21)G3.react('win');
+ const rr=run;setTimeout(()=>{if(run===rr)TM.play(ok>=21?'thidat':'thichua')},ok>=21?900:250);
 }
 /* Phiếu kết quả thi thử: vẽ ra ảnh PNG để người học lưu lại hoặc gửi cho ban tổ chức lớp tập huấn */
 function saveCert(){
@@ -1258,7 +1321,7 @@ function flipMem(v){
 
 /* ---------- Sự kiện ---------- */
 const ACT={
- tab:v=>{if(tour){clearTimeout(tour.t);tour=null}tab=v;confirmReset=false;SFX.tap();render();$('#main').scrollTop=0},
+ tab:v=>{if(tour){clearTimeout(tour.t);tour=null}TM.stop();tab=v;confirmReset=false;SFX.tap();render();$('#main').scrollTop=0},
  pin:v=>{const i=+v;if(tour){stopTour();return}if(run)return;if(i===selSt)openInfo(i);else goSel(i)},
  'g-prev':()=>goSel(selSt-1),'g-next':()=>goSel(selSt+1),'g-enter':()=>openInfo(selSt),'g-tour':()=>startTour(),'g-tour-stop':()=>stopTour(),
  gfx:v=>{const was=S.gfx||'auto';if(v===was)return;S.gfx=v;save();if((v==='off')!==(was==='off')||(!g3&&v!=='off')){location.reload();return}if(g3)G3.setQuality(v==='low'?'low':'high');render()},
@@ -1272,7 +1335,11 @@ const ACT={
  'mem-start':startMem,'mem-flip':flipMem,
  card:v=>{const i=+v;if(!S.cards.includes(STAGES[i].id)){openInfo(i);return}stopRun();run={type:'card',idx:i};openOv();$('#ovb').scrollTop=0},
  credits:()=>{stopRun();run={type:'credits'};openOv();$('#ovb').scrollTop=0},
- snd:()=>{S.snd=!S.snd;save();if(S.snd)SFX.drum();if(tab==='me'&&!run)render();else renderTop()},
+ tm:v=>{if(TM.key===v){TM.stop();return}if(!S.snd){S.snd=true;save();renderTop()}tmHeard[v]=1;if(!TM.play(v))toast('Thiết bị này chưa có giọng đọc tiếng Việt')},
+ 'tm-tog':()=>{S.tm=S.tm==='off'?'on':'off';save();if(S.tm==='off')TM.stop();render()},
+ 'tm-g':v=>{if(!TMD||!TMD.giong[v])return;S.tmg=v;save();render();TM.play('thu')},
+ 'tm-q':()=>{S.tmq=!S.tmq;save();render()},
+ snd:()=>{S.snd=!S.snd;save();if(S.snd)SFX.drum();else TM.stop();if(tab==='me'&&!run)render();else renderTop()},
  free:()=>{S.free=!S.free;save();render()},
  cine:()=>openCine(false),'cine-close':closeCine,
  photo:(v,b)=>openLb(v,b&&b.dataset.l),'lb-close':closeLb,'lb-go':lbGo,
@@ -1287,7 +1354,7 @@ const ACT={
  'cine-play':()=>{const v=$('#vid');if(v){v.muted=!S.snd;const p=v.play();if(p&&p.catch)p.catch(()=>{})}},
  'onb-open':openOnb,
  'onb-role':v=>{onb.role=v;document.querySelectorAll('.role').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v))},
- 'onb-done':()=>{S.role=onb.role;S.name=(onb.name||'').trim().slice(0,40)||'Đại biểu mới';S.team=onb.team;save();$('#onb').classList.remove('on');render();SFX.drum();toast('Chào mừng '+S.name+'!')},
+ 'onb-done':()=>{S.role=onb.role;S.name=(onb.name||'').trim().slice(0,40)||'Đại biểu mới';S.team=onb.team;save();$('#onb').classList.remove('on');render();SFX.drum();toast('Chào mừng '+S.name+'!');TM.play('chao')},
  reset:()=>{confirmReset=true;render()},
  'reset-no':()=>{confirmReset=false;render()},
  'reset-yes':()=>{const snd=S.snd;S=fresh();S.snd=snd;S.intro=true;confirmReset=false;save();tab='map';render();openOnb()}
@@ -1350,8 +1417,12 @@ function renderHud(){
 function goSel(i){if(!g3||i<0||i>=STAGES.length)return;selSt=i;SFX.tap();G3.select(i);renderHud()}
 /* Bay tham quan: ống kính lần lượt ghé 10 di sản, thay cho phim giới thiệu khi chạy 3D */
 function startTour(){if(!g3||run)return;if(tour)clearTimeout(tour.t);tour={i:0,t:0};tourStep()}
-function tourStep(){sync3d();SFX.drum();tour.t=setTimeout(()=>{if(!tour)return;if(tour.i<STAGES.length-1){tour.i++;tourStep()}else stopTour()},RM?4000:6500)}
-function stopTour(){if(!tour)return;clearTimeout(tour.t);selSt=tour.i;tour=null;sync3d()}
+function tourStep(){
+ sync3d();SFX.drum();const T=tour,i=T.i,dw=RM?4000:6500,t0=Date.now(),nx=()=>{if(tour!==T||T.i!==i)return;if(i<STAGES.length-1){T.i++;tourStep()}else stopTour()};
+ if(TM.on()&&TM.can('c'+i)){T.t=setTimeout(nx,70000);TM.play('c'+i,()=>{if(tour!==T||T.i!==i)return;clearTimeout(T.t);T.t=setTimeout(nx,Math.max(900,dw-(Date.now()-t0)))})}
+ else T.t=setTimeout(nx,dw);
+}
+function stopTour(){if(!tour)return;clearTimeout(tour.t);selSt=tour.i;tour=null;TM.stop();sync3d()}
 /* Chụp mô hình 3D làm hình đại diện cho huy hiệu chặng, thẻ di sản và linh vật */
 function makeThumbs(){
  let i=0;const step=()=>{
