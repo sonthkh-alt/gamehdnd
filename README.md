@@ -8,15 +8,16 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 
 ## Nội dung game
 
-- **Sa bàn 3D xứ Thanh:** toàn bộ hành trình diễn ra trên một sa bàn 3D dựng bằng mã: núi phía tây, đồng bằng, sông Mã, sông Chu, biển Đông và 10 cụm mô hình di sản (trống đồng Đông Sơn, cầu Hàm Rồng có đoàn tàu chạy qua, cổng đá Thành nhà Hồ, chính điện Lam Kinh, đền Bà Triệu, bãi biển Sầm Sơn, ruộng bậc thang và cọn nước Pù Luông, suối cá Cẩm Lương, cảng Nghi Sơn, quảng trường Hạc Thành). Linh vật Voi Đồng đi theo người chơi, nhảy mừng khi trả lời đúng, lắc đầu khi sai; vượt cấp thì có pháo hoa. Chặng chưa mở bị mây che. Nút "Tham quan" cho ống kính bay lần lượt qua 10 di sản; Đấu trường 60 giây bay dọc sông Mã từ núi ra biển.
+- **Sa bàn 3D xứ Thanh:** toàn bộ hành trình diễn ra trên một sa bàn 3D dựng bằng mã: núi phía tây, đồng bằng, sông Mã, sông Chu, biển Đông và 10 cụm mô hình di sản (trống đồng Đông Sơn, cầu Hàm Rồng có đoàn tàu chạy qua, cổng đá Thành nhà Hồ, chính điện Lam Kinh, đền Bà Triệu, bãi biển Sầm Sơn, ruộng bậc thang và cọn nước Pù Luông, suối cá Cẩm Lương, cảng Nghi Sơn, quảng trường Hạc Thành). Linh vật Voi Đồng đi theo người chơi, nhảy mừng khi trả lời đúng, lắc đầu khi sai; vượt cấp thì có pháo hoa. Chặng chưa mở bị mây che. Nút "Kể chuyện" mở chuyện kể dọc sông Mã, ống kính lần lượt ghé 10 di sản theo lời kể; Đấu trường 60 giây bay dọc sông Mã từ núi ra biển.
 - **Hành trình dọc sông Mã:** 10 chặng gắn với 10 di tích, thắng cảnh xứ Thanh; mỗi chặng một chuyên đề và ba cấp độ Dễ, Vừa, Khó. Mỗi lượt 8 câu, đúng từ 5 câu thì vượt cấp. Mỗi ngôi sao làm tăng GRDP của "tỉnh ảo"; đích là mốc 11%.
 - **Ngân hàng 570 câu hỏi** (198 dễ, 224 vừa, 148 khó; 219 câu tình huống), mỗi câu có giải thích và căn cứ đến điều, khoản.
 - **Thi đấu:** Đấu trường 60 giây (chọn cấp độ), Thi thử 30 câu trong 25 phút (đạt từ 21/30, tải được phiếu kết quả dạng ảnh PNG), Ôn câu sai (luyện lại các câu từng trả lời sai cho đến khi đúng).
 - **Trò chơi nhỏ:** Ai có thẩm quyền? (22 thẻ), Xếp đúng quy trình (4 quy trình), Lật thẻ di sản, Ảnh này ở đâu? (đoán địa danh qua ảnh thật), Ai giữ cương vị nào? (câu hỏi sinh từ dữ liệu mục Bộ máy).
 - **Bộ máy dân cử:** mục giới thiệu tổ chức, nhân sự theo Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn): Thường trực và bốn Ban của HĐND tỉnh khóa XIX, 82 đại biểu HĐND tỉnh kèm ảnh chân dung và đơn vị bầu cử (tìm theo tên, lọc theo đơn vị), Đoàn ĐBQH tỉnh khóa XVI, lãnh đạo và các phòng của Văn phòng, danh sách đại biểu Quốc hội bầu tại Thanh Hóa từ khóa I và đại biểu HĐND tỉnh từ khóa XVI. Kèm trò chơi "Ai giữ cương vị nào?".
 - **Màn chào và lời nói đầu:** mỗi lần mở game có màn chào với nút "Vào nghị trường" (trình duyệt chỉ cho phát tiếng sau một lần chạm). Lần đầu trong ngày game đọc lời nói đầu rồi nối sang hướng dẫn của trang Hành trình; các lần sau chỉ chào ngắn. Trang Hành trình có nút "Nghe lời nói đầu" để nghe lại.
+- **Chuyện kể dọc sông Mã:** một câu chuyện lịch sử xứ Thanh kể liền mạch khoảng 10 phút, 28 đoạn trong 11 chương, đi theo dòng thời gian từ Núi Đọ, Đông Sơn, Bà Triệu, Thành nhà Hồ, Lam Sơn, Hạc Thành, Sầm Sơn, Hàm Rồng, Pù Luông, Cẩm Lương, Nghi Sơn đến năm 2025, mượn năm chặng của hò sông Mã (rời bến, đò ngược, mắc cạn, đò xuôi, cập bến) làm mạch dẫn. Hết đoạn này tự sang đoạn sau, không dừng ở từng chặng; ống kính 3D ghé đúng di sản đang được nhắc tới. Có nút tạm dừng, chuyển chương, mục lục, chạm vào đoạn nào nghe từ đoạn đó; tắt tiếng thì chữ tự chạy. Mở từ trang Hành trình, nút "Kể chuyện" trên sa bàn hoặc từ màn giới thiệu của từng chặng.
 - **Nhạc nền:** bản nhạc tự soạn trên thang ngũ cung (đàn dây gảy, sáo, trống hội, chiêng, tiếng nước), nhỏ lại khi có thuyết minh và khi trả lời câu hỏi, tắt khi thi thử và ở Đấu trường. Bật, tắt trong Hồ sơ.
-- **Thuyết minh bằng giọng nói tiếng Việt:** lời chào, lời dẫn của 10 chặng di sản (tự phát khi mở chặng lần đầu, có nút nghe lại), bay tham quan có thuyết minh (ống kính chờ đọc xong mới sang di sản kế tiếp), lời báo kết quả khi vượt cấp, thi thử, đấu trường. Tùy chọn thêm: đọc câu hỏi và giải thích ở Hành trình, Ôn câu sai. Bật, tắt trong Hồ sơ.
+- **Thuyết minh bằng giọng nói tiếng Việt:** lời chào, lời dẫn của 10 chặng di sản (tự phát khi mở chặng lần đầu, có nút nghe lại), lời báo kết quả khi vượt cấp, thi thử, đấu trường. Tùy chọn thêm: đọc câu hỏi và giải thích ở Hành trình, Ôn câu sai. Bật, tắt trong Hồ sơ.
 - **Thẻ di sản:** vượt cấp Dễ của mỗi chặng để mở một thẻ tranh sơn mài kèm lời dẫn và ảnh tư liệu.
 - **Thư viện ảnh xứ Thanh:** 59 ảnh tư liệu từ Wikimedia Commons về cả 10 chặng và nhiều địa danh khác (Bến En, đảo Hòn Nẹ, núi Nưa, sông Mã, đền Lê Lai, đền Lê Hoàn, nghè Xuân Phả, đền Mai An Tiêm, cửa biển Lạch Sung, hang Co Luồng, đảo cò Tiến Nông, chùa Sùng Nghiêm...), có chú thích, tác giả, giấy phép; lọc theo địa danh, xem ảnh lớn.
 - **Phim giới thiệu** 46 giây, âm thanh trống hội, trợ giúp 50:50 và "xem căn cứ", 24 huy hiệu, nhiệm vụ hằng ngày, chuỗi ngày học.
@@ -53,6 +54,7 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 | `tools/lay_bo_may.py` | Tải lại thông tin từ Cổng dbndthanhhoa.gov.vn, sinh hai tệp trên, ảnh chân dung trong `assets/img/db/` và bản chụp trong `nguon/dbnd_*.txt` |
 | `data/thuyet-minh.json`, `data/thuyet-minh.js` | Lời thuyết minh (bản để sửa) và bản gọn game nạp, kèm danh sách tệp âm thanh còn khớp lời |
 | `tools/tao_thuyet_minh.py` | Sinh `data/thuyet-minh.js`; thêm `--tong-hop` để tổng hợp tệp âm thanh vào `assets/audio/tm/` |
+| `tools/nhan_nhac_nen.py` | Nhận một bản thu có quyền sử dụng (ví dụ hò sông Mã) làm nhạc nền: cắt, chỉnh âm lượng, ghi nguồn vào game (cần numpy, soundfile, soxr, lameenc) |
 | `tools/tao_nhac_nen.py` | Soạn và tổng hợp nhạc nền `assets/audio/nhac-nen.mp3` (cần numpy, lameenc) |
 | `tools/kiem_tra_thuyet_minh.py` | Cho máy chép lại lời các tệp thuyết minh (Whisper) để rà soát, ghi vào `assets/audio/tm/kiem-tra.txt` |
 | `.github/workflows/tao-thuyet-minh.yml` | Tổng hợp tệp âm thanh thuyết minh trên máy chủ GitHub khi lời thuyết minh thay đổi |
@@ -134,7 +136,7 @@ Công cụ chỉ lấy họ tên, chức vụ, đơn vị bầu cử, giới tí
 
 ### Thuyết minh bằng giọng nói
 
-Lời thuyết minh nằm trong `data/thuyet-minh.json` (23 đoạn, gồm lời nói đầu `chao`, hướng dẫn trang Hành trình `hanhtrinh`, lời chào ngắn `chaolai`). Trường `doc` là lời để đọc: viết đủ chữ, không viết tắt, số và ngày tháng viết bằng chữ. Lời của 10 chặng phải khớp với lời dẫn (`lore`) của chặng trong `index.html`. Sửa xong chạy `python tools/tao_thuyet_minh.py` để sinh lại `data/thuyet-minh.js`.
+Lời thuyết minh nằm trong `data/thuyet-minh.json`: 23 đoạn lẻ ở mục `muc` (gồm lời nói đầu `chao`, hướng dẫn trang Hành trình `hanhtrinh`, lời chào ngắn `chaolai`) và 28 đoạn của chuyện kể ở mục `chuyen` (`s01` đến `s28`). Trường `doc` là lời để đọc: viết đủ chữ, không viết tắt, số và ngày tháng viết bằng chữ. Lời của 10 chặng phải khớp với lời dẫn (`lore`) của chặng trong `index.html`. Sửa xong chạy `python tools/tao_thuyet_minh.py` để sinh lại `data/thuyet-minh.js`.
 
 Game phát thuyết minh theo hai tầng:
 
@@ -149,7 +151,22 @@ Kho đã có tệp thu sẵn cho các đoạn với hai giọng Bắc (nữ "Mai
 
 Đổi giọng máy: sửa tên giọng trong mục `giong` của `data/thuyet-minh.json` (danh sách 23 giọng có sẵn ở trang mô hình VieNeu-TTS-v3-Turbo trên Hugging Face) rồi tổng hợp lại với `--lam-lai`. Không dùng giọng đọc của Microsoft Edge lấy qua thư viện `edge-tts`: Microsoft không cấp quyền phát hành lại âm thanh tạo theo cách đó. Tệp tổng hợp xong cần được nghe lại toàn bộ trước khi dùng chính thức, nhất là tên riêng, năm tháng.
 
+### Chuyện kể dọc sông Mã
+
+Mục `chuyen` của `data/thuyet-minh.json` chứa 28 đoạn. Mỗi đoạn có `loi` (lời hiện trên màn hình, số viết bằng chữ số), `st` (chặng mà ống kính ghé tới, 0 đến 9; -1 là bay dọc sông), `ch` (tên chương, chỉ ghi ở đoạn mở chương) và `nguon` (các tệp trong `nguon/` làm căn cứ). Công cụ tự đổi số thành chữ để có lời đọc; xem lời đọc bằng `python tools/tao_thuyet_minh.py --xem-chuyen`, đoạn nào máy đọc chưa đúng thì thêm trường `doc` viết tay.
+
+Quy tắc khi sửa: chỉ kể điều có trong các tệp `nguon/`; chi tiết truyền thuyết phải nói rõ là tương truyền; mỗi đoạn dài chừng 60 đến 100 tiếng (khoảng 20 giây) để máy đọc ổn định và người nghe dễ theo; câu cuối của chương nên bắc cầu sang chương sau. Sửa xong chạy `python tools/tao_thuyet_minh.py`, push lên `main` là workflow tự tổng hợp lại tiếng của những đoạn đã đổi. Chuyện kể chưa qua thẩm định của cơ quan chuyên môn về lịch sử, xem `RA-SOAT.md`.
+
 ### Nhạc nền
+
+**Dùng bản hò sông Mã thật:** kho chưa có bản thu nào vì chưa tìm được bản có giấy phép tự do (đã tìm trên Wikimedia Commons và Internet Archive ngày 28/11/2026, không có). Giai điệu dân ca thuộc về cộng đồng, nhưng mỗi bản thu còn có quyền của người biểu diễn và đơn vị ghi âm, nên không lấy bản thu trên YouTube, trang nhạc, báo, đài khi chưa được đồng ý. Khi có bản thu được phép dùng (của Trung tâm Văn hóa, Nhà hát Nghệ thuật truyền thống, Đài Phát thanh và Truyền hình tỉnh, Viện Âm nhạc, hoặc bản tự thu nghệ nhân), chạy:
+
+```
+python tools/nhan_nhac_nen.py <tệp> --ten "Hò sông Mã: ..." --nguoi "người thể hiện" --nguon "đơn vị cung cấp" --quyen "căn cứ cho phép dùng"
+```
+
+Công cụ cắt, chỉnh âm lượng, làm mờ đầu cuối, ghi `assets/audio/nhac-nen.mp3` và đưa tên bài, người thể hiện, nguồn vào màn "Tác giả, căn cứ và nguồn". Nên chọn đoạn 1,5 đến 3 phút.
+
 
 `assets/audio/nhac-nen.mp3` (dài khoảng 107 giây, lặp lại) do `python tools/tao_nhac_nen.py` tạo ra: nhạc tự soạn, tổng hợp hoàn toàn bằng máy trên thang ngũ cung Rê (rê, mi, son, la, si), dùng lại bốn câu đàn của nhạc phim giới thiệu, thêm tiếng sáo, trống hội, chiêng và tiếng nước. Đây không phải bản thu một làn điệu dân ca có thật. Muốn dùng bản thu thật (ví dụ hò sông Mã, dân ca Đông Anh) thì cần bản có quyền sử dụng hợp lệ, chép đè lên tệp này; nên chọn bản mở đầu và kết thúc lặng để lặp lại không gắt. Không dùng nhạc nền: để trống trường `tep` trong mục `nhac` của `data/thuyet-minh.json` rồi chạy `python tools/tao_thuyet_minh.py`.
 

@@ -117,3 +117,21 @@ Trò "Ai giữ cương vị nào?" không có câu soạn tay về nhân sự: c
 
 - Lời nói đầu (`chao`) được viết lại, có nhắc năm địa danh: trống đồng Đông Sơn, cầu Hàm Rồng, Thành nhà Hồ, biển Sầm Sơn, cảng Nghi Sơn. Lời hướng dẫn trang Hành trình (`hanhtrinh`) nêu "tám câu hỏi, đúng từ năm câu là vượt cấp", khớp luật chơi hiện tại.
 - Nhạc nền là nhạc máy tự soạn trên thang ngũ cung, chưa có ai nghe duyệt; lúc làm chỉ kiểm tra được bằng số đo âm lượng và ảnh phổ. Nếu nghe chưa hợp với bản sắc xứ Thanh, nên thay bằng bản thu có bản quyền hợp lệ (xem README, mục Nhạc nền).
+
+## Chuyện kể dọc sông Mã (thêm ngày 28/11/2026)
+
+- Lời kể 28 đoạn do máy soạn từ các bài Wikipedia tiếng Việt lưu trong `nguon/` (mỗi đoạn ghi tệp căn cứ ở trường `nguon` trong `data/thuyet-minh.json`). **Chưa có nhà sử học hay cơ quan chuyên môn nào thẩm định.** Nên nhờ Bảo tàng tỉnh, Hội Khoa học lịch sử tỉnh hoặc Ban Tuyên giáo và Dân vận Tỉnh ủy đọc duyệt trước khi dùng chính thức.
+- Wikipedia không phải nguồn chính thống. Những chỗ nên đối chiếu với sách sử, địa chí Thanh Hóa:
+  - Núi Đọ: niên đại "khoảng ba mươi vạn năm" và việc coi là di tích sơ kỳ đá cũ còn có ý kiến khác (lời kể đã viết "phần đông các nhà nghiên cứu cho rằng").
+  - Bà Triệu: năm sinh 226, câu "cưỡi cơn gió mạnh, đạp luồng sóng dữ" (chép muộn, thế kỷ 19; lời kể viết "tương truyền"), áo giáp vàng, voi trắng một ngà (truyền thuyết; lời kể viết "người đời kể rằng").
+  - Dương Đình Nghệ: năm 931 và con số ba nghìn "giả tử" (con nuôi); lời kể gọi là "nghĩa sĩ do ông nuôi dạy".
+  - Tên gọi Thanh Hóa: lời kể lấy mốc năm 1029 (đổi Ái Châu thành phủ Thanh Hóa) theo bài "Thanh Hóa"; cũng bài này ghi tên "Thanh Hoa" có từ năm 1469, đổi thành tỉnh Thanh Hoa năm 1831 và Thanh Hóa năm 1843.
+  - Thành nhà Hồ: "phiến dài tới bảy mét, nặng chừng mười lăm tấn", "xây trong chừng ba tháng".
+  - Lam Sơn: hội thề Lũng Nhai đầu năm 1416 với 18 người; ngày 7/2/1418 là ngày dương lịch quy đổi.
+  - Trịnh Kiểm "người làng Sóc Sơn" (theo Lịch triều hiến chương loại chí, bài Wikipedia dẫn lại).
+  - Sầm Sơn: mốc 1907 (bài "Bãi biển Sầm Sơn" ghi 1906); việc cảng Lạch Hới đón đồng bào miền Nam tập kết năm 1954.
+  - Hàm Rồng: ngày 3/4/1965 và "trận đầu tiên của không quân" lấy theo bài về phi công Phạm Ngọc Lan; "hơn một trăm máy bay bị bắn rơi", "hai hòm đạn nặng 98 kg" theo bài "Cầu Hàm Rồng" và "Ngô Thị Tuyển". Lời kể không nêu con số máy bay rơi trong hai ngày 3 và 4/4/1965 vì nguồn trong kho không ghi.
+  - Suối cá: di tích nay thuộc xã Cẩm Tú sau sắp xếp; lời kể vẫn gọi theo tên chặng là Cẩm Lương.
+- Chặng Pù Luông, Cẩm Lương, Nghi Sơn không có nhiều sự kiện lịch sử trong nguồn, nên lời kể nói về thiên nhiên, nếp giữ rừng giữ suối và phát triển kinh tế.
+- Chế độ "Tham quan" cũ (ống kính dừng ở từng chặng đọc lời dẫn) đã bỏ, thay bằng chuyện kể liền mạch.
+- Nhạc nền vẫn là nhạc máy tự soạn. Yêu cầu thay bằng bản hò sông Mã thật **chưa làm được** vì chưa có bản thu được phép phát hành lại; xem README, mục Nhạc nền.

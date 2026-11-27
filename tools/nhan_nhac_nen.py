@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Nhận một bản thu CÓ QUYỀN SỬ DỤNG làm nhạc nền của game (ví dụ một bản hò sông Mã).
+
+  python tools/nhan_nhac_nen.py <tệp âm thanh> --ten "Hò sông Mã: hò rời bến" --nguoi "Nghệ nhân ..." \
+         --nguon "Trung tâm ... cung cấp ngày ..." --quyen "Được ... đồng ý cho dùng trong game theo văn bản số ..." \
+         [--tu 0] [--den 180]
+
+Đọc được wav, flac, ogg, mp3. Cần: pip install numpy soundfile soxr lameenc
+
+Việc công cụ làm:
+  - cắt lấy đoạn từ giây --tu đến giây --den (mặc định cả bài), trộn về một kênh, 44,1 kHz;
+  - chỉnh âm lượng ngang với bản nhạc nền cũ, làm mờ dần ở đầu và cuối, chừa một quãng lặng để lặp lại không gắt;
+  - ghi assets/audio/nhac-nen.mp3 (96 kbps);
+  - ghi tên bài, người thể hiện, nguồn, căn cứ cho phép dùng vào mục "nhac" của data/thuyet-minh.json
+    (game hiện các dòng này ở màn "Tác giả, căn cứ và nguồn") rồi sinh lại data/thuyet-minh.js.
+
+Bắt buộc có --quyen. Giai điệu dân ca thuộc về cộng đồng, nhưng mỗi bản thu vẫn có quyền của người biểu diễn và đơn vị
+ghi âm; không lấy bản thu trên mạng (YouTube, trang nhạc, báo, đài) khi chưa được đơn vị giữ quyền đồng ý cho phát hành lại.
+
+Muốn quay về nhạc nền tự soạn: python tools/tao_nhac_nen.py rồi sửa lại mục "nhac" trong data/thuyet-minh.json.
+Thử mà không đụng vào game: thêm --thu <tệp ra.mp3> (chỉ ghi tệp đó).
+"""
+import argparse, io, json, os, subprocess, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(ROOT, "data", "thuyet-minh.json")
+RA = os.path.join(ROOT, "assets", "audio", "nhac-nen.mp3")
+SR = 44100
+KBPS = 96
+RMS_DB = -19.0   # mức trung bình của bản nhạc nền cũ, để không phải chỉnh lại mức trộn trong game
+DINH = 0.89
+
+
+def loi(m):
+    print(m)
+    sys.exit(1)
+
+
+def main():
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf8", line_buffering=True)
+    ap = argparse.ArgumentParser(description="Nhận bản thu có quyền sử dụng làm nhạc nền")
+    ap.add_argument("tep")
+    ap.add_argument("--ten", default="")
+    ap.add_argument("--nguoi", default="")
+    ap.add_argument("--nguon", default="")
+    ap.add_argument("--quyen", default="")
+    ap.add_argument("--tu", type=float, default=0.0)
+    ap.add_argument("--den", type=float, default=0.0)
+    ap.add_argument("--thu", default="")
+    a = ap.parse_args()
+    if not a.thu and not (a.ten.strip() and a.quyen.strip()):
+        loi("Cần --ten (tên bài) và --quyen (căn cứ cho phép dùng và phát hành lại bản thu này).")
+
+    import numpy as np, soundfile as sf, soxr, lameenc
+    x, sr = sf.read(a.tep, dtype="float32", always_2d=True)
+    x = x.mean(axis=1)
+    i, j = int(a.tu * sr), int(a.den * sr) if a.den > 0 else len(x)
+    x = x[max(0, i):min(len(x), j)]
+    if len(x) < sr * 20:
+        loi("Đoạn nhạc ngắn hơn 20 giây, lặp lại sẽ rất nhàm. Hãy chọn đoạn dài hơn.")
+    if sr != SR:
+        x = soxr.resample(x, sr, SR)
+    # mờ dần đầu 1 giây, cuối 3 giây, thêm 1,2 giây lặng trước khi lặp
+    n1, n2 = int(1.0 * SR), int(3.0 * SR)
+    x[:n1] *= np.linspace(0, 1, n1, dtype="float32") ** 2
+    x[-n2:] *= np.linspace(1, 0, n2, dtype="float32") ** 2
+    x = np.concatenate([x, np.zeros(int(1.2 * SR), dtype="float32")])
+    # âm lượng: đưa mức trung bình về RMS_DB, rồi ép đỉnh mềm nếu vượt
+    rms = float(np.sqrt(np.mean(x[np.abs(x) > 1e-4] ** 2))) or 1.0
+    x = x * (10 ** (RMS_DB / 20) / rms)
+    dinh = float(np.max(np.abs(x)))
+    if dinh > DINH:
+        x = np.tanh(x / DINH * 1.2) / np.tanh(1.2) * DINH
+    pcm = (np.clip(x, -1, 1) * 32767).astype("<i2").tobytes()
+    e = lameenc.Encoder()
+    e.set_bit_rate(KBPS)
+    e.set_in_sample_rate(SR)
+    e.set_channels(1)
+    e.set_quality(2)
+    b = bytes(e.encode(pcm) + e.flush())
+    ra = a.thu or RA
+    os.makedirs(os.path.dirname(os.path.abspath(ra)), exist_ok=True)
+    open(ra, "wb").write(b)
+    print("%s: %.1f giây, %d KB, đỉnh %.2f, trung bình %.1f dB" % (
+        os.path.relpath(ra, ROOT) if not a.thu else ra, len(x) / SR, len(b) // 1024, float(np.max(np.abs(x))),
+        20 * np.log10(float(np.sqrt(np.mean(x ** 2))) + 1e-9)))
+    if a.thu:
+        return
+    D = json.load(open(SRC, encoding="utf8"))
+    mo_ta = a.ten.strip().rstrip(".") + "."
+    if a.nguoi.strip():
+        mo_ta += " Thể hiện: " + a.nguoi.strip().rstrip(".") + "."
+    if a.nguon.strip():
+        mo_ta += " Nguồn: " + a.nguon.strip().rstrip(".") + "."
+    mo_ta += " " + a.quyen.strip().rstrip(".") + "."
+    D["nhac"] = {"tep": "assets/audio/nhac-nen.mp3", "ten": a.ten.strip(), "nguoi": a.nguoi.strip(), "nguon": a.nguon.strip(),
+                 "quyen": a.quyen.strip(), "mo_ta": mo_ta, "ghi_chu": (D.get("nhac") or {}).get("ghi_chu", "")}
+    json.dump(D, open(SRC, "w", encoding="utf8", newline="\n"), ensure_ascii=False, indent=1)
+    open(SRC, "a", encoding="utf8", newline="\n").write("\n")
+    subprocess.check_call([sys.executable, os.path.join(ROOT, "tools", "tao_thuyet_minh.py")])
+    print("Đã ghi nguồn nhạc vào data/thuyet-minh.json. Mở game nghe thử rồi commit, push.")
+
+
+if __name__ == "__main__":
+    main()

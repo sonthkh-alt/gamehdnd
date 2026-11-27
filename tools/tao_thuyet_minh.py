@@ -19,8 +19,12 @@ thì game không bao giờ phát nhầm tệp cũ.
 Có thể thay bằng giọng người thật: thu từng đoạn, lưu đúng tên tệp
 assets/audio/tm/<giọng>/<khóa>.mp3 rồi chạy: python tools/tao_thuyet_minh.py --nhan-tep
 (ghi nhận các tệp đang có là khớp với lời hiện tại).
+
+Chuyện kể liền mạch (mục "chuyen" trong data/thuyet-minh.json): mỗi đoạn có "loi" là lời hiện trên
+màn hình, số viết bằng chữ số. Công cụ tự đổi số thành chữ để có lời đọc (đoạn nào có "doc" thì dùng
+"doc"). Xem lời đọc sau khi đổi: python tools/tao_thuyet_minh.py --xem-chuyen
 """
-import argparse, hashlib, io, json, os, sys
+import argparse, hashlib, io, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "data", "thuyet-minh.json")
@@ -30,6 +34,58 @@ SO = os.path.join(DIR, "clips.json")  # sổ ghi: tệp nào được tổng h�
 REL = "assets/audio/tm/"
 TAN_SO = 44100
 KBPS = 64
+
+
+CS = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"]
+
+
+def _ba_so(n, dau):
+    """Đọc số 0..999; dau=True: nhóm đứng đầu, không đọc 'không trăm'."""
+    tr, r = divmod(n, 100)
+    ch, dv = divmod(r, 10)
+    o = []
+    if tr or not dau:
+        o += [CS[tr], "trăm"]
+    if ch == 0:
+        if dv:
+            o += (["linh"] if o else []) + [CS[dv]]
+    elif ch == 1:
+        o += ["mười"] + (["lăm" if dv == 5 else CS[dv]] if dv else [])
+    else:
+        o += [CS[ch], "mươi"] + ([{1: "mốt", 4: "tư", 5: "lăm"}.get(dv, CS[dv])] if dv else [])
+    return " ".join(o)
+
+
+def so_thanh_chu(n):
+    """Số nguyên 0..999999 thành chữ: 1397 -> một nghìn ba trăm chín mươi bảy; 2006 -> hai nghìn không trăm linh sáu."""
+    if n < 1000:
+        return _ba_so(n, True)
+    ng, r = divmod(n, 1000)
+    return _ba_so(ng, True) + " nghìn" + ((" " + _ba_so(r, False)) if r else "")
+
+
+def doc_tu_loi(t):
+    """Lời hiện trên màn hình -> lời để máy đọc: số thành chữ, 'tháng 4' thành 'tháng tư', bỏ gạch nối trong từ phiên âm."""
+    t = re.sub(r"tháng 4(?!\d)", "tháng tư", t)
+    t = re.sub(r"(?<=\w)-(?=\w)", " ", t)
+    t = re.sub(r"\d+", lambda m: so_thanh_chu(int(m.group(0))), t)
+    if re.search(r"\d", t):
+        sys.exit("Còn chữ số chưa đổi được: " + t)
+    return t
+
+
+def gop_chuyen(D):
+    """Kiểm tra mục 'chuyen' rồi nối các đoạn của nó vào danh sách lời đọc (để tổng hợp tiếng như mọi đoạn khác)."""
+    C = D.get("chuyen") or {}
+    for d in C.get("doan", []):
+        if not d.get("loi", "").strip():
+            sys.exit("Đoạn chuyện %s chưa có lời" % d.get("k"))
+        if not isinstance(d.get("st"), int) or not -1 <= d["st"] <= 9:
+            sys.exit("Đoạn chuyện %s: 'st' phải là số từ -1 đến 9" % d["k"])
+        for n in d.get("nguon", []):
+            if not os.path.exists(os.path.join(ROOT, "nguon", n + ".txt")):
+                sys.exit("Đoạn chuyện %s: không thấy nguon/%s.txt" % (d["k"], n))
+        D["muc"].append({"k": d["k"], "ten": "Chuyện kể", "doc": d.get("doc") or doc_tu_loi(d["loi"])})
 
 
 def bam(t):
@@ -59,7 +115,11 @@ def sinh_js(D, so):
     nhac = (D.get("nhac") or {}).get("tep", "")
     if nhac and not os.path.exists(os.path.join(ROOT, nhac)):
         nhac = ""  # chưa có tệp nhạc thì game không phát nhạc nền
-    o = {"dir": REL, "may": D.get("may", ""), "giong": D["giong"], "nhac": nhac, "muc": muc, "clip": clip}
+    N = D.get("nhac") or {}
+    C = D.get("chuyen") or {}
+    doan = [dict({"k": d["k"], "st": d["st"], "loi": d["loi"]}, **({"ch": d["ch"]} if d.get("ch") else {})) for d in C.get("doan", [])]
+    o = {"dir": REL, "may": D.get("may", ""), "giong": D["giong"], "nhac": nhac, "nhacTen": N.get("ten", ""), "nhacMoTa": N.get("mo_ta", ""),
+         "chuyen": {"ten": C.get("ten", ""), "doan": doan}, "muc": muc, "clip": clip}
     js = ("/* Sinh tự động bằng tools/tao_thuyet_minh.py từ data/thuyet-minh.json. Không sửa tay. */\n"
           "window.NTS_TM=" + json.dumps(o, ensure_ascii=False, separators=(",", ":")) + ";\n")
     open(OUT_JS, "w", encoding="utf8", newline="\n").write(js)
@@ -151,8 +211,15 @@ def main():
     ap.add_argument("--giong", default="")
     ap.add_argument("--lam-lai", action="store_true")
     ap.add_argument("--nhan-tep", action="store_true")
+    ap.add_argument("--xem-chuyen", action="store_true")
     a = ap.parse_args()
     D = json.load(open(SRC, encoding="utf8"))
+    gop_chuyen(D)
+    if a.xem_chuyen:
+        for d in D["chuyen"]["doan"]:
+            print("[%s | chặng %s] %s" % (d["k"], d["st"], d.get("doc") or doc_tu_loi(d["loi"])))
+            print()
+        return
     ks = [m["k"] for m in D["muc"]]
     if len(set(ks)) != len(ks):
         sys.exit("Trùng khóa trong data/thuyet-minh.json")

@@ -30,7 +30,7 @@ concurrency:
 jobs:
   tao:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -51,11 +51,7 @@ jobs:
             echo "::error title=Tong hop that bai::$MSG"
             exit 1
           fi
-      - name: May chep lai loi de ra soat
-        continue-on-error: true
-        run: |
-          pip install faster-whisper 2>&1 | tail -n 1
-          python tools/kiem_tra_thuyet_minh.py 2>&1 | tail -n 60
+      # Commit tiếng trước, chép lời sau: nếu bước chép lời chạy lâu hoặc lỗi thì tệp âm thanh vẫn đã lên kho
       - name: Commit tep am thanh
         run: |
           git config user.name "github-actions[bot]"
@@ -65,6 +61,24 @@ jobs:
             echo "Khong co gi thay doi."
           else
             git commit -m "Tong hop tep am thanh thuyet minh"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: May chep lai loi de ra soat
+        continue-on-error: true
+        timeout-minutes: 120
+        run: |
+          pip install faster-whisper 2>&1 | tail -n 1
+          python tools/kiem_tra_thuyet_minh.py 2>&1 | tail -n 80
+      - name: Commit ban may chep loi
+        if: always()
+        continue-on-error: true
+        run: |
+          git add assets/audio/tm
+          if git diff --cached --quiet; then
+            echo "Khong co gi thay doi."
+          else
+            git commit -m "Ban may chep loi thuyet minh"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
