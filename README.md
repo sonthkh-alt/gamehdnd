@@ -39,8 +39,10 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 | `tools/kiem_tra_cau_hoi.py` | Kiểm tra định dạng câu hỏi và đối chiếu từng đoạn trích với văn bản trong `nguon/` |
 | `tools/tai_anh_ve_may.py` | Tải các ảnh đang nạp từ Wikimedia Commons về lưu hẳn trong kho |
 | `tools/phim/` | Bộ công cụ dựng lại phim giới thiệu (xem `tools/phim/HUONG-DAN.md`) |
-| `nguon/` | Nguyên văn 26 văn bản pháp luật, văn bản của tỉnh và 16 bài Wikipedia làm căn cứ câu hỏi |
+| `nguon/` | Nguyên văn 26 văn bản pháp luật, văn bản của tỉnh và 22 bài Wikipedia làm căn cứ câu hỏi |
 | `CLAUDE.md` | Hướng dẫn cho Claude Code khi làm việc với kho này |
+| `RA-SOAT.md` | Danh sách câu hỏi nên được Phòng Công tác HĐND xem kỹ, kèm lý do |
+| `tools/HUONG-DAN-SOAN-CAU-HOI.md` | Quy trình soạn và rà soát câu hỏi mới |
 | `.github/workflows/dong-bo-trang-web.yml` | Tự cập nhật trang web sau mỗi lần đẩy lên nhánh `main` |
 | `assets/art.js` | Bộ 10 tranh phong cách sơn mài (vẽ bằng SVG) cho 10 chặng |
 | `assets/img/` | Ảnh tư liệu lưu trong kho, `credits.js` (ảnh chính của từng chặng) và `gallery.js` (thư viện ảnh: chú thích, địa danh, tác giả, giấy phép, đường dẫn) |

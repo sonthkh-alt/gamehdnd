@@ -16,6 +16,7 @@ Game học tập về trục Hội đồng nhân dân hai cấp tỉnh Thanh Hó
 - `trich` phải là đoạn chép nguyên văn từ `nguon/<tep_nguon>.txt`. Chỉ dựa vào văn bản trong `nguon/`, không dựa vào trí nhớ: nhiều quy định đã đổi năm 2025–2026 (chính quyền 2 cấp từ 01/7/2025, không còn cấp huyện).
 - Không dùng phương án kiểu "Tất cả các đáp án trên". Câu nào khác nhau giữa cấp tỉnh và cấp xã phải ghi rõ cấp.
 - Sau khi sửa: `python tools/kiem_tra_cau_hoi.py` (phải in OK), rồi `python tools/build_bank.py`.
+- Quy trình đầy đủ (soạn, kiểm tra, rà soát độc lập) ở `tools/HUONG-DAN-SOAN-CAU-HOI.md`; câu còn điểm đáng bàn ghi vào `RA-SOAT.md`.
 - Chỗ vênh đã biết: điểm a khoản 2 Điều 16 Quy chế làm việc mẫu (NQ 103, 104/2025/UBTVQH15) so với Điều 36 Luật 72/2025/QH15 về người giới thiệu Phó Chủ tịch, Ủy viên UBND; không ra câu hỏi phụ thuộc chỗ vênh này.
 
 ## Ảnh
