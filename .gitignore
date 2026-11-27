@@ -1,0 +1,16 @@
+# tệp tạm khi dựng phim
+tools/phim/frames/
+tools/phim/bia/
+tools/phim/thu/
+tools/phim/_t/
+tools/phim/music.wav
+tools/phim/music.m4a
+tools/phim/node_modules/
+tools/phim/package*.json
+
+# tệp hệ điều hành, trình soạn thảo
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+__pycache__/

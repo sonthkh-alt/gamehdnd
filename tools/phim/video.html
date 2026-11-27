@@ -1,0 +1,80 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;700&family=Phudu:wght@500;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#071816}
+#st{position:relative;width:960px;height:540px;overflow:hidden;background:radial-gradient(circle at 50% 42%,#18423a,#071816 75%);font-family:'Be Vietnam Pro';color:#f9f1df}
+.sc{position:absolute;inset:0;opacity:0}
+.sc img{position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover}
+.sc svg.bg{position:absolute;inset:0;width:100%;height:100%}
+.sc .sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,24,22,.45) 0%,rgba(7,24,22,0) 28%,rgba(7,24,22,.1) 52%,rgba(7,24,22,.9) 100%)}
+.cap{position:absolute;left:56px;right:56px;bottom:58px}
+.cap .eb{font:700 17px 'Be Vietnam Pro';letter-spacing:.14em;text-transform:uppercase;color:#f5d98f;text-shadow:0 2px 8px #000}
+.cap h2{font:700 66px/1 Phudu;margin:6px 0 8px;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.85)}
+.cap p{font:500 25px/1.25 'Be Vietnam Pro';margin:0;text-shadow:0 2px 10px #000}
+.no{position:absolute;right:48px;top:40px;width:86px;height:86px}
+.tc{position:absolute;left:0;right:0;bottom:0;height:16px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='9' viewBox='0 0 36 9'%3E%3Crect width='36' height='9' fill='%2374140f'/%3E%3Cpath d='M0 4.5L4.5 0L9 4.5L4.5 9Z' fill='%23d9a441'/%3E%3Cpath d='M2.4 4.5L4.5 2.4L6.6 4.5L4.5 6.6Z' fill='%2322375c'/%3E%3Cpath d='M9 4.5L13.5 0L18 4.5L13.5 9Z' fill='%23f9f1df'/%3E%3Cpath d='M11.4 4.5L13.5 2.4L15.6 4.5L13.5 6.6Z' fill='%23b8281f'/%3E%3Cpath d='M18 4.5L22.5 0L27 4.5L22.5 9Z' fill='%23d9a441'/%3E%3Cpath d='M20.4 4.5L22.5 2.4L24.6 4.5L22.5 6.6Z' fill='%2322375c'/%3E%3Cpath d='M27 4.5L31.5 0L36 4.5L31.5 9Z' fill='%2356a59a'/%3E%3Cpath d='M29.4 4.5L31.5 2.4L33.6 4.5L31.5 6.6Z' fill='%2374140f'/%3E%3C/svg%3E");background-size:auto 100%;z-index:9}
+.ttl{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.ttl h1{font:700 92px/1 Phudu;margin:0;color:#f5d98f;text-shadow:0 4px 24px rgba(0,0,0,.9),0 0 60px rgba(245,217,143,.35)}
+.ttl p{font:500 27px 'Be Vietnam Pro';margin:14px 0 0;text-shadow:0 2px 10px #000}
+.ttl .k{font:700 19px 'Be Vietnam Pro';letter-spacing:.2em;color:#f5d98f;margin-bottom:14px}
+#drum{position:absolute;left:50%;top:50%;width:620px;height:620px;margin:-310px 0 0 -310px}
+#birds svg{position:absolute;width:64px;height:32px}
+.end .row{display:flex;gap:26px;justify-content:center;margin-top:26px}
+.end .row div{border:2px solid #d9a441;border-radius:16px;padding:12px 22px;background:rgba(7,24,22,.72)}
+.end .row b{display:block;font:700 46px/1 Phudu;color:#f5d98f}
+.end .row span{font:500 19px 'Be Vietnam Pro'}
+.end .go{display:inline-block;margin-top:28px;padding:14px 38px;border-radius:14px;background:linear-gradient(#f3cb68,#cf9632);color:#1d1509;font:700 30px Phudu}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<radialGradient id="gDrum" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffe7a6"/><stop offset=".5" stop-color="#dca54c"/><stop offset="1" stop-color="#94591f"/></radialGradient>
+<g id="adefs"></g><linearGradient id="gEle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2ad58"/><stop offset="1" stop-color="#9a5f25"/></linearGradient></defs></svg>
+<div id="st"></div>
+<script src="drum.js"></script>
+<script src="../../assets/art.js"></script>
+<script src="../../assets/img/credits.js"></script>
+<script>
+const IMG='../../assets/img/';const CRED=window.NTS_CREDITS||{};
+const photo=k=>{const c=CRED[k];if(!c)return null;return c.file?'../../'+c.file:(c.url||IMG+k+'.jpg')};
+const SC=[['dongson','Đông Sơn','Cội nguồn thời dựng nước bên dòng sông Mã','Nền tảng chính quyền hai cấp'],
+['hamrong','Hàm Rồng','Nhịp cầu anh hùng bắc qua sông Mã','Bầu cử đại biểu HĐND'],
+['thanhho','Thành nhà Hồ','Thành đá Tây Đô, di sản văn hóa thế giới','Tổ chức HĐND và đại biểu'],
+['lamkinh','Lam Kinh','Đất phát tích của khởi nghĩa Lam Sơn','Nhiệm vụ, quyền hạn'],
+['batrieu','Đền Bà Triệu','Chí lớn cưỡi gió, đạp sóng','Kỳ họp và quy chế làm việc'],
+['samson','Sầm Sơn','Biển gọi dưới chân núi Trường Lệ','Hoạt động giám sát'],
+['puluong','Pù Luông','Núi lớn và mùa lúa bậc thang','Cử tri và dân nguyện'],
+['camluong','Cẩm Lương','Suối cá được giữ bằng lệ làng','Ban hành nghị quyết, văn bản'],
+['nghison','Nghi Sơn','Cửa biển phía nam, vươn ra khơi xa','Ngân sách và đầu tư công'],
+['hacthanh','Hạc Thành','Trái tim xứ Thanh','Thanh Hóa: quê hương và khát vọng']];
+const NQ=new URLSearchParams(location.search).get('nq')||'570';
+const T0=3.6,D=3.7,X=.8,TEND=T0+SC.length*D,TOTAL=TEND+5.4;
+document.getElementById('adefs').innerHTML=NTS_ART.defs;
+const st=document.getElementById('st');
+let h=`<div class="sc" id="s-title"><svg id="drum" viewBox="0 0 200 200"><g id="dg">${drum(100,100,96,false)}</g></svg><div style="position:absolute;inset:0;background:radial-gradient(circle,rgba(7,24,22,.66) 0%,rgba(7,24,22,.6) 30%,rgba(7,24,22,.9) 72%)"></div><div id="birds"></div><div class="ttl"><div><div class="k" id="tk">TỈNH THANH HÓA</div><h1 id="th1">Nghị trường số</h1><p id="tp">Hành trình Đại biểu HĐND hai cấp</p></div></div></div>`;
+SC.forEach((s,i)=>{h+=`<div class="sc" id="s${i}">${photo(s[0])&&s[0]!=="dongson"?`<img class="bgi" data-k="${s[0]}" src="${photo(s[0])}">`:NTS_ART.svg(s[0],"bg bgi")}<div class="sh"></div><svg class="no" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#74140f" stroke="#f5d98f" stroke-width="4"/><circle cx="50" cy="50" r="37" fill="none" stroke="#d9a441" stroke-width="1.5" stroke-dasharray="2 4"/><text x="50" y="67" text-anchor="middle" font-family="Phudu" font-weight="700" font-size="46" fill="#f5d98f">${i+1}</text></svg><div class="cap"><div class="eb">Chặng ${i+1} · ${s[3]}</div><h2>${s[1]}</h2><p>${s[2]}</p></div></div>`});
+h+=`<div class="sc end" id="s-end"><svg id="drum2" viewBox="0 0 200 200" style="position:absolute;left:50%;top:50%;width:760px;height:760px;margin:-380px 0 0 -380px;opacity:.5"><g id="dg2">${drum(100,100,96,false)}</g></svg><div style="position:absolute;inset:0;background:radial-gradient(circle,rgba(7,24,22,.55) 10%,rgba(7,24,22,.92) 70%)"></div><div class="ttl"><div><h1 style="font-size:70px">Dọc dòng sông Mã</h1><div class="row"><div><b>10</b><span>chặng di sản</span></div><div><b>${NQ}</b><span>câu hỏi</span></div><div><b>3</b><span>cấp độ</span></div></div><div class="go">Vào nghị trường!</div></div></div><svg viewBox="0 0 130 100" style="position:absolute;left:44px;bottom:34px;width:150px">${ELE}</svg></div><div class="tc"></div>`;
+st.innerHTML=h;
+/* ảnh không nạp được thì thay bằng tranh sơn mài của chặng */
+document.querySelectorAll('img.bgi').forEach(im=>{const sw=()=>{const d=document.createElement('div');d.innerHTML=NTS_ART.svg(im.dataset.k,'bg bgi');im.replaceWith(d.firstChild)};im.addEventListener('error',sw);if(im.complete&&!im.naturalWidth)sw()});
+const B=document.getElementById('birds');let bh='';const BR=[];
+for(let i=0;i<9;i++){const y=60+((i*97)%420),sp=150+((i*53)%120),ph=(i*211)%1100;BR.push({y,sp,ph});bh+=`<svg viewBox="-22 -10 42 20" id="b${i}"><path d="${BIRD}" fill="#f5d98f" stroke="#f5d98f" stroke-width="1.2" stroke-linecap="round" opacity=".85"/></svg>`}
+B.innerHTML=bh;
+const cl=x=>Math.max(0,Math.min(1,x)),sm=x=>{x=cl(x);return x*x*(3-2*x)};
+const $=id=>document.getElementById(id);
+window.TOTAL=TOTAL;
+window.setT=t=>{
+ // tiêu đề
+ const ta=sm(t/.7)*sm((T0+X-t)/X);$('s-title').style.opacity=ta;
+ $('dg').setAttribute('transform',`rotate(${-t*7} 100 100)`);$('drum').style.transform=`scale(${1+t*.03})`;
+ $('th1').style.opacity=sm((t-.5)/.8);$('th1').style.transform=`translateY(${(1-sm((t-.5)/.8))*26}px)`;
+ $('tk').style.opacity=sm((t-.2)/.6);$('tp').style.opacity=sm((t-1.3)/.7);
+ BR.forEach((b,i)=>{const x=((t*b.sp+b.ph)%1150)-90,e=$('b'+i);e.style.left=x+'px';e.style.top=(b.y+Math.sin(t*2+i)*10)+'px'});
+ SC.forEach((s,i)=>{const a=T0+i*D,e=a+D+X,el=$('s'+i),o=sm((t-a)/X)*(i===SC.length-1?sm((e-t)/X):(t<e?1:0));
+  el.style.opacity=o;el.style.zIndex=i+1;if(o<=0)return;const k=(t-a)/(D+X),dir=i%2?1:-1;
+  const bg=el.querySelector('.bgi');bg.style.transform=bg.tagName==='IMG'?`scale(${1.02+.1*k}) translate(${dir*(k-.5)*2.4}%,${(k-.5)*-1.2}%)`:`scale(${1+.07*k}) translate(${dir*(k-.5)*1.2}%,${1.5-k*1.5}%)`;
+  const c=el.querySelector('.cap'),co=sm((t-a-.45)/.6);c.style.opacity=co;c.style.transform=`translateY(${(1-co)*22}px)`;
+  const n=el.querySelector('.no');n.style.opacity=co;n.style.transform=`scale(${.6+.4*co}) rotate(${(1-co)*-40}deg)`;});
+ const ea=sm((t-TEND+.2)/X);$('s-end').style.opacity=ea;$('s-end').style.zIndex=50;$('dg2').setAttribute('transform',`rotate(${t*6} 100 100)`);
+ const g=document.querySelector('.go');g.style.transform=`scale(${1+.04*Math.sin(t*5)})`;
+};
+setT(0);
+</script></body></html>

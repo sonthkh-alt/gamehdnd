@@ -441,7 +441,7 @@ const STAGES=[
 {id:'th',n:'Hạc Thành',t:'Thanh Hóa: quê hương và khát vọng',img:'hacthanh',cap:'Hạc đứng trên lưng rùa',
  lore:'Hạc Thành là tên gọi xưa của đô thị tỉnh lỵ xứ Thanh, nay là tên phường trung tâm hình thành sau sắp xếp năm 2025. Chặng về đích: 166 xã, phường của tỉnh, HĐND tỉnh khóa XIX, mục tiêu tăng trưởng hai con số và những trang sử, di sản đáng tự hào.'}];
 const SIDX={};STAGES.forEach((s,i)=>{SIDX[s.id]=i});
-const img=k=>(CRED[k]&&CRED[k].url)||'assets/img/'+k+'.jpg';
+const img=k=>(CRED[k]&&(CRED[k].file||CRED[k].url))||'assets/img/'+k+'.jpg';
 
 const CARDS=[
  {t:'Quyết định dự toán thu, chi ngân sách địa phương của tỉnh',b:'ht',why:'HĐND quyết định dự toán và phân bổ ngân sách địa phương cùng cấp; UBND lập và trình.'},
