@@ -1,0 +1,38 @@
+# Mỗi lần có thay đổi trên nhánh main, đưa nhánh gh-pages về đúng bản của main
+# để GitHub Pages (đang phục vụ từ nhánh gh-pages) cập nhật trang web.
+# Nếu data/cau-hoi.js chưa được sinh lại sau khi sửa data/cau-hoi.json, bước này tự sinh lại
+# (chỉ trên gh-pages; bản trên main vẫn nên sinh lại bằng: python tools/build_bank.py).
+name: Dong bo trang web
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dong-bo-gh-pages
+  cancel-in-progress: true
+
+jobs:
+  dong-bo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Doi chieu doan trich voi van ban nguon (chi canh bao)
+        continue-on-error: true
+        run: python3 tools/kiem_tra_cau_hoi.py
+      - name: Sinh lai data/cau-hoi.js
+        run: |
+          python3 tools/build_bank.py
+          if ! git diff --quiet -- data/cau-hoi.js; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Sinh lai data/cau-hoi.js tu data/cau-hoi.json" -- data/cau-hoi.js
+          fi
+      - name: Day sang gh-pages
+        run: git push --force origin HEAD:refs/heads/gh-pages
