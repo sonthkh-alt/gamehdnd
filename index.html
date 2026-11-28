@@ -866,7 +866,7 @@ const KCD=TMD&&TMD.chuyen&&TMD.chuyen.doan&&TMD.chuyen.doan.length?TMD.chuyen.do
 let KCW=0,kcT=0,kcF=0,kcWL=null,kcWP=false;
 if(KCD)KCD.forEach((d,i)=>{d.w=d.loi.split(/\s+/).length;KCW+=d.w;if(d.ch||!i)KCC.push({t:d.ch||TMD.chuyen.ten,a:i,b:i,st:d.st});else KCC[KCC.length-1].b=i;d.c=KCC.length-1});
 const PAUSE='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7z M13 5h4v14h-4z" fill="currentColor"/></svg>';
-const kcMin=w=>Math.max(1,Math.round(w/4.1/60));
+const kcMin=w=>Math.max(1,Math.round(w/3.7/60)); /* giọng thu sẵn đọc khoảng 3,5 đến 3,9 tiếng mỗi giây */
 const kcPlace=st=>st>=0?STAGES[st].n:'Dọc sông Mã';
 const kcBtn=(i,l,cls)=>KCD?`<button class="tmb ${cls||''}" data-act="kc" data-v="${i}">${PLAY}<span>${l}</span></button>`:'';
 const kcSt=i=>{const k=KCD?KCD.findIndex(d=>d.st===i):-1;return k<0?'':kcBtn(k,'Nghe chuyện kể về nơi này')};
