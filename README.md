@@ -8,8 +8,8 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 
 ## Nội dung game
 
-- **Sa bàn 3D xứ Thanh:** toàn bộ hành trình diễn ra trên một sa bàn 3D dựng bằng mã: núi phía tây, đồng bằng, sông Mã, sông Chu, biển Đông và 10 cụm mô hình di sản (trống đồng Đông Sơn, cầu Hàm Rồng có đoàn tàu chạy qua, cổng đá Thành nhà Hồ, chính điện Lam Kinh, đền Bà Triệu, bãi biển Sầm Sơn, ruộng bậc thang và cọn nước Pù Luông, suối cá Cẩm Lương, cảng Nghi Sơn, quảng trường Hạc Thành). Linh vật Voi Đồng đi theo người chơi, nhảy mừng khi trả lời đúng, lắc đầu khi sai; vượt cấp thì có pháo hoa. Chặng chưa mở bị mây che. Nút "Kể chuyện" mở chuyện kể dọc sông Mã, ống kính lần lượt ghé 10 di sản theo lời kể; Đấu trường 60 giây bay dọc sông Mã từ núi ra biển.
-- **Hành trình dọc sông Mã:** 10 chặng gắn với 10 di tích, thắng cảnh xứ Thanh; mỗi chặng một chuyên đề và ba cấp độ Dễ, Vừa, Khó. Mỗi lượt 8 câu, đúng từ 5 câu thì vượt cấp. Mỗi ngôi sao làm tăng GRDP của "tỉnh ảo"; đích là mốc 11%.
+- **Sa bàn 3D xứ Thanh:** toàn bộ hành trình diễn ra trên một sa bàn 3D dựng bằng mã: núi phía tây, đồng bằng, sông Mã, sông Chu, biển Đông và 10 cụm mô hình di sản (trống đồng Đông Sơn, cầu Hàm Rồng có đoàn tàu chạy qua, cổng đá Thành nhà Hồ, chính điện Lam Kinh, đền Bà Triệu, bãi biển Sầm Sơn, ruộng bậc thang và cọn nước Pù Luông, suối cá Cẩm Lương, cảng Nghi Sơn, quảng trường Hạc Thành). Linh vật Voi Đồng đi theo người chơi, nhảy mừng khi trả lời đúng, lắc đầu khi sai; vượt cấp thì có pháo hoa. Nút "Kể chuyện" mở chuyện kể dọc sông Mã, ống kính lần lượt ghé 10 di sản theo lời kể; Đấu trường 60 giây bay dọc sông Mã từ núi ra biển.
+- **Hành trình dọc sông Mã:** 10 chặng gắn với 10 di tích, thắng cảnh xứ Thanh; mỗi chặng một chuyên đề và ba cấp độ Dễ, Vừa, Khó. Mọi chặng và cấp độ đều mở sẵn để ai cũng tiếp cận được nội dung; game chỉ gợi ý chặng nên đi tiếp. Mỗi lượt 8 câu, đúng từ 5 câu thì vượt cấp. Mỗi ngôi sao làm tăng GRDP của "tỉnh ảo"; đích là mốc 11%.
 - **Ngân hàng 570 câu hỏi** (198 dễ, 224 vừa, 148 khó; 219 câu tình huống), mỗi câu có giải thích và căn cứ đến điều, khoản.
 - **Thi đấu:** Đấu trường 60 giây (chọn cấp độ), Thi thử 30 câu trong 25 phút (đạt từ 21/30, tải được phiếu kết quả dạng ảnh PNG), Ôn câu sai (luyện lại các câu từng trả lời sai cho đến khi đúng).
 - **Trò chơi nhỏ:** Ai có thẩm quyền? (22 thẻ), Xếp đúng quy trình (4 quy trình), Lật thẻ di sản, Ảnh này ở đâu? (đoán địa danh qua ảnh thật), Ai giữ cương vị nào? (câu hỏi sinh từ dữ liệu mục Bộ máy).
@@ -20,9 +20,7 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 - **Thuyết minh bằng giọng nói tiếng Việt:** lời chào, lời dẫn của 10 chặng di sản (tự phát khi mở chặng lần đầu, có nút nghe lại), lời báo kết quả khi vượt cấp, thi thử, đấu trường. Tùy chọn thêm: đọc câu hỏi và giải thích ở Hành trình, Ôn câu sai. Bật, tắt trong Hồ sơ.
 - **Thẻ di sản:** vượt cấp Dễ của mỗi chặng để mở một thẻ tranh sơn mài kèm lời dẫn và ảnh tư liệu.
 - **Thư viện ảnh xứ Thanh:** 59 ảnh tư liệu từ Wikimedia Commons về cả 10 chặng và nhiều địa danh khác (Bến En, đảo Hòn Nẹ, núi Nưa, sông Mã, đền Lê Lai, đền Lê Hoàn, nghè Xuân Phả, đền Mai An Tiêm, cửa biển Lạch Sung, hang Co Luồng, đảo cò Tiến Nông, chùa Sùng Nghiêm...), có chú thích, tác giả, giấy phép; lọc theo địa danh, xem ảnh lớn.
-- **Phim giới thiệu** 46 giây, âm thanh trống hội, trợ giúp 50:50 và "xem căn cứ", 24 huy hiệu, nhiệm vụ hằng ngày, chuỗi ngày học.
-- **Chế độ ôn tập tự do** (trong Hồ sơ): mở sẵn mọi chặng để tập huấn theo chuyên đề.
-- **Tiện ích:** sao lưu và khôi phục tiến trình bằng tệp `.json` (khi đổi máy), chọn chế độ đồ họa (Tự động, 3D cao, 3D nhẹ, 2D), cài lên màn hình chính của điện thoại và chơi khi mất mạng (PWA).
+- **Phim giới thiệu** 46 giây, âm thanh trống hội, trợ giúp 50:50 và "xem căn cứ", 24 huy hiệu, nhiệm vụ hằng ngày, chuỗi ngày học.- **Tiện ích:** sao lưu và khôi phục tiến trình bằng tệp `.json` (khi đổi máy), chọn chế độ đồ họa (Tự động, 3D cao, 3D nhẹ, 2D), cài lên màn hình chính của điện thoại và chơi khi mất mạng (PWA).
 - **Bố cục:** điện thoại một cột, sa bàn 3D nằm đầu trang và ngay trên câu hỏi; màn hình rộng từ 1000px chia hai khoang, sa bàn bên trái, bảng chơi bên phải. Máy không chạy được WebGL tự chuyển về giao diện 2D như bản trước.
 
 | Chặng | Di sản | Chuyên đề | Số câu |

@@ -767,7 +767,8 @@ function level(xp){let i=0;LEVELS.forEach((l,k)=>{if(xp>=l[0])i=k});const cur=LE
 const stv=(sid,m)=>S.stars[sid+m]||0;
 const totalStars=()=>Object.values(S.stars).reduce((a,b)=>a+b,0);
 const nOk=()=>Object.keys(S.ok).length;
-function isOpen(i,m){if(S.free)return true;if(m===1)return i===0||stv(STAGES[i-1].id,1)>=1;return stv(STAGES[i].id,m-1)>=1}
+/* Mọi chặng và cả ba cấp Dễ, Vừa, Khó luôn mở để ai cũng tiếp cận được nội dung; nextNode() vẫn gợi ý thứ tự nên đi */
+function isOpen(i,m){return true}
 function indicators(extraStars){
  const ts=totalStars()+(extraStars||0),grp={kc:['nt','tc','nv','vb','kh'],hl:['bc','ct','gs'],ns:['ns','th']},o={grdp:Math.min(12,7+4*ts/75)};
  Object.keys(grp).forEach(k=>{let a=0,b=0;grp[k].forEach(cd=>(BYCD[cd]||[]).forEach(q=>{b++;if(S.ok[q.id])a++}));o[k]=Math.round(40+60*(b?a/b:0))});
@@ -972,8 +973,7 @@ function tabMap(){
  <div class="facts pad"><div class="stat"><b>${fmt(NQ)}</b><span>Câu hỏi</span></div><div class="stat"><b>10</b><span>Chặng di sản</span></div><div class="stat"><b>${totalStars()}/90</b><span>Sao đã đạt</span></div></div>
  <section class="sec"><h2>Tỉnh ảo của bạn</h2>${indCard(ind)}</section>
  <section class="sec"><h2>Nhiệm vụ hôm nay</h2><div class="card">${DAILY.map(t=>{const d=S.daily.done[t.id];return `<div class="dl ${d?'done':''}"><i>${d?CHECK:''}</i><span>${t.n}</span><b>+${t.xp} XP</b></div>`}).join('')}</div></section>
- <section class="sec"><h2>Dọc dòng sông Mã</h2><p class="sub" style="margin:-4px 0 14px">Mười chặng, mỗi chặng ba cấp độ: Dễ, Vừa, Khó. Đúng từ ${PASS}/${RUN} câu để vượt cấp.</p><div class="jmap">${riverSVG()}${STAGES.map(st).join('')}</div></section>
- <p class="note">Bộ câu hỏi soạn từ nguyên văn văn bản hiện hành (cập nhật 11/2026) và cần được Phòng Công tác HĐND rà soát trước khi dùng chính thức. Xem <a href="#" data-act="credits">căn cứ pháp lý và nguồn ảnh</a>.</p>`;
+ <section class="sec"><h2>Dọc dòng sông Mã</h2><p class="sub" style="margin:-4px 0 14px">Mười chặng, mỗi chặng ba cấp độ: Dễ, Vừa, Khó, đều mở sẵn, chọn chặng và cấp nào cũng được. Đúng từ ${PASS}/${RUN} câu để vượt cấp.</p><div class="jmap">${riverSVG()}${STAGES.map(st).join('')}</div></section>`;
 }
 function tabArena(){
  ensureWeek();
@@ -1024,7 +1024,6 @@ function tabMe(){
  ${NHDS.length?`<div class="sw"><div>Nhạc nền<small>${esc((nhChon()||{}).ten||'Nhạc nền')}. Nhỏ lại khi có thuyết minh và khi trả lời câu hỏi; tắt khi thi thử và ở Đấu trường.</small></div><button class="tog" role="switch" aria-checked="${S.music!==false}" data-act="nhac" aria-label="Nhạc nền"></button></div>
  ${NHDS.length>1&&S.music!==false?`<div class="seg g2" role="group" aria-label="Chọn nhạc nền" style="margin:0 0 12px">${NHDS.map(x=>`<button data-act="nhac-k" data-v="${esc(x.k)}" aria-pressed="${(nhChon()||{}).k===x.k}">${esc(x.nhan||x.ten)}</button>`).join('')}</div>`:''}`:''}
  <div class="sw"><div>Đọc câu hỏi và giải thích<small>Ở Hành trình và Ôn câu sai. Dùng giọng đọc tiếng Việt của thiết bị nên chất lượng tùy máy; văn bản có nhiều số hiệu có thể đọc chưa trôi chảy.</small></div><button class="tog" role="switch" aria-checked="${!!S.tmq}" data-act="tm-q" aria-label="Đọc câu hỏi và giải thích"></button></div>
- <div class="sw"><div>Chế độ ôn tập tự do<small>Mở sẵn mọi chặng và cấp độ, dùng khi tập huấn theo chuyên đề.</small></div><button class="tog" role="switch" aria-checked="${S.free}" data-act="free" aria-label="Chế độ ôn tập tự do"></button></div>
  <div class="sw" style="display:block"><div>Đồ họa<small>${g3?'Đang chạy 3D ('+(G3.quality()==='low'?'tiết kiệm':'chất lượng cao')+').':S.gfx==='off'?'Đang dùng giao diện 2D.':'Máy này chưa chạy được 3D, game đang dùng giao diện 2D.'} Máy yếu nên chọn 3D tiết kiệm hoặc 2D.</small></div><div class="seg g4" role="group" aria-label="Chế độ đồ họa">${[['auto','Tự động'],['high','3D cao'],['low','3D nhẹ'],['off','2D']].map(([k,n])=>`<button data-act="gfx" data-v="${k}" aria-pressed="${(S.gfx||'auto')===k}">${n}</button>`).join('')}</div></div>
  </div><div class="btns mt"><button class="btn ghost full" data-act="credits">Tác giả, căn cứ pháp lý và nguồn ảnh</button>
  <div class="row2"><button class="btn ghost" data-act="backup">Sao lưu tiến trình</button><button class="btn ghost" data-act="restore">Khôi phục</button></div><input type="file" id="rsf" accept="application/json,.json" hidden>
@@ -1479,7 +1478,6 @@ const ACT={
  'kc-ch':v=>{const r=run;if(!r||r.type!=='kc')return;const c=KCD[r.i].c;if(+v<0)kcJump(r.i>KCC[c].a||!c?KCC[c].a:KCC[c-1].a);else if(c<KCC.length-1)kcJump(KCC[c+1].a)},
  'kc-snd':()=>{S.snd=true;if(S.tm==='off')S.tm='on';save();renderTop();if(run&&run.type==='kc')kcPlay()},
  snd:()=>{S.snd=!S.snd;save();if(S.snd)SFX.drum();else TM.stop();NH.sync();if(tab==='me'&&!run)render();else renderTop()},
- free:()=>{S.free=!S.free;save();render()},
  cine:()=>openCine(false),'cine-close':closeCine,
  photo:(v,b)=>openLb(v,b&&b.dataset.l),'lb-close':closeLb,'lb-go':lbGo,
  galf:v=>{galF=v;const y=$('#main').scrollTop;render();$('#main').scrollTop=y},
