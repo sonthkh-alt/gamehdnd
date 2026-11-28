@@ -14,6 +14,15 @@
  "nhac": {
   "ds": [
    {
+    "k": "di-cay",
+    "tep": "assets/audio/nhac-di-cay.mp3",
+    "ten": "Đi cấy (dân ca Thanh Hóa): hòa tấu sáo, đàn tranh",
+    "nhan": "Đi cấy",
+    "nguon": "giai điệu chép theo bản ký âm trong sách giáo khoa Âm nhạc và Mĩ thuật 6, NXB Giáo dục Việt Nam (bài 4)",
+    "quyen": "Dân ca, không có tác giả riêng (dẫn xuất xứ theo Điều 23 Luật Sở hữu trí tuệ); âm thanh tổng hợp bằng máy bằng tools/tao_nhac_di_cay.py, không dùng bản thu nào",
+    "mo_ta": "Điệu “Đi cấy”, dân ca Thanh Hóa (trích Tổ khúc Múa đèn). Giai điệu giữ nguyên theo bản ký âm trong sách giáo khoa Âm nhạc và Mĩ thuật 6; phần hòa tấu sáo, đàn tranh, trống, chiêng do game tự dựng bằng máy, không dùng bản thu nào."
+   },
+   {
     "k": "dan-day",
     "tep": "assets/audio/nhac-dan-day.mp3",
     "ten": "Nhạc dân tộc Việt Nam: đàn dây gảy, bản thu thật tại Hà Nội tháng 10/2008",
