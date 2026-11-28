@@ -16,7 +16,7 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 - **Bộ máy dân cử:** mục giới thiệu tổ chức, nhân sự theo Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn): Thường trực và bốn Ban của HĐND tỉnh khóa XIX, 82 đại biểu HĐND tỉnh kèm ảnh chân dung và đơn vị bầu cử (tìm theo tên, lọc theo đơn vị), Đoàn ĐBQH tỉnh khóa XVI, lãnh đạo và các phòng của Văn phòng, danh sách đại biểu Quốc hội bầu tại Thanh Hóa từ khóa I và đại biểu HĐND tỉnh từ khóa XVI. Kèm trò chơi "Ai giữ cương vị nào?".
 - **Màn chào và lời nói đầu:** mỗi lần mở game có màn chào với nút "Vào nghị trường" (trình duyệt chỉ cho phát tiếng sau một lần chạm). Lần đầu trong ngày game đọc lời nói đầu rồi nối sang hướng dẫn của trang Hành trình; các lần sau chỉ chào ngắn. Trang Hành trình có nút "Nghe lời nói đầu" để nghe lại.
 - **Chuyện kể dọc sông Mã:** một câu chuyện lịch sử xứ Thanh kể liền mạch khoảng 10 phút, 28 đoạn trong 11 chương, đi theo dòng thời gian từ Núi Đọ, Đông Sơn, Bà Triệu, Thành nhà Hồ, Lam Sơn, Hạc Thành, Sầm Sơn, Hàm Rồng, Pù Luông, Cẩm Lương, Nghi Sơn đến năm 2025, mượn năm chặng của hò sông Mã (rời bến, đò ngược, mắc cạn, đò xuôi, cập bến) làm mạch dẫn. Hết đoạn này tự sang đoạn sau, không dừng ở từng chặng; ống kính 3D ghé đúng di sản đang được nhắc tới. Có nút tạm dừng, chuyển chương, mục lục, chạm vào đoạn nào nghe từ đoạn đó; tắt tiếng thì chữ tự chạy. Mở từ trang Hành trình, nút "Kể chuyện" trên sa bàn hoặc từ màn giới thiệu của từng chặng.
-- **Nhạc nền:** bản nhạc tự soạn trên thang ngũ cung (đàn dây gảy, sáo, trống hội, chiêng, tiếng nước), nhỏ lại khi có thuyết minh và khi trả lời câu hỏi, tắt khi thi thử và ở Đấu trường. Bật, tắt trong Hồ sơ.
+- **Nhạc nền:** mặc định là bản thu thật nhạc dân tộc Việt Nam (đàn dây gảy, thu tại Hà Nội năm 2008, giấy phép CC BY 4.0, lấy từ Freesound); người chơi có thể chọn lại bản nhạc tự soạn trên thang ngũ cung. Nhạc nhỏ lại khi có thuyết minh và khi trả lời câu hỏi, tắt khi thi thử và ở Đấu trường. Bật, tắt và chọn bản nhạc trong Hồ sơ.
 - **Thuyết minh bằng giọng nói tiếng Việt:** lời chào, lời dẫn của 10 chặng di sản (tự phát khi mở chặng lần đầu, có nút nghe lại), lời báo kết quả khi vượt cấp, thi thử, đấu trường. Tùy chọn thêm: đọc câu hỏi và giải thích ở Hành trình, Ôn câu sai. Bật, tắt trong Hồ sơ.
 - **Thẻ di sản:** vượt cấp Dễ của mỗi chặng để mở một thẻ tranh sơn mài kèm lời dẫn và ảnh tư liệu.
 - **Thư viện ảnh xứ Thanh:** 59 ảnh tư liệu từ Wikimedia Commons về cả 10 chặng và nhiều địa danh khác (Bến En, đảo Hòn Nẹ, núi Nưa, sông Mã, đền Lê Lai, đền Lê Hoàn, nghè Xuân Phả, đền Mai An Tiêm, cửa biển Lạch Sung, hang Co Luồng, đảo cò Tiến Nông, chùa Sùng Nghiêm...), có chú thích, tác giả, giấy phép; lọc theo địa danh, xem ảnh lớn.
@@ -54,6 +54,8 @@ Game học tập về trục Hội đồng nhân dân: **"Nghị trường số 
 | `tools/lay_bo_may.py` | Tải lại thông tin từ Cổng dbndthanhhoa.gov.vn, sinh hai tệp trên, ảnh chân dung trong `assets/img/db/` và bản chụp trong `nguon/dbnd_*.txt` |
 | `data/thuyet-minh.json`, `data/thuyet-minh.js` | Lời thuyết minh (bản để sửa) và bản gọn game nạp, kèm danh sách tệp âm thanh còn khớp lời |
 | `tools/tao_thuyet_minh.py` | Sinh `data/thuyet-minh.js`; thêm `--tong-hop` để tổng hợp tệp âm thanh vào `assets/audio/tm/` |
+| `tools/thu-am.html` | Trang thu giọng người đọc thật cho thuyết minh và chuyện kể: hiện lời từng đoạn, thu bằng micro, nghe lại, đóng gói .zip (mở trên trang công khai hoặc qua `python -m http.server`) |
+| `tools/nhan_giong_doc.py` | Nhận gói bản thu giọng người đọc: cắt lặng, lọc ù, cân âm lượng, ghi `assets/audio/tm/nguoi/` (cần numpy, soundfile, soxr, lameenc) |
 | `tools/nhan_nhac_nen.py` | Nhận một bản thu có quyền sử dụng (ví dụ hò sông Mã) làm nhạc nền: cắt, chỉnh âm lượng, ghi nguồn vào game (cần numpy, soundfile, soxr, lameenc) |
 | `tools/tao_nhac_nen.py` | Soạn và tổng hợp nhạc nền `assets/audio/nhac-nen.mp3` (cần numpy, lameenc) |
 | `tools/kiem_tra_thuyet_minh.py` | Cho máy chép lại lời các tệp thuyết minh (Whisper) để rà soát, ghi vào `assets/audio/tm/kiem-tra.txt` |
@@ -147,9 +149,25 @@ Kho đã có tệp thu sẵn cho các đoạn với hai giọng Bắc (nữ "Mai
 
 - **Tổng hợp trên GitHub (đang dùng):** workflow "Tao thuyet minh" tự chạy mỗi khi `data/thuyet-minh.json` thay đổi trên nhánh `main` và chỉ tổng hợp lại đoạn đã đổi lời; cũng có thể bấm Run workflow ở tab Actions (đặt `lam_lai` là `true` để tổng hợp lại tất cả). Máy chủ GitHub cài VieNeu-TTS v3 Turbo (mô hình tiếng Việt mã nguồn mở, giấy phép Apache 2.0, 48 kHz, tác giả Phạm Nguyễn Ngọc Bảo), tổng hợp hai giọng ghi trong `data/thuyet-minh.json` (nữ "Mai Anh", nam "Thiện Minh", đều giọng Bắc), commit tệp vào kho và cập nhật trang web. Xong, workflow cho máy chép lại lời từng tệp (Whisper) vào `assets/audio/tm/kiem-tra.txt` để rà soát.
 - **Tổng hợp trên máy:** `pip install vieneu lameenc` rồi `python tools/tao_thuyet_minh.py --tong-hop`. Trên máy Windows đang bật Smart App Control, một thư viện của VieNeu-TTS bị chặn nên cách này không chạy được nếu không đổi thiết lập bảo mật.
-- **Giọng người thật:** nhờ phát thanh viên thu các đoạn, lưu đúng tên `assets/audio/tm/nu/<khóa>.mp3` (hoặc `nam/`), rồi chạy `python tools/tao_thuyet_minh.py --nhan-tep`. Đây là cách cho chất lượng cao nhất.
+- **Giọng người thật (nên dùng):** xem mục "Thu giọng người đọc thật" ngay dưới đây. Game luôn ưu tiên giọng người đọc; đoạn nào chưa thu mới dùng giọng máy.
 
 Đổi giọng máy: sửa tên giọng trong mục `giong` của `data/thuyet-minh.json` (danh sách 23 giọng có sẵn ở trang mô hình VieNeu-TTS-v3-Turbo trên Hugging Face) rồi tổng hợp lại với `--lam-lai`. Không dùng giọng đọc của Microsoft Edge lấy qua thư viện `edge-tts`: Microsoft không cấp quyền phát hành lại âm thanh tạo theo cách đó. Tệp tổng hợp xong cần được nghe lại toàn bộ trước khi dùng chính thức, nhất là tên riêng, năm tháng.
+
+### Thu giọng người đọc thật
+
+Giọng máy đọc đúng chữ nhưng chưa có hồn; chuyện kể dọc sông Mã dài khoảng 10 phút nên cần một giọng người kể. Cách làm:
+
+1. Người đọc (phát thanh viên, cán bộ có giọng tốt) mở trang thu âm bằng Chrome hoặc Edge trên máy tính có micro: https://sonthkh-alt.github.io/gamehdnd/tools/thu-am.html (hoặc chạy `python -m http.server 8765` rồi mở http://localhost:8765/tools/thu-am.html). Trang hiện lời từng đoạn bằng chữ to, 28 đoạn chuyện kể trước, 23 đoạn thuyết minh sau; bấm Space để thu, Space để dừng, P để nghe lại, mũi tên phải để sang đoạn sau. Trang báo khi tiếng quá to, quá nhỏ hoặc đọc quá nhanh. Bản thu chỉ lưu trong trình duyệt của máy đó (tắt máy không mất), không gửi đi đâu.
+2. Thu xong bấm "Tải tất cả (.zip)", chuyển tệp .zip cho người quản lý game. Thu dở cũng gửi được; đoạn chưa thu game vẫn đọc bằng giọng máy.
+3. Người quản lý chạy:
+
+```
+python tools/nhan_giong_doc.py giong-doc-nghi-truong-so.zip --nguoi "Họ và tên người đọc" --quyen "Người đọc đồng ý cho Văn phòng dùng và phát hành lại bản thu trong game, ngày ..."
+```
+
+Công cụ bỏ qua bản thu của đoạn đã sửa lời sau khi thu (tên tệp mang mã băm của lời), lọc tiếng ù, cắt khoảng lặng thừa, cân mọi đoạn về cùng âm lượng để nghe liền mạch, ghi `assets/audio/tm/nguoi/<khóa>.mp3` và ghi tên người đọc vào màn "Tác giả, căn cứ và nguồn". Thêm `--thu <thư mục>` để xử lý thử mà không đụng vào game. Commit, push lên `main`; workflow sẽ cho máy chép lại lời các tệp mới để rà soát đọc sót, đọc nhầm. Workflow không bao giờ tổng hợp đè lên giọng người đọc (giọng có `"nguoi": true` trong mục `giong`).
+
+Lưu ý khi thu: phòng kín, tắt quạt và điều hòa; micro rời hoặc tai nghe có micro, cách miệng một gang tay; giữ cùng giọng, cùng nhịp, cùng khoảng cách suốt các đoạn vì chuyện kể phát nối liền. Cần có sự đồng ý bằng văn bản của người đọc cho phát hành lại bản thu.
 
 ### Chuyện kể dọc sông Mã
 
@@ -159,16 +177,23 @@ Quy tắc khi sửa: chỉ kể điều có trong các tệp `nguon/`; chi tiế
 
 ### Nhạc nền
 
-**Dùng bản hò sông Mã thật:** kho chưa có bản thu nào vì chưa tìm được bản có giấy phép tự do (đã tìm trên Wikimedia Commons và Internet Archive ngày 28/11/2026, không có). Giai điệu dân ca thuộc về cộng đồng, nhưng mỗi bản thu còn có quyền của người biểu diễn và đơn vị ghi âm, nên không lấy bản thu trên YouTube, trang nhạc, báo, đài khi chưa được đồng ý. Khi có bản thu được phép dùng (của Trung tâm Văn hóa, Nhà hát Nghệ thuật truyền thống, Đài Phát thanh và Truyền hình tỉnh, Viện Âm nhạc, hoặc bản tự thu nghệ nhân), chạy:
+Mục `nhac` của `data/thuyet-minh.json` là danh sách (`ds`) các bản nhạc người chơi chọn được trong Hồ sơ; bản đầu là mặc định. Hiện có:
+
+- `dan-day` (mặc định), `assets/audio/nhac-dan-day.mp3`: bản thu thật "BR_043-1_VN_HanoiMusic" của người dùng kevp888 trên Freesound (https://freesound.org/s/440632/), nhạc dân tộc đàn dây gảy, thu tại Hà Nội tháng 10/2008, giấy phép CC BY 4.0. Game đã làm mờ đầu cuối, đổi sang một kênh, chỉnh âm lượng (dài 159 giây, lặp lại). Đây không phải hò sông Mã và người thu không ghi tên nhạc công, tên bài.
+- `tu-soan`, `assets/audio/nhac-nen.mp3`: nhạc tự soạn tổng hợp bằng máy (xem dưới).
+
+**Đã tìm bản hò sông Mã thật (ngày 28/11/2026):** Wikimedia Commons, Internet Archive, Freesound đều không có bản thu hò sông Mã nào. Internet Archive có nhiều đĩa nhạc dân tộc Việt Nam gắn nhãn CC BY-ND, nhưng đó là đĩa thương mại (Làng Văn, Hồ Gươm Audio, Dihavina…) do người khác tải lên, người tải không có quyền cấp phép nên không dùng được. Trên Freesound chỉ có vài bản thu thực địa nhạc dân tộc ở Hà Nội và miền núi phía Bắc; bản `dan-day` được chọn vì phổ âm sạch nhất (giai điệu liền, không có tiếng vỗ tay, tiếng nói). Các bản khác cùng người thu (440630 có giọng hát nữ, 440631 có trống tre, 440569 nhạc dân tộc miền núi có cồng chiêng) có thể thêm bằng `tools/nhan_nhac_nen.py --sau` nếu nghe thấy hợp; bản có lời hát thì phải xác định bài hát có còn thời hạn bảo hộ không.
+
+**Dùng bản hò sông Mã thật khi có:** Giai điệu dân ca thuộc về cộng đồng, nhưng mỗi bản thu còn có quyền của người biểu diễn và đơn vị ghi âm, nên không lấy bản thu trên YouTube, trang nhạc, báo, đài khi chưa được đồng ý. Khi có bản thu được phép dùng (của Trung tâm Văn hóa, Nhà hát Nghệ thuật truyền thống, Đài Phát thanh và Truyền hình tỉnh, Viện Âm nhạc, hoặc bản tự thu nghệ nhân), chạy:
 
 ```
 python tools/nhan_nhac_nen.py <tệp> --ten "Hò sông Mã: ..." --nguoi "người thể hiện" --nguon "đơn vị cung cấp" --quyen "căn cứ cho phép dùng"
 ```
 
-Công cụ cắt, chỉnh âm lượng, làm mờ đầu cuối, ghi `assets/audio/nhac-nen.mp3` và đưa tên bài, người thể hiện, nguồn vào màn "Tác giả, căn cứ và nguồn". Nên chọn đoạn 1,5 đến 3 phút.
+Công cụ cắt, chỉnh âm lượng, làm mờ đầu cuối, ghi `assets/audio/nhac-<khóa>.mp3`, đưa bản này lên đầu danh sách (thành nhạc mặc định; thêm `--sau` để xếp cuối) và đưa tên bài, người thể hiện, nguồn vào màn "Tác giả, căn cứ và nguồn". Nên chọn đoạn 1,5 đến 3 phút. Ví dụ: `--khoa ho-song-ma --nhan "Hò sông Mã"`.
 
 
-`assets/audio/nhac-nen.mp3` (dài khoảng 107 giây, lặp lại) do `python tools/tao_nhac_nen.py` tạo ra: nhạc tự soạn, tổng hợp hoàn toàn bằng máy trên thang ngũ cung Rê (rê, mi, son, la, si), dùng lại bốn câu đàn của nhạc phim giới thiệu, thêm tiếng sáo, trống hội, chiêng và tiếng nước. Đây không phải bản thu một làn điệu dân ca có thật. Muốn dùng bản thu thật (ví dụ hò sông Mã, dân ca Đông Anh) thì cần bản có quyền sử dụng hợp lệ, chép đè lên tệp này; nên chọn bản mở đầu và kết thúc lặng để lặp lại không gắt. Không dùng nhạc nền: để trống trường `tep` trong mục `nhac` của `data/thuyet-minh.json` rồi chạy `python tools/tao_thuyet_minh.py`.
+`assets/audio/nhac-nen.mp3` (dài khoảng 107 giây, lặp lại) do `python tools/tao_nhac_nen.py` tạo ra: nhạc tự soạn, tổng hợp hoàn toàn bằng máy trên thang ngũ cung Rê (rê, mi, son, la, si), dùng lại bốn câu đàn của nhạc phim giới thiệu, thêm tiếng sáo, trống hội, chiêng và tiếng nước. Đây không phải bản thu một làn điệu dân ca có thật. Bỏ một bản nhạc: xóa mục của nó trong `nhac.ds` của `data/thuyet-minh.json` rồi chạy `python tools/tao_thuyet_minh.py`.
 
 ### Cài như một ứng dụng
 

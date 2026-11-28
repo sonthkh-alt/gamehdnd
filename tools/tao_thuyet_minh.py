@@ -112,19 +112,26 @@ def sinh_js(D, so):
         for g in D["giong"]:
             if so.get(m["k"], {}).get(g) == h and os.path.exists(os.path.join(DIR, g, m["k"] + ".mp3")):
                 clip.setdefault(m["k"], {})[g] = h
-    nhac = (D.get("nhac") or {}).get("tep", "")
-    if nhac and not os.path.exists(os.path.join(ROOT, nhac)):
-        nhac = ""  # chưa có tệp nhạc thì game không phát nhạc nền
+    # Nhạc nền: danh sách bản nhạc người chơi chọn được, bản đầu là mặc định; bản nào thiếu tệp thì bỏ
     N = D.get("nhac") or {}
+    ds = [x for x in (N.get("ds") or ([N] if N.get("tep") else [])) if x.get("tep") and os.path.exists(os.path.join(ROOT, x["tep"]))]
+    nhac_ds = [{"k": x.get("k") or str(j), "tep": x["tep"], "ten": x.get("ten", ""), "nhan": x.get("nhan") or x.get("ten", ""),
+                "moTa": x.get("mo_ta", "")} for j, x in enumerate(ds)]
+    d0 = nhac_ds[0] if nhac_ds else {"tep": "", "ten": "", "moTa": ""}
     C = D.get("chuyen") or {}
     doan = [dict({"k": d["k"], "st": d["st"], "loi": d["loi"]}, **({"ch": d["ch"]} if d.get("ch") else {})) for d in C.get("doan", [])]
-    o = {"dir": REL, "may": D.get("may", ""), "giong": D["giong"], "nhac": nhac, "nhacTen": N.get("ten", ""), "nhacMoTa": N.get("mo_ta", ""),
+    o = {"dir": REL, "may": D.get("may", ""), "giong": D["giong"], "nhac": d0["tep"], "nhacTen": d0["ten"], "nhacMoTa": d0["moTa"], "nhacDs": nhac_ds,
          "chuyen": {"ten": C.get("ten", ""), "doan": doan}, "muc": muc, "clip": clip}
     js = ("/* Sinh tự động bằng tools/tao_thuyet_minh.py từ data/thuyet-minh.json. Không sửa tay. */\n"
           "window.NTS_TM=" + json.dumps(o, ensure_ascii=False, separators=(",", ":")) + ";\n")
     open(OUT_JS, "w", encoding="utf8", newline="\n").write(js)
-    du = sum(1 for k in muc if len(clip.get(k, {})) == len(D["giong"]))
-    print("data/thuyet-minh.js: %d đoạn lời, %d đoạn đã đủ tệp âm thanh cho %d giọng." % (len(muc), du, len(D["giong"])))
+    may = [g for g in D["giong"] if not D["giong"][g].get("nguoi")]
+    du = sum(1 for k in muc if all(g in clip.get(k, {}) for g in may))
+    print("data/thuyet-minh.js: %d đoạn lời, %d đoạn đã đủ tệp âm thanh cho %d giọng máy." % (len(muc), du, len(may)))
+    for g in D["giong"]:
+        if D["giong"][g].get("nguoi"):
+            co = sum(1 for k in muc if g in clip.get(k, {}))
+            print("  Giọng người đọc '%s' (%s): đã có %d/%d đoạn." % (g, D["giong"][g].get("ten", ""), co, len(muc)))
 
 
 def cat_lang(x, sr, nguong=0.006, dem=0.12):
@@ -227,10 +234,13 @@ def main():
         if not m["doc"].strip():
             sys.exit("Đoạn %s chưa có lời đọc" % m["k"])
     so = doc_so()
-    chon = [g for g in (a.giong.split(",") if a.giong else D["giong"]) if g]
+    # Giọng người đọc thật ("nguoi": true) chỉ nhận tệp thu qua tools/nhan_giong_doc.py, không bao giờ tổng hợp bằng máy
+    chon = [g for g in (a.giong.split(",") if a.giong else [g for g in D["giong"] if not D["giong"][g].get("nguoi")]) if g]
     for g in chon:
         if g not in D["giong"]:
             sys.exit("Không có giọng '%s' trong data/thuyet-minh.json" % g)
+        if D["giong"][g].get("nguoi"):
+            sys.exit("Giọng '%s' là giọng người đọc thật, không tổng hợp bằng máy." % g)
     if a.nhan_tep:
         for m in D["muc"]:
             for g in D["giong"]:

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icon/icon.svg">
+<title>Thu giọng đọc thuyết minh – Nghị trường số</title>
+<style>
+:root{--bg:#071816;--bg2:#0c2421;--panel:#12332e;--panel2:#18423a;--line:#2a584e;--gold:#d9a441;--gold2:#f5d98f;--son:#b8281f;--ivory:#f9f1df;--mute:#b3c6bb;--ok:#74d6a5;--bad:#ff9282}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ivory);font:16px/1.5 system-ui,"Segoe UI",Roboto,Arial,sans-serif;display:flex;flex-direction:column}
+header{padding:12px 16px;background:var(--bg2);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+h1{font-size:18px;margin:0;color:var(--gold2);flex:1 1 260px}
+.tien{font-size:14px;color:var(--mute)}
+button{font:inherit;border:1px solid var(--line);background:var(--panel2);color:var(--ivory);border-radius:10px;padding:8px 14px;cursor:pointer}
+button:hover{border-color:var(--gold)}
+button:disabled{opacity:.45;cursor:default}
+button.chinh{background:var(--son);border-color:var(--son);font-weight:700}
+button.chinh.dang{background:#e23b2f;animation:nhap 1s infinite}
+@keyframes nhap{50%{box-shadow:0 0 0 6px rgba(226,59,47,.25)}}
+input{font:inherit;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ivory)}
+main{flex:1;display:flex;min-height:0}
+aside{width:300px;overflow:auto;border-right:1px solid var(--line);background:var(--bg2)}
+aside h3{margin:12px 12px 4px;font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:.04em}
+aside button{display:flex;width:100%;text-align:left;border:0;border-radius:0;background:none;padding:6px 12px;gap:8px;font-size:14px}
+aside button[aria-current=true]{background:var(--panel2)}
+aside .dau{width:18px;flex:none;text-align:center}
+aside .ok{color:var(--ok)} aside .cu{color:var(--bad)}
+section{flex:1;overflow:auto;padding:18px clamp(14px,4vw,48px) 28px;display:flex;flex-direction:column;gap:14px}
+.nhom{color:var(--gold);font-size:14px}
+#loi{font-size:clamp(20px,2.4vw,28px);line-height:1.65;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;max-width:60em}
+.hang{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#muc{height:14px;width:min(420px,100%);background:var(--bg);border:1px solid var(--line);border-radius:7px;overflow:hidden}
+#muc i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ok),var(--gold) 75%,var(--bad))}
+#tt{color:var(--mute);font-size:15px;min-height:1.5em}
+#tt.loi{color:var(--bad)}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;max-width:60em}
+summary{cursor:pointer;color:var(--gold2)}
+details li{margin:4px 0}
+kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;background:var(--bg);font-size:13px}
+@media(max-width:760px){main{flex-direction:column}aside{width:auto;max-height:30vh;border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<header>
+ <h1>Thu giọng đọc thuyết minh · Nghị trường số</h1>
+ <label class="tien">Người đọc: <input id="ten" placeholder="Họ và tên" size="18"></label>
+ <button id="thuMuc" hidden>Chọn thư mục lưu</button>
+ <button id="taiZip">Tải tất cả (.zip)</button>
+ <span class="tien" id="tien"></span>
+</header>
+<main>
+ <aside id="ds" aria-label="Danh sách đoạn cần thu"></aside>
+ <section>
+  <div class="nhom" id="nhom"></div>
+  <div id="loi" aria-live="polite"></div>
+  <div class="hang">
+   <button class="chinh" id="thu">● Thu</button>
+   <button id="nghe" disabled>▶ Nghe lại</button>
+   <button id="truoc">← Đoạn trước</button>
+   <button id="sau">Đoạn sau →</button>
+  </div>
+  <div class="hang"><div id="muc"><i></i></div><span class="tien" id="dai"></span></div>
+  <div id="tt"></div>
+  <details open>
+   <summary>Cách thu cho tiếng hay</summary>
+   <ul>
+    <li>Ngồi trong phòng kín, tắt quạt, điều hòa; đóng cửa sổ. Rèm, tủ quần áo, chăn đệm giúp giảm tiếng vọng.</li>
+    <li>Dùng micro rời hoặc tai nghe có micro, đặt cách miệng chừng một gang tay, hơi chếch sang bên để tránh tiếng phì hơi. Giữ nguyên khoảng cách suốt các đoạn.</li>
+    <li>Đọc chậm rãi, giọng kể chuyện, như đang dẫn khách đi dọc sông Mã. Các đoạn chuyện kể sẽ phát nối nhau thành một mạch, nên giữ cùng giọng, cùng nhịp. Số và năm tháng đọc như khi nói (1397 đọc là "một nghìn ba trăm chín mươi bảy").</li>
+    <li>Bấm Thu, đợi nửa giây rồi mới đọc; đọc xong đợi nửa giây rồi bấm Dừng. Khoảng lặng thừa ở đầu và cuối sẽ được cắt tự động.</li>
+    <li>Đọc vấp thì bấm Thu lại cả đoạn, không cần đọc tiếp. Thanh mức âm nên lên quá nửa nhưng không chạm đỏ.</li>
+    <li>Tiếng thu chỉ lưu trên máy này (trình duyệt và thư mục anh chị chọn), không gửi đi đâu. Thu xong bấm "Tải tất cả (.zip)" rồi chuyển tệp cho người quản lý game.</li>
+   </ul>
+   <p class="tien">Phím tắt: <kbd>Space</kbd> thu hoặc dừng, <kbd>P</kbd> nghe lại, <kbd>←</kbd> <kbd>→</kbd> chuyển đoạn.</p>
+  </details>
+ </section>
+</main>
+<script src="../data/thuyet-minh.js"></script>
+<script>
+'use strict';
+const TMD = window.NTS_TM;
+const $ = id => document.getElementById(id);
+if (!TMD) { document.body.innerHTML = '<p style="padding:20px">Không nạp được data/thuyet-minh.js. Hãy mở trang này từ thư mục tools của game.</p>'; throw 0; }
+
+/* Danh sách đoạn: chuyện kể trước (người nghe nhiều nhất), rồi các đoạn thuyết minh lẻ */
+const DS = [];
+let chuong = '';
+(TMD.chuyen && TMD.chuyen.doan || []).forEach(d => {
+  if (d.ch) chuong = d.ch;
+  DS.push({ k: d.k, nhom: 'Chuyện kể · ' + (chuong || TMD.chuyen.ten), loi: d.loi, h: TMD.muc[d.k].h });
+});
+const ten = { chao: 'Lời nói đầu', hanhtrinh: 'Hướng dẫn trang Hành trình', chaolai: 'Lời chào lại', thu: 'Câu nghe thử giọng', bomay: 'Mục Bộ máy' };
+Object.keys(TMD.muc).forEach(k => {
+  if (DS.some(x => x.k === k)) return;
+  DS.push({ k, nhom: 'Thuyết minh · ' + (ten[k] || (/^c\d$/.test(k) ? 'Chặng ' + (+k.slice(1) + 1) : 'Trò chơi')), loi: TMD.muc[k].doc, h: TMD.muc[k].h });
+});
+const tenTep = x => x.k + '-' + x.h + '.wav';
+const soTieng = t => t.split(/\s+/).filter(Boolean).length;
+
+/* Lưu bản thu trong IndexedDB để tắt trình duyệt không mất */
+let db = null;
+const moDb = () => new Promise((ok, no) => {
+  const r = indexedDB.open('nts-thu-am', 1);
+  r.onupgradeneeded = () => r.result.createObjectStore('ban', { keyPath: 'k' });
+  r.onsuccess = () => ok(r.result); r.onerror = () => no(r.error);
+});
+const BAN = {};
+const ghiDb = b => new Promise(ok => { const t = db.transaction('ban', 'readwrite'); t.objectStore('ban').put(b); t.oncomplete = ok; t.onerror = ok; });
+const docDb = () => new Promise(ok => { const r = db.transaction('ban').objectStore('ban').getAll(); r.onsuccess = () => ok(r.result || []); r.onerror = () => ok([]); });
+
+let i = 0, dir = null;
+function tt(s, loi) { $('tt').textContent = s; $('tt').className = loi ? 'loi' : ''; }
+function trangThai(x) { const b = BAN[x.k]; return !b ? '' : b.h === x.h ? 'ok' : 'cu'; }
+function veDs() {
+  let h = '', nh = '';
+  DS.forEach((x, j) => {
+    const g = x.nhom.split(' · ')[0];
+    if (g !== nh) { nh = g; h += '<h3>' + g + '</h3>'; }
+    const s = trangThai(x);
+    h += '<button data-i="' + j + '" aria-current="' + (j === i) + '"><span class="dau ' + s + '">' + (s === 'ok' ? '✓' : s === 'cu' ? '!' : '·') + '</span><span>' + x.k + ' · ' + x.loi.slice(0, 38).replace(/</g, '&lt;') + '…</span></button>';
+  });
+  $('ds').innerHTML = h;
+  const xong = DS.filter(x => trangThai(x) === 'ok'), giay = xong.reduce((a, x) => a + BAN[x.k].dai, 0);
+  $('tien').textContent = 'Đã thu ' + xong.length + '/' + DS.length + ' đoạn · ' + Math.round(giay / 60) + ' phút';
+  const c = $('ds').querySelector('[aria-current=true]'); if (c) c.scrollIntoView({ block: 'nearest' });
+}
+function veDoan() {
+  const x = DS[i], b = BAN[x.k];
+  $('nhom').textContent = x.nhom + ' · ' + x.k + ' · ' + soTieng(x.loi) + ' tiếng';
+  $('loi').textContent = x.loi;
+  $('nghe').disabled = !b;
+  $('truoc').disabled = i === 0; $('sau').disabled = i === DS.length - 1;
+  $('dai').textContent = b ? 'Bản đã thu: ' + b.dai.toFixed(1) + ' giây, ' + Math.round(soTieng(x.loi) / b.dai * 60) + ' tiếng/phút' : '';
+  if (b && b.h !== x.h) tt('Lời đoạn này đã sửa sau khi thu, cần thu lại.', true);
+  else if (!dangThu) tt(b ? 'Đã có bản thu. Bấm Thu để thu lại, hoặc sang đoạn sau.' : 'Chưa thu đoạn này.');
+  veDs();
+}
+function den(j) { if (dangThu) return; dungNghe(); i = Math.max(0, Math.min(DS.length - 1, j)); veDoan(); }
+
+/* Thu âm: lấy mẫu thô từ micro (tắt khử ồn, tự chỉnh âm lượng của trình duyệt để giữ chất giọng tự nhiên) */
+let ctx = null, luong = null, nut = null, manh = [], dangThu = false, dinh = 0, mucHt = 0;
+async function moMic() {
+  if (luong) return true;
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) { tt('Trình duyệt không cho dùng micro ở trang này. Hãy mở bằng Chrome hoặc Edge, qua địa chỉ https:// hoặc http://localhost.', true); return false; }
+  try {
+    luong = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+  } catch (e) { tt('Chưa được phép dùng micro: ' + e.message, true); return false; }
+  ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const src = ctx.createMediaStreamSource(luong);
+  nut = ctx.createScriptProcessor(4096, 1, 1);
+  nut.onaudioprocess = e => {
+    const d = e.inputBuffer.getChannelData(0);
+    let p = 0; for (let j = 0; j < d.length; j++) { const v = Math.abs(d[j]); if (v > p) p = v; }
+    mucHt = Math.max(p, mucHt * 0.85);
+    if (dangThu) { manh.push(new Float32Array(d)); if (p > dinh) dinh = p; }
+  };
+  src.connect(nut); nut.connect(ctx.destination);
+  (function ve() { $('muc').firstChild.style.width = Math.min(100, Math.sqrt(mucHt) * 100) + '%'; requestAnimationFrame(ve); })();
+  return true;
+}
+function wav(chunks, sr) {
+  const n = chunks.reduce((a, c) => a + c.length, 0), b = new DataView(new ArrayBuffer(44 + n * 2));
+  const s = (o, t) => { for (let j = 0; j < t.length; j++) b.setUint8(o + j, t.charCodeAt(j)); };
+  s(0, 'RIFF'); b.setUint32(4, 36 + n * 2, true); s(8, 'WAVE'); s(12, 'fmt ');
+  b.setUint32(16, 16, true); b.setUint16(20, 1, true); b.setUint16(22, 1, true); b.setUint32(24, sr, true);
+  b.setUint32(28, sr * 2, true); b.setUint16(32, 2, true); b.setUint16(34, 16, true); s(36, 'data'); b.setUint32(40, n * 2, true);
+  let o = 44; for (const c of chunks) for (let j = 0; j < c.length; j++, o += 2) b.setInt16(o, Math.max(-1, Math.min(1, c[j])) * 32767, true);
+  return new Blob([b], { type: 'audio/wav' });
+}
+async function batThu() {
+  if (!await moMic()) return;
+  if (ctx.state === 'suspended') await ctx.resume();
+  dungNghe(); manh = []; dinh = 0; dangThu = true;
+  $('thu').textContent = '■ Dừng'; $('thu').classList.add('dang');
+  tt('Đang thu… đọc xong bấm Dừng (hoặc phím Space).');
+}
+async function dungThu() {
+  dangThu = false; $('thu').textContent = '● Thu'; $('thu').classList.remove('dang');
+  const x = DS[i], n = manh.reduce((a, c) => a + c.length, 0), dai = n / ctx.sampleRate;
+  if (dai < 1.5) { tt('Bản thu quá ngắn, hãy thu lại.', true); return; }
+  const b = { k: x.k, h: x.h, wav: wav(manh, ctx.sampleRate), dai, dinh, t: Date.now(), sr: ctx.sampleRate };
+  manh = [];
+  BAN[x.k] = b; await ghiDb(b);
+  if (dir) await ghiThuMuc(x, b);
+  veDoan();
+  const loi = [];
+  if (dinh > 0.985) loi.push('tiếng bị rè vì quá to, nên lùi xa micro một chút rồi thu lại');
+  else if (dinh < 0.12) loi.push('tiếng hơi nhỏ, nên ngồi gần micro hơn hoặc tăng mức micro');
+  const tpm = soTieng(x.loi) / dai * 60;
+  if (tpm > 230) loi.push('đọc hơi nhanh (' + Math.round(tpm) + ' tiếng/phút), nên chậm lại');
+  tt(loi.length ? 'Đã lưu, nhưng ' + loi.join('; ') + '.' : 'Đã lưu (' + dai.toFixed(1) + ' giây). Bấm P để nghe lại, → để sang đoạn sau.', !!loi.length);
+}
+let am = null;
+function dungNghe() { if (am) { am.pause(); URL.revokeObjectURL(am.src); am = null; } }
+function nghe() { const b = BAN[DS[i].k]; if (!b) return; dungNghe(); am = new Audio(URL.createObjectURL(b.wav)); am.play(); }
+
+/* Ghi thẳng vào một thư mục (Chrome, Edge) */
+async function ghiThuMuc(x, b) {
+  try { const f = await dir.getFileHandle(tenTep(x), { create: true }); const w = await f.createWritable(); await w.write(b.wav); await w.close(); }
+  catch (e) { tt('Không ghi được vào thư mục: ' + e.message, true); }
+}
+if (window.showDirectoryPicker) $('thuMuc').hidden = false;
+$('thuMuc').onclick = async () => {
+  try { dir = await window.showDirectoryPicker({ mode: 'readwrite' }); } catch (e) { return; }
+  $('thuMuc').textContent = 'Đang lưu vào: ' + dir.name;
+  for (const x of DS) if (trangThai(x) === 'ok') await ghiThuMuc(x, BAN[x.k]);
+  tt('Mỗi bản thu sẽ được ghi ngay vào thư mục ' + dir.name + '.');
+};
+
+/* Tệp .zip không nén (wav vốn đã lớn, nén cũng không nhỏ đi bao nhiêu) */
+const CRC = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+const crc32 = u => { let c = 0xFFFFFFFF; for (let j = 0; j < u.length; j++) c = CRC[(c ^ u[j]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+async function zip(tep) {
+  const enc = new TextEncoder(), phan = [], muc = []; let o = 0;
+  for (const [ten, blob] of tep) {
+    const u = new Uint8Array(await blob.arrayBuffer()), n = enc.encode(ten), c = crc32(u);
+    const h = new DataView(new ArrayBuffer(30));
+    h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x0800, true); h.setUint32(14, c, true); h.setUint32(18, u.length, true); h.setUint32(22, u.length, true); h.setUint16(26, n.length, true);
+    phan.push(h, n, u);
+    const m = new DataView(new ArrayBuffer(46));
+    m.setUint32(0, 0x02014b50, true); m.setUint16(4, 20, true); m.setUint16(6, 20, true); m.setUint16(8, 0x0800, true); m.setUint32(16, c, true); m.setUint32(20, u.length, true); m.setUint32(24, u.length, true); m.setUint16(28, n.length, true); m.setUint32(42, o, true);
+    muc.push(m, n);
+    o += 30 + n.length + u.length;
+  }
+  const sz = muc.reduce((a, x) => a + x.byteLength, 0), e = new DataView(new ArrayBuffer(22));
+  e.setUint32(0, 0x06054b50, true); e.setUint16(8, tep.length, true); e.setUint16(10, tep.length, true); e.setUint32(12, sz, true); e.setUint32(16, o, true);
+  return new Blob([...phan, ...muc, e], { type: 'application/zip' });
+}
+$('taiZip').onclick = async () => {
+  const xong = DS.filter(x => trangThai(x) === 'ok');
+  if (!xong.length) { tt('Chưa có bản thu nào.', true); return; }
+  tt('Đang đóng gói ' + xong.length + ' bản thu…');
+  const ghi = 'Người đọc: ' + ($('ten').value.trim() || '(chưa ghi tên)') + '\nNgày đóng gói: ' + new Date().toLocaleString('vi-VN') + '\nSố đoạn: ' + xong.length + '/' + DS.length + '\nThiếu: ' + DS.filter(x => trangThai(x) !== 'ok').map(x => x.k).join(', ') + '\n';
+  const z = await zip([['nguoi-doc.txt', new Blob([ghi])], ...xong.map(x => [tenTep(x), BAN[x.k].wav])]);
+  const a = document.createElement('a'); a.href = URL.createObjectURL(z); a.download = 'giong-doc-nghi-truong-so.zip'; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 60000);
+  tt('Đã tạo tệp giong-doc-nghi-truong-so.zip (' + Math.round(z.size / 1048576) + ' MB).');
+};
+
+$('thu').onclick = () => dangThu ? dungThu() : batThu();
+$('nghe').onclick = nghe;
+$('truoc').onclick = () => den(i - 1);
+$('sau').onclick = () => den(i + 1);
+$('ds').onclick = e => { const b = e.target.closest('button[data-i]'); if (b) den(+b.dataset.i); };
+$('ten').value = localStorage.getItem('nts-thu-am-ten') || '';
+$('ten').oninput = () => localStorage.setItem('nts-thu-am-ten', $('ten').value);
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.code === 'Space') { e.preventDefault(); $('thu').click(); }
+  else if (e.key === 'p' || e.key === 'P') nghe();
+  else if (e.key === 'ArrowRight') den(i + 1);
+  else if (e.key === 'ArrowLeft') den(i - 1);
+});
+window.addEventListener('beforeunload', e => { if (dangThu) { e.preventDefault(); e.returnValue = ''; } });
+(async () => {
+  try { db = await moDb(); (await docDb()).forEach(b => BAN[b.k] = b); }
+  catch (e) { tt('Trình duyệt không cho lưu tạm bản thu; hãy chọn thư mục lưu hoặc tải .zip thường xuyên.', true); db = { transaction: () => ({ objectStore: () => ({ put() {} }), set oncomplete(f) { f(); } }) }; }
+  const dau = DS.findIndex(x => trangThai(x) !== 'ok'); i = dau < 0 ? 0 : dau;
+  veDoan();
+})();
+</script>
+</body>
+</html>

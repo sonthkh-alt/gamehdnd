@@ -134,4 +134,10 @@ Trò "Ai giữ cương vị nào?" không có câu soạn tay về nhân sự: c
   - Suối cá: di tích nay thuộc xã Cẩm Tú sau sắp xếp; lời kể vẫn gọi theo tên chặng là Cẩm Lương.
 - Chặng Pù Luông, Cẩm Lương, Nghi Sơn không có nhiều sự kiện lịch sử trong nguồn, nên lời kể nói về thiên nhiên, nếp giữ rừng giữ suối và phát triển kinh tế.
 - Chế độ "Tham quan" cũ (ống kính dừng ở từng chặng đọc lời dẫn) đã bỏ, thay bằng chuyện kể liền mạch.
-- Nhạc nền vẫn là nhạc máy tự soạn. Yêu cầu thay bằng bản hò sông Mã thật **chưa làm được** vì chưa có bản thu được phép phát hành lại; xem README, mục Nhạc nền.
+- Nhạc nền: từ ngày 28/11/2026 mặc định là bản thu thật nhạc dân tộc đàn dây gảy (Freesound 440632, CC BY 4.0, thu tại Hà Nội năm 2008), vẫn chọn lại được nhạc tự soạn. Bản hò sông Mã thật **vẫn chưa có** vì không tìm được bản thu được phép phát hành lại; xem README, mục Nhạc nền.
+
+## Nhạc nền bản thu thật và giọng người đọc (thêm ngày 28/11/2026)
+
+- Bản nhạc `nhac-dan-day.mp3` được chọn bằng số đo (âm lượng, phổ âm, máy dò tiếng nói) chứ **chưa ai nghe duyệt**. Cần nghe xem có hợp làm nền cho game về xứ Thanh không; không hợp thì chọn "Tự soạn" làm mặc định (đổi thứ tự trong `nhac.ds`).
+- Giấy phép CC BY 4.0 do người thu (kevp888) cấp; người thu không ghi tên nhạc công và tên bài. Đây là bản thu buổi diễn nhạc truyền thống, giai điệu dân gian; về nguyên tắc nhạc công cũng có quyền đối với cuộc biểu diễn. Nếu cần chắc chắn tuyệt đối thì dùng bản thu do đơn vị trong tỉnh cấp phép.
+- Giọng kể hiện vẫn là giọng máy VieNeu-TTS. Đã có trang thu âm `tools/thu-am.html` và công cụ `tools/nhan_giong_doc.py`; cần một người đọc thu 51 đoạn (khoảng 15 phút tiếng, thu chừng một buổi) và văn bản đồng ý cho phát hành lại bản thu.

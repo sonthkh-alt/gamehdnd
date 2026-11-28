@@ -4,7 +4,11 @@
 
   python tools/nhan_nhac_nen.py <tệp âm thanh> --ten "Hò sông Mã: hò rời bến" --nguoi "Nghệ nhân ..." \
          --nguon "Trung tâm ... cung cấp ngày ..." --quyen "Được ... đồng ý cho dùng trong game theo văn bản số ..." \
-         [--tu 0] [--den 180]
+         [--khoa ho-song-ma] [--sau] [--tu 0] [--den 180]
+
+Game có danh sách nhạc nền (mục "nhac"."ds" của data/thuyet-minh.json), người chơi chọn ở tab Hồ sơ.
+Bản mới nhận được xếp đầu danh sách, tức là thành nhạc mặc định (thêm --sau để xếp cuối).
+Nhận lại cùng một --khoa thì thay bản cũ.
 
 Đọc được wav, flac, ogg, mp3. Cần: pip install numpy soundfile soxr lameenc
 
@@ -21,7 +25,7 @@ ghi âm; không lấy bản thu trên mạng (YouTube, trang nhạc, báo, đài
 Muốn quay về nhạc nền tự soạn: python tools/tao_nhac_nen.py rồi sửa lại mục "nhac" trong data/thuyet-minh.json.
 Thử mà không đụng vào game: thêm --thu <tệp ra.mp3> (chỉ ghi tệp đó).
 """
-import argparse, io, json, os, subprocess, sys
+import argparse, io, json, os, re, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "data", "thuyet-minh.json")
@@ -48,7 +52,12 @@ def main():
     ap.add_argument("--tu", type=float, default=0.0)
     ap.add_argument("--den", type=float, default=0.0)
     ap.add_argument("--thu", default="")
+    ap.add_argument("--khoa", default="that", help="khóa ngắn của bản nhạc; tệp ghi ra assets/audio/nhac-<khóa>.mp3")
+    ap.add_argument("--sau", action="store_true", help="xếp cuối danh sách thay vì làm nhạc mặc định")
+    ap.add_argument("--nhan", default="", help="nhãn ngắn trên nút chọn nhạc ở tab Hồ sơ, ví dụ 'Hò sông Mã'")
     a = ap.parse_args()
+    if not re.match(r"^[a-z0-9-]+$", a.khoa):
+        loi("--khoa chỉ gồm chữ thường không dấu, số, gạch nối.")
     if not a.thu and not (a.ten.strip() and a.quyen.strip()):
         loi("Cần --ten (tên bài) và --quyen (căn cứ cho phép dùng và phát hành lại bản thu này).")
 
@@ -79,7 +88,7 @@ def main():
     e.set_channels(1)
     e.set_quality(2)
     b = bytes(e.encode(pcm) + e.flush())
-    ra = a.thu or RA
+    ra = a.thu or os.path.join(ROOT, "assets", "audio", "nhac-%s.mp3" % a.khoa)
     os.makedirs(os.path.dirname(os.path.abspath(ra)), exist_ok=True)
     open(ra, "wb").write(b)
     print("%s: %.1f giây, %d KB, đỉnh %.2f, trung bình %.1f dB" % (
@@ -94,8 +103,13 @@ def main():
     if a.nguon.strip():
         mo_ta += " Nguồn: " + a.nguon.strip().rstrip(".") + "."
     mo_ta += " " + a.quyen.strip().rstrip(".") + "."
-    D["nhac"] = {"tep": "assets/audio/nhac-nen.mp3", "ten": a.ten.strip(), "nguoi": a.nguoi.strip(), "nguon": a.nguon.strip(),
-                 "quyen": a.quyen.strip(), "mo_ta": mo_ta, "ghi_chu": (D.get("nhac") or {}).get("ghi_chu", "")}
+    N = D.get("nhac") or {}
+    ds = N.get("ds") or ([dict({k: v for k, v in N.items() if k != "ghi_chu"}, k="tu-soan")] if N.get("tep") else [])
+    moi = {"k": a.khoa, "tep": os.path.relpath(ra, ROOT).replace(os.sep, "/"), "ten": a.ten.strip(), "nhan": a.nhan.strip() or a.ten.strip()[:30], "nguoi": a.nguoi.strip(),
+           "nguon": a.nguon.strip(), "quyen": a.quyen.strip(), "mo_ta": mo_ta}
+    ds = [x for x in ds if x.get("k") != a.khoa]
+    ds = ds + [moi] if a.sau else [moi] + ds
+    D["nhac"] = {"ds": ds, "ghi_chu": N.get("ghi_chu", "")}
     json.dump(D, open(SRC, "w", encoding="utf8", newline="\n"), ensure_ascii=False, indent=1)
     open(SRC, "a", encoding="utf8", newline="\n").write("\n")
     subprocess.check_call([sys.executable, os.path.join(ROOT, "tools", "tao_thuyet_minh.py")])

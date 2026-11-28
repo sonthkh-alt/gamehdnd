@@ -12,10 +12,26 @@
   }
  },
  "nhac": {
-  "tep": "assets/audio/nhac-nen.mp3",
-  "ten": "Nhạc nền tự soạn",
-  "mo_ta": "Nhạc nền do máy tổng hợp từ bản tự soạn trên thang ngũ cung (đàn dây gảy, sáo, trống hội, chiêng, tiếng nước), cùng chất liệu với nhạc phim giới thiệu. Đây không phải bản thu một làn điệu dân ca có thật.",
-  "ghi_chu": "Thay bằng bản thu có quyền sử dụng (ví dụ hò sông Mã): python tools/nhan_nhac_nen.py <tệp> --ten ... --nguoi ... --quyen ... Để trống \"tep\" nếu không dùng nhạc nền."
+  "ds": [
+   {
+    "k": "dan-day",
+    "tep": "assets/audio/nhac-dan-day.mp3",
+    "ten": "Nhạc dân tộc Việt Nam: đàn dây gảy, bản thu thật tại Hà Nội tháng 10/2008",
+    "nguoi": "nhạc công truyền thống (người thu không ghi tên)",
+    "nguon": "bản thu “BR_043-1_VN_HanoiMusic” của kevp888 trên Freesound, freesound.org/s/440632",
+    "quyen": "Dùng theo giấy phép CC BY 4.0 của người thu; game đã làm mờ đầu cuối, đổi sang một kênh và chỉnh âm lượng",
+    "mo_ta": "Nhạc dân tộc Việt Nam: đàn dây gảy, bản thu thật tại Hà Nội tháng 10/2008. Thể hiện: nhạc công truyền thống (người thu không ghi tên). Nguồn: bản thu “BR_043-1_VN_HanoiMusic” của kevp888 trên Freesound, freesound.org/s/440632. Dùng theo giấy phép CC BY 4.0 của người thu; game đã làm mờ đầu cuối, đổi sang một kênh và chỉnh âm lượng.",
+    "nhan": "Đàn dân tộc"
+   },
+   {
+    "tep": "assets/audio/nhac-nen.mp3",
+    "ten": "Nhạc nền tự soạn",
+    "mo_ta": "Nhạc nền do máy tổng hợp từ bản tự soạn trên thang ngũ cung (đàn dây gảy, sáo, trống hội, chiêng, tiếng nước), cùng chất liệu với nhạc phim giới thiệu. Đây không phải bản thu một làn điệu dân ca có thật.",
+    "k": "tu-soan",
+    "nhan": "Tự soạn"
+   }
+  ],
+  "ghi_chu": "Danh sách nhạc nền, bản đầu là mặc định; người chơi chọn ở tab Hồ sơ. Mỗi bản có k (khóa), tep, ten, nhan (nhãn nút chọn), mo_ta (ghi nguồn hiện ở màn Tác giả, căn cứ và nguồn). Thêm bản thu có quyền sử dụng (ví dụ hò sông Mã): python tools/nhan_nhac_nen.py <tệp> --khoa ... --ten ... --nguoi ... --nguon ... --quyen ..."
  },
  "muc": [
   {

@@ -797,8 +797,9 @@ const tmLoadV=()=>{try{tmVs=SYN?SYN.getVoices().filter(v=>/^vi([-_]|$)/i.test(v.
 const tmVoice=()=>{if(!tmVs.length)return null;const rx=S.tmg==='nam'?/nam ?minh|male/i:/hoai ?my|hoài my|linh|female/i,sc=v=>(/natural|neural/i.test(v.name)?8:0)+(/online/i.test(v.name)?4:0)+(/google/i.test(v.name)?3:0)+(rx.test(v.name)?2:0);return tmVs.slice().sort((a,b)=>sc(b)-sc(a))[0]};
 const TM={key:'',a:null,u:null,cb:null,n:0,
  on(){return !!TMD&&S.snd&&S.tm!=='off'},
- clip(k){const m=TMD&&TMD.muc[k],c=TMD&&TMD.clip&&TMD.clip[k];if(!m||!c)return '';const g=c[S.tmg]===m.h?S.tmg:Object.keys(c).find(x=>c[x]===m.h);return g?TMD.dir+g+'/'+k+'.mp3':''},
- hasClips(){return !!TMD&&Object.keys(TMD.giong).every(g=>Object.keys(TMD.muc).some(k=>TMD.clip[k]&&TMD.clip[k][g]===TMD.muc[k].h))},
+ /* Giọng người đọc thật (giong[g].nguoi) luôn được ưu tiên; đoạn chưa thu mới dùng giọng máy người chơi đã chọn */
+ clip(k){const m=TMD&&TMD.muc[k],c=TMD&&TMD.clip&&TMD.clip[k];if(!m||!c)return '';const ok=g=>c[g]===m.h,G=Object.keys(c),g=G.find(x=>TMD.giong[x]&&TMD.giong[x].nguoi&&ok(x))||(ok(S.tmg)?S.tmg:G.find(ok));return g?TMD.dir+g+'/'+k+'.mp3':''},
+ hasClips(){return !!TMD&&Object.keys(TMD.giong).some(g=>tmCo(g)>0)},
  can(k){return !!(TMD&&TMD.muc[k])&&(!!this.clip(k)||!!tmVoice())},
  stop(){this.n++;const f=this.cb;this.cb=null;this.key='';if(this.a){try{this.a.pause()}catch(e){}this.a=null}if(SYN){try{SYN.cancel()}catch(e){}}tmUi();if(f)f(false)},
  begin(k,cb){this.stop();const id=++this.n;this.key=k;this.cb=cb||null;tmUi();return [id,ok=>{if(id!==this.n)return;this.n++;this.cb=null;this.key='';this.a=null;tmUi();if(cb)cb(ok)}]},
@@ -828,7 +829,10 @@ function tmLoiDau(){return TM.play('chao',ok=>{if(ok&&entered&&!run&&tab==='map'
 /* Khi vào game: lần đầu trong ngày đọc đủ lời nói đầu, các lần sau chỉ chào ngắn */
 function tmHello(){if(!TM.on())return;const t=today();if(S.hello!==t){if(tmLoiDau()){S.hello=t;save()}}else TM.play('chaolai')}
 function tmAuto(k){if(TM.on()&&!tmHeard[k]&&TM.can(k)){tmHeard[k]=1;TM.play(k)}}
-const tmStatus=()=>!TMD?'Chưa nạp được lời thuyết minh.':TM.hasClips()?'Giọng đọc thu sẵn: '+TMD.giong[TMD.giong[S.tmg]?S.tmg:Object.keys(TMD.giong)[0]].ten+' ('+TMD.may+').':tmVs.length?'Đang dùng giọng đọc tiếng Việt của thiết bị: '+tmVoice().name+'.':'Thiết bị này chưa có giọng đọc tiếng Việt nên chưa phát được thuyết minh.';
+const tmCo=g=>TMD?Object.keys(TMD.muc).filter(k=>TMD.clip[k]&&TMD.clip[k][g]===TMD.muc[k].h).length:0;
+const tmNguoi=()=>TMD?Object.keys(TMD.giong).filter(g=>TMD.giong[g].nguoi&&tmCo(g)>0):[];
+const tmMay=()=>TMD?Object.keys(TMD.giong).filter(g=>!TMD.giong[g].nguoi&&tmCo(g)>0):[];
+const tmStatus=()=>!TMD?'Chưa nạp được lời thuyết minh.':tmNguoi().length?tmNguoi().map(g=>'Giọng người đọc: '+TMD.giong[g].ten+(tmCo(g)<Object.keys(TMD.muc).length?' ('+tmCo(g)+'/'+Object.keys(TMD.muc).length+' đoạn; đoạn chưa thu dùng giọng máy)':'')).join('; ')+'.':TM.hasClips()?'Giọng đọc thu sẵn: '+TMD.giong[TMD.giong[S.tmg]?S.tmg:Object.keys(TMD.giong)[0]].ten+' ('+TMD.may+').':tmVs.length?'Đang dùng giọng đọc tiếng Việt của thiết bị: '+tmVoice().name+'.':'Thiết bị này chưa có giọng đọc tiếng Việt nên chưa phát được thuyết minh.';
 /* Đọc câu hỏi, giải thích bằng giọng của thiết bị: đổi chữ viết tắt thành chữ đầy đủ để máy đọc xuôi tai hơn */
 const TMAB=[[/HĐND/g,'Hội đồng nhân dân'],[/UBND/g,'Ủy ban nhân dân'],[/ĐBQH/g,'đại biểu Quốc hội'],[/UBTVQH\d*/g,'Ủy ban Thường vụ Quốc hội'],[/UB ?MTTQ/g,'Ủy ban Mặt trận Tổ quốc'],[/MTTQ/g,'Mặt trận Tổ quốc'],[/(\d+)\/(\d{4})\//g,'$1 năm $2 '],[/\bQH(\d+)/g,'Quốc hội khóa $1'],[/\bNQ-/g,'Nghị quyết '],[/KT-XH/g,'kinh tế, xã hội'],[/\bVBHN-VPQH\b/g,'văn bản hợp nhất của Văn phòng Quốc hội'],[/\bCT-TTg\b/g,'chỉ thị của Thủ tướng']];
 const tmNorm=t=>TMAB.reduce((x,[a,b])=>x.replace(a,b),String(t));
@@ -842,17 +846,22 @@ if(SYN){tmLoadV();try{SYN.addEventListener('voiceschanged',()=>{tmLoadV();if(tab
    Một tệp nhạc lặp lại (assets/audio/nhac-nen.mp3: tự soạn, tổng hợp bằng tools/tao_nhac_nen.py). Chỉ bắt đầu sau lần chạm ở màn chào,
    nhỏ lại khi có thuyết minh hoặc đang trả lời câu hỏi, tắt hẳn khi thi thử, ở Đấu trường, khi xem phim và khi rời trang. */
 let entered=false;
-const NH={src:(TMD&&TMD.nhac)||'',buf:null,node:null,g:null,el:null,busy:false,t0:0,off:0,
+/* Danh sách nhạc nền (bản đầu là mặc định); người chơi chọn ở tab Hồ sơ, lưu ở S.nhacK */
+const NHDS=TMD&&TMD.nhacDs&&TMD.nhacDs.length?TMD.nhacDs:(TMD&&TMD.nhac?[{k:'0',tep:TMD.nhac,ten:TMD.nhacTen,nhan:TMD.nhacTen,moTa:TMD.nhacMoTa}]:[]);
+const nhChon=()=>NHDS.find(x=>x.k===S.nhacK)||NHDS[0]||null;
+const NH={src:NHDS.length?NHDS[0].tep:'',cur:null,hong:{},buf:null,node:null,g:null,el:null,busy:false,t0:0,off:0,
+ pick(){const c=nhChon(),u=c&&!this.hong[c.tep]?c.tep:'';if(u===this.cur)return;this.stop();if(this.el){try{this.el.pause()}catch(e){}this.el=null}this.buf=null;this.off=0;this.busy=false;this.cur=u;this.src=u},
  factor(){const rt=run&&ov.classList.contains('on')?run.type:'';if(/^(exam|arena)$/.test(rt))return 0;if(rt==='kc')return .3;return (/^(stage|tq|qt|mem|pic|bmq)$/.test(rt)?.45:1)*(TM.key?.3:1)},
  want(){return !!this.src&&entered&&S.snd&&S.music!==false&&!document.hidden&&!$('#cine').classList.contains('on')&&this.factor()>0},
  sync(){
+  this.pick();
   if(!this.want()){this.stop();return}
   const lv=.5*this.factor();
   if(!/^https?:$/.test(location.protocol)){ /* mở bằng tệp: không tải được dữ liệu để giải mã, dùng thẻ audio */
    if(!this.el){this.el=new Audio(this.src);this.el.loop=true}
    this.el.volume=lv;if(this.el.paused){const pr=this.el.play();if(pr&&pr.catch)pr.catch(()=>{})}return}
   const a=ac();if(!a)return;
-  if(!this.buf){if(this.busy)return;this.busy=true;fetch(this.src).then(r=>{if(!r.ok)throw 0;return r.arrayBuffer()}).then(b=>new Promise((ok,no)=>a.decodeAudioData(b,ok,no))).then(b=>{this.buf=b;this.busy=false;this.sync()}).catch(()=>{this.busy=false;this.src=''});return}
+  if(!this.buf){if(this.busy)return;this.busy=true;const u=this.src;fetch(u).then(r=>{if(!r.ok)throw 0;return r.arrayBuffer()}).then(b=>new Promise((ok,no)=>a.decodeAudioData(b,ok,no))).then(b=>{if(u!==this.cur)return;this.buf=b;this.busy=false;this.sync()}).catch(()=>{if(u!==this.cur)return;this.busy=false;this.hong[u]=1;this.src=''});return}
   if(!this.node){const n=a.createBufferSource(),g=a.createGain();n.buffer=this.buf;n.loop=true;g.gain.value=.0001;n.connect(g);g.connect(a.destination);n.start(0,this.off%this.buf.duration);this.t0=a.currentTime;this.node=n;this.g=g}
   const t=a.currentTime;this.g.gain.cancelScheduledValues(t);this.g.gain.setValueAtTime(Math.max(.0001,this.g.gain.value),t);this.g.gain.linearRampToValueAtTime(lv,t+.9)},
  stop(){
@@ -1009,8 +1018,9 @@ function tabMe(){
  <section class="sec"><h2>Tùy chọn</h2><div class="card">
  <div class="sw"><div>Âm thanh trống hội<small>Tiếng trống, tiếng chuông khi trả lời. Tắt mục này thì thuyết minh cũng tắt.</small></div><button class="tog" role="switch" aria-checked="${S.snd}" data-act="snd" aria-label="Âm thanh"></button></div>
  <div class="sw"><div>Thuyết minh bằng giọng nói<small>Lời chào, chuyện kể dọc sông Mã, lời dẫn từng chặng di sản, lời báo kết quả. ${tmStatus()}</small></div><button class="tog" role="switch" aria-checked="${S.tm!=='off'}" data-act="tm-tog" aria-label="Thuyết minh bằng giọng nói"></button></div>
- ${TMD&&S.tm!=='off'&&TM.hasClips()?`<div class="seg g2" role="group" aria-label="Chọn giọng thuyết minh" style="margin:0 0 12px">${Object.keys(TMD.giong).map(g=>`<button data-act="tm-g" data-v="${g}" aria-pressed="${S.tmg===g}">${esc(TMD.giong[g].nhan)}</button>`).join('')}</div>`:''}
- ${NH.src?`<div class="sw"><div>Nhạc nền<small>${esc(TMD.nhacTen||'Nhạc nền')}. Nhỏ lại khi có thuyết minh và khi trả lời câu hỏi; tắt khi thi thử và ở Đấu trường.</small></div><button class="tog" role="switch" aria-checked="${S.music!==false}" data-act="nhac" aria-label="Nhạc nền"></button></div>`:''}
+ ${TMD&&S.tm!=='off'&&tmMay().length>1&&tmNguoi().every(g=>tmCo(g)<Object.keys(TMD.muc).length)?`<div class="seg g2" role="group" aria-label="Chọn giọng thuyết minh" style="margin:0 0 12px">${tmMay().map(g=>`<button data-act="tm-g" data-v="${g}" aria-pressed="${S.tmg===g}">${esc(TMD.giong[g].nhan)}</button>`).join('')}</div>`:''}
+ ${NHDS.length?`<div class="sw"><div>Nhạc nền<small>${esc((nhChon()||{}).ten||'Nhạc nền')}. Nhỏ lại khi có thuyết minh và khi trả lời câu hỏi; tắt khi thi thử và ở Đấu trường.</small></div><button class="tog" role="switch" aria-checked="${S.music!==false}" data-act="nhac" aria-label="Nhạc nền"></button></div>
+ ${NHDS.length>1&&S.music!==false?`<div class="seg g2" role="group" aria-label="Chọn nhạc nền" style="margin:0 0 12px">${NHDS.map(x=>`<button data-act="nhac-k" data-v="${esc(x.k)}" aria-pressed="${(nhChon()||{}).k===x.k}">${esc(x.nhan||x.ten)}</button>`).join('')}</div>`:''}`:''}
  <div class="sw"><div>Đọc câu hỏi và giải thích<small>Ở Hành trình và Ôn câu sai. Dùng giọng đọc tiếng Việt của thiết bị nên chất lượng tùy máy; văn bản có nhiều số hiệu có thể đọc chưa trôi chảy.</small></div><button class="tog" role="switch" aria-checked="${!!S.tmq}" data-act="tm-q" aria-label="Đọc câu hỏi và giải thích"></button></div>
  <div class="sw"><div>Chế độ ôn tập tự do<small>Mở sẵn mọi chặng và cấp độ, dùng khi tập huấn theo chuyên đề.</small></div><button class="tog" role="switch" aria-checked="${S.free}" data-act="free" aria-label="Chế độ ôn tập tự do"></button></div>
  <div class="sw" style="display:block"><div>Đồ họa<small>${g3?'Đang chạy 3D ('+(G3.quality()==='low'?'tiết kiệm':'chất lượng cao')+').':S.gfx==='off'?'Đang dùng giao diện 2D.':'Máy này chưa chạy được 3D, game đang dùng giao diện 2D.'} Máy yếu nên chọn 3D tiết kiệm hoặc 2D.</small></div><div class="seg g4" role="group" aria-label="Chế độ đồ họa">${[['auto','Tự động'],['high','3D cao'],['low','3D nhẹ'],['off','2D']].map(([k,n])=>`<button data-act="gfx" data-v="${k}" aria-pressed="${(S.gfx||'auto')===k}">${n}</button>`).join('')}</div></div>
@@ -1240,8 +1250,8 @@ function renderOvBody(){
   <h3 class="mt" style="margin-top:22px">Đồ họa 3D, tranh và ảnh</h3><p class="sub">Sa bàn 3D và mười cụm mô hình di sản được dựng riêng cho game bằng mã, là hình cách điệu chứ không theo đúng tỷ lệ; dùng thư viện three.js (giấy phép MIT). Mười bức tranh phong cách sơn mài của các chặng được vẽ riêng cho game. Ảnh tư liệu lấy từ Wikimedia Commons, dùng theo giấy phép ghi kèm; ảnh đã được cắt và thu nhỏ.</p><div class="card mt">${STAGES.map(s=>{const c=CRED[s.img];return c?`<div class="crd"><b>${s.n}</b>: ${esc(c.title)}. Tác giả: ${esc(c.author)}. Giấy phép: ${esc(c.lic)}. <a href="${esc(c.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`:''}).join('')}</div>
   ${GAL.length?`<h3 style="margin-top:22px">Thư viện ảnh (${GAL.length} ảnh)</h3><div class="card mt">${GAL.map(g=>`<div class="crd"><b>${esc(g.pl)}</b>: ${esc(g.cap)}. Tác giả: ${esc(g.author)}. Giấy phép: ${esc(g.lic)}. <a href="${esc(g.page)}" target="_blank" rel="noopener">Trang gốc</a></div>`).join('')}</div>`:''}
   ${BM?`<h3 style="margin-top:22px">Mục Bộ máy</h3><p class="sub">Thông tin tổ chức, nhân sự và ảnh chân dung đại biểu lấy từ Cổng thông tin điện tử Đoàn ĐBQH và HĐND tỉnh Thanh Hóa (dbndthanhhoa.gov.vn) ngày ${BM.ngay}; ảnh đã được cắt và thu nhỏ. Game chỉ đăng họ tên, chức vụ, đơn vị bầu cử. Năm của các khóa là phần game bổ sung, không lấy từ danh sách trên Cổng.</p>`:''}
-  ${TMD?`<h3 style="margin-top:22px">Thuyết minh bằng giọng nói</h3><p class="sub">${TM.hasClips()?'Lời thuyết minh được tổng hợp sẵn bằng '+esc(TMD.may)+', mô hình giọng nói tiếng Việt mã nguồn mở (giấy phép Apache 2.0) của tác giả Phạm Nguyễn Ngọc Bảo; đây là giọng máy, không phải giọng người thật.':'Lời thuyết minh hiện được đọc bằng giọng tiếng Việt có sẵn của thiết bị, nên mỗi máy nghe một khác; đây là giọng máy, không phải giọng người thật.'} Lời đọc soạn theo đúng lời dẫn của từng chặng.</p>`:''}
-  ${NH.src?`<h3 style="margin-top:22px">Nhạc nền</h3><p class="sub">${esc(TMD.nhacMoTa||TMD.nhacTen||'')}</p>`:''}
+  ${TMD?`<h3 style="margin-top:22px">Thuyết minh bằng giọng nói</h3><p class="sub">${tmNguoi().length?tmNguoi().map(g=>'Lời thuyết minh và chuyện kể do '+esc(TMD.giong[g].ten)+' đọc và thu âm'+(TMD.giong[g].quyen?' ('+esc(TMD.giong[g].quyen)+')':'')+'. ').join('')+(tmNguoi().some(g=>tmCo(g)<Object.keys(TMD.muc).length)?'Những đoạn chưa thu được đọc bằng giọng máy '+esc(TMD.may)+' (mã nguồn mở, giấy phép Apache 2.0, tác giả Phạm Nguyễn Ngọc Bảo).':''):TM.hasClips()?'Lời thuyết minh được tổng hợp sẵn bằng '+esc(TMD.may)+', mô hình giọng nói tiếng Việt mã nguồn mở (giấy phép Apache 2.0) của tác giả Phạm Nguyễn Ngọc Bảo; đây là giọng máy, không phải giọng người thật.':'Lời thuyết minh hiện được đọc bằng giọng tiếng Việt có sẵn của thiết bị, nên mỗi máy nghe một khác; đây là giọng máy, không phải giọng người thật.'} Lời đọc soạn theo đúng lời dẫn của từng chặng.</p>`:''}
+  ${NHDS.length?`<h3 style="margin-top:22px">Nhạc nền</h3><div class="card mt">${NHDS.map(x=>`<div class="crd"><b>${esc(x.nhan||x.ten)}</b>: ${esc(x.moTa||x.ten||'')}</div>`).join('')}</div>`:''}
   ${KCD?`<h3 style="margin-top:22px">${esc(TMD.chuyen.ten)}</h3><p class="sub">Lời kể soạn riêng cho game từ các bài Wikipedia tiếng Việt lưu trong thư mục nguon của kho mã (giấy phép CC BY-SA 4.0), mượn năm chặng của hò sông Mã làm mạch dẫn. Chuyện kể để gợi hứng thú tìm hiểu, chưa qua thẩm định của cơ quan chuyên môn về lịch sử.</p>`:''}
   <p class="hint">Phim giới thiệu dựng từ các tranh, ảnh trên; nhạc và tiếng trống được tổng hợp bằng máy.</p>`;
  }
@@ -1459,6 +1469,7 @@ const ACT={
  vao:v=>{if(entered)return;if(v==='im')S.snd=false;else if(v==='tieng')S.snd=true;save();entered=true;const c=$('#chaoM');c.classList.add('off');setTimeout(()=>c.remove(),500);renderTop();SFX.drum();NH.sync();
   if(!S.role){if(!S.intro){S.intro=true;save()}openOnb()}else tmHello()},
  nhac:()=>{S.music=S.music===false;save();NH.sync();render()},
+ 'nhac-k':v=>{if(!NHDS.some(x=>x.k===v))return;S.nhacK=v;S.music=true;save();NH.sync();render()},
  'tm-tog':()=>{S.tm=S.tm==='off'?'on':'off';save();if(S.tm==='off')TM.stop();render()},
  'tm-g':v=>{if(!TMD||!TMD.giong[v])return;S.tmg=v;save();render();TM.play('thu')},
  'tm-q':()=>{S.tmq=!S.tmq;save();render()},
