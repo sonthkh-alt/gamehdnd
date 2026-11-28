@@ -22,6 +22,14 @@ Việc công cụ làm:
 Bắt buộc có --quyen. Giai điệu dân ca thuộc về cộng đồng, nhưng mỗi bản thu vẫn có quyền của người biểu diễn và đơn vị
 ghi âm; không lấy bản thu trên mạng (YouTube, trang nhạc, báo, đài) khi chưa được đơn vị giữ quyền đồng ý cho phát hành lại.
 
+Ca khúc có tác giả (ví dụ các bài hát về Thanh Hóa) cần ĐỦ HAI quyền, ghi cả hai vào --quyen:
+  1. quyền tác giả của nhạc sĩ: thỏa thuận với Trung tâm Bảo vệ quyền tác giả âm nhạc Việt Nam (VCPMC) hoặc văn bản
+     đồng ý của nhạc sĩ, người thừa kế (quyền tác giả còn 50 năm sau khi tác giả mất);
+  2. quyền của người biểu diễn và nhà sản xuất bản ghi: văn bản đồng ý của đơn vị làm ra bản thu (đài, nhà hát...).
+Thêm --co-loi cho bài có lời hát: game tắt hẳn nhạc khi đang thuyết minh, kể chuyện để hai giọng không đè nhau.
+  python tools/nhan_nhac_nen.py bai.mp3 --khoa ca-khuc --nhan "Tên bài" --co-loi --ten "..." --nguoi "Ca sĩ ..." \
+         --nguon "..." --quyen "Quyền tác giả: hợp đồng VCPMC số ...; bản ghi: Đài ... đồng ý theo văn bản số ..."
+
 Muốn quay về nhạc nền tự soạn: python tools/tao_nhac_nen.py rồi sửa lại mục "nhac" trong data/thuyet-minh.json.
 Thử mà không đụng vào game: thêm --thu <tệp ra.mp3> (chỉ ghi tệp đó).
 """
@@ -55,6 +63,8 @@ def main():
     ap.add_argument("--khoa", default="that", help="khóa ngắn của bản nhạc; tệp ghi ra assets/audio/nhac-<khóa>.mp3")
     ap.add_argument("--sau", action="store_true", help="xếp cuối danh sách thay vì làm nhạc mặc định")
     ap.add_argument("--nhan", default="", help="nhãn ngắn trên nút chọn nhạc ở tab Hồ sơ, ví dụ 'Hò sông Mã'")
+    ap.add_argument("--co-loi", action="store_true",
+                    help="bản nhạc có lời hát (ví dụ một ca khúc về Thanh Hóa): game tắt hẳn nhạc khi đang thuyết minh, kể chuyện")
     a = ap.parse_args()
     if not re.match(r"^[a-z0-9-]+$", a.khoa):
         loi("--khoa chỉ gồm chữ thường không dấu, số, gạch nối.")
@@ -107,6 +117,8 @@ def main():
     ds = N.get("ds") or ([dict({k: v for k, v in N.items() if k != "ghi_chu"}, k="tu-soan")] if N.get("tep") else [])
     moi = {"k": a.khoa, "tep": os.path.relpath(ra, ROOT).replace(os.sep, "/"), "ten": a.ten.strip(), "nhan": a.nhan.strip() or a.ten.strip()[:30], "nguoi": a.nguoi.strip(),
            "nguon": a.nguon.strip(), "quyen": a.quyen.strip(), "mo_ta": mo_ta}
+    if a.co_loi:
+        moi["co_loi"] = True
     ds = [x for x in ds if x.get("k") != a.khoa]
     ds = ds + [moi] if a.sau else [moi] + ds
     D["nhac"] = {"ds": ds, "ghi_chu": N.get("ghi_chu", "")}

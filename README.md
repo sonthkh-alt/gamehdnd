@@ -192,6 +192,16 @@ python tools/nhan_nhac_nen.py <tệp> --ten "Hò sông Mã: ..." --nguoi "ngư�
 
 Công cụ cắt, chỉnh âm lượng, làm mờ đầu cuối, ghi `assets/audio/nhac-<khóa>.mp3`, đưa bản này lên đầu danh sách (thành nhạc mặc định; thêm `--sau` để xếp cuối) và đưa tên bài, người thể hiện, nguồn vào màn "Tác giả, căn cứ và nguồn". Nên chọn đoạn 1,5 đến 3 phút. Ví dụ: `--khoa ho-song-ma --nhan "Hò sông Mã"`.
 
+**Dùng một ca khúc về Thanh Hóa** (ví dụ "Chào sông Mã anh hùng" của nhạc sĩ Xuân Giao): ca khúc có tác giả cần đủ hai quyền.
+1. Quyền tác giả của nhạc sĩ. Cách lấy: thỏa thuận cấp phép với Trung tâm Bảo vệ quyền tác giả âm nhạc Việt Nam (VCPMC), hoặc văn bản đồng ý của nhạc sĩ hay người thừa kế. Quyền này còn đến 50 năm sau khi tác giả mất, và game học tập không thu tiền vẫn phải xin.
+2. Quyền của ca sĩ và đơn vị làm ra bản thu. Cách lấy: văn bản đồng ý của đơn vị đó, ví dụ Đài Phát thanh và Truyền hình tỉnh hoặc Nhà hát.
+
+Đến năm 2026, chưa tìm thấy bản thu bài hát về Thanh Hóa nào có giấy phép tự do trên Wikimedia Commons, Freesound hay Internet Archive. Khi đã có đủ hai văn bản, chạy công cụ trên, thêm `--co-loi` cho bài có lời hát. Với bài có lời, game tắt hẳn nhạc trong lúc thuyết minh và kể chuyện, để hai giọng không đè lên nhau, rồi phát lại tiếp ở chỗ đã dừng:
+
+```
+python tools/nhan_nhac_nen.py bai.mp3 --khoa ca-khuc --nhan "Tên bài" --co-loi --ten "Tên bài (nhạc sĩ ...)" --nguoi "Ca sĩ ..." --nguon "Đơn vị cung cấp" --quyen "Quyền tác giả: ...; bản ghi: ..."
+```
+
 
 `assets/audio/nhac-nen.mp3` (dài khoảng 107 giây, lặp lại) do `python tools/tao_nhac_nen.py` tạo ra: nhạc tự soạn, tổng hợp hoàn toàn bằng máy trên thang ngũ cung Rê (rê, mi, son, la, si), dùng lại bốn câu đàn của nhạc phim giới thiệu, thêm tiếng sáo, trống hội, chiêng và tiếng nước. Đây không phải bản thu một làn điệu dân ca có thật. Bỏ một bản nhạc: xóa mục của nó trong `nhac.ds` của `data/thuyet-minh.json` rồi chạy `python tools/tao_thuyet_minh.py`.
 

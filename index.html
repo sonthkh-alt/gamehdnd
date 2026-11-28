@@ -851,7 +851,9 @@ const NHDS=TMD&&TMD.nhacDs&&TMD.nhacDs.length?TMD.nhacDs:(TMD&&TMD.nhac?[{k:'0',
 const nhChon=()=>NHDS.find(x=>x.k===S.nhacK)||NHDS[0]||null;
 const NH={src:NHDS.length?NHDS[0].tep:'',cur:null,hong:{},buf:null,node:null,g:null,el:null,busy:false,t0:0,off:0,
  pick(){const c=nhChon(),u=c&&!this.hong[c.tep]?c.tep:'';if(u===this.cur)return;this.stop();if(this.el){try{this.el.pause()}catch(e){}this.el=null}this.buf=null;this.off=0;this.busy=false;this.cur=u;this.src=u},
- factor(){const rt=run&&ov.classList.contains('on')?run.type:'';if(/^(exam|arena)$/.test(rt))return 0;if(rt==='kc')return .3;return (/^(stage|tq|qt|mem|pic|bmq)$/.test(rt)?.45:1)*(TM.key?.3:1)},
+ factor(){const rt=run&&ov.classList.contains('on')?run.type:'',c=nhChon();if(/^(exam|arena)$/.test(rt))return 0;
+  /* bài hát có lời: tắt hẳn khi đang thuyết minh hay kể chuyện để hai giọng không đè nhau */
+  if(c&&c.coLoi&&(TM.key||rt==='kc'))return 0;if(rt==='kc')return .3;return (/^(stage|tq|qt|mem|pic|bmq)$/.test(rt)?.45:1)*(TM.key?.3:1)},
  want(){return !!this.src&&entered&&S.snd&&S.music!==false&&!document.hidden&&!$('#cine').classList.contains('on')&&this.factor()>0},
  sync(){
   this.pick();

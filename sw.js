@@ -3,7 +3,7 @@
    - Ảnh: ưu tiên bản đã lưu (ảnh không đổi), chưa có thì tải rồi lưu.
    - Phim giới thiệu và tài nguyên của trang khác (phông chữ Google) không lưu.
    Đổi số phiên bản V khi muốn xóa sạch bộ nhớ đệm cũ. */
-const V='nts-v3d-6';
+const V='nts-v3d-7';
 const CORE=['./','index.html','data/cau-hoi.js','data/bo-may.js','data/thuyet-minh.js','assets/art.js','assets/img/credits.js','assets/img/gallery.js','assets/vendor/three.min.js','assets/3d/mo-hinh.js','assets/3d/the-gioi.js','assets/icon/icon.svg','assets/icon/icon-192.png','manifest.webmanifest'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});

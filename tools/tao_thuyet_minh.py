@@ -116,7 +116,7 @@ def sinh_js(D, so):
     N = D.get("nhac") or {}
     ds = [x for x in (N.get("ds") or ([N] if N.get("tep") else [])) if x.get("tep") and os.path.exists(os.path.join(ROOT, x["tep"]))]
     nhac_ds = [{"k": x.get("k") or str(j), "tep": x["tep"], "ten": x.get("ten", ""), "nhan": x.get("nhan") or x.get("ten", ""),
-                "moTa": x.get("mo_ta", "")} for j, x in enumerate(ds)]
+                "moTa": x.get("mo_ta", ""), **({"coLoi": True} if x.get("co_loi") else {})} for j, x in enumerate(ds)]
     d0 = nhac_ds[0] if nhac_ds else {"tep": "", "ten": "", "moTa": ""}
     C = D.get("chuyen") or {}
     doan = [dict({"k": d["k"], "st": d["st"], "loi": d["loi"]}, **({"ch": d["ch"]} if d.get("ch") else {})) for d in C.get("doan", [])]
