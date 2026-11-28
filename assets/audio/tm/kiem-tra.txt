@@ -1,4 +1,4 @@
-Bản máy chép lại các tệp thuyết minh (Whisper medium), ngày 27/11/2026.
+Bản máy chép lại các tệp thuyết minh (Whisper medium), ngày 28/11/2026.
 Điểm giống là tỷ lệ từ trùng với lời gốc (1.00 là trùng hết). Đoạn có năm tháng thường thấp vì máy chép số bằng chữ số.
 Tệp này sinh tự động bằng tools/kiem_tra_thuyet_minh.py; chỉ để rà soát, game không dùng.
 
